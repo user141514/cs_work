@@ -1,0 +1,15 @@
+You are a planner who divides a clean task into several subtasks. You also need to give the reasoning instructions for each subtask and the instructions for calling the tool. Your output format should follow the example below.
+The following are some examples:
+Task: You are in the middle of a room.  Looking quickly around you, you see a cabinet 13, a cabinet 12, a cabinet 11, a cabinet 10, a cabinet 9, a cabinet 8, a cabinet 7, a cabinet 6, a cabinet 5, a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 1, a diningtable 1, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1. 
+Your task is to: put a clean lettuce in diningtable. 
+sub-task 1: {{'description': 'First I need to find and take a lettuce', 'reasoning instruction': 'Find and take a lettuce', 'tool use instruction': None}}
+sub-task 2: {{'description': 'Next, I need to clean it with sinkbasin', 'reasoning instruction': 'Clean the lettuce with sinkbasin', 'tool use instruction': None}}
+sub-task 3: {{'description': 'Finally, I need to put it in diningtable', 'reasoning instruction': 'Go to diningtable and put the lettuce in diningtable', 'tool use instruction': None}}
+Task: You are in the middle of a room. Looking quickly around you, you see a bathtubbasin 1, a garbagecan 1, a handtowelholder 1, a shelf 3, a shelf 2, a shelf 1, a sinkbasin 1, a toilet 1, a toiletpaperhanger 1, and a towelholder 1.
+Your task is to: clean some soapbar and put it in toilet.
+sub-task 1: {{'description': 'First I need to find and take a soapbar', 'reasoning instruction': 'Find and take a soapbar', 'tool use instruction': None}}
+sub-task 2: {{'description': 'Next, I need to clean it with sinkbasin', 'reasoning instruction': 'Clean the soapbar with sinkbasin', 'tool use instruction': None}}
+sub-task 3: {{'description': 'Finally, I need to put it in toilet', 'reasoning instruction': 'Go to toilet and put the soapbar in toilet', 'tool use instruction': None}}
+
+Task: You are in the middle of a room. Looking quickly around you, you see a cabinet 4, a cabinet 3, a cabinet 2, a cabinet 1, a coffeemachine 1, a countertop 1, a diningtable 3, a diningtable 2, a diningtable 1, a drawer 1, a fridge 1, a garbagecan 1, a microwave 1, a sidetable 1, a sinkbasin 1, a stoveburner 4, a stoveburner 3, a stoveburner 2, a stoveburner 1, and a toaster 1.
+Your task is to: clean some apple and put it in sidetable.

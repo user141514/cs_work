@@ -1,0 +1,70 @@
+{
+  "decision_boundary": "material task-required macro conflict only; lexical/search/open-close differences do not count",
+  "fixture_selection": {
+    "jaccard": 0.7142857142857143,
+    "memory_key": "react_put_1",
+    "memory_task": "find some apple and put it in sidetable",
+    "shared_tokens": [
+      "and",
+      "apple",
+      "it",
+      "put",
+      "sidetable"
+    ],
+    "target_key": "react_clean_1",
+    "target_task": "clean some apple and put it in sidetable",
+    "target_type": "clean"
+  },
+  "material_conflict": false,
+  "original_tp_memory_text": "Plan: Search likely food locations systematically\u2014fridge, dining tables, sidetable, countertop, sinkbasin, and garbagecan\u2014until finding an apple. Take the apple, bring it to sinkbasin 1, clean it there, then carry the cleaned apple to sidetable 1 and put it in/on the sidetable.",
+  "original_tp_signature": [
+    "ACQUIRE(apple)",
+    "CLEAN(apple,sinkbasin)",
+    "PLACE(apple,sidetable)"
+  ],
+  "original_tp_thread_id": "01a0ee10-c4c0-7053-9731-512cb77c1e49",
+  "original_tp_usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 0,
+    "input_tokens": 20015,
+    "output_tokens": 218,
+    "reasoning_output_tokens": 133
+  },
+  "planningio_signature": [
+    "ACQUIRE(apple)",
+    "CLEAN(apple,sinkbasin)",
+    "PLACE(apple,sidetable)"
+  ],
+  "planningio_subtasks": [
+    {
+      "description": "First I need to find and take an apple",
+      "reasoning instruction": "Find and take an apple",
+      "tool use instruction": null
+    },
+    {
+      "description": "Next, I need to clean it with sinkbasin",
+      "reasoning instruction": "Clean the apple with sinkbasin",
+      "tool use instruction": null
+    },
+    {
+      "description": "Finally, I need to put it in sidetable",
+      "reasoning instruction": "Go to sidetable and put the apple in sidetable",
+      "tool use instruction": null
+    }
+  ],
+  "planningio_thread_id": "01a0ee15-0a1c-7f23-8964-0de6df75427a",
+  "planningio_usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 0,
+    "input_tokens": 16547,
+    "output_tokens": 172,
+    "reasoning_output_tokens": 38
+  },
+  "planningio_valid_no_tool_execution": true,
+  "required_signature": [
+    "ACQUIRE(apple)",
+    "CLEAN(apple,sinkbasin)",
+    "PLACE(apple,sidetable)"
+  ],
+  "status": "NO_CONFLICT_EXPOSURE"
+}

@@ -1,0 +1,12 @@
+{
+  "agent_square_commit": "8f5b3fe5d8a32f9b59d20370823bef2a2c86928c",
+  "memory_key": "react_put_1",
+  "memory_prompt_sha256": "9aa55c2a4521d5f96682c5f5ad21e36740dc00eea680f981502fd3068cbe4414",
+  "memory_schema_sha256": "2b6339c386414488a37fd9d99af0d4687ffb1949f67bec4c98c417b3d5086801",
+  "model": "gpt-5.6-luna",
+  "planning_prompt_sha256": "a43fc6e176e232cdc11cf44627fd940e0a54ca3b9295ab34adbe4663adf9b52a",
+  "reasoning_effort": "medium",
+  "same_target_occurrences_in_planning_prompt": 1,
+  "target_initial_sha256": "82570f447bf666a7edd2820872456425252d42a4d14e81ebd25f5fd749c9f50f",
+  "target_key": "react_clean_1"
+}

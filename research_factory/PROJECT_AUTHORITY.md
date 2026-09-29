@@ -71,9 +71,10 @@ Current scientific redirection:
 - OI-AS-02A completed `MANIPULATION_PASS`: under the common GPT-5.6 Luna / medium Codex backend, Original TP generated a current-task plan while OI-TP returned bounded memory guidance with zero current-task action directives.
 - OI-AS-02B completed `NULL_ON_PILOT`: on five frozen ALFWorld prompt checkpoints, Original TP = 2/5 and OI-TP = 2/5 exact-normalized correct, paired difference = 0 and discordant pairs = 0/5. This is a checkpoint proxy, not a full METHOD_PILOT.
 - OI-AS-02C completed `NO_CONFLICT_EXPOSURE`: actual frozen PlanningIO under GPT-5.6 Luna / medium parsed to `ACQUIRE(apple) -> HEAT(apple,microwave) -> PLACE(apple,fridge)`, exactly matching Original-TP's frozen macro signature. Upstream `planning_prompt['heat']` contains the exact same target task in its few-shot, so this fixture is structurally low-conflict and is CLOSED for further conflict-repair testing.
-- The OI-AS-02B null therefore cannot be promoted into a candidate-level kill under the kill-scope invariant.
-- Next planned step: OI-AS-03 conflict-exposed fixture gate. Freeze one new AgentSquare ALFWorld target not duplicated in PlanningIO few-shot examples and require a pre-registered material PlanningIO-vs-Original-TP plan conflict before any downstream OI-TP comparison.
-- OI-AS-03 is `PLANNED_NOT_AUTHORIZED`; no user input or API key is currently required because Codex routing is verified.
+- OI-AS-03 completed `NO_CONFLICT_EXPOSURE` on an outcome-blind lexical-nearest cross-task stress fixture: target `clean some apple and put it in sidetable`, memory `find some apple and put it in sidetable`, Jaccard 0.7143. Valid no-tool PlanningIO and Original TP both reduced to `ACQUIRE(apple) -> CLEAN(apple,sinkbasin) -> PLACE(apple,sidetable)`. Original TP recovered the target-required CLEAN phase despite the misleading memory task.
+- The OI-AS-02B null therefore still cannot be promoted into a candidate-level kill, but the narrower `MemoryTP-plan-conflict` mechanism is now weakened.
+- Next planned step: OI-AS-04 MemoryTP conflict-prevalence screen across the remaining eligible non-duplicated targets. Hard stop rule: zero material conflicts across the complete eligible set TERMINATES this seam; otherwise only the first deterministic conflict case may proceed downstream.
+- OI-AS-04 is `PLANNED_NOT_AUTHORIZED`; no user input or API key is currently required because Codex routing is verified.
 - No further engineering stage absent a concrete, decision-changing research-task blocker.
 
 ## 4. Retained scientific state

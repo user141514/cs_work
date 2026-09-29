@@ -1,0 +1,131 @@
+{
+  "eligible_targets": [
+    {
+      "key": "react_clean_1",
+      "task": "clean some apple and put it in sidetable",
+      "type": "clean"
+    },
+    {
+      "key": "react_cool_1",
+      "task": "put a cool mug in shelf",
+      "type": "cool"
+    },
+    {
+      "key": "react_examine_1",
+      "task": "examine the pen with the desklamp",
+      "type": "examine"
+    },
+    {
+      "key": "react_heat_2",
+      "task": "heat some bread and put it in countertop",
+      "type": "heat"
+    },
+    {
+      "key": "react_put_1",
+      "task": "find some apple and put it in sidetable",
+      "type": "put"
+    },
+    {
+      "key": "react_puttwo_1",
+      "task": "put two cellphone in sofa",
+      "type": "puttwo"
+    }
+  ],
+  "selected": {
+    "jaccard": 0.7142857142857143,
+    "memory_key": "react_put_1",
+    "memory_task": "find some apple and put it in sidetable",
+    "shared_tokens": [
+      "and",
+      "apple",
+      "it",
+      "put",
+      "sidetable"
+    ],
+    "target_key": "react_clean_1",
+    "target_task": "clean some apple and put it in sidetable",
+    "target_type": "clean"
+  },
+  "selection_rule": "max token-set Jaccard over eligible target vs any distinct frozen successful task; ties lexicographic",
+  "stopwords": [
+    "a",
+    "an",
+    "in",
+    "on",
+    "some",
+    "the",
+    "to"
+  ],
+  "top_pairs": [
+    {
+      "memory_key": "react_put_1",
+      "memory_task": "find some apple and put it in sidetable",
+      "score": 0.7142857142857143,
+      "target_key": "react_clean_1",
+      "target_task": "clean some apple and put it in sidetable"
+    },
+    {
+      "memory_key": "react_clean_1",
+      "memory_task": "clean some apple and put it in sidetable",
+      "score": 0.7142857142857143,
+      "target_key": "react_put_1",
+      "target_task": "find some apple and put it in sidetable"
+    },
+    {
+      "memory_key": "react_clean_2",
+      "memory_task": "clean some soapbar and put it in toilet",
+      "score": 0.5,
+      "target_key": "react_clean_1",
+      "target_task": "clean some apple and put it in sidetable"
+    },
+    {
+      "memory_key": "react_heat_0",
+      "memory_task": "heat some egg and put it in diningtable",
+      "score": 0.5,
+      "target_key": "react_heat_2",
+      "target_task": "heat some bread and put it in countertop"
+    },
+    {
+      "memory_key": "react_cool_0",
+      "memory_task": "cool some pan and put it in stoveburner",
+      "score": 0.3333333333333333,
+      "target_key": "react_clean_1",
+      "target_task": "clean some apple and put it in sidetable"
+    },
+    {
+      "memory_key": "react_cool_2",
+      "memory_task": "cool some potato and put it in diningtable",
+      "score": 0.3333333333333333,
+      "target_key": "react_clean_1",
+      "target_task": "clean some apple and put it in sidetable"
+    },
+    {
+      "memory_key": "react_heat_0",
+      "memory_task": "heat some egg and put it in diningtable",
+      "score": 0.3333333333333333,
+      "target_key": "react_clean_1",
+      "target_task": "clean some apple and put it in sidetable"
+    },
+    {
+      "memory_key": "react_heat_2",
+      "memory_task": "heat some bread and put it in countertop",
+      "score": 0.3333333333333333,
+      "target_key": "react_clean_1",
+      "target_task": "clean some apple and put it in sidetable"
+    },
+    {
+      "memory_key": "react_clean_1",
+      "memory_task": "clean some apple and put it in sidetable",
+      "score": 0.3333333333333333,
+      "target_key": "react_heat_2",
+      "target_task": "heat some bread and put it in countertop"
+    },
+    {
+      "memory_key": "react_clean_2",
+      "memory_task": "clean some soapbar and put it in toilet",
+      "score": 0.3333333333333333,
+      "target_key": "react_heat_2",
+      "target_task": "heat some bread and put it in countertop"
+    }
+  ]
+}
