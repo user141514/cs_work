@@ -19,14 +19,13 @@ Build and validate a reusable research-task workflow on the dedicated D:/cs_work
 Only the current step is authorized. Listing future steps is NOT execution authorization.
 
 ## CURRENT_STEP
-ID: WFE-03.1
-Status: COMPLETED_REPOSITORY_MIGRATION
-Authorization: explicit user request on 2026-09-29 to name and execute WFE-03.1.
-Result authority: WFE03_1_RESULT.md.
-Observed: the active CS/top-conference substrate was migrated from D:/bio_paper into the dedicated Git repository D:/cs_work; pre-authority-edit copy parity passed for 13 workflow-engineering files and 55 computer-topconf files; three directly referenced upstream process/provenance files were additionally preserved; obvious secret-pattern scan returned zero hits.
-Ownership: D:/cs_work is now the sole active writer for CS/top-conference and workflow-engineering state. The corresponding D:/bio_paper copies are historical provenance only.
-Predecessor: WFE-03 native PC2 verification remains valid under WFE03_RESULT.md.
-Decision: KEEP the workflow-engineering plan. Repository separation changes ownership/location, not scientific conclusions or workflow-effectiveness evidence. No model/agent/API/GPU launch, Watchdog change, historical replay or live executor integration occurred.
+ID: WFE-04
+Status: AUTHORIZED_BY_CURRENT_USER
+Authorization: explicit user request on 2026-09-29 to execute WFE-04.
+Action: bind one real execution entry (`computer_topconf_2027/run_stageb_agent.ps1 -Action Launch`) behind the WFE gate in model-free dry-run mode. The adapter may validate a live lease and prepare a structured launch plan, but MUST NOT invoke PowerShell, the executor, a model, an agent, or a network client.
+Acceptance: invalid/stale/missing leases fail before command preparation; one valid lease produces a deterministic dry-run plan bound to the frozen executor hash, declared prompt/read scope, trusted task/session paths and expected executor receipt fields; current missing live preconditions/side effects are surfaced; no NEXT_STEP is auto-authorized or dispatched.
+Composition invariant: gate is the sole authorization owner, executor remains the sole future execution owner, adapter is a derived projection only and may not create a second authority.
+Forbidden: model/API/GPU/agent launch, Watchdog changes, historical replay, live executor invocation, broad Stage-B harness rewrite, automatic WFE-05.
 
 ## Previous completed step
 ID: WFE-01
@@ -91,8 +90,5 @@ Decision: KEEP. The first unresolved engineering boundary remains live enforceme
 
 ## NEXT_STEP
 ID: WFE-04
-Status: PLANNED_NOT_AUTHORIZED
-Action: identify one current real execution entry and build the smallest gate-to-executor adapter in model-free dry-run mode. A valid admitted lease may resolve/prepare the existing command, but dry-run must not launch a model/agent. Invalid/stale/missing leases must block preparation/dispatch; expose the trusted workspace/session paths and receipt fields needed for later live use.
-Acceptance: deterministic PC2 adapter tests prove reject-before-dispatch for invalid authority, one legal dry-run path, no automatic NEXT_STEP dispatch, and an explicit inventory of remaining bypasses/side effects before any live launch.
-Forbidden: paid/model/API/GPU launch, historical replay, Watchdog changes, broad executor refactor, automatic WFE-05.
-STOP: WFE-03.1 is complete; WFE-04 has not been executed.
+Status: IN_PROGRESS_AUTHORIZED
+No later step is authorized until WFE-04 evidence is recorded. After WFE-04, write exactly one new NEXT_STEP and STOP.

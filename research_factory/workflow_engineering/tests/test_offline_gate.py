@@ -495,6 +495,32 @@ class GateTests(unittest.TestCase):
         self.assertEqual(code, 2)
         self.assertEqual(json.loads(out.getvalue())["code"], "UNAUTHORIZED_ACTION")
 
+    def test_admitted_lease_persists_resolved_session_paths(self):
+        gate = self.start()
+        lease = gate.admit(self.request())
+        self.assertEqual(lease["session_paths"], [str(self.root.resolve())])
+
+    def test_validate_lease_returns_current_running_attempt(self):
+        gate = self.start()
+        lease = gate.admit(self.request())
+        validated = gate.validate_lease(lease)
+        self.assertEqual(validated["attempt"]["attempt_id"], lease["attempt_id"])
+        self.assertEqual(validated["attempt"]["status"], "RUNNING")
+        self.assertEqual(validated["workspace"], str(self.root))
+
+    def test_validate_lease_rejects_after_receipt(self):
+        gate = self.start()
+        lease = gate.admit(self.request())
+        gate.submit(self.receipt(lease))
+        self.denied("LEASE_NOT_ACTIVE", gate.validate_lease, lease)
+
+    def test_validate_lease_rechecks_frozen_authority(self):
+        gate = self.start()
+        lease = gate.admit(self.request())
+        self.contract["goal"] = "changed after admission"
+        dump(self.contract_path, self.contract)
+        self.denied("CONTRACT_CHANGED", gate.validate_lease, lease)
+
 
 if __name__ == "__main__":
     unittest.main()

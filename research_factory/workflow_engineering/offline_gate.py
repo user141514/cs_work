@@ -277,6 +277,19 @@ class Gate:
         finally:
             connection.close()
 
+    def validate_lease(self, lease: Dict[str, Any]) -> Dict[str, Any]:
+        """Revalidate a currently RUNNING admitted lease without changing its state."""
+        with self._transaction() as state:
+            self._identity(state, lease)
+            self._authority(state)
+            require(isinstance(lease.get("attempt_id"), str), "UNKNOWN_ATTEMPT")
+            attempt = state["attempts"].get(lease["attempt_id"])
+            require(attempt is not None and attempt["unit_id"] == lease.get("unit_id"), "UNKNOWN_ATTEMPT")
+            require(attempt["status"] == "RUNNING", "LEASE_NOT_ACTIVE")
+            require(attempt["action"] == lease.get("action") and attempt["identity"] == lease.get("identity"),
+                    "STALE_LEASE")
+            return {"attempt": copy.deepcopy(attempt), "workspace": state["contract"]["workspace"]}
+
     @staticmethod
     def _identity(state, request):
         require(isinstance(request, dict), "STALE_IDENTITY")
@@ -322,8 +335,7 @@ class Gate:
             require(not any(a["status"] == "INVALID" for a in attempts), "REPLAN_REQUIRED")
             root = state["contract"]["workspace"]
             string_list(request.get("session_paths"), "SESSION_PATHS_REQUIRED")
-            for path in request["session_paths"]:
-                scoped_path(path, root)
+            session_paths = [scoped_path(path, root) for path in request["session_paths"]]
             for dependency in unit["depends_on"]:
                 previous = [a for a in attempts if a["unit_id"] == dependency and a["status"] == "ACCEPTED"]
                 require(bool(previous), "DEPENDENCY_NOT_READY", dependency)
@@ -345,8 +357,9 @@ class Gate:
             attempt_id = uuid.uuid4().hex
             record = {"attempt_id": attempt_id, "unit_id": unit["id"], "action": request["action"],
                       "identity": copy.deepcopy(request["identity"]), "status": "RUNNING",
-                      "reads": reads, "writes": writes, "read_hashes": read_hashes,
-                      "reservation": reservation, "scientific_conclusion": "UNASSESSED"}
+                      "reads": reads, "writes": writes, "session_paths": session_paths,
+                      "read_hashes": read_hashes, "reservation": reservation,
+                      "scientific_conclusion": "UNASSESSED"}
             state["attempts"][attempt_id] = record
             for key, amount in reservation.items():
                 state["reserved"][key] += amount
