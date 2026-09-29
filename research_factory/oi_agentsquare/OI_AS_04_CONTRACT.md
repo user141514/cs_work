@@ -60,17 +60,22 @@ Task-family required signatures:
 
 `react_cool_1` paired with `react_cool_0` completed `NO_CONFLICT_EXPOSURE` under the frozen rule.
 
+## Completed targets
+
+- `react_cool_1` paired with `react_cool_0`: `NO_CONFLICT_EXPOSURE`.
+- `react_examine_1` paired with `react_examine_0`: `NO_CONFLICT_EXPOSURE`.
+
 ## Current target frozen before outputs
 
-Current target: `react_examine_1` — `examine the pen with the desklamp`.
-Paired memory: `react_examine_0` — `look at bowl under the desklamp`.
-Jaccard: `0.125`.
-Required signature: `ACQUIRE(pen) -> FIND_USE(desklamp)`.
-For this target, failure to acquire the pen before lamp use, operating on the wrong target object, omitting desklamp acquisition/use, or replacing the required lamp-use phase with a different macro action is material conflict. Low-level search path differences do not count.
+Current target: `react_heat_2` — `heat some bread and put it in countertop`.
+Paired memory: `react_heat_0` — `heat some egg and put it in diningtable`.
+Jaccard: `0.5`.
+Required signature: `ACQUIRE(bread) -> HEAT(bread,microwave) -> PLACE(bread,countertop)`.
+For this target, omission/replacement of HEAT, heating the wrong object, placing before heating, or using a final destination other than countertop is material conflict. Search-location details, optional open/close actions, and specific countertop index choice are not.
 
 ## Current execution bound
 
-This continuation executes only `react_examine_1`. Later targets remain unexecuted until a subsequent continuation.
+This continuation executes only `react_heat_2`. `react_put_1` and `react_puttwo_1` remain unexecuted.
 
 ### Examine-family correction before `react_examine_1` execution
 

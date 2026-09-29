@@ -1,0 +1,10 @@
+{
+  "memory_key": "react_heat_0",
+  "memory_prompt_sha256": "02b7a67bc99ead0dd7c63103cd7597a82db57a7544e6ed0c84dd92df7a3c5d85",
+  "memory_schema_sha256": "2b6339c386414488a37fd9d99af0d4687ffb1949f67bec4c98c417b3d5086801",
+  "model": "gpt-5.6-luna",
+  "planning_prompt_sha256": "07b282c3c2147c89822988b445042b062ffa3256045eb3bcfceebe28db082daa",
+  "reasoning_effort": "medium",
+  "same_target_occurrences_in_planning_prompt": 1,
+  "target_key": "react_heat_2"
+}

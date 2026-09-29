@@ -75,8 +75,9 @@ Current scientific redirection:
 - The OI-AS-02B null therefore still cannot be promoted into a candidate-level kill, but the narrower `MemoryTP-plan-conflict` mechanism is now weakened.
 - OI-AS-04 MemoryTP conflict-prevalence screen is ACTIVE under the hard stop rule. The complete remaining target-memory pairing manifest is frozen before model calls.
 - `react_cool_1` (`put a cool mug in shelf`) paired with `react_cool_0` completed `NO_CONFLICT_EXPOSURE`: clean PlanningIO and Original TP both reduce to `ACQUIRE(mug) -> COOL(mug,fridge) -> PLACE(mug,shelf)`.
-- `react_examine_1` paired with `react_examine_0` also completed `NO_CONFLICT_EXPOSURE`. Before any examine output, the family signature was corrected to the actual frozen AgentSquare form `ACQUIRE(object) -> FIND_USE(desklamp)`; clean PlanningIO and Original TP both reduce to `ACQUIRE(pen) -> FIND_USE(desklamp)`. Across screened eligible targets = 3 and material conflicts = 0.
-- Exact next step: `react_heat_2` with frozen memory `react_heat_0`; it is `NOT_EXECUTED`. `react_put_1` and `react_puttwo_1` remain frozen and unexecuted. Hard stop rule remains unchanged: zero conflicts across the complete eligible set TERMINATES the `MemoryTP-plan-conflict` seam; the first conflict, if any, stops the screen and becomes the only downstream case.
+- `react_examine_1` paired with `react_examine_0` completed `NO_CONFLICT_EXPOSURE` after the pre-output family correction to `ACQUIRE(object) -> FIND_USE(desklamp)`.
+- `react_heat_2` paired with `react_heat_0` also completed `NO_CONFLICT_EXPOSURE`: clean PlanningIO and Original TP both reduce to `ACQUIRE(bread) -> HEAT(bread,microwave) -> PLACE(bread,countertop)`. Across screened eligible targets = 4 and material conflicts = 0.
+- Exact next step: `react_put_1` with frozen memory `react_clean_1`; it is `NOT_EXECUTED`. `react_puttwo_1` remains frozen and unexecuted. Hard stop rule remains unchanged: zero conflicts across the complete eligible set TERMINATES the `MemoryTP-plan-conflict` seam; the first conflict, if any, stops the screen and becomes the only downstream case.
 - No further engineering stage absent a concrete, decision-changing research-task blocker.
 
 ## 4. Retained scientific state

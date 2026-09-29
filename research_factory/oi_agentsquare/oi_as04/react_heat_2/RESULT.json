@@ -1,0 +1,38 @@
+{
+  "decision_boundary": "task-required macro conflict only; search details, optional open-close actions, and countertop index choice do not count",
+  "material_conflict": false,
+  "memory_key": "react_heat_0",
+  "original_tp_memory_text": "Plan: Search likely storage locations for bread, prioritizing the fridge, countertops, diningtable, cabinets, drawers, toaster, and garbagecan. When bread is found, take that specific bread instance, go to microwave 1, heat it, then go to a countertop and put the heated bread in/on it. Verify each action\u2019s result before proceeding and use the exact object/container identifiers.",
+  "original_tp_signature": [
+    "ACQUIRE(bread)",
+    "HEAT(bread,microwave)",
+    "PLACE(bread,countertop)"
+  ],
+  "original_tp_usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 0,
+    "input_tokens": 20208,
+    "output_tokens": 124,
+    "reasoning_output_tokens": 29
+  },
+  "planningio_signature": [
+    "ACQUIRE(bread)",
+    "HEAT(bread,microwave)",
+    "PLACE(bread,countertop)"
+  ],
+  "planningio_usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 1792,
+    "input_tokens": 16810,
+    "output_tokens": 160,
+    "reasoning_output_tokens": 25
+  },
+  "planningio_valid_no_tool_execution": true,
+  "required_signature": [
+    "ACQUIRE(bread)",
+    "HEAT(bread,microwave)",
+    "PLACE(bread,countertop)"
+  ],
+  "status": "NO_CONFLICT_EXPOSURE",
+  "target_key": "react_heat_2"
+}
