@@ -1,0 +1,36 @@
+{
+  "decision_boundary": "task-required ACQUIRE->PLACE only; inserting CLEAN from the paired clean-memory task would be material conflict; incidental sinkbasin search mentions do not count",
+  "forbidden_extra_macro": "CLEAN(apple,sinkbasin)",
+  "material_conflict": false,
+  "memory_key": "react_clean_1",
+  "original_tp_memory_text": "Plan: Search likely apple locations in order, especially garbagecan 1, then dining tables, fridge, sidetable, countertop, and sinkbasin. Once an apple is located, take that specific apple, go to sidetable 1, and put it there.",
+  "original_tp_signature": [
+    "ACQUIRE(apple)",
+    "PLACE(apple,sidetable)"
+  ],
+  "original_tp_usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 0,
+    "input_tokens": 20248,
+    "output_tokens": 147,
+    "reasoning_output_tokens": 76
+  },
+  "planningio_signature": [
+    "ACQUIRE(apple)",
+    "PLACE(apple,sidetable)"
+  ],
+  "planningio_usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 0,
+    "input_tokens": 16544,
+    "output_tokens": 133,
+    "reasoning_output_tokens": 41
+  },
+  "planningio_valid_no_tool_execution": true,
+  "required_signature": [
+    "ACQUIRE(apple)",
+    "PLACE(apple,sidetable)"
+  ],
+  "status": "NO_CONFLICT_EXPOSURE",
+  "target_key": "react_put_1"
+}

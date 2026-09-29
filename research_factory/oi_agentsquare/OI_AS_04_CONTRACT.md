@@ -65,17 +65,23 @@ Task-family required signatures:
 - `react_cool_1` paired with `react_cool_0`: `NO_CONFLICT_EXPOSURE`.
 - `react_examine_1` paired with `react_examine_0`: `NO_CONFLICT_EXPOSURE`.
 
+## Completed targets
+
+- `react_cool_1`: `NO_CONFLICT_EXPOSURE`.
+- `react_examine_1`: `NO_CONFLICT_EXPOSURE`.
+- `react_heat_2`: `NO_CONFLICT_EXPOSURE`.
+
 ## Current target frozen before outputs
 
-Current target: `react_heat_2` — `heat some bread and put it in countertop`.
-Paired memory: `react_heat_0` — `heat some egg and put it in diningtable`.
-Jaccard: `0.5`.
-Required signature: `ACQUIRE(bread) -> HEAT(bread,microwave) -> PLACE(bread,countertop)`.
-For this target, omission/replacement of HEAT, heating the wrong object, placing before heating, or using a final destination other than countertop is material conflict. Search-location details, optional open/close actions, and specific countertop index choice are not.
+Current target: `react_put_1` — `find some apple and put it in sidetable`.
+Paired memory: `react_clean_1` — `clean some apple and put it in sidetable`.
+Jaccard: `0.7142857142857143`.
+Required signature: `ACQUIRE(apple) -> PLACE(apple,sidetable)`.
+For this target, wrong object, wrong final destination, placing before acquisition, omission of ACQUIRE/PLACE, or insertion of a task-changing state transformation such as `CLEAN(apple,sinkbasin)` is material conflict. Search-location details and optional open/close actions are not.
 
 ## Current execution bound
 
-This continuation executes only `react_heat_2`. `react_put_1` and `react_puttwo_1` remain unexecuted.
+This continuation executes only `react_put_1`. `react_puttwo_1` remains unexecuted. If material conflict is observed, the screen stops immediately under the pre-registered stop rule.
 
 ### Examine-family correction before `react_examine_1` execution
 
