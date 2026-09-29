@@ -1,0 +1,52 @@
+{
+  "admitted_residual_seams": [],
+  "candidates": {
+    "MEMORY_TO_REASONING_GUIDANCE": {
+      "A_evidence": "Under the frozen mapping CURRENT_GUIDANCE is TP-only; TP is exactly the MemoryTP/I3 seam terminated by OI-AS-04.",
+      "A_independent_seam": false,
+      "B_evidence": "As a soft tag this is memory evidence or guidance consumed by reasoning; the only TP plan-authority form was already tested as the hard seam.",
+      "B_responsibility_conflict": false,
+      "C_evidence": "The soft exposure is concentrated in TP rather than varying independently of memory-module identity.",
+      "C_identifiable_contrast": false,
+      "D_evidence": "The original TP low label motivated the hard seam, but the complete conflict-prevalence screen found 0/6 macro-plan conflicts; no distinct soft-guidance harm signal remains.",
+      "D_preexisting_directional_evidence": false,
+      "E_evidence": "OI-TP already demonstrated guidance-form manipulation is technically possible, but this is not an independent residual mechanism.",
+      "E_minimal_isolated_intervention": true,
+      "exposure_count": 42,
+      "passes_all_A_to_E": false
+    },
+    "PLANNING_TO_REASONING_GUIDANCE": {
+      "A_independent_seam": true,
+      "B_evidence": "Pinned workflow explicitly executes planner first, then injects each subtask reasoning instruction as Current task for the reasoning module; this is hierarchical planner-to-executor handoff, not two independent same-level action owners.",
+      "B_responsibility_conflict": false,
+      "C_evidence": "All five non-None planners emit reasoning instructions; the only unexposed planning option is None, which removes decomposition itself. Existing module labels therefore cannot isolate guidance from planning presence.",
+      "C_identifiable_contrast": false,
+      "D_evidence": "OI-AS-00 provides occupancy only. Frozen planning labels do not vary the exposure among active planners, and OI-AS-01..04 produced no failure trace attributed to planner-to-reasoner guidance.",
+      "D_preexisting_directional_evidence": false,
+      "E_evidence": "A future study could in principle preserve subtask decomposition while replacing or removing the reasoning-instruction field, but that possibility alone is insufficient after B/C/D fail.",
+      "E_minimal_isolated_intervention": true,
+      "exposure_count": 175,
+      "passes_all_A_to_E": false
+    },
+    "PLANNING_TO_TOOL_GUIDANCE": {
+      "A_independent_seam": true,
+      "B_responsibility_conflict": false,
+      "C_identifiable_contrast": false,
+      "D_preexisting_directional_evidence": false,
+      "E_minimal_isolated_intervention": false,
+      "eligibility": "ABSENT_FROM_ALFWORLD_EXECUTABLE_SPACE",
+      "evidence": "AgentSquare ALFWorld search filters tooluse to None, so this soft tag has zero executable exposure.",
+      "exposure_count": 0,
+      "passes_all_A_to_E": false
+    }
+  },
+  "decision": "TERMINATE_AGENT_SQUARE_ALFWORLD_OI",
+  "experiment": "OI-AS-05",
+  "hard_gate_integration_authorized": false,
+  "new_intervention_authorized": false,
+  "scope_boundary": {
+    "not_terminated": "Orthogonality + Invariants as a general research idea on other baselines or tasks where an independent conflict mechanism is evidenced before intervention design.",
+    "terminated": "Current AgentSquare/ALFWorld O+I research line under the frozen module space and evidence chain."
+  },
+  "status": "COMPLETED_TERMINATE_AGENTSQUARE_ALFWORLD_OI_LINE"
+}

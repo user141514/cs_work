@@ -80,7 +80,8 @@ Current scientific redirection:
 - `react_put_1` paired with `react_clean_1` completed `NO_CONFLICT_EXPOSURE`: Original TP did not import the source clean-task transformation.
 - Final `react_puttwo_1` paired with `react_puttwo_0` also completed `NO_CONFLICT_EXPOSURE`: both clean PlanningIO and Original TP preserve two cellphone acquisition-placement cycles and sofa destination. Complete eligible prevalence result: 0 material conflicts / 6 targets.
 - OI-AS-04 therefore triggers its pre-registered stop rule: `MemoryTP-plan-conflict` is TERMINATED. OI-AS-00's hard union count equals I3 count (42), while I2 count is 35, so I2 is a subset of I3 in this executable space and is not an independent remaining hard seam. Do not integrate the hard gate or search for more MemoryTP examples.
-- Exact next step: OI-AS-05 Residual O+I Decision Gate, `PLANNED_NOT_AUTHORIZED`, using only frozen evidence to decide whether soft coupling supports a distinct new mechanism or whether AgentSquare/ALFWorld O+I should terminate entirely.
+- OI-AS-05 Residual O+I Decision Gate completed `TERMINATE_AGENT_SQUARE_ALFWORLD_OI`: no residual soft seam passes all pre-registered A-E admission criteria. `PLANNING_TO_REASONING_GUIDANCE` is an explicit hierarchical planner→executor handoff, lacks an identifiable active-planner exposed/unexposed contrast, and has no pre-existing directional harm evidence; `MEMORY_TO_REASONING_GUIDANCE` is the already-terminated TP seam; `PLANNING_TO_TOOL_GUIDANCE` has zero executable ALFWorld exposure.
+- The current AgentSquare/ALFWorld O+I line is TERMINATED. Hard-gate integration and new soft-guidance interventions are not authorized; do not create OI-AS-06 without genuinely new external evidence. Control returns to the higher-level research selector/replanning layer.
 - No further engineering stage absent a concrete, decision-changing research-task blocker.
 
 ## 4. Retained scientific state
