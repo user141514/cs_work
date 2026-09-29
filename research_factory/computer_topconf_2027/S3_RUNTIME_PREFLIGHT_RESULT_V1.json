@@ -1,0 +1,50 @@
+{
+  "experiment": "S3_RUNTIME_PREFLIGHT_V1",
+  "task": "pi-mono-auto-93c17d3b",
+  "verdict": "DAEMON_NOT_READY",
+  "model_calls_made": 0,
+  "scientific_state_mutated": false,
+  "docker": {
+    "client_path": "C:/Program Files/Docker/Docker/resources/bin/docker.exe",
+    "desktop_path": "C:/Program Files/Docker/Docker/Docker Desktop.exe",
+    "client_version": "29.8.0",
+    "desktop_process_started": true,
+    "daemon_reachable": false,
+    "backend_binary_present": true,
+    "backend_binary_path": "C:/Program Files/Docker/Docker/resources/com.docker.backend.exe",
+    "registry_key_expected": "HKLM/SOFTWARE/Docker Inc./Docker Desktop",
+    "registry_key_present": false,
+    "host_log_error": "getting backend binary path: cannot find registry key \"SOFTWARE\\\\Docker Inc.\\\\Docker Desktop\"",
+    "prior_installer_attempt": {
+      "backend": "hyper-v",
+      "result": "exit status 1"
+    },
+    "firmware_virtualization_enabled": true,
+    "windows_optional_feature_state": "NOT_RESOLVED_IN_CURRENT_NON_ELEVATED_PREFLIGHT"
+  },
+  "official_assets": {
+    "image": "ghcr.io/togetherbench/multi-user-turn-codebench/pi-mono-auto-93c17d3b:2f7d1992e60d",
+    "image_inspected": false,
+    "image_pulled": false,
+    "image_reason": "Docker daemon unreachable; bounded preflight stops before acquisition",
+    "task_initial_state": "5133697bc454da5595655cf4b0c70d3c2c725677",
+    "verifier_sha256": "2d06c9a791d7e2d6785711f14bf8bc3657b3dcc13049e5566d48adfb6706c046",
+    "verifier_manifest_sha256": "a29b160939ea5abbef70987b9852b87c8f2fe00f07c39074b3b9054fa07a7e2f",
+    "task_toml_sha256": "4676cc1660709cd1da6030a9e1e47cebc741409e96b8fb19ddbf1fc7d4d6c8e3",
+    "dockerfile_sha256": "1c9f85e457efd7fdee80c2b81c5d9b3c8cd620addad86a9b8056b9b9225dca40"
+  },
+  "pass_criteria": {
+    "R1_daemon_reachable": false,
+    "R2_exact_image_inspectable": false,
+    "R3_container_runtime_identity": false,
+    "R4_official_verifier_executes": false,
+    "R5_zero_model_no_science_mutation": true
+  },
+  "exact_user_action_required": [
+    "Repair or reinstall Docker Desktop with administrator privileges so its registry/service/backend installation completes successfully.",
+    "Start Docker Desktop and wait until the Docker engine is running; if the installer requests a Windows restart, restart first.",
+    "Then return to this task so S3_RUNTIME_PREFLIGHT_V1 can resume at exact-image inspection without rerunning earlier scientific steps."
+  ],
+  "next_step_after_user_action": "RESUME_S3_RUNTIME_PREFLIGHT_V1_AT_R1_R2",
+  "paid_model_authorized_now": false
+}

@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-09-30
-status: BFSC_S3_PREFLIGHT_ACTIVE__PAID_EXECUTION_NOT_AUTHORIZED
+status: BFSC_S3_RUNTIME_BLOCKED__DOCKER_REPAIR_REQUIRED
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -265,10 +265,8 @@ S3 offline boundary freeze is now COMPLETE/PASS. Authority: `S3_STAGE_B_BOUNDARY
 
 `S3_EXECUTION_LEVERAGE_GATE` is now COMPLETE: scientific leverage = PASS, but current execution authorization = `DEFERRED_RUNTIME_NOT_READY`. Lower-level evidence cannot replace a controlled R2/R3 comparison, and S3 has nontrivial work headroom; however the installed Docker client cannot currently reach a Docker daemon, so the official S3 image/runtime is not yet locally verified. Authority: `S3_EXECUTION_LEVERAGE_GATE_V1.md`, `S3_EXECUTION_LEVERAGE_RESULT_V1.md`, and `S3_EXECUTION_LEVERAGE_RESULT_V1.json`.
 
-The exact next scientific transition is now:
+`S3_RUNTIME_PREFLIGHT_V1` has been executed with zero model calls and returns `DAEMON_NOT_READY`. Docker CLI/client exists and Docker Desktop frontend starts, but the backend daemon is unreachable. The Docker Desktop host log reports a missing `SOFTWARE\\Docker Inc.\\Docker Desktop` registry installation key, and the prior local installer log records the `--backend=hyper-v` install attempt exiting with status 1. Exact image inspection/pull and verifier execution therefore did not run. Authority: `S3_RUNTIME_PREFLIGHT_V1.md`, `S3_RUNTIME_PREFLIGHT_RESULT_V1.md/json`, `S3_RUNTIME_PREFLIGHT_EVIDENCE_V1.txt`, and `S3_RUNTIME_PREFLIGHT_VERIFY_V1.json`.
 
-`S3_RUNTIME_PREFLIGHT_V1`
-->
-verify Docker daemon + exact official/equivalent S3 runtime with zero model calls.
+Current blocker is operational and requires Docker Desktop repair/reinstall with administrator privileges, then a running Docker engine. After that, resume the **same** preflight at daemon reachability / exact image inspection; do not redo mechanism exposure, boundary freeze, or execution leverage.
 
-Only if that runtime preflight passes may the frozen initial paid sequence become authorized: COMMON_PRESTATE -> R2 -> R3. R0 is conditional on R3 headroom surviving; R1 is not authorized for symmetry. No S3 paid arm, common-prestate model run, S2/S4 run, broad topic scan, new TOPIC_BET, or PAPER_CANDIDATE is authorized before runtime preflight.
+Only a later `PASS_RUNTIME_READY` may authorize COMMON_PRESTATE -> R2 -> R3. No S3 paid arm, common-prestate model run, S2/S4 run, broad topic scan, new TOPIC_BET, or PAPER_CANDIDATE is authorized while this runtime blocker remains.

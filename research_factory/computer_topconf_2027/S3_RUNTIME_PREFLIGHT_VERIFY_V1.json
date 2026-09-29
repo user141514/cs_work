@@ -1,0 +1,8 @@
+{
+  "experiment": "S3_RUNTIME_PREFLIGHT_V1",
+  "model_calls_made": 0,
+  "paid_model_authorized_now": false,
+  "resume_after_user_action": "RESUME_S3_RUNTIME_PREFLIGHT_V1_AT_R1_R2",
+  "verdict": "DAEMON_NOT_READY",
+  "verification": "PASS"
+}

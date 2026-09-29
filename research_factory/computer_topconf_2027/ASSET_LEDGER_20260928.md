@@ -266,10 +266,14 @@ S3 mechanism exposure is `EXPOSURE_SOURCE_PROVEN` and S3 offline boundary freeze
 
 S3 execution leverage is now adjudicated: scientific leverage = PASS, but paid execution is deferred because the exact Docker runtime is not currently ready. The installed Docker client exists, but the Docker daemon is not reachable; the old development checkout is not an admissible scientific prestate.
 
-Current first unresolved transition:
+`S3_RUNTIME_PREFLIGHT_V1` has run with zero model calls and returns `DAEMON_NOT_READY`: installed Docker client 29.8.0 exists, Docker Desktop frontend starts, but the daemon is unreachable; host log reports a missing Docker Desktop registry installation key and prior installer log records a failed hyper-v install (`status 1`). Exact official image inspection/pull and verifier execution were not attempted after the daemon failure.
 
-`S3_RUNTIME_PREFLIGHT_V1`
+Current first unresolved transition is operational input repair:
+
+repair/reinstall Docker Desktop as Administrator
 ->
-verify Docker daemon + official/equivalent S3 runtime without model calls.
+start Docker engine
+->
+resume `S3_RUNTIME_PREFLIGHT_V1` at daemon/image checks.
 
-Only after runtime preflight PASS may COMMON_PRESTATE -> R2 -> R3 be authorized. R0 is conditional on R3 headroom; R1 is not authorized for symmetry. No S3 paid arm, common-prestate model run, S2/S4 run, new topic generation, learned dependency model, benchmark expansion, or new TOPIC_BET is authorized before this transition.
+Only a later `PASS_RUNTIME_READY` may authorize COMMON_PRESTATE -> R2 -> R3. No S3 paid arm, common-prestate model run, S2/S4 run, new topic generation, learned dependency model, benchmark expansion, or new TOPIC_BET is authorized while this blocker remains.

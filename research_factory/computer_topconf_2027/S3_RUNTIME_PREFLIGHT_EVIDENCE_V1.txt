@@ -1,0 +1,38 @@
+S3_RUNTIME_PREFLIGHT_EVIDENCE_V1
+date=2026-09-30
+
+=== docker client/version ===
+{"Client":{"Version":"29.8.0","ApiVersion":"1.56","DefaultAPIVersion":"1.56","GitCommit":"88096ef","GoVersion":"go1.26.8","Os":"windows","Arch":"amd64","BuildTime":"Thu Sep  3 21:53:38 2026","Context":"default"},"Server":null}
+failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+
+=== docker info ===
+Server= OSType= Images=0 Containers=0
+failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+
+=== desktop process ===
+
+
+ProcessName : Docker Desktop
+Id          : 202928
+StartTime   : 2026/9/30 5:14:56
+
+
+
+
+=== backend binary ===
+PRESENT C:/Program Files/Docker/Docker/resources/com.docker.backend.exe
+
+=== Docker Desktop host log tail ===
+-------------------------------------------------------------------------------->8
+[2026-09-29T21:14:56.883466000Z][Docker Desktop.exe][E] getting backend binary path: cannot find registry key "SOFTWARE\\Docker Inc.\\Docker Desktop": The system cannot find the file specified.
+
+=== installer log relevant tail ===
+19:[2026-09-28T08:54:23.549641900Z][DockerDesktopInstaller-4.91.0.exe.installer] running "C:\\Users\\Administrator\\AppData\\Local\\Temp\\DockerDesktopInstallers\\1790585662536913800\\Docker Desktop Installer.exe" [install -package <HOME>\AppData\Local\Temp\DockerDesktopInstallers\1790585662536913800\DockerDesktop.d4w --quiet --accept-license --backend=hyper-v]
+21:[2026-09-28T08:54:53.966715400Z][DockerDesktopInstaller-4.91.0.exe.installer][E] installer exited with status 1
+
+=== virtualization firmware ===
+
+
+Name                          : AMD Ryzen 7 9800X3D 8-Core Processor
+VirtualizationFirmwareEnabled : True
+VMMonitorModeExtensions       : True
