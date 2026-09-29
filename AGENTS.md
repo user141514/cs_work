@@ -48,9 +48,9 @@ Workflow-policy changes require a new version. Scientific negative evidence only
 
 ## Current execution state
 
-WFE-03.1 is the repository-separation/migration step. Its result authority is `research_factory/workflow_engineering/WFE03_1_RESULT.md`.
+WFE-04 is complete under `research_factory/workflow_engineering/WFE04_RESULT.md`: a real Stage-B launcher command can be prepared behind a revalidated gate lease without launching PowerShell/model/network, but live integration is BLOCKED because the historical launcher owns arm/venv/log paths outside the lease scope and atomic dispatch/parameter freezing are not yet gate-owned.
 
-The next planned step is WFE-04, a model-free dry-run gate-to-executor adapter. It is not authorized merely by being listed.
+The next planned step is WFE-05: add a model-free immutable dispatch contract and atomic single-use claim inside the gate. It is not authorized merely by being listed. Do not launch or modify the historical Stage-B PowerShell runner in WFE-05.
 
 The historical BFSC / selector work in `research_factory/computer_topconf_2027/` is PAUSED_UNRESOLVED scientific evidence, not current launch authorization.
 

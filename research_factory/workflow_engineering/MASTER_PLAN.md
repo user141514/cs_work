@@ -20,12 +20,12 @@ Only the current step is authorized. Listing future steps is NOT execution autho
 
 ## CURRENT_STEP
 ID: WFE-04
-Status: AUTHORIZED_BY_CURRENT_USER
+Status: COMPLETED_DRY_RUN_ADAPTER__LIVE_BLOCKED
 Authorization: explicit user request on 2026-09-29 to execute WFE-04.
-Action: bind one real execution entry (`computer_topconf_2027/run_stageb_agent.ps1 -Action Launch`) behind the WFE gate in model-free dry-run mode. The adapter may validate a live lease and prepare a structured launch plan, but MUST NOT invoke PowerShell, the executor, a model, an agent, or a network client.
-Acceptance: invalid/stale/missing leases fail before command preparation; one valid lease produces a deterministic dry-run plan bound to the frozen executor hash, declared prompt/read scope, trusted task/session paths and expected executor receipt fields; current missing live preconditions/side effects are surfaced; no NEXT_STEP is auto-authorized or dispatched.
-Composition invariant: gate is the sole authorization owner, executor remains the sole future execution owner, adapter is a derived projection only and may not create a second authority.
-Forbidden: model/API/GPU/agent launch, Watchdog changes, historical replay, live executor invocation, broad Stage-B harness rewrite, automatic WFE-05.
+Result authority: WFE04_RESULT.md.
+Observed: gate lease revalidation and dry-run command preparation are implemented and verified; the actual Stage-B launcher hash is pinned and its command can be prepared without invoking PowerShell/model/network. Native PC2 full suite passes 74/74 with 0 failures/errors/skips.
+Live blocker: the real launcher mutates `D:/stageb_agent_runtime/arms|venvs/...` and `D:/cs_work/external/spec_stageb_logs`, which are outside the valid lease's declared session/write scopes. The new repository also lacks the historical backend freeze receipt and source arm. Atomic dispatch claim and gate-owned executor parameter freezing are not yet implemented.
+Decision: KEEP the gate and dry-run adapter; BLOCK live launch. No model/agent/API/GPU launch, Watchdog change or historical replay occurred.
 
 ## Previous completed step
 ID: WFE-01
@@ -88,7 +88,17 @@ Raw migrated assets were committed separately before authority edits so historic
 
 Decision: KEEP. The first unresolved engineering boundary remains live enforcement integration, not offline gate correctness or repository placement.
 
+## WFE-04 observations and decision
+
+Result authority: WFE04_RESULT.md. The decisive result is not merely that argv construction works; it is that the existing historical launcher owns mutation paths outside the gate lease. Wrapping it more tightly without first moving dispatch/path authority upstream would preserve a bypass. Do not call it live yet.
+
+Decision: KEEP the engineering plan, but insert one model-free dispatch-contract step before any live executor work.
+
 ## NEXT_STEP
-ID: WFE-04
-Status: IN_PROGRESS_AUTHORIZED
-No later step is authorized until WFE-04 evidence is recorded. After WFE-04, write exactly one new NEXT_STEP and STOP.
+ID: WFE-05
+Status: PLANNED_NOT_AUTHORIZED
+Action: add a gate-owned immutable dispatch contract and atomic single-use claim transition, freezing executor identity/hash, prompt, executor parameters and all projected mutation paths. Every claimed path must be inside declared session/write authority.
+Acceptance: deterministic concurrent tests prove one claim wins, drift is rejected, claimed paths are authorized, and no process/model/network call occurs.
+Boundary: do not modify or launch the historical Stage-B PowerShell runner in WFE-05. Its current path mismatch remains evidence, not something to hide.
+Forbidden: model/API/GPU/agent launch, historical replay, Watchdog changes, automatic WFE-06.
+STOP: WFE-04 is complete; WFE-05 has not been executed.

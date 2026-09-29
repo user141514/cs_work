@@ -41,18 +41,17 @@ Completed before repository separation:
 - WFE-02: minimal offline admission/receipt gate;
 - WFE-03: native PC2 verification.
 
-Current repository transition:
-- WFE-03.1: migrate the active CS substrate into `cs_work`, preserve selected evidence byte-for-byte before authority edits, establish one active source of truth.
+Completed repository transition:
+- WFE-03.1: active CS substrate moved into `cs_work` with byte-parity checks and one active write authority.
 
-WFE-03.1 result:
-- source-copy parity passed for 13 workflow-engineering files and 55 computer-topconf files before authority edits;
-- three directly referenced upstream process/provenance files were additionally copied;
-- obvious credential-pattern scan returned zero hits;
-- raw migration is committed on the dedicated short-lived branch;
-- no model/API/GPU/agent run or historical replay is part of migration.
+Completed execution-boundary probe:
+- WFE-04: added `Gate.validate_lease()` plus a dry-run adapter for the real historical `run_stageb_agent.ps1 -Action Launch` entry.
+- Native PC2 final suite: 74/74 passed, 0 failures/errors/skips.
+- No PowerShell/model/network launch occurred.
+- Live launch remains BLOCKED: projected arm/venv/log paths fall outside the valid lease's declared path authority; the new repo also lacks the historical backend freeze receipt/source arm; atomic dispatch claim and gate-owned executor parameter freezing are not implemented.
 
 Next planned step:
-- WFE-04: model-free dry-run gate-to-executor adapter.
+- WFE-05: model-free immutable dispatch contract + atomic single-use claim in the gate.
 - Status: PLANNED_NOT_AUTHORIZED.
 
 ## 4. Retained scientific state

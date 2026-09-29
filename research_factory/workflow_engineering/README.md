@@ -4,7 +4,7 @@
 
 实现的是一个独立的、无模型的检查器，不是完整工作流平台，也不是操作系统沙箱。WFE-03.1 后的活跃目录为 `D:/cs_work/research_factory/workflow_engineering/`；`D:/bio_paper` 中的旧副本仅保留为历史来源。
 
-验证已经覆盖两类环境：独立 Linux / Python 3.13.5，以及 PC2 原生 Windows 10 / Python 3.7.0。PC2 原生完整套件 58/58 通过、0 skip，100 次 SQLite 冲突准入重复检查通过，并验证了 Windows directory-junction 重定向会被 `SCOPE_CHANGED` 拒绝。真实执行器仍未接入。
+验证已经覆盖两类环境：独立 Linux / Python 3.13.5，以及 PC2 原生 Windows 10 / Python 3.7.0。WFE-04 后 PC2 完整套件为 74/74 通过、0 skip。除原有准入/SQLite/junction 检查外，新增了 lease 复验和真实 Stage-B launcher 的 model-free dry-run adapter。真实执行器仍未 live 接入。
 
 ## 重跑全部离线测试
 
@@ -21,6 +21,12 @@ python -B -m unittest discover -s tests -v
 ```
 
 不安装依赖，不联网、不运行模型、不调用任何历史实验启动脚本。测试使用临时工作目录与 SQLite 数据库；验证器只将报告写入指定的输出目录。验证器在整套测试期间将 `socket.socket.connect` 和 `subprocess.Popen` 设为拒绝调用，检查器本身不含网络或模型客户端。它不是对其他进程的网络防火墙。
+
+## WFE-04：dry-run executor adapter
+
+`executor_adapter.py` 只做：重新验证 RUNNING lease → 锁定真实 `run_stageb_agent.ps1` 哈希 → 校验 prompt 属于冻结 read scope → 生成结构化 PowerShell argv → 暴露未来 receipt 字段和 live 前置条件。它没有启动原语，`would_launch` 永远为 false。
+
+真实 PC2 dry-run 发现当前历史 launcher 会写 `D:/stageb_agent_runtime/{arms,venvs}` 与 `D:/cs_work/external/spec_stageb_logs`，不在当前 lease 的 session/write scope 内，因此 `live_ready=false`。另有 `atomic_dispatch_claim`、`executor_parameters_not_frozen_in_gate` 和 `executor_path_ownership` 三个剩余 enforcement gap。详见 `WFE04_RESULT.md`。
 
 ## 最小执行链
 
