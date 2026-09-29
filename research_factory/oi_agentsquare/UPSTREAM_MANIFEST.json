@@ -1,0 +1,34 @@
+{
+  "commit": "8f5b3fe5d8a32f9b59d20370823bef2a2c86928c",
+  "files": {
+    "agent_search.py": {
+      "bytes": 18875,
+      "sha256": "9a0f7929be37fcfc48cc39104ecd69db74a41be03d7459a09e12dd2dd80b7f54"
+    },
+    "memory_modules.json": {
+      "bytes": 11867,
+      "sha256": "9cfa68c228748d3c33ac2b117aa3b935231603f13c8c03365fa72a7ef1a5e09d"
+    },
+    "module_predictor.py": {
+      "bytes": 9950,
+      "sha256": "9200aa23fff050b2a7f902149cdb462b22db0f8fc48b82d59973f8bc252f8e72"
+    },
+    "planning_modules.json": {
+      "bytes": 8434,
+      "sha256": "d4010f2f922d10f4b111d3ebd551e185f519a366eba3c97f573f9f766a0680a4"
+    },
+    "reasoning_modules.json": {
+      "bytes": 12547,
+      "sha256": "bd49e6d65700ef8c97f376e70d830bbde59b12de0aba95eb42c1b0d25b23ac02"
+    },
+    "recombination.py": {
+      "bytes": 2724,
+      "sha256": "58bde9610d8f3e435439ac855fe95e5cf0e51b743928953e9a34c0adced02b0d"
+    },
+    "tooluse_modules.json": {
+      "bytes": 1228,
+      "sha256": "442cefbcb49601cce7ec0193546f7a31bbbd64f8789aaa9366e0ae989678f895"
+    }
+  },
+  "repo": "tsinghua-fib-lab/AgentSquare"
+}

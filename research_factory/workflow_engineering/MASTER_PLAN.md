@@ -111,8 +111,8 @@ Decision: KEEP the hypothesis for a clean paired late-revision replay; do not us
 
 ## NEXT_STEP
 ID: RESEARCH-02
-Status: PLANNED_NOT_AUTHORIZED
+Status: SUPERSEDED_BY_USER_REDIRECTION
 Action: from the exact authoritative first-completion `phase_a/` bytes, create two isolated identical late-revision arms. STRUCTURED receives the same pre-revision + late requirements plus mandatory goal/responsibility/invariant/counterexample/one-step replanning scaffolding; RAW_AGENT receives the same requirements and contamination boundary without that scaffolding. Both use fresh GPT-5.6 Sol/xhigh sessions, the same dependency-free constraints and the already-frozen evaluator. Do not expose the historical Phase-B plan/code/result to either arm.
 Acceptance: compare final endpoint, provider wall time, process deviations, authoritative Phase-A→final rework and preservation of valid pre-revision behavior. Keep all attempts in the denominator.
 Boundary: RESEARCH-02 is DEVELOPMENT_ONLY, isolates the late-revision workflow intervention only, and does not authorize publication claims, new engineering, benchmark expansion or a different task.
-STOP: RESEARCH-01 is complete; RESEARCH-02 has not been executed.
+STOP: RESEARCH-01 is complete; RESEARCH-02 was not executed and is superseded by `../oi_agentsquare/MASTER_PLAN.md`.

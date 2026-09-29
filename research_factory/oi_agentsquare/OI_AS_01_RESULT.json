@@ -1,0 +1,43 @@
+{
+  "baseline_commit": "8f5b3fe5d8a32f9b59d20370823bef2a2c86928c",
+  "descending_rank": {
+    "DILU": 2,
+    "Generative": 3,
+    "TP": 4,
+    "Voyager": 1
+  },
+  "descriptive_none": 0.0,
+  "exact_one_sided_random_rank_probability": 0.25,
+  "exposure": {
+    "admissible": [
+      "DILU",
+      "Generative",
+      "Voyager"
+    ],
+    "violating": [
+      "TP"
+    ]
+  },
+  "limitations": [
+    "tiny n=4 module-level directional screen",
+    "labels are module-level, not combination-level",
+    "no causal or statistical-significance claim"
+  ],
+  "performance": {
+    "DILU": 0.74,
+    "Generative": 0.64,
+    "TP": 0.36,
+    "Voyager": 0.78
+  },
+  "population": [
+    "DILU",
+    "Generative",
+    "TP",
+    "Voyager"
+  ],
+  "tp_minus_admissible_mean": -0.36,
+  "tp_minus_admissible_median": -0.38,
+  "tp_rank": 4,
+  "tp_unique_minimum": true,
+  "verdict": "DIRECTIONALLY_CONSISTENT"
+}

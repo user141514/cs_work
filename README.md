@@ -38,7 +38,10 @@ Historical files are intentionally retained even when a line of research is paus
 - WFE-04: historical Stage-B dry-run probe completed; historical live launcher remains blocked.
 - WFE-05: consolidated real local execution completed. Engineering baseline frozen; 10 native real-process acceptance cases passed, plus the existing 74-test verifier executed as a real child.
 - RESEARCH-01: completed DEVELOPMENT_ONLY S3 replay. Final implementation passes the frozen public+lifecycle endpoint, but the workflow transition is boundary-contaminated by an extra post-Phase-A provider turn that changed the focused test before the late revision; do not use it as comparative evidence.
-- RESEARCH-02: planned clean paired late-revision replay from the exact authoritative Phase-A bytes (STRUCTURED vs RAW_AGENT); not authorized merely by being listed.
+- RESEARCH-02: superseded by user redirection; preserved but inactive.
+- OI-AS-00: AgentSquare ALFWorld static O+I scan completed; 42/210 hard-inadmissible, 182/210 soft-coupled.
+- OI-AS-01: module-label directional screen completed; MemoryTP is uniquely lowest among four non-None memory modules, but evidence is tiny-n/non-causal.
+- OI-AS-02: planned controlled original-TP vs orthogonalized-TP experiment; not authorized merely by being listed.
 
 Runnable model-free end-to-end example (from `research_factory/workflow_engineering`):
 

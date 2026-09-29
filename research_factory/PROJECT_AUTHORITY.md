@@ -62,9 +62,14 @@ Completed developmental replay:
 - Temporal validity limit: an unexplained extra provider turn after valid Phase-A completion changed the focused test by +20/-3 before the late revision. The actual Phase-B checkout inherited this drift. Therefore RESEARCH-01 is a DEVELOPMENTAL_MECHANISM_PASS but an invalid clean workflow-transition comparison. The first-completion `phase_a/` snapshot is authoritative; the post-completion incident state is retained separately.
 - Phase A also made a blocked npx registry attempt.
 
-Next planned step:
-- RESEARCH-02: from the authoritative Phase-A bytes, create two isolated fresh late-revision arms (STRUCTURED vs RAW_AGENT) with identical GPT-5.6 Sol/xhigh, requirements, runtime constraints and frozen evaluator; differ only in mandatory workflow scaffolding. Do not expose historical Phase-B artifacts.
-- Status: PLANNED_NOT_AUTHORIZED.
+Current scientific redirection:
+- RESEARCH-02 is `SUPERSEDED_BY_USER_REDIRECTION`; preserve its evidence but do not execute it.
+- Active plan: `oi_agentsquare/MASTER_PLAN.md` (`OI-AS-20260929`).
+- Goal: test Orthogonality + Invariants as a responsibility-compatibility prior/gate on AgentSquare modular search.
+- OI-AS-00 completed with 42/210 (20%) hard-inadmissible and 182/210 (86.67%) soft-coupled executable ALFWorld static combinations under outcome-blind frozen rules.
+- OI-AS-01 completed `DIRECTIONALLY_CONSISTENT`: MemoryTP, predesignated from source behavior as violating the memory boundary, has shipped module performance 0.36 versus Generative 0.64, DILU 0.74 and Voyager 0.78; TP is uniquely lowest but n=4 and one-sided random-rank probability is 0.25, so this is only a directional screen.
+- Next planned step: OI-AS-02 controlled original-TP vs orthogonalized-TP intervention, preserving retrieval/top-k/memory insertion/comparable LLM budget while removing current-task PLAN_CONTROL from the memory module.
+- OI-AS-02 is `PLANNED_NOT_AUTHORIZED`. PC2's active Python environment currently lacks AgentSquare runtime dependencies and OPENAI_API_KEY; do not silently substitute another model/benchmark.
 - No further engineering stage absent a concrete, decision-changing research-task blocker.
 
 ## 4. Retained scientific state

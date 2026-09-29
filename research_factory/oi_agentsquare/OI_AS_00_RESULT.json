@@ -1,0 +1,162 @@
+{
+  "alfworld_executable_space": {
+    "hard_by_type": {
+      "I2_DECOMPOSITION_AUTHORITY": 35,
+      "I3_MEMORY_BOUNDARY": 42
+    },
+    "hard_inadmissible": 42,
+    "hard_inadmissible_rate": 0.2,
+    "hard_module_participation": {
+      "memory": {
+        "TP": 42
+      },
+      "planning": {
+        "DEPS": 7,
+        "HUGGINGGPT": 7,
+        "IO": 7,
+        "None": 7,
+        "OPENAGI": 7,
+        "Voyager": 7
+      },
+      "reasoning": {
+        "COT": 6,
+        "COTSC": 6,
+        "DILU": 6,
+        "IO": 6,
+        "SelfRefine": 6,
+        "StepBack": 6,
+        "TOT": 6
+      },
+      "tooluse": {
+        "None": 42
+      }
+    },
+    "representative_hard_conflicts": [
+      {
+        "config": {
+          "memory": "TP",
+          "planning": "None",
+          "reasoning": "IO",
+          "tooluse": "None"
+        },
+        "hard": [
+          "I3_MEMORY_BOUNDARY"
+        ],
+        "soft": [
+          "MEMORY_TO_REASONING_GUIDANCE"
+        ]
+      },
+      {
+        "config": {
+          "memory": "TP",
+          "planning": "IO",
+          "reasoning": "IO",
+          "tooluse": "None"
+        },
+        "hard": [
+          "I2_DECOMPOSITION_AUTHORITY",
+          "I3_MEMORY_BOUNDARY"
+        ],
+        "soft": [
+          "MEMORY_TO_REASONING_GUIDANCE",
+          "PLANNING_TO_REASONING_GUIDANCE"
+        ]
+      }
+    ],
+    "soft_by_type": {
+      "MEMORY_TO_REASONING_GUIDANCE": 42,
+      "PLANNING_TO_REASONING_GUIDANCE": 175
+    },
+    "soft_coupled": 182,
+    "soft_coupled_rate": 0.8666666666666667,
+    "total": 210
+  },
+  "baseline": {
+    "commit": "8f5b3fe5d8a32f9b59d20370823bef2a2c86928c",
+    "repo": "tsinghua-fib-lab/AgentSquare",
+    "seam": "recombination -> OI gate -> predict_performance"
+  },
+  "full_catalog_diagnostic": {
+    "hard_by_type": {
+      "I2_DECOMPOSITION_AUTHORITY": 175,
+      "I3_MEMORY_BOUNDARY": 210
+    },
+    "hard_inadmissible": 210,
+    "hard_inadmissible_rate": 0.2,
+    "hard_module_participation": {
+      "memory": {
+        "TP": 210
+      },
+      "planning": {
+        "DEPS": 35,
+        "HUGGINGGPT": 35,
+        "IO": 35,
+        "None": 35,
+        "OPENAGI": 35,
+        "Voyager": 35
+      },
+      "reasoning": {
+        "COT": 30,
+        "COTSC": 30,
+        "DILU": 30,
+        "IO": 30,
+        "SelfRefine": 30,
+        "StepBack": 30,
+        "TOT": 30
+      },
+      "tooluse": {
+        "ANYTOOL": 42,
+        "IO": 42,
+        "None": 42,
+        "TOOLBENCH": 42,
+        "TOOLFORMER": 42
+      }
+    },
+    "representative_hard_conflicts": [
+      {
+        "config": {
+          "memory": "TP",
+          "planning": "None",
+          "reasoning": "IO",
+          "tooluse": "None"
+        },
+        "hard": [
+          "I3_MEMORY_BOUNDARY"
+        ],
+        "soft": [
+          "MEMORY_TO_REASONING_GUIDANCE"
+        ]
+      },
+      {
+        "config": {
+          "memory": "TP",
+          "planning": "IO",
+          "reasoning": "IO",
+          "tooluse": "None"
+        },
+        "hard": [
+          "I2_DECOMPOSITION_AUTHORITY",
+          "I3_MEMORY_BOUNDARY"
+        ],
+        "soft": [
+          "MEMORY_TO_REASONING_GUIDANCE",
+          "PLANNING_TO_REASONING_GUIDANCE"
+        ]
+      }
+    ],
+    "soft_by_type": {
+      "MEMORY_TO_REASONING_GUIDANCE": 210,
+      "PLANNING_TO_REASONING_GUIDANCE": 875,
+      "PLANNING_TO_TOOL_GUIDANCE": 700
+    },
+    "soft_coupled": 910,
+    "soft_coupled_rate": 0.8666666666666667,
+    "total": 1050
+  },
+  "mapping_guards": {
+    "all_non_none_planning_emit_reasoning_instructions": true,
+    "all_non_none_planning_emit_tool_calling_instructions": true,
+    "memory_TP_generates_current_plans": true
+  },
+  "triage_verdict": "NONTRIVIAL_HEADROOM"
+}
