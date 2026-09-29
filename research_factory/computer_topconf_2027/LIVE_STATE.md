@@ -259,12 +259,14 @@ Selector V2 / family identities / post-S1 value gate remain frozen.
 S5 offline freeze, common prestate, R2, R3 and the decision-relevant R0 adjudication are complete.
 S5 R3-vs-R2 headroom passed locally, but S5 value gate V is NEGATIVE.
 
-The next scientific transition is now:
+The new selector MECHANISM_EXPOSURE_GATE has now been applied to S3 before any new paid S3 arm. Using only the frozen Stage-A S3 identity plus verbatim pre-revision and late-revision user messages, S3 is `EXPOSURE_SOURCE_PROVEN`: an existing multi-turn signal UI is already present before the revision, the late revision reports streaming/UI freeze and inability to type, and other extension responsibilities remain in the frozen contract. Authority: `S3_MECHANISM_EXPOSURE_GATE_V1.md`, `S3_MECHANISM_EXPOSURE_RESULT_V1.md`, and `S3_MECHANISM_EXPOSURE_RESULT_V1.json`.
+
+The exact next scientific transition is now:
 
 S3 offline boundary freeze
-+
+->
 S3 execution-leverage gate
 ->
 decide whether paid S3 R2/R3 execution is justified.
 
-No S3 paid arm, S2/S4 run, broad topic scan, Unlearning continuation, molecular experiment, dependency-model training, post-hoc family invention, benchmark expansion, or activation of the queued orthogonality/invariant workflow candidate is authorized before this transition.
+No S3 paid arm, S2/S4 run, broad topic scan, Unlearning continuation, molecular experiment, dependency-model training, post-hoc family invention, benchmark expansion, or new TOPIC_BET is authorized before the S3 offline boundary freeze.

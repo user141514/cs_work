@@ -65,7 +65,7 @@ Completed developmental replay:
 Current scientific redirection:
 - RESEARCH-02 is `SUPERSEDED_BY_USER_REDIRECTION`; preserve its evidence but do not execute it.
 - `oi_agentsquare/MASTER_PLAN.md` (`OI-AS-20260929`) is TERMINATED_NO_ADMITTED_RESIDUAL_SEAM; it is retained as negative scientific evidence, not an active plan.
-- Current active object is the higher-level topic-selector/replanning layer. No new TOPIC_BET or paper candidate is activated yet.
+- The higher-level selector has returned control to the pre-existing Rank-1 BFSC/selective-rederivation line rather than creating a new TOPIC_BET. S3 `pi-mono-auto-93c17d3b` has now passed the new MECHANISM_EXPOSURE_GATE as `EXPOSURE_SOURCE_PROVEN` using only frozen Stage-A identity plus verbatim pre-/late-revision user trace. This is a preflight result, not PAPER_CANDIDATE activation.
 - OI-AS-00 completed with 42/210 (20%) hard-inadmissible and 182/210 (86.67%) soft-coupled executable ALFWorld static combinations under outcome-blind frozen rules.
 - OI-AS-01 completed `DIRECTIONALLY_CONSISTENT`: MemoryTP, predesignated from source behavior as violating the memory boundary, has shipped module performance 0.36 versus Generative 0.64, DILU 0.74 and Voyager 0.78; TP is uniquely lowest but n=4 and one-sided random-rank probability is 0.25, so this is only a directional screen.
 - OI-AS-02A completed `MANIPULATION_PASS`: under the common GPT-5.6 Luna / medium Codex backend, Original TP generated a current-task plan while OI-TP returned bounded memory guidance with zero current-task action directives.
@@ -83,7 +83,7 @@ Current scientific redirection:
 - OI-AS-05 Residual O+I Decision Gate completed `TERMINATE_AGENT_SQUARE_ALFWORLD_OI`: no residual soft seam passes all pre-registered A-E admission criteria. `PLANNING_TO_REASONING_GUIDANCE` is an explicit hierarchical planner→executor handoff, lacks an identifiable active-planner exposed/unexposed contrast, and has no pre-existing directional harm evidence; `MEMORY_TO_REASONING_GUIDANCE` is the already-terminated TP seam; `PLANNING_TO_TOOL_GUIDANCE` has zero executable ALFWorld exposure.
 - The current AgentSquare/ALFWorld O+I line is TERMINATED. Hard-gate integration and new soft-guidance interventions are not authorized; do not create OI-AS-06 without genuinely new external evidence.
 - Selector feedback from this negative line is now applied: the live top-conference selector has a MECHANISM_EXPOSURE_GATE enforcing `STATIC_HEADROOM != MECHANISM_EXPOSURE` whenever a causal claim requires an instantiable runtime conflict/mismatch/competition/stale-state relation. Calibration authority: `computer_topconf_2027/MECHANISM_EXPOSURE_GATE_CALIBRATION_20260930.md`.
-- No new research candidate has been activated by the mutation. Control remains at the higher-level selector/replanning layer.
+- No new research candidate was invented by the selector mutation. The surviving pre-existing Rank-1 BFSC line is now the active scientific object at S3 preflight. Exact next step: S3 offline boundary freeze only; after that, S3 execution-leverage may decide whether paid R2/R3 evidence is justified. No S3 paid arm is authorized yet.
 - No further engineering stage absent a concrete, decision-changing research-task blocker.
 
 ## 4. Retained scientific state

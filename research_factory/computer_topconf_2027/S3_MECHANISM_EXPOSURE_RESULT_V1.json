@@ -1,0 +1,31 @@
+{
+  "checks": {
+    "E1_pre_revision_existing_multiturn_ui": true,
+    "E2_late_revision_reports_streaming_freeze": true,
+    "E3_stage_a_freeze_preserves_other_contract": true,
+    "E4_mixed_validity_relation": true,
+    "E5_primary_evidence_has_no_post_revision_solution": true
+  },
+  "claim_boundary": {
+    "not_supported": [
+      "No claim that RAW_HISTORY fails on S3.",
+      "No claim that R3 beats R0/R1.",
+      "No claim derived from RESEARCH-01 Phase-B outcome.",
+      "No paid S3 arm is authorized by exposure alone."
+    ],
+    "supported": "S3 contains source-visible mixed-validity revision pressure before any new paid S3 arm: an existing UI/lifecycle behavior is challenged while other extension responsibilities persist."
+  },
+  "experiment": "S3_MECHANISM_EXPOSURE_GATE_V1",
+  "exposed_relation": {
+    "late_revision_pressure": "streaming/output while that UI is active freezes the UI / prevents typing",
+    "pre_revision_behavior": "signal-driven UI already opens/closes across multiple turns",
+    "preserved_contract": "command/handler, hidden protocol, distinct signals and loadable-extension behavior remain part of the frozen task"
+  },
+  "source_hashes": {
+    "LATE_REVISION.md": "f7635fb88bb2ce578ace71acbbe36d352a7888abf4e20b16ea9313d83a970ca7",
+    "PRE_REVISION_REQUIREMENTS.md": "f1010e3e37e5ae5f042d5bd442840275cf00de0837dd496712edaea5f2211c30",
+    "SPEC_STAGE_A_TASK_FREEZE_V1.md": "e34ceeb68d5de194add6079b44ac2457c0283776c7d11fde600cc1af3d213181"
+  },
+  "task": "pi-mono-auto-93c17d3b",
+  "verdict": "EXPOSURE_SOURCE_PROVEN"
+}
