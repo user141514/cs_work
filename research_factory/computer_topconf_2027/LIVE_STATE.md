@@ -263,10 +263,12 @@ The new selector MECHANISM_EXPOSURE_GATE has now been applied to S3 before any n
 
 S3 offline boundary freeze is now COMPLETE/PASS. Authority: `S3_STAGE_B_BOUNDARY_FREEZE_V1.md`, `S3_STAGE_B_BOUNDARY_FREEZE_V1.json`, `S3_STAGE_B_BOUNDARY_FREEZE_RESULT_V1.md`, and `S3_STAGE_B_BOUNDARY_FREEZE_RESULT_V1.json`. TASK_INITIAL_STATE is frozen at `5133697bc454da5595655cf4b0c70d3c2c725677`; controlled requirement exposure, revision boundary, pre/final specs, semantic R3 dependency rule, and immutable common-prestate contract are frozen. Exact R3 file/hunk scope remains pending the not-yet-created scientific common prestate.
 
+`S3_EXECUTION_LEVERAGE_GATE` is now COMPLETE: scientific leverage = PASS, but current execution authorization = `DEFERRED_RUNTIME_NOT_READY`. Lower-level evidence cannot replace a controlled R2/R3 comparison, and S3 has nontrivial work headroom; however the installed Docker client cannot currently reach a Docker daemon, so the official S3 image/runtime is not yet locally verified. Authority: `S3_EXECUTION_LEVERAGE_GATE_V1.md`, `S3_EXECUTION_LEVERAGE_RESULT_V1.md`, and `S3_EXECUTION_LEVERAGE_RESULT_V1.json`.
+
 The exact next scientific transition is now:
 
-`S3_EXECUTION_LEVERAGE_GATE`
+`S3_RUNTIME_PREFLIGHT_V1`
 ->
-decide whether producing the common prestate and paid S3 R2/R3 evidence is justified.
+verify Docker daemon + exact official/equivalent S3 runtime with zero model calls.
 
-No S3 paid arm, common-prestate model run, S2/S4 run, broad topic scan, Unlearning continuation, molecular experiment, dependency-model training, post-hoc family invention, benchmark expansion, or new TOPIC_BET is authorized before the S3 execution-leverage decision.
+Only if that runtime preflight passes may the frozen initial paid sequence become authorized: COMMON_PRESTATE -> R2 -> R3. R0 is conditional on R3 headroom surviving; R1 is not authorized for symmetry. No S3 paid arm, common-prestate model run, S2/S4 run, broad topic scan, new TOPIC_BET, or PAPER_CANDIDATE is authorized before runtime preflight.

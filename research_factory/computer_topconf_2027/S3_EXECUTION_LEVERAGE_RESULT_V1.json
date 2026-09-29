@@ -1,0 +1,49 @@
+{
+  "conditional_next_paid_arm": "R0_RAW_HISTORY only if R3-vs-R2 local headroom survives",
+  "current_execution_authorization": "DEFERRED_RUNTIME_NOT_READY",
+  "early_stop_rule": [
+    "runtime preflight fails -> zero model spend",
+    "common prestate has no material derived work -> S3 NONIDENTIFIABLE",
+    "R2 invalid/non-executable -> INVALID, no science verdict",
+    "R3 fails R2 endpoint or preserves <30% meaningful work -> stop before R0/R1",
+    "R3 headroom survives -> authorize exactly R0 next; R1 remains conditional"
+  ],
+  "experiment": "S3_EXECUTION_LEVERAGE_GATE_V1",
+  "initial_paid_sequence_if_runtime_passes": [
+    "COMMON_PRESTATE",
+    "R2_FULL_RESTART",
+    "R3_ORACLE_SCOPED"
+  ],
+  "lower_level_evidence": {
+    "cheap_rival_pressure": {
+      "S1": "R3-vs-R2 headroom pass; RAW_HISTORY value fail on task",
+      "S5": "R3-vs-R2 headroom pass; S5 value gate V negative; RAW_HISTORY much cheaper"
+    },
+    "developmental_phase_a_material_work": {
+      "extension_bytes": 2881,
+      "extension_lines": 100,
+      "phase_a_duration_minutes": 28.36,
+      "scientific_substitute": false,
+      "test_bytes": 4178,
+      "test_lines": 142
+    },
+    "mechanism_exposure": "EXPOSURE_SOURCE_PROVEN",
+    "offline_boundary": "PASS"
+  },
+  "next_step": "S3_RUNTIME_PREFLIGHT_V1",
+  "paid_model_authorized_now": false,
+  "r1_policy": "NOT_AUTHORIZED_FOR_SYMMETRY; conditional only if R0 cannot adjudicate the frozen value gate",
+  "runtime": {
+    "developmental_checkout_admissible_scientific_prestate": false,
+    "developmental_checkout_exists": true,
+    "developmental_checkout_has_node_modules": false,
+    "docker_probe": {
+      "client_exists": true,
+      "returncode": 1,
+      "stderr": "failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.",
+      "stdout": "{\"Client\":{\"Version\":\"29.8.0\",\"ApiVersion\":\"1.56\",\"DefaultAPIVersion\":\"1.56\",\"GitCommit\":\"88096ef\",\"GoVersion\":\"go1.26.8\",\"Os\":\"windows\",\"Arch\":\"amd64\",\"BuildTime\":\"Thu Sep  3 21:53:38 2026\",\"Context\":\"default\"},\"Server\":null}"
+    },
+    "docker_server_ready": false
+  },
+  "scientific_execution_leverage": "PASS"
+}

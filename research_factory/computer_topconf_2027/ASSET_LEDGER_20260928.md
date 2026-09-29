@@ -264,10 +264,12 @@ S5 current decision is complete:
 
 S3 mechanism exposure is `EXPOSURE_SOURCE_PROVEN` and S3 offline boundary freeze is COMPLETE/PASS. The task initial state, controlled requirement sequence, revision boundary, consolidated pre/final specification, semantic R3 dependency rule and immutable common-prestate requirements are now frozen. Exact R3 file/hunk scope remains pending a scientific common prestate.
 
+S3 execution leverage is now adjudicated: scientific leverage = PASS, but paid execution is deferred because the exact Docker runtime is not currently ready. The installed Docker client exists, but the Docker daemon is not reachable; the old development checkout is not an admissible scientific prestate.
+
 Current first unresolved transition:
 
-`S3_EXECUTION_LEVERAGE_GATE`
+`S3_RUNTIME_PREFLIGHT_V1`
 ->
-decide whether producing the common prestate and paid S3 R2/R3 execution is justified.
+verify Docker daemon + official/equivalent S3 runtime without model calls.
 
-No S3 paid arm, common-prestate model run, S2/S4 run, new topic generation, Unlearning continuation, learned dependency model, benchmark expansion, molecular experiment, post-hoc mechanism family, or new TOPIC_BET is authorized before this transition.
+Only after runtime preflight PASS may COMMON_PRESTATE -> R2 -> R3 be authorized. R0 is conditional on R3 headroom; R1 is not authorized for symmetry. No S3 paid arm, common-prestate model run, S2/S4 run, new topic generation, learned dependency model, benchmark expansion, or new TOPIC_BET is authorized before this transition.
