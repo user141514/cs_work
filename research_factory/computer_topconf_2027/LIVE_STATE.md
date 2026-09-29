@@ -1,7 +1,7 @@
 # Computer Top-Conference Research Factory — Live State
 
 date: 2026-09-28
-execution_authority_updated: 2026-09-29
+execution_authority_updated: 2026-09-30
 status: PAUSED_UNRESOLVED__EXECUTION_SUPERSEDED_BY_WFE_20260929
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The user has redirected execution to `../workflow_engineering/MASTER_PLAN.md` and `../workflow_engineering/WORKFLOW_SPEC_V0_1.md` inside the dedicated `D:/cs_work` repository. The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not current launch authorization. No S3/BFSC arm is authorized by reading its historical remaining-task order below. BFSC is paused, not scientifically killed. Its R0/R3 results must never be relabeled as the new workflow's A/B results. The engineering workstream has no measured effectiveness result yet.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not current launch authorization. No S3/BFSC arm is authorized by reading its historical remaining-task order below. BFSC is paused, not scientifically killed. Its R0/R3 results must never be relabeled as evidence for another research line. The AgentSquare/ALFWorld O+I line has now terminated under `../oi_agentsquare/MASTER_PLAN.md`; its negative chain has been fed back into the live selector as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PRECARD is activated by that mutation.
 
 ## 1. Retained scientific objective
 
@@ -28,6 +28,7 @@ Current invariants:
 - negative results kill only the frozen claim/family they identify;
 - topic-formation search budget belongs to the interface-level mechanism portfolio, not to the first favored repair;
 - primitive occupancy is not complete-claim occupancy; family identity/provenance must be frozen before family-specific evidence;
+- static headroom / structural overlap is not mechanism exposure: if harm requires conflict, mismatch, competition, stale-state survival, or another runtime relation, freeze and test that exposure before a family-specific intervention;
 - selector-training experiments are not automatically active paper candidates;
 - molecular research assets are portfolio/thesis assets, not the authority for general-CS topic selection.
 
@@ -39,7 +40,8 @@ Primary gates:
 - SELECTOR_MECHANISM_SPACE_BACKTEST_20260928.md
 - BFSC_MECHANISM_PORTFOLIO_V2_20260928.md
 - BFSC_SELECTOR_V2_DECISION_ADDENDUM_20260928.md
-- C:/Users/Administrator/.agents/skills/top-conference-topic-selection/training/live/MECHANISM_SPACE_FORMATION_GATE.md
+- C:/Users/Administrator/.agents/skills/top-conference-topic-selection/training/live/MECHANISM_SPACE_FORMATION_GATE.md (includes MECHANISM_EXPOSURE_GATE §5.5)
+- MECHANISM_EXPOSURE_GATE_CALIBRATION_20260930.md
 
 ## 2. Historical Rank-1 research object — paused
 
