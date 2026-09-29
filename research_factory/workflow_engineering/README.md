@@ -2,9 +2,9 @@
 
 ## 当前状态
 
-实现的是一个独立的、无模型的检查器，不是完整工作流平台，也不是操作系统沙箱。PC2 中的目标目录为 `D:/bio_paper/research_factory/workflow_engineering/`。
+实现的是一个独立的、无模型的检查器，不是完整工作流平台，也不是操作系统沙箱。WFE-03.1 后的活跃目录为 `D:/cs_work/research_factory/workflow_engineering/`；`D:/bio_paper` 中的旧副本仅保留为历史来源。
 
-本轮在独立 Linux / Python 3.13.5 环境完成测试。PC2 的文件写入工具可用，但后续 shell 请求被平台拦截，因此没有在 PC2 运行测试，也没有接入真实执行器。源码通过 Python 3.7 语法检查，不等于 Windows / Python 3.7 运行验证。
+验证已经覆盖两类环境：独立 Linux / Python 3.13.5，以及 PC2 原生 Windows 10 / Python 3.7.0。PC2 原生完整套件 58/58 通过、0 skip，100 次 SQLite 冲突准入重复检查通过，并验证了 Windows directory-junction 重定向会被 `SCOPE_CHANGED` 拒绝。真实执行器仍未接入。
 
 ## 重跑全部离线测试
 
@@ -89,9 +89,9 @@ python offline_gate.py status --state-dir control/run1
 ## 边界与后续真实接入前提
 
 1. 本实现只约束经过它的请求。直接 shell/MCP、worker 未声明的文件/服务访问、修改控制数据库等行为尚未被 OS 权限隔离阻断。
-2. 路径检查是检查时刻的校验，不是消除文件系统 TOCTOU 的证明。Windows 路径在 Linux 上只测词法范围；Windows junction/ACL/SQLite 本机行为仍待验收。
+2. 路径检查是检查时刻的校验，不是消除文件系统 TOCTOU 的证明。Windows junction 与 SQLite 的本机已覆盖上述离线验收，但 ACL、跨进程权限隔离和检查后路径/文件被竞态替换仍不是本检查器的证明范围。
 3. 真实适配器需要完整提取会话与工具路径、独立计量、绑定 lease 到真正的 launch、隔离输出与权限、处理取消/进程崩溃；跨运行去重和总预算也由协调者负责。本轮没有实现这些功能。
 4. 不自动重试、不自动搜索、不自动启动下一步。预算预约保守、不退款；有助于拒绝越权，不证明执行效率最佳。
 5. 历史错误工作区 fixture 是根据记录制作的最小开发反例，文件中的臂名称为示意，既不是历史原会话，也不是同任务 A/B 回放结果。
 
-唯一后续步骤由 MASTER_PLAN.md / WFE02_RESULT.md 决定；本代码不自动推进。
+唯一后续步骤由 MASTER_PLAN.md 决定；WFE-03.1 的迁移结果记录在 WFE03_1_RESULT.md。本代码不自动推进。

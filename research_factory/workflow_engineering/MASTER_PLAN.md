@@ -6,7 +6,7 @@ Status: ACTIVE
 Authority: current user request to understand adjacent papers, integrate their mechanisms into our own workflow, retrospect historical tasks, and make the workflow binding.
 
 ## Goal / scope
-Build and validate a reusable research-task workflow on the existing D:/bio_paper substrate. Reuse verified mechanisms and existing tools; do not equate a collection of paper names with an implemented method. First engineer our own workflow, then evaluate it on the SAME complex historical task as the frozen original workflow. This is not an A²Flow reproduction claim, a new SOTA claim, or a new scientific candidate.
+Build and validate a reusable research-task workflow on the dedicated D:/cs_work substrate. Reuse verified mechanisms and existing tools; do not equate a collection of paper names with an implemented method. First engineer our own workflow, then evaluate it on the SAME complex historical task as the frozen original workflow. This is not an A²Flow reproduction claim, a new SOTA claim, or a new scientific candidate.
 
 ## Plan
 1. Verify the mechanisms and implementation seams of the selected papers; inspect existing local authority and execution assets; define one versioned integration and hard-constraint contract.
@@ -19,12 +19,14 @@ Build and validate a reusable research-task workflow on the existing D:/bio_pape
 Only the current step is authorized. Listing future steps is NOT execution authorization.
 
 ## CURRENT_STEP
-ID: WFE-03
-Status: COMPLETED_NATIVE_PC2_VERIFICATION
-Authorization: explicit user request on 2026-09-29 to open PC2 and execute the next planned step.
-Result authority: WFE03_RESULT.md.
-Observed: exact source hashes match the independent Linux baseline; native Windows 10 / Python 3.7.0 full suite passed 58/58 with 0 failures/errors/skips; 100 repeated SQLite conflicting-admission races passed; a native Windows directory-junction retarget after freeze was rejected as SCOPE_CHANGED.
-Decision: KEEP the offline gate unchanged. No model/agent/API/GPU launch, Watchdog change, historical replay or live executor integration occurred.
+ID: WFE-03.1
+Status: COMPLETED_REPOSITORY_MIGRATION
+Authorization: explicit user request on 2026-09-29 to name and execute WFE-03.1.
+Result authority: WFE03_1_RESULT.md.
+Observed: the active CS/top-conference substrate was migrated from D:/bio_paper into the dedicated Git repository D:/cs_work; pre-authority-edit copy parity passed for 13 workflow-engineering files and 55 computer-topconf files; three directly referenced upstream process/provenance files were additionally preserved; obvious secret-pattern scan returned zero hits.
+Ownership: D:/cs_work is now the sole active writer for CS/top-conference and workflow-engineering state. The corresponding D:/bio_paper copies are historical provenance only.
+Predecessor: WFE-03 native PC2 verification remains valid under WFE03_RESULT.md.
+Decision: KEEP the workflow-engineering plan. Repository separation changes ownership/location, not scientific conclusions or workflow-effectiveness evidence. No model/agent/API/GPU launch, Watchdog change, historical replay or live executor integration occurred.
 
 ## Previous completed step
 ID: WFE-01
@@ -80,10 +82,17 @@ Fixed from regression evidence: frozen path-alias retargeting, boolean version i
 PC2: files written with permitted file tools and core code/test sections read back; no remote test, model call, historical replay, Watchdog change, commit or push.
 Decision: KEEP the master plan and minimal adapter approach; no effectiveness or scientific superiority claim. Insert native verification before live wiring. This is an implementation-plan revision, not an approximately 180-degree goal reversal.
 
+## WFE-03.1 observations and decision
+
+Result authority: WFE03_1_RESULT.md.
+Raw migrated assets were committed separately before authority edits so historical evidence remains reviewable. The new repo-level AGENTS.md and research_factory/PROJECT_AUTHORITY.md define recovery and single-writer ownership. The old mixed-domain root must not receive further active CS state after this transition.
+
+Decision: KEEP. The first unresolved engineering boundary remains live enforcement integration, not offline gate correctness or repository placement.
+
 ## NEXT_STEP
 ID: WFE-04
 Status: PLANNED_NOT_AUTHORIZED
 Action: identify one current real execution entry and build the smallest gate-to-executor adapter in model-free dry-run mode. A valid admitted lease may resolve/prepare the existing command, but dry-run must not launch a model/agent. Invalid/stale/missing leases must block preparation/dispatch; expose the trusted workspace/session paths and receipt fields needed for later live use.
 Acceptance: deterministic PC2 adapter tests prove reject-before-dispatch for invalid authority, one legal dry-run path, no automatic NEXT_STEP dispatch, and an explicit inventory of remaining bypasses/side effects before any live launch.
 Forbidden: paid/model/API/GPU launch, historical replay, Watchdog changes, broad executor refactor, automatic WFE-05.
-STOP: WFE-03 is complete; WFE-04 has not been executed.
+STOP: WFE-03.1 is complete; WFE-04 has not been executed.

@@ -5,12 +5,14 @@ execution_authority_updated: 2026-09-29
 status: PAUSED_UNRESOLVED__EXECUTION_SUPERSEDED_BY_WFE_20260929
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
+repository_authority: D:/cs_work
+migration_status: ACTIVE_COPY_MOVED_BY_WFE_03_1__BIO_PAPER_COPY_READ_ONLY
 explicit_exclusion: molecular generation, bioinformatics and chemistry-specific topic formation unless explicitly reopened
 formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The user has redirected execution to `../workflow_engineering/MASTER_PLAN.md` and `../workflow_engineering/WORKFLOW_SPEC_V0_1.md`. This file retains BFSC evidence and unresolved questions, not current launch authorization. No S3/BFSC arm is authorized by reading its historical remaining-task order below. BFSC is paused, not scientifically killed. Its R0/R3 results must never be relabeled as the new workflow's A/B results. The engineering workstream has no measured effectiveness result yet.
+The user has redirected execution to `../workflow_engineering/MASTER_PLAN.md` and `../workflow_engineering/WORKFLOW_SPEC_V0_1.md` inside the dedicated `D:/cs_work` repository. The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not current launch authorization. No S3/BFSC arm is authorized by reading its historical remaining-task order below. BFSC is paused, not scientifically killed. Its R0/R3 results must never be relabeled as the new workflow's A/B results. The engineering workstream has no measured effectiveness result yet.
 
 ## 1. Retained scientific objective
 
