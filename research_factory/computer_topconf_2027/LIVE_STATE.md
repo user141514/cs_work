@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-09-30
-status: PAUSED_UNRESOLVED__EXECUTION_SUPERSEDED_BY_WFE_20260929
+status: BFSC_S3_PREFLIGHT_ACTIVE__PAID_EXECUTION_NOT_AUTHORIZED
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -261,12 +261,12 @@ S5 R3-vs-R2 headroom passed locally, but S5 value gate V is NEGATIVE.
 
 The new selector MECHANISM_EXPOSURE_GATE has now been applied to S3 before any new paid S3 arm. Using only the frozen Stage-A S3 identity plus verbatim pre-revision and late-revision user messages, S3 is `EXPOSURE_SOURCE_PROVEN`: an existing multi-turn signal UI is already present before the revision, the late revision reports streaming/UI freeze and inability to type, and other extension responsibilities remain in the frozen contract. Authority: `S3_MECHANISM_EXPOSURE_GATE_V1.md`, `S3_MECHANISM_EXPOSURE_RESULT_V1.md`, and `S3_MECHANISM_EXPOSURE_RESULT_V1.json`.
 
+S3 offline boundary freeze is now COMPLETE/PASS. Authority: `S3_STAGE_B_BOUNDARY_FREEZE_V1.md`, `S3_STAGE_B_BOUNDARY_FREEZE_V1.json`, `S3_STAGE_B_BOUNDARY_FREEZE_RESULT_V1.md`, and `S3_STAGE_B_BOUNDARY_FREEZE_RESULT_V1.json`. TASK_INITIAL_STATE is frozen at `5133697bc454da5595655cf4b0c70d3c2c725677`; controlled requirement exposure, revision boundary, pre/final specs, semantic R3 dependency rule, and immutable common-prestate contract are frozen. Exact R3 file/hunk scope remains pending the not-yet-created scientific common prestate.
+
 The exact next scientific transition is now:
 
-S3 offline boundary freeze
+`S3_EXECUTION_LEVERAGE_GATE`
 ->
-S3 execution-leverage gate
-->
-decide whether paid S3 R2/R3 execution is justified.
+decide whether producing the common prestate and paid S3 R2/R3 evidence is justified.
 
-No S3 paid arm, S2/S4 run, broad topic scan, Unlearning continuation, molecular experiment, dependency-model training, post-hoc family invention, benchmark expansion, or new TOPIC_BET is authorized before the S3 offline boundary freeze.
+No S3 paid arm, common-prestate model run, S2/S4 run, broad topic scan, Unlearning continuation, molecular experiment, dependency-model training, post-hoc family invention, benchmark expansion, or new TOPIC_BET is authorized before the S3 execution-leverage decision.

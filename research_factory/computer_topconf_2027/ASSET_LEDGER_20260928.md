@@ -262,12 +262,12 @@ S5 current decision is complete:
 - S5 value gate V = NEGATIVE;
 - R1 cannot change that value decision and is not run.
 
+S3 mechanism exposure is `EXPOSURE_SOURCE_PROVEN` and S3 offline boundary freeze is COMPLETE/PASS. The task initial state, controlled requirement sequence, revision boundary, consolidated pre/final specification, semantic R3 dependency rule and immutable common-prestate requirements are now frozen. Exact R3 file/hunk scope remains pending a scientific common prestate.
+
 Current first unresolved transition:
 
-S3 offline boundary freeze
-+
-S3 execution-leverage gate
+`S3_EXECUTION_LEVERAGE_GATE`
 ->
-decide whether paid S3 R2/R3 execution is justified.
+decide whether producing the common prestate and paid S3 R2/R3 execution is justified.
 
-No S3 paid arm, S2/S4 run, new topic generation, Unlearning continuation, learned dependency model, benchmark expansion, molecular experiment, post-hoc mechanism family, or activation of the queued orthogonality/invariant workflow direction is authorized before this transition.
+No S3 paid arm, common-prestate model run, S2/S4 run, new topic generation, Unlearning continuation, learned dependency model, benchmark expansion, molecular experiment, post-hoc mechanism family, or new TOPIC_BET is authorized before this transition.

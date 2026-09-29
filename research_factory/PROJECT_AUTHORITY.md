@@ -83,15 +83,15 @@ Current scientific redirection:
 - OI-AS-05 Residual O+I Decision Gate completed `TERMINATE_AGENT_SQUARE_ALFWORLD_OI`: no residual soft seam passes all pre-registered A-E admission criteria. `PLANNING_TO_REASONING_GUIDANCE` is an explicit hierarchical planner→executor handoff, lacks an identifiable active-planner exposed/unexposed contrast, and has no pre-existing directional harm evidence; `MEMORY_TO_REASONING_GUIDANCE` is the already-terminated TP seam; `PLANNING_TO_TOOL_GUIDANCE` has zero executable ALFWorld exposure.
 - The current AgentSquare/ALFWorld O+I line is TERMINATED. Hard-gate integration and new soft-guidance interventions are not authorized; do not create OI-AS-06 without genuinely new external evidence.
 - Selector feedback from this negative line is now applied: the live top-conference selector has a MECHANISM_EXPOSURE_GATE enforcing `STATIC_HEADROOM != MECHANISM_EXPOSURE` whenever a causal claim requires an instantiable runtime conflict/mismatch/competition/stale-state relation. Calibration authority: `computer_topconf_2027/MECHANISM_EXPOSURE_GATE_CALIBRATION_20260930.md`.
-- No new research candidate was invented by the selector mutation. The surviving pre-existing Rank-1 BFSC line is now the active scientific object at S3 preflight. Exact next step: S3 offline boundary freeze only; after that, S3 execution-leverage may decide whether paid R2/R3 evidence is justified. No S3 paid arm is authorized yet.
+- No new research candidate was invented by the selector mutation. The surviving pre-existing Rank-1 BFSC line is the active scientific object at S3 preflight. S3 mechanism exposure is `EXPOSURE_SOURCE_PROVEN`, and S3 offline boundary freeze is now COMPLETE/PASS: TASK_INITIAL_STATE, controlled requirement exposure, revision boundary, pre/final specs, semantic R3 dependency rule, and immutable common-prestate contract are frozen. Exact R3 file/hunk scope remains pending the not-yet-created scientific common prestate. Exact next step: `S3_EXECUTION_LEVERAGE_GATE` only. No S3 common-prestate model run or R0/R1/R2/R3 paid arm is authorized yet.
 - No further engineering stage absent a concrete, decision-changing research-task blocker.
 
 ## 4. Retained scientific state
 
 `computer_topconf_2027/LIVE_STATE.md` preserves the selector/BFSC research evidence.
 
-Status remains:
-`PAUSED_UNRESOLVED__EXECUTION_SUPERSEDED_BY_WFE_20260929`.
+Current retained scientific status:
+`BFSC_S3_PREFLIGHT_ACTIVE__PAID_EXECUTION_NOT_AUTHORIZED`.
 
 Do not infer a scientific PASS/KILL from the repository move. No historical R0/R3 arm becomes evidence for the new workflow by migration.
 

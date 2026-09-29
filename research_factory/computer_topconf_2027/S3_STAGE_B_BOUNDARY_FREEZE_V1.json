@@ -1,0 +1,69 @@
+{
+  "task": "pi-mono-auto-93c17d3b",
+  "status": "OFFLINE_BOUNDARY_FROZEN__COMMON_PRESTATE_PENDING__R3_EXACT_SCOPE_PENDING",
+  "task_initial_state": "5133697bc454da5595655cf4b0c70d3c2c725677",
+  "official_docker_image": "ghcr.io/togetherbench/multi-user-turn-codebench/pi-mono-auto-93c17d3b:2f7d1992e60d",
+  "source_hashes": {
+    "official_task_toml": "4676cc1660709cd1da6030a9e1e47cebc741409e96b8fb19ddbf1fc7d4d6c8e3",
+    "official_dockerfile": "1c9f85e457efd7fdee80c2b81c5d9b3c8cd620addad86a9b8056b9b9225dca40",
+    "SPEC_STAGE_A_TASK_FREEZE_V1.md": "e34ceeb68d5de194add6079b44ac2457c0283776c7d11fde600cc1af3d213181",
+    "USER_REQUIREMENTS_RAW.json": "2d1a65f1df329e90ded685ac9b7a183be03f07d67b8a3d34a7d27bda62af1b89",
+    "SOURCE_FREEZE.json": "f3740ba43264ee36afddc08b6744d72c98e1ad3d5f9c7e73916fd8a282a4e7d4",
+    "PRE_REVISION_REQUIREMENTS.md": "f1010e3e37e5ae5f042d5bd442840275cf00de0837dd496712edaea5f2211c30",
+    "LATE_REVISION.md": "f7635fb88bb2ce578ace71acbbe36d352a7888abf4e20b16ea9313d83a970ca7"
+  },
+  "controlled_sequence": [
+    {
+      "index": 0,
+      "class": "CONTEXT_ONLY"
+    },
+    {
+      "index": 2,
+      "class": "AUTHORITATIVE_PRE_REVISION_REQUIREMENT"
+    },
+    {
+      "index": 31,
+      "class": "AUTHORITATIVE_LOCATION_CONSTRAINT"
+    },
+    {
+      "index": 34,
+      "class": "WORKFLOW_ONLY"
+    },
+    {
+      "index": 36,
+      "class": "AMBIGUOUS_BEHAVIORAL_CLARIFICATION__CONSERVATIVELY_INCLUDED"
+    },
+    {
+      "index": 38,
+      "class": "HISTORICAL_OBSERVATION"
+    },
+    {
+      "index": 40,
+      "class": "HISTORICAL_OBSERVATION"
+    },
+    {
+      "index": 42,
+      "class": "AUTHORITATIVE_MULTI_TURN_VERIFICATION_REQUIREMENT"
+    },
+    {
+      "index": 44,
+      "class": "AUTHORITATIVE_CORRECTION_AND_VERIFICATION_REQUIREMENT"
+    },
+    {
+      "index": 48,
+      "class": "WORKFLOW_ONLY"
+    },
+    {
+      "index": 51,
+      "class": "WORKFLOW_ONLY"
+    },
+    {
+      "index": 54,
+      "class": "AUTHORITATIVE_LATE_REVISION"
+    }
+  ],
+  "revision_boundary": "after controlled pre-revision U1-U5 implementation/persistence, before source_message_index 54",
+  "exact_r3_scope_status": "PENDING_COMMON_PRESTATE",
+  "paid_arm_authorized": false,
+  "next_step": "S3_EXECUTION_LEVERAGE_GATE"
+}
