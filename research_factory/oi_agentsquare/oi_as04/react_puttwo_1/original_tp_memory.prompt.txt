@@ -1,0 +1,50 @@
+You are performing the memory-transform step from AgentSquare MemoryTP.
+Return only the requested structured JSON. The field memory_text must contain the answer to the following exact task.
+
+You will be given a successful case where you successfully complete the task. Then you will be given an ongoing task. Do not summarize these two cases, but rather use the successful case to think about the strategy and path you took to attempt to complete the task in the ongoing task. Devise a concise, new plan of action that accounts for your task with reference to specific actions that you should have taken. You will need this later to solve the task. Give your plan after "Plan".
+Success Case:
+You are in the middle of a room. Looking quickly around you, you see a armchair 2, a armchair 1, a bed 1, a countertop 1, a diningtable 1, a drawer 2, a drawer 1, a dresser 1, a garbagecan 1, a laundryhamper 1, and a sidetable 1.
+Your task is to: put two creditcard in dresser.
+> think: To solve the task, I need to find and take the first creditcard, then put it in dresser, then find and take the second creditcard, then put it in dresser.
+OK.
+> think: First I need to find the first creditcard. A creditcard is more likely to appear in drawer (1-2), coutertop (1), sidetable (1), diningtable (1), armchair (1-2), bed (1). I can check one by one, starting with drawer 1.
+OK.
+> go to drawer 1
+The drawer 1 is closed.
+> open drawer 1
+You open the drawer 1. The drawer 1 is open. In it, you see a book 1, a cd 1, and a pen 1.
+> go to drawer 2
+The drawer 2 is closed.
+> open drawer 2
+You open the drawer 2. The drawer 2 is open. In it, you see nothing.
+> go to countertop 1
+On the countertop 1, you see a cellphone 2, a creditcard 4, a creditcard 3, a creditcard 2, a mirror 1, a pencil 2, and a pencil 1.
+> think: Now I find the first creditcard (2). Next, I need to take it. I can find the second creditcard (3) later in countertop 1.
+OK.
+> take creditcard 2 from countertop 1
+You pick up the creditcard 2 from the countertop 1.
+> think: Now I take the first creditcard (2). Next, I need to put it in/on dresser 1.
+OK.
+> go to dresser 1
+On the dresser 1, you see a mug 1, and a television 1.
+> put creditcard 2 in/on dresser 1
+You put the creditcard 2 in/on the dresser 1.
+> think: Now I put the first creditcard in dresser. Next, I need to find the second creditcard. I can directly go to countertop 1.
+OK.
+> go to countertop 1
+On the countertop 1, you see a cellphone 2, a creditcard 4, a creditcard 3, a mirror 1, a pencil 2, and a pencil 1.
+> think: Now I find the second creditcard (3). Next, I need to take it.
+OK.
+> take creditcard 3 from countertop 1
+You pick up the creditcard 3 from the countertop 1.
+> think: Now I take the second creditcard (3). Next, I need to put it in/on dresser 1.
+OK.
+> go to dresser 1
+On the dresser 1, you see a creditcard 2, a mug 1, and a television 1.
+> put creditcard 3 in/on dresser 1
+You put the creditcard 3 in/on the dresser 1.
+
+Ongoing task:
+You are in the middle of a room. Looking quickly around you, you see a coffeetable 1, a diningtable 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a dresser 1, a garbagecan 1, a sidetable 2, a sidetable 1, and a sofa 1.
+Your task is to: put two cellphone in sofa.
+Plan:

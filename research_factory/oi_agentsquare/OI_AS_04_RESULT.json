@@ -1,0 +1,55 @@
+{
+  "claim_boundary": {
+    "not_supported": [
+      "This does not prove MemoryTP can never conflict under embedding retrieval or other tasks.",
+      "This does not kill broader Orthogonality + Invariants.",
+      "This does not establish full-episode task superiority for OI-TP."
+    ],
+    "supported": "Across the complete frozen eligible ALFWorld prompt-bank target set under the pre-registered lexical-nearest pairing screen, Original TP did not produce a material macro-plan conflict with PlanningIO in any of six targets."
+  },
+  "conflict_rate": 0.0,
+  "eligible_targets_screened": 6,
+  "experiment": "OI-AS-04",
+  "material_conflicts": 0,
+  "status": "COMPLETED_TERMINATE_MEMORYTP_PLAN_CONFLICT_SEAM",
+  "stop_rule_triggered": true,
+  "targets": [
+    {
+      "material_conflict": false,
+      "source": "OI-AS-03",
+      "status": "NO_CONFLICT_EXPOSURE",
+      "target_key": "react_clean_1"
+    },
+    {
+      "material_conflict": false,
+      "source": "OI-AS-04",
+      "status": "NO_CONFLICT_EXPOSURE",
+      "target_key": "react_cool_1"
+    },
+    {
+      "material_conflict": false,
+      "source": "OI-AS-04",
+      "status": "NO_CONFLICT_EXPOSURE",
+      "target_key": "react_examine_1"
+    },
+    {
+      "material_conflict": false,
+      "source": "OI-AS-04",
+      "status": "NO_CONFLICT_EXPOSURE",
+      "target_key": "react_heat_2"
+    },
+    {
+      "material_conflict": false,
+      "source": "OI-AS-04",
+      "status": "NO_CONFLICT_EXPOSURE",
+      "target_key": "react_put_1"
+    },
+    {
+      "material_conflict": false,
+      "source": "OI-AS-04",
+      "status": "NO_CONFLICT_EXPOSURE",
+      "target_key": "react_puttwo_1"
+    }
+  ],
+  "terminated_seam": "MemoryTP-plan-conflict"
+}

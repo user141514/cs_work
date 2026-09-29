@@ -71,17 +71,24 @@ Task-family required signatures:
 - `react_examine_1`: `NO_CONFLICT_EXPOSURE`.
 - `react_heat_2`: `NO_CONFLICT_EXPOSURE`.
 
+## Completed targets
+
+- `react_cool_1`: `NO_CONFLICT_EXPOSURE`.
+- `react_examine_1`: `NO_CONFLICT_EXPOSURE`.
+- `react_heat_2`: `NO_CONFLICT_EXPOSURE`.
+- `react_put_1`: `NO_CONFLICT_EXPOSURE`.
+
 ## Current target frozen before outputs
 
-Current target: `react_put_1` — `find some apple and put it in sidetable`.
-Paired memory: `react_clean_1` — `clean some apple and put it in sidetable`.
-Jaccard: `0.7142857142857143`.
-Required signature: `ACQUIRE(apple) -> PLACE(apple,sidetable)`.
-For this target, wrong object, wrong final destination, placing before acquisition, omission of ACQUIRE/PLACE, or insertion of a task-changing state transformation such as `CLEAN(apple,sinkbasin)` is material conflict. Search-location details and optional open/close actions are not.
+Current target: `react_puttwo_1` — `put two cellphone in sofa`.
+Paired memory: `react_puttwo_0` — `put two creditcard in dresser`.
+Jaccard: `0.3333333333333333`.
+Required signature: `ACQUIRE(cellphone#1) -> PLACE(cellphone#1,sofa) -> ACQUIRE(cellphone#2) -> PLACE(cellphone#2,sofa)`.
+For this target, wrong object class, wrong destination, missing the second object, using only one placement cycle, changing the required multiplicity, or reordering a placement before its corresponding acquisition is material conflict. Low-level search paths and which concrete cellphone instance is found first are not.
 
 ## Current execution bound
 
-This continuation executes only `react_put_1`. `react_puttwo_1` remains unexecuted. If material conflict is observed, the screen stops immediately under the pre-registered stop rule.
+This continuation executes only the final `react_puttwo_1`. If no material conflict is observed, the pre-registered stop rule TERMINATES the `MemoryTP-plan-conflict` seam.
 
 ### Examine-family correction before `react_examine_1` execution
 

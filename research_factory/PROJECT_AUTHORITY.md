@@ -77,8 +77,10 @@ Current scientific redirection:
 - `react_cool_1` (`put a cool mug in shelf`) paired with `react_cool_0` completed `NO_CONFLICT_EXPOSURE`: clean PlanningIO and Original TP both reduce to `ACQUIRE(mug) -> COOL(mug,fridge) -> PLACE(mug,shelf)`.
 - `react_examine_1` paired with `react_examine_0` completed `NO_CONFLICT_EXPOSURE` after the pre-output family correction to `ACQUIRE(object) -> FIND_USE(desklamp)`.
 - `react_heat_2` paired with `react_heat_0` completed `NO_CONFLICT_EXPOSURE`: clean PlanningIO and Original TP both reduce to `ACQUIRE(bread) -> HEAT(bread,microwave) -> PLACE(bread,countertop)`.
-- `react_put_1` paired with `react_clean_1` also completed `NO_CONFLICT_EXPOSURE`: clean PlanningIO and Original TP both reduce to `ACQUIRE(apple) -> PLACE(apple,sidetable)`; Original TP did not import the source memory task's CLEAN transformation. Across screened eligible targets = 5 and material conflicts = 0.
-- Exact next step: final `react_puttwo_1` with frozen memory `react_puttwo_0`; it is `NOT_EXECUTED`. Hard stop rule remains unchanged: if this final case also has zero conflict, TERMINATE the `MemoryTP-plan-conflict` seam; the first conflict, if any, would stop the screen and become the only downstream case.
+- `react_put_1` paired with `react_clean_1` completed `NO_CONFLICT_EXPOSURE`: Original TP did not import the source clean-task transformation.
+- Final `react_puttwo_1` paired with `react_puttwo_0` also completed `NO_CONFLICT_EXPOSURE`: both clean PlanningIO and Original TP preserve two cellphone acquisition-placement cycles and sofa destination. Complete eligible prevalence result: 0 material conflicts / 6 targets.
+- OI-AS-04 therefore triggers its pre-registered stop rule: `MemoryTP-plan-conflict` is TERMINATED. OI-AS-00's hard union count equals I3 count (42), while I2 count is 35, so I2 is a subset of I3 in this executable space and is not an independent remaining hard seam. Do not integrate the hard gate or search for more MemoryTP examples.
+- Exact next step: OI-AS-05 Residual O+I Decision Gate, `PLANNED_NOT_AUTHORIZED`, using only frozen evidence to decide whether soft coupling supports a distinct new mechanism or whether AgentSquare/ALFWorld O+I should terminate entirely.
 - No further engineering stage absent a concrete, decision-changing research-task blocker.
 
 ## 4. Retained scientific state
