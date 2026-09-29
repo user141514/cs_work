@@ -48,7 +48,7 @@ Task-family required signatures:
 - clean: ACQUIRE(object) -> CLEAN(object,sinkbasin) -> PLACE(object,destination)
 - heat: ACQUIRE(object) -> HEAT(object,microwave) -> PLACE(object,destination)
 - cool: ACQUIRE(object) -> COOL(object,fridge) -> PLACE(object,destination)
-- examine: ACQUIRE(object) -> FIND_USE(desklamp) -> EXAMINE(object,desklamp)
+- examine: ACQUIRE(object) -> FIND_USE(desklamp)
 - puttwo: ACQUIRE(first object) -> PLACE(first,destination) -> ACQUIRE(second object) -> PLACE(second,destination)
 
 ## Stop rule
@@ -56,14 +56,22 @@ Task-family required signatures:
 - If any material conflict appears, STOP the prevalence screen immediately. That first deterministic conflict case becomes the only candidate for a downstream OI-TP-vs-Original mechanism test.
 - If all remaining targets complete with zero material conflicts, TERMINATE the `MemoryTP-plan-conflict` seam.
 
-## First target frozen before outputs
+## First target completed
 
-Current target: `react_cool_1` — `put a cool mug in shelf`.
-Paired memory: `react_cool_0` — `cool some pan and put it in stoveburner`.
-Jaccard: `0.25`.
-Required signature: `ACQUIRE(mug) -> COOL(mug,fridge) -> PLACE(mug,shelf)`.
-For this target, omission/replacement of COOL, cooling a different target object, placing before cooling, or using a final destination other than shelf is material conflict. Object-specific adaptation from pan to mug and destination adaptation from stoveburner to shelf are required.
+`react_cool_1` paired with `react_cool_0` completed `NO_CONFLICT_EXPOSURE` under the frozen rule.
+
+## Current target frozen before outputs
+
+Current target: `react_examine_1` — `examine the pen with the desklamp`.
+Paired memory: `react_examine_0` — `look at bowl under the desklamp`.
+Jaccard: `0.125`.
+Required signature: `ACQUIRE(pen) -> FIND_USE(desklamp)`.
+For this target, failure to acquire the pen before lamp use, operating on the wrong target object, omitting desklamp acquisition/use, or replacing the required lamp-use phase with a different macro action is material conflict. Low-level search path differences do not count.
 
 ## Current execution bound
 
-This continuation executes only `react_cool_1` after the full pairing manifest is frozen. Later targets remain unexecuted until a subsequent continuation.
+This continuation executes only `react_examine_1`. Later targets remain unexecuted until a subsequent continuation.
+
+### Examine-family correction before `react_examine_1` execution
+
+The original generic line incorrectly listed an extra terminal `EXAMINE(object,desklamp)` macro. Frozen AgentSquare `planning_prompt['examine']` and the frozen successful `react_examine_*` trajectories both terminate by finding and using the desklamp while holding the target object; there is no separate planner-owned EXAMINE subtask/action. Before any `react_examine_1` model output, the required family signature is therefore corrected to `ACQUIRE(object) -> FIND_USE(desklamp)`. This correction does not affect the already-completed clean/cool gates.

@@ -1,0 +1,13 @@
+You are a planner who divides a examine task into several subtasks. You also need to give the reasoning instructions for each subtask and the instructions for calling the tool. Your output format should follow the example below.
+The following are some examples:
+Task: You are in the middle of a room.  Looking quickly around you, you see a bed 1, a desk 1, a drawer 3, a drawer 2, a drawer 1, a garbagecan 1, a safe 1, a shelf 5, a shelf 4, a shelf 3, a shelf 2, a shelf 1, a sidetable 2, and a sidetable 1. 
+Your task is to: look at bowl under the desklamp.
+sub-task 1: {{'description': 'First I need to find and take a bowl', 'reasoning instruction': 'Find and take a bowl', 'tool use instruction': None}}
+sub-task 2: {{'description': 'Finally, I need to find and use a desklamp', 'reasoning instruction': 'Find and use a desklamp', 'tool use instruction': None}}
+Task: You are in the middle of a room. Looking quickly around you, you see a coffeetable 1, a diningtable 1, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a dresser 1, a garbagecan 1, a sidetable 2, a sidetable 1, and a sofa 1.
+Your task is to: look at statue under the desklamp.
+sub-task 1: {{'description': 'First I need to find and take a statue', 'reasoning instruction': 'Find and take a statue', 'tool use instruction': None}}
+sub-task 2: {{'description': 'Finally, I need to find and use a desklamp', 'reasoning instruction': 'Find and use a desklamp', 'tool use instruction': None}}
+
+Task: You are in the middle of a room. Looking quickly around you, you see a bed 1, a drawer 10, a drawer 9, a drawer 8, a drawer 7, a drawer 6, a drawer 5, a drawer 4, a drawer 3, a drawer 2, a drawer 1, a dresser 1, a garbagecan 1, a shelf 9, a shelf 8, a shelf 7, a shelf 6, a shelf 5, a shelf 4, a shelf 3, a shelf 2, and a shelf 1.
+Your task is to: examine the pen with the desklamp.

@@ -1,0 +1,36 @@
+{
+  "decision_boundary": "required macros are ACQUIRE(pen)->FIND_USE(desklamp); extra verbal restatement of the final examine goal is not a separate frozen planner macro and does not create conflict",
+  "extra_redundant_examine_phrase": true,
+  "material_conflict": false,
+  "memory_key": "react_examine_0",
+  "original_tp_memory_text": "Plan: Search the listed containers systematically for a pen, checking drawers and shelves and opening closed drawers as needed. When the pen is found, take it. Continue searching the remaining drawers and shelves for a desklamp; once found, use/turn on the desklamp, then examine the pen with the desklamp.",
+  "original_tp_signature": [
+    "ACQUIRE(pen)",
+    "FIND_USE(desklamp)"
+  ],
+  "original_tp_usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 9984,
+    "input_tokens": 19771,
+    "output_tokens": 212,
+    "reasoning_output_tokens": 129
+  },
+  "planningio_signature": [
+    "ACQUIRE(pen)",
+    "FIND_USE(desklamp)"
+  ],
+  "planningio_usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 7936,
+    "input_tokens": 16464,
+    "output_tokens": 136,
+    "reasoning_output_tokens": 47
+  },
+  "planningio_valid_no_tool_execution": true,
+  "required_signature": [
+    "ACQUIRE(pen)",
+    "FIND_USE(desklamp)"
+  ],
+  "status": "NO_CONFLICT_EXPOSURE",
+  "target_key": "react_examine_1"
+}
