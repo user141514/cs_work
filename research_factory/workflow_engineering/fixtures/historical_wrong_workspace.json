@@ -1,0 +1,9 @@
+{
+  "evidence_class": "DEVELOPMENT_RETROSPECTIVE",
+  "source": "D:/bio_paper/research_factory/workflow_engineering/WORKFLOW_SPEC_V0_1.md#8",
+  "upstream_record": "D:/bio_paper/research_factory/computer_topconf_2027/LIVE_STATE.md",
+  "provenance_note": "Synthetic minimal fixture for the documented session retaining source-workspace absolute paths. Names below are illustrative; this is not an original session dump, rerun, or counterfactual result.",
+  "expected_workspace": "D:/replay/arm-new",
+  "wrong_session_paths": ["D:/replay/arm-old/src/task.py", "d:\\replay\\arm-old\\result.json"],
+  "correct_session_paths": ["D:/replay/arm-new/src/task.py", "d:\\replay\\arm-new\\result.json"]
+}

@@ -1,0 +1,23 @@
+{
+  "errors": 0,
+  "failures": 0,
+  "gate_has_model_or_network_client": false,
+  "historical_fixture": "DEVELOPMENT_ONLY_SYNTHETIC_REGRESSION_NOT_REPLAY",
+  "network_and_subprocess_calls_blocked": true,
+  "passed": 58,
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+  "python": "3.13.5",
+  "scope": "Only the offline checker subsystem; not the whole bio_paper project or a live executor",
+  "skipped": 0,
+  "source_sha256": {
+    "offline_gate.py": "fccd182f8f0bdb6cf784c8c09a56afaad3949c2d638795ebb9a34c7d2ca7c748",
+    "tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests/test_offline_gate.py": "a1a108b462f337ef147ad82da85238a89222bc080511270bf970ab1748784a1b",
+    "verify_offline.py": "64579e9b3bcdf842f7bf130f7d55eb2be225b8eac5ad824b7043dc8642a71540"
+  },
+  "step": "WFE-02",
+  "success": true,
+  "syntax_check": "PYTHON_3_7_GRAMMAR_PASS_NOT_RUNTIME_PROOF",
+  "tests_run": 58,
+  "utc": "2026-09-29T03:53:51.498688+00:00"
+}

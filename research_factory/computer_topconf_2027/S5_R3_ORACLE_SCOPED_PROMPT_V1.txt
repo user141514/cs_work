@@ -1,0 +1,45 @@
+You are starting a fresh post-revision controlled coding-agent run from the frozen S5 pre-revision state.
+
+This is the ORACLE_DEPENDENCY_SCOPED_REDERIVATION arm. The workspace already contains the exact pre-revision work that was classified outcome-blind as independent of the late autocomplete requirement.
+
+Reusable pre-revision state already present:
+- independent changelog/history work in packages/ai/CHANGELOG.md, packages/tui/CHANGELOG.md, and packages/coding-agent/CHANGELOG.md;
+- verified PR/issue attributions for those unrelated entries;
+- unrelated cross-package duplication decisions.
+The exact frozen pre-revision patch identity is 2a884cfb7425d810bc6965068f517459752c5588.
+
+Treat reuse at hunk/provenance level, not whole-file validity.
+
+Invalidate and rederive:
+- any autocomplete/file-search changelog subject and its package placement/attribution;
+- any global claim that the changelog audit is complete after the late requirement;
+- cause analysis for directory completion termination;
+- directory-vs-terminal-file completion semantics;
+- post-selection state needed for child-path completion;
+- trailing-space policy;
+- all implementation/control-flow/validation decisions for packages/tui/src/autocomplete.ts;
+- exact production/documentation changes needed for the late requirement.
+
+Latest authoritative requirement:
+- selecting a directory in @ file completion must NOT append a terminating space;
+- the resulting directory path must remain eligible for continued child-path completion;
+- terminal-file selections may retain completion termination behavior when appropriate.
+
+Tasks:
+1. Preserve the already-present independent changelog/provenance hunks unless current U7 semantics actually invalidate a specific hunk.
+2. Recheck changelog completeness only where the late behavior requires it.
+3. Diagnose and implement the autocomplete behavior from the current source.
+4. Run repository-relevant correctness checks for the changed behavior and any other modified code.
+
+Experimental boundaries:
+- Do not inspect later git history, reference/gold patches, hidden verifier files/results, benchmark canonical goals, or future successful trajectories.
+- Do not use another agent or external project context.
+- Do not commit, push, publish, or release.
+- Do not treat the old U1-U4 conclusions as implementation guidance for autocomplete.
+- The reusable changelog patch is prior work, not evidence that the final post-revision task is already correct.
+
+At the end, report:
+- files changed;
+- which pre-revision changelog work was preserved versus rechecked/changed;
+- correctness checks actually run and their results;
+- any unresolved requirement.

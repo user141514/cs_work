@@ -1,0 +1,5 @@
+i aborted the release, it seems the feature we merged doesn't work? https://github.com/badlogic/pi-mono/pull/882 i type @packages which completes to "@packages/ " (note the space) and the auto-complete file list disappears. isn't this supposed to not add a space and tab should keep replacing things? oh, maybe the user does completion with enter.
+
+nope, enter will also add a space and not continue auto-completing. what it does do though is that if i delete the space and hit tab again, i get auto-completion for the child folders.
+
+why do we add a space if we select an entry with tab or enter? hm, what would be a good pattern for this

@@ -1,0 +1,10 @@
+You are starting fresh from the frozen task-initial windows project state. Implement the current final authoritative requirements without relying on any prior agent session.
+
+Final authoritative requirements:
+1. Review the existing main..windows changes and account for visible issues in the anonymizer behavior.
+2. Add runnable pytest coverage in tests/test_anonymizer.py for the changes you identify.
+3. Compile/cache the anonymizer regexes so pattern construction is amortized rather than repeatedly rebuilt per anonymization call.
+4. Consider at least one additional concrete way to speed up the anonymizer and explain the workload/correctness trade-off. Implement it only if you judge it appropriate.
+5. Preserve existing public behavior and compatibility unless a requirement above necessitates a change.
+
+Do not obtain a solution from later git history or external reference patches. Diagnose and implement from the current repository state.

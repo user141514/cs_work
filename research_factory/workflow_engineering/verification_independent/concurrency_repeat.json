@@ -1,0 +1,8 @@
+{
+  "scenario": "two independent Gate clients with conflicting write scopes",
+  "repetitions": 100,
+  "failures": 0,
+  "errors": 0,
+  "success": true,
+  "scope": "threads with separate SQLite connections on independent Linux host; not a multi-process or Windows result"
+}

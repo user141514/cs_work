@@ -1,0 +1,24 @@
+You are starting a fresh controlled coding-agent run from the frozen task-initial repository state at commit 69d02b8a5fce07041f77aba64c6ebbc8589827ab.
+
+Implement the consolidated final authoritative requirements below without relying on any prior agent session.
+
+Final authoritative requirements:
+
+1. Audit changelog entries for commits since the last release that are visible from the current frozen repository history. Add missing entries under the repository's existing changelog conventions.
+2. Verify external PR/issue attributions for those changelog entries and correct attribution mistakes. Preserve appropriate cross-package duplication for user-facing changes.
+3. Fix @ file/directory completion behavior so selecting a directory does NOT append a terminating space and the resulting directory path remains eligible for continued child-path completion.
+4. Preserve terminal-file completion behavior unless a narrowly necessary change is required by item 3.
+5. Run repository-relevant correctness checks for the modified completion behavior and other changed code.
+
+Experimental boundaries:
+- Diagnose and implement only from the current repository state and requirements above.
+- Do not inspect later git history, reference/gold patches, hidden verifier files/results, benchmark canonical goals, or future successful trajectories.
+- Do not use another agent or external project context.
+- Do not commit, push, publish, or release.
+- Changelog/history investigation may use public PR/issue identity only as needed to verify attribution.
+- Do not treat any historical pre-revision implementation conclusion as authoritative; this is a fresh full-restart arm.
+
+At the end, report:
+- files changed;
+- correctness checks actually run and their results;
+- any unresolved requirement.

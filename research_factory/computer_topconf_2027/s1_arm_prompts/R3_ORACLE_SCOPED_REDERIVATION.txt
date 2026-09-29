@@ -1,0 +1,23 @@
+You are continuing after a late requirement change, but stale implementation/performance reasoning has been deliberately discarded. Re-derive what is affected.
+
+Current authoritative behavioral requirements that may be reused from prior work:
+- anonymize_text handles long usernames between underscores;
+- short usernames work in Windows backslash paths;
+- short-path matching is case-insensitive;
+- the home argument supports custom home directories;
+- configured extra usernames are matched case-insensitively;
+- username replacement preserves longer containing names.
+
+The current workspace already contains pre-revision behavioral tests. The first four anonymize_text-oriented tests are reusable unchanged. For the final two behaviors, preserve the behavioral requirement but do NOT assume the private _replace_username helper is a required implementation seam.
+
+Invalidated prior reasoning:
+- old pass/fail counts or individual failure attribution are not authoritative;
+- do not assume production remains unchanged or a specific bug still remains;
+- do not assume the existing behavioral suite covers the new performance requirement;
+- do not assume any cache ownership, cache key, regex compilation frequency, or dominant runtime cost;
+- rederive all performance design and verification.
+
+Latest revision:
+Compile the regexes in the anonymizer. How else can we speedup the anonymizer?
+
+Re-derive the implementation needed for this revision, rerun relevant correctness tests, and establish whatever focused performance/caching evidence you judge necessary.
