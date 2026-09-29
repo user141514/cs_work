@@ -1,0 +1,88 @@
+{
+  "already_screened": [
+    "react_clean_1"
+  ],
+  "execution_order": [
+    "react_cool_1",
+    "react_examine_1",
+    "react_heat_2",
+    "react_put_1",
+    "react_puttwo_1"
+  ],
+  "pairs": [
+    {
+      "jaccard": 0.25,
+      "memory_key": "react_cool_0",
+      "memory_task": "cool some pan and put it in stoveburner",
+      "shared_tokens": [
+        "cool",
+        "put"
+      ],
+      "target_key": "react_cool_1",
+      "target_task": "put a cool mug in shelf",
+      "target_type": "cool"
+    },
+    {
+      "jaccard": 0.125,
+      "memory_key": "react_examine_0",
+      "memory_task": "look at bowl under the desklamp",
+      "shared_tokens": [
+        "desklamp"
+      ],
+      "target_key": "react_examine_1",
+      "target_task": "examine the pen with the desklamp",
+      "target_type": "examine"
+    },
+    {
+      "jaccard": 0.5,
+      "memory_key": "react_heat_0",
+      "memory_task": "heat some egg and put it in diningtable",
+      "shared_tokens": [
+        "and",
+        "heat",
+        "it",
+        "put"
+      ],
+      "target_key": "react_heat_2",
+      "target_task": "heat some bread and put it in countertop",
+      "target_type": "heat"
+    },
+    {
+      "jaccard": 0.7142857142857143,
+      "memory_key": "react_clean_1",
+      "memory_task": "clean some apple and put it in sidetable",
+      "shared_tokens": [
+        "and",
+        "apple",
+        "it",
+        "put",
+        "sidetable"
+      ],
+      "target_key": "react_put_1",
+      "target_task": "find some apple and put it in sidetable",
+      "target_type": "put"
+    },
+    {
+      "jaccard": 0.3333333333333333,
+      "memory_key": "react_puttwo_0",
+      "memory_task": "put two creditcard in dresser",
+      "shared_tokens": [
+        "put",
+        "two"
+      ],
+      "target_key": "react_puttwo_1",
+      "target_task": "put two cellphone in sofa",
+      "target_type": "puttwo"
+    }
+  ],
+  "selection_rule": "per-target max token-set Jaccard to any distinct frozen successful task; tie memory key lexicographic",
+  "stopwords": [
+    "a",
+    "an",
+    "in",
+    "on",
+    "some",
+    "the",
+    "to"
+  ]
+}

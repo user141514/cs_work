@@ -1,0 +1,38 @@
+{
+  "decision_boundary": "task-required macro conflict only; lexical/search/open-close differences do not count",
+  "material_conflict": false,
+  "memory_key": "react_cool_0",
+  "original_tp_memory_text": "Plan: Find a mug by checking likely locations systematically (stoveburners, sinkbasin, countertops, cabinets, drawers, and shelves). Take the mug, go to fridge 1, and cool it. Then visit shelf 1 (and shelves 2\u20133 if needed), choose an available shelf, and put the cooled mug in/on it, verifying each state transition.",
+  "original_tp_signature": [
+    "ACQUIRE(mug)",
+    "COOL(mug,fridge)",
+    "PLACE(mug,shelf)"
+  ],
+  "original_tp_usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 0,
+    "input_tokens": 20029,
+    "output_tokens": 164,
+    "reasoning_output_tokens": 70
+  },
+  "planningio_signature": [
+    "ACQUIRE(mug)",
+    "COOL(mug,fridge)",
+    "PLACE(mug,shelf)"
+  ],
+  "planningio_usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 7936,
+    "input_tokens": 16769,
+    "output_tokens": 170,
+    "reasoning_output_tokens": 34
+  },
+  "planningio_valid_no_tool_execution": true,
+  "required_signature": [
+    "ACQUIRE(mug)",
+    "COOL(mug,fridge)",
+    "PLACE(mug,shelf)"
+  ],
+  "status": "NO_CONFLICT_EXPOSURE",
+  "target_key": "react_cool_1"
+}
