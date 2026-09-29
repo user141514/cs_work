@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "answer": {
+      "type": "string"
+    },
+    "model_condition": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "answer",
+    "model_condition"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,59 @@
+{
+  "commit": "8f5b3fe5d8a32f9b59d20370823bef2a2c86928c",
+  "files": {
+    "agent.py": {
+      "bytes": 709,
+      "sha256": "d4925b911e1166064b9188254a8583e2dbe58f1ee0689f049030b2e27d4de9cd"
+    },
+    "alfworld_run.py": {
+      "bytes": 7395,
+      "sha256": "f86b66c7700ee38937a6da0e5df9d7ac6982e9d397487c96dcc0d6b74980b30d"
+    },
+    "base_config.yaml": {
+      "bytes": 7741,
+      "sha256": "d95e445ae3b3fc1f277a6ebd613678bf2c46a39a4975d8a12a85d642e8d40016"
+    },
+    "memory_modules.py": {
+      "bytes": 11389,
+      "sha256": "817655a4933fe3df6e77ded729fda261ff76b58e1083f348f8de086195c5a0ce"
+    },
+    "module_map.py": {
+      "bytes": 2574,
+      "sha256": "1ab1ec07f8336a8c80a4f63016157184434757e5726bba5ff0909e21996187d6"
+    },
+    "planning_modules.py": {
+      "bytes": 8878,
+      "sha256": "e37ed2c1601f52022fa778b3ace2b7d99a7dd31133fb8aa28923e0204e9564b3"
+    },
+    "planning_prompt.py": {
+      "bytes": 11281,
+      "sha256": "d8eea5741add7cf6ba94f80926af66dff0565a1638ae2ebd705cf7a55c0ab1e7"
+    },
+    "prompts/alfworld_3prompts.json": {
+      "bytes": 36918,
+      "sha256": "ad538d9b47812fe90ccdf31e442fb2aa14486abc98ffbfb1b4f8503f2dce7461"
+    },
+    "prompts/alfworld_reasoning_prompt1.json": {
+      "bytes": 34081,
+      "sha256": "15282b13a55f59459c7622a08057b03e5078811f7e7752bd226c26d27a06ef44"
+    },
+    "reasoning_modules.py": {
+      "bytes": 15615,
+      "sha256": "a741e2a048b1b9631c4cefd253bdc7302e9d95b62fba1dd4f16bc8638436703a"
+    },
+    "tooluse_modules.py": {
+      "bytes": 98,
+      "sha256": "d3c99de597bb223b9d36d1fa71ad442e9a59182a42c7d6d9d43c1c687c0859c6"
+    },
+    "utils.py": {
+      "bytes": 3469,
+      "sha256": "70669a81964f89a1f913bc7156d1bbfebc23d4b2925e0d5bd11b9fab220f1a78"
+    },
+    "workflow.py": {
+      "bytes": 2610,
+      "sha256": "89aa448e74d8f723a0c2be1641ba6aa0e990910aa9c5df8ea953f27224182c71"
+    }
+  },
+  "repo": "tsinghua-fib-lab/AgentSquare",
+  "root": "search/alfworld"
+}

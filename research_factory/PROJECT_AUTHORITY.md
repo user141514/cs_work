@@ -68,8 +68,12 @@ Current scientific redirection:
 - Goal: test Orthogonality + Invariants as a responsibility-compatibility prior/gate on AgentSquare modular search.
 - OI-AS-00 completed with 42/210 (20%) hard-inadmissible and 182/210 (86.67%) soft-coupled executable ALFWorld static combinations under outcome-blind frozen rules.
 - OI-AS-01 completed `DIRECTIONALLY_CONSISTENT`: MemoryTP, predesignated from source behavior as violating the memory boundary, has shipped module performance 0.36 versus Generative 0.64, DILU 0.74 and Voyager 0.78; TP is uniquely lowest but n=4 and one-sided random-rank probability is 0.25, so this is only a directional screen.
-- Next planned step: OI-AS-02 controlled original-TP vs orthogonalized-TP intervention, preserving retrieval/top-k/memory insertion/comparable LLM budget while removing current-task PLAN_CONTROL from the memory module.
-- OI-AS-02 is `PLANNED_NOT_AUTHORIZED`. PC2's active Python environment currently lacks AgentSquare runtime dependencies and OPENAI_API_KEY; do not silently substitute another model/benchmark.
+- OI-AS-02A completed `MANIPULATION_PASS`: under the common GPT-5.6 Luna / medium Codex backend, Original TP generated a current-task plan while OI-TP returned bounded memory guidance with zero current-task action directives.
+- OI-AS-02B completed `NULL_ON_PILOT`: on five frozen ALFWorld prompt checkpoints, Original TP = 2/5 and OI-TP = 2/5 exact-normalized correct, paired difference = 0 and discordant pairs = 0/5. This is a checkpoint proxy, not a full METHOD_PILOT.
+- OI-AS-02C completed `NO_CONFLICT_EXPOSURE`: actual frozen PlanningIO under GPT-5.6 Luna / medium parsed to `ACQUIRE(apple) -> HEAT(apple,microwave) -> PLACE(apple,fridge)`, exactly matching Original-TP's frozen macro signature. Upstream `planning_prompt['heat']` contains the exact same target task in its few-shot, so this fixture is structurally low-conflict and is CLOSED for further conflict-repair testing.
+- The OI-AS-02B null therefore cannot be promoted into a candidate-level kill under the kill-scope invariant.
+- Next planned step: OI-AS-03 conflict-exposed fixture gate. Freeze one new AgentSquare ALFWorld target not duplicated in PlanningIO few-shot examples and require a pre-registered material PlanningIO-vs-Original-TP plan conflict before any downstream OI-TP comparison.
+- OI-AS-03 is `PLANNED_NOT_AUTHORIZED`; no user input or API key is currently required because Codex routing is verified.
 - No further engineering stage absent a concrete, decision-changing research-task blocker.
 
 ## 4. Retained scientific state

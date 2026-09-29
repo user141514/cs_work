@@ -1,0 +1,39 @@
+{
+  "arms": {
+    "oi": {
+      "action": "put apple 1 in fridge 1",
+      "correct": false,
+      "elapsed_seconds": 123.878488779068,
+      "normalized": "put apple 1 in fridge 1",
+      "thread_id": "01a0edd6-a80d-73f1-9bcb-ab8bcb8cfa88",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 19736,
+        "output_tokens": 44,
+        "reasoning_output_tokens": 20
+      }
+    },
+    "original": {
+      "action": "put apple 1 in fridge 1",
+      "correct": false,
+      "elapsed_seconds": 129.8872709274292,
+      "normalized": "put apple 1 in fridge 1",
+      "thread_id": "01a0edd6-b14b-7610-a233-38594d18e2ef",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 19698,
+        "output_tokens": 81,
+        "reasoning_output_tokens": 57
+      }
+    }
+  },
+  "checkpoint": "C5",
+  "checkpoint_verdict": "TIE_BOTH_WRONG",
+  "gold_action": "put apple 1 in/on fridge 1",
+  "gold_normalized": "put apple 1 in/on fridge 1",
+  "paired_difference": 0,
+  "scoring_boundary": "exact-normalized only; no post-hoc fuzzy or semantic partial credit",
+  "shared_error_note": "both arms used 'in' instead of frozen gold token 'in/on'; exact scorer is unchanged"
+}

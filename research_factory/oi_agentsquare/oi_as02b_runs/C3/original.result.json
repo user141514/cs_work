@@ -1,0 +1,17 @@
+{
+  "agent_text": "{\"action\":\"go to microwave 1\"}",
+  "complete": true,
+  "elapsed_seconds": 132.92348289489746,
+  "jsonl": "research_factory\\oi_agentsquare\\oi_as02b_runs\\C3\\original.jsonl",
+  "parsed": {
+    "action": "go to microwave 1"
+  },
+  "thread_id": "01a0edad-a0f3-7233-8fd9-33fe99b6cc5d",
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 0,
+    "input_tokens": 19606,
+    "output_tokens": 45,
+    "reasoning_output_tokens": 24
+  }
+}

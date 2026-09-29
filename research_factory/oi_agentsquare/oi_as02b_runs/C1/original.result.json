@@ -1,0 +1,17 @@
+{
+  "agent_text": "{\"action\":\"open fridge 1\"}",
+  "complete": true,
+  "elapsed_seconds": 139.231614112854,
+  "jsonl": "research_factory\\oi_agentsquare\\oi_as02b_runs\\C1\\original.jsonl",
+  "parsed": {
+    "action": "open fridge 1"
+  },
+  "thread_id": "01a0ed84-e1c8-7c83-9108-d907bba056fd",
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 0,
+    "input_tokens": 19388,
+    "output_tokens": 52,
+    "reasoning_output_tokens": 32
+  }
+}

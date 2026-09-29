@@ -68,14 +68,17 @@ Observed:
 
 Decision: DIRECTIONALLY_CONSISTENT, but tiny-n and non-causal. Retain the memory-boundary seam for exactly one controlled intervention; do not claim significance or combination-level benefit.
 
-## NEXT_STEP
+## CURRENT_STEP_2
 
 ID: OI-AS-02
-Status: PLANNED_NOT_AUTHORIZED
+Status: AUTHORIZED_BY_USER_CONTINUATION
+Model condition: GPT-5.6 Luna via local Codex CLI, reasoning effort medium, identical for both arms.
+
+OI-AS-02A manipulation check: COMPLETED_PASS. Static behavior test confirms OI-TP preserves k=1 retrieval, empty-memory behavior, inherited storage path and one memory-side LLM call while changing only output authority. Real Luna/Medium paired prompts then produced four ordered current-task directives for Original TP and zero current-task directives for OI-TP under the frozen deterministic evaluator. Authority manipulation is operationally valid; task performance remains unmeasured.
 
 Create one orthogonalized MemoryTP variant (OI-TP) that preserves TP retrieval/top-k/memory insertion and comparable LLM-call budget, but removes current-task PLAN_CONTROL: it returns bounded memory-derived guidance while planning remains the sole current-plan owner. Compare original TP vs OI-TP under one fixed non-None planning module, fixed reasoning, tooluse=None, same model/tasks/seeds/budget.
 
 Acceptance: verify the intervention changes only the memory-output responsibility before running any benchmark; then measure paired task outcome and cost. If runtime dependencies/model credentials are unavailable, record NEED_INPUT rather than substituting another benchmark/model.
 
 STOP:
-OI-AS-01 is complete; OI-AS-02 has not been executed.
+OI-AS-01 is complete. OI-AS-02A manipulation validity is complete. OI-AS-02B is COMPLETE_NULL_ON_PILOT: Original TP 2/5, OI-TP 2/5, paired difference 0, discordant pairs 0/5. OI-AS-02C is COMPLETE_NO_CONFLICT_EXPOSURE: the actual frozen PlanningIO path under GPT-5.6 Luna / medium parsed to `ACQUIRE(apple) -> HEAT(apple,microwave) -> PLACE(apple,fridge)`, exactly matching the frozen Original-TP macro signature. Upstream `planning_prompt['heat']` also contains the exact target as a few-shot example, so this fixture is structurally low-conflict. Therefore OI-AS-02B's null cannot be promoted into an O+I candidate kill, and this fixture is CLOSED for further conflict-repair testing. Result authority: `OI_AS_02C_RESULT.md` and `OI_AS_02C_RESULT.json`. Exactly one next step is OI-AS-03 conflict-exposed fixture gate, PLANNED_NOT_AUTHORIZED: freeze one new AgentSquare ALFWorld target not duplicated in PlanningIO few-shot examples and require a pre-registered material PlanningIO-vs-Original-TP plan conflict before any downstream OI-TP comparison.

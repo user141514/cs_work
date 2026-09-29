@@ -1,0 +1,9 @@
+You will be given a successful case where you successfully complete the task. Then you will be given an ongoing task. Do not summarize these two cases, but rather use the successful case to think about the strategy and path you took to attempt to complete the task in the ongoing task. Devise a concise, new plan of action that accounts for your task with reference to specific actions that you should have taken. You will need this later to solve the task. Give your plan after "Plan".
+
+Success Case:
+You are in a kitchen. Your task is to: heat an egg and put it on the dining table. > open fridge 1 -> no egg. > go to countertop 3 -> see egg 2. > take egg 2 from countertop 3. > go to microwave 1. > heat egg 2 with microwave 1. > go to diningtable 1. > put egg 2 in/on diningtable 1. success.
+
+Ongoing task:
+You are in a kitchen. Your task is to: heat a potato and put it on the dining table.
+
+Plan:

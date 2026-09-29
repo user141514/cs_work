@@ -1,0 +1,4 @@
+{
+  "success_case": "You are in a kitchen. Your task is to: heat an egg and put it on the dining table. > open fridge 1 -> no egg. > go to countertop 3 -> see egg 2. > take egg 2 from countertop 3. > go to microwave 1. > heat egg 2 with microwave 1. > go to diningtable 1. > put egg 2 in/on diningtable 1. success.",
+  "ongoing_task": "You are in a kitchen. Your task is to: heat a potato and put it on the dining table."
+}

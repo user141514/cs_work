@@ -1,0 +1,11 @@
+{
+  "agent_square_commit": "8f5b3fe5d8a32f9b59d20370823bef2a2c86928c",
+  "feedback": "",
+  "few_shot_sha256": "b3ca53cafacfc5f6718ae65d4146e1c771eeaa10e844f3c40a0c4c95123983ad",
+  "model": "gpt-5.6-luna",
+  "prompt_bytes": 2871,
+  "prompt_sha256": "f0ceab5d48caf432505697e1b5e07f945c9067c9ce360210a8af6efb38400c0e",
+  "reasoning_effort": "medium",
+  "task_description_sha256": "55ee504d8ac8cfca8da350960d369975374d776f3b538e2fc23b9ca610af9c0c",
+  "task_type": "heat"
+}

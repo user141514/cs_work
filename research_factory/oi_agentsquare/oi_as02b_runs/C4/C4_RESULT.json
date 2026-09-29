@@ -1,0 +1,39 @@
+{
+  "arms": {
+    "oi": {
+      "action": "open microwave 1",
+      "correct": false,
+      "elapsed_seconds": 125.81815028190613,
+      "normalized": "open microwave 1",
+      "thread_id": "01a0edc8-ceaf-7103-8ab0-914b0fba0777",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 19293,
+        "output_tokens": 38,
+        "reasoning_output_tokens": 18
+      }
+    },
+    "original": {
+      "action": "open microwave 1",
+      "correct": false,
+      "elapsed_seconds": 138.78474187850952,
+      "normalized": "open microwave 1",
+      "thread_id": "01a0edc8-dd06-75f1-ada2-2cd08827399d",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 19255,
+        "output_tokens": 93,
+        "reasoning_output_tokens": 73
+      }
+    }
+  },
+  "checkpoint": "C4",
+  "checkpoint_verdict": "TIE_BOTH_WRONG",
+  "gold_action": "heat apple 1 with microwave 1",
+  "gold_normalized": "heat apple 1 with microwave 1",
+  "paired_difference": 0,
+  "scoring_boundary": "exact-normalized only; no post-hoc fuzzy or semantic partial credit",
+  "shared_error_note": "both arms chose open microwave 1 while frozen AgentSquare trajectory gold is direct heat; do not change gold after observing outputs"
+}

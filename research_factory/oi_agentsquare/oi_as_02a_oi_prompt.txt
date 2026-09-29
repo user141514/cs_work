@@ -1,0 +1,16 @@
+You will be given a successful case where you successfully completed a task, and an ongoing task. Extract only reusable memory-derived guidance for the ongoing task.
+
+Do NOT create a plan, ordered action sequence, subgoals, to-do list, or decide the next action.
+Do NOT take ownership of current-task planning. The planning module is the sole authority for current-task decomposition.
+
+Return concise guidance in two parts:
+1. Useful prior facts/patterns that may transfer.
+2. Constraints or pitfalls the planner/reasoner should consider.
+
+Success Case:
+You are in a kitchen. Your task is to: heat an egg and put it on the dining table. > open fridge 1 -> no egg. > go to countertop 3 -> see egg 2. > take egg 2 from countertop 3. > go to microwave 1. > heat egg 2 with microwave 1. > go to diningtable 1. > put egg 2 in/on diningtable 1. success.
+
+Ongoing task:
+You are in a kitchen. Your task is to: heat a potato and put it on the dining table.
+
+Memory Guidance:

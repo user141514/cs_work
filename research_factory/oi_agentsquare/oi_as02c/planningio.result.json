@@ -1,0 +1,14 @@
+{
+  "agent_text": "sub-task 1: {{'description': 'First I need to find and take an apple', 'reasoning instruction': 'Find an apple and pick it up', 'tool use instruction': None}}\n\nsub-task 2: {{'description': 'Next, I need to heat the apple', 'reasoning instruction': 'Place the apple in the microwave and heat it until hot', 'tool use instruction': None}}\n\nsub-task 3: {{'description': 'Finally, I need to put the hot apple in the fridge', 'reasoning instruction': 'Take the hot apple to the fridge and place it inside', 'tool use instruction': None}}",
+  "complete": true,
+  "elapsed_seconds": 131.77000284194946,
+  "jsonl": "research_factory\\oi_agentsquare\\oi_as02c\\planningio.jsonl",
+  "thread_id": "01a0edf3-6c93-7b32-abfe-98e7431ec5b7",
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 8960,
+    "input_tokens": 19864,
+    "output_tokens": 192,
+    "reasoning_output_tokens": 53
+  }
+}

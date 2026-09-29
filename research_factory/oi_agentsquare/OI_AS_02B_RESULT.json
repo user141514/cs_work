@@ -1,0 +1,99 @@
+{
+  "action_usage": {
+    "oi": {
+      "elapsed_seconds": 655.9547872543335,
+      "input_tokens": 97689,
+      "output_tokens": 214,
+      "reasoning_output_tokens": 109
+    },
+    "original": {
+      "elapsed_seconds": 672.9266817569733,
+      "input_tokens": 97499,
+      "output_tokens": 323,
+      "reasoning_output_tokens": 218
+    }
+  },
+  "checkpoint_results": [
+    {
+      "checkpoint": "C1",
+      "gold_action": "open fridge 1",
+      "oi_action": "open fridge 1",
+      "oi_correct": true,
+      "original_action": "open fridge 1",
+      "original_correct": true,
+      "paired_difference": 0,
+      "verdict": "TIE_BOTH_CORRECT"
+    },
+    {
+      "checkpoint": "C2",
+      "gold_action": "take apple 1 from diningtable 1",
+      "oi_action": "take apple 1",
+      "oi_correct": false,
+      "original_action": "take apple 1",
+      "original_correct": false,
+      "paired_difference": 0,
+      "verdict": "TIE_BOTH_WRONG"
+    },
+    {
+      "checkpoint": "C3",
+      "gold_action": "go to microwave 1",
+      "oi_action": "go to microwave 1",
+      "oi_correct": true,
+      "original_action": "go to microwave 1",
+      "original_correct": true,
+      "paired_difference": 0,
+      "verdict": "TIE_BOTH_CORRECT"
+    },
+    {
+      "checkpoint": "C4",
+      "gold_action": "heat apple 1 with microwave 1",
+      "oi_action": "open microwave 1",
+      "oi_correct": false,
+      "original_action": "open microwave 1",
+      "original_correct": false,
+      "paired_difference": 0,
+      "verdict": "TIE_BOTH_WRONG"
+    },
+    {
+      "checkpoint": "C5",
+      "gold_action": "put apple 1 in/on fridge 1",
+      "oi_action": "put apple 1 in fridge 1",
+      "oi_correct": false,
+      "original_action": "put apple 1 in fridge 1",
+      "original_correct": false,
+      "paired_difference": 0,
+      "verdict": "TIE_BOTH_WRONG"
+    }
+  ],
+  "claim_boundary": {
+    "not_supported": [
+      "No claim that O+I is globally ineffective.",
+      "No full-episode ALFWorld result.",
+      "No search-efficiency result.",
+      "No conclusion about cases where memory-derived and planner-derived plans conflict."
+    ],
+    "supported": "On this frozen same-task heat-task trajectory, orthogonalizing TP memory authority changed the memory representation but produced no next-action differences at any of five checkpoints."
+  },
+  "discordant_pairs": 0,
+  "memory_transform_usage": {
+    "oi": {
+      "elapsed_seconds": 138.06730008125305,
+      "input_tokens": 19980,
+      "output_tokens": 231,
+      "reasoning_output_tokens": 93
+    },
+    "original": {
+      "elapsed_seconds": 129.0977919101715,
+      "input_tokens": 19986,
+      "output_tokens": 164,
+      "reasoning_output_tokens": 73
+    }
+  },
+  "model_condition": "gpt-5.6-luna-medium",
+  "n_checkpoints": 5,
+  "oi_correct": 2,
+  "original_correct": 2,
+  "paired_difference_sum": 0,
+  "pilot": "OI-AS-02B",
+  "verdict": "NULL_ON_PILOT"
+}

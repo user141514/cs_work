@@ -1,0 +1,8 @@
+Plan
+
+1. Extract the successful case’s concrete sequence: initial diagnosis, evidence gathered, corrective action, verification, and completion signal.
+2. Identify which decisions or checks made that case succeed, especially timing, scope control, state inspection, and independent verification.
+3. Compare those actions against the ongoing task to locate the first missing or divergent step.
+4. Reapply the successful sequence to the ongoing task, adapting only task-specific details.
+5. Verify the result using the same kind of evidence that established success previously.
+6. Stop once the ongoing task reaches the equivalent completion condition; avoid unrelated changes.

@@ -1,0 +1,20 @@
+{
+  "action_schema_sha256": "9458cbca2c12f17d8083350eacfba739b238980a1b7336ea3a22f135380b1bf8",
+  "arms": {
+    "oi": {
+      "bytes": 2401,
+      "prompt_file": "D:/cs_work/research_factory/oi_agentsquare/oi_as02b_runs/C4/oi.prompt.txt",
+      "sha256": "96979581c4f22a147d0df0496f58298c3dc8b16fe4444b7acf7e34512ee8112c"
+    },
+    "original": {
+      "bytes": 2080,
+      "prompt_file": "D:/cs_work/research_factory/oi_agentsquare/oi_as02b_runs/C4/original.prompt.txt",
+      "sha256": "268c1b7240e3ecc9161c14d44b4ef080be6c2fdfa57be94a1f5164f1499608d4"
+    }
+  },
+  "checkpoint": "C4",
+  "gold_action": "heat apple 1 with microwave 1",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "template_sha256": "0de31973bd58cce6f3bad379c83c93073cca59db07ebb2f75b8717268e1092b2"
+}

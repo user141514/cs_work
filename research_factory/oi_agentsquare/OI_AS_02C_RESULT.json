@@ -1,0 +1,42 @@
+{
+  "decision_boundary": "lexical differences and extra low-level hints do not count; only ordered macro responsibility conflict counts",
+  "material_conflict": false,
+  "original_tp_signature": [
+    "ACQUIRE(apple)",
+    "HEAT(apple,microwave)",
+    "PLACE(apple,fridge)"
+  ],
+  "planningio_parsed_subtasks": [
+    {
+      "description": "First I need to find and take an apple",
+      "reasoning instruction": "Find an apple and pick it up",
+      "tool use instruction": null
+    },
+    {
+      "description": "Next, I need to heat the apple",
+      "reasoning instruction": "Place the apple in the microwave and heat it until hot",
+      "tool use instruction": null
+    },
+    {
+      "description": "Finally, I need to put the hot apple in the fridge",
+      "reasoning instruction": "Take the hot apple to the fridge and place it inside",
+      "tool use instruction": null
+    }
+  ],
+  "planningio_signature": [
+    "ACQUIRE(apple)",
+    "HEAT(apple,microwave)",
+    "PLACE(apple,fridge)"
+  ],
+  "planningio_thread_id": "01a0edf3-6c93-7b32-abfe-98e7431ec5b7",
+  "planningio_usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 8960,
+    "input_tokens": 19864,
+    "output_tokens": 192,
+    "reasoning_output_tokens": 53
+  },
+  "prompt_sha256": "f0ceab5d48caf432505697e1b5e07f945c9067c9ce360210a8af6efb38400c0e",
+  "same_target_in_few_shot_and_query": true,
+  "status": "NO_CONFLICT_EXPOSURE"
+}

@@ -1,0 +1,28 @@
+{
+  "action_schema_sha256": "9458cbca2c12f17d8083350eacfba739b238980a1b7336ea3a22f135380b1bf8",
+  "checkpoints": {
+    "C1": {
+      "gold_action": "open fridge 1",
+      "template_sha256": "11a131b74e2e505827ad961a977df079837b6db8e10d99637b78d75058a4d0e3"
+    },
+    "C2": {
+      "gold_action": "take apple 1 from diningtable 1",
+      "template_sha256": "a3970b6e94eaa88992a729efbe5cd87fefca64cdd702c5cb0ed45f0ff37a8bfd"
+    },
+    "C3": {
+      "gold_action": "go to microwave 1",
+      "template_sha256": "c1e53294bf7d6eb092d914a0d4aa7eb2e06250905f6a42a5e29aa568d3686183"
+    },
+    "C4": {
+      "gold_action": "heat apple 1 with microwave 1",
+      "template_sha256": "0de31973bd58cce6f3bad379c83c93073cca59db07ebb2f75b8717268e1092b2"
+    },
+    "C5": {
+      "gold_action": "put apple 1 in/on fridge 1",
+      "template_sha256": "857c42af517c3cd660cb35a27c6067ba51ac0a7a41c833bd4f7b407a066cc05b"
+    }
+  },
+  "memory_oi_sha256": "173efe9bbcbf1e62da32ee01acab38e4facf1629d793bfa7d8b879e1cb6300b6",
+  "memory_original_sha256": "8b6210e46b35e0c0a7ed71b3827c4564cc6733aa538ee0e30ee36b03c01c395f",
+  "memory_schema_sha256": "2b6339c386414488a37fd9d99af0d4687ffb1949f67bec4c98c417b3d5086801"
+}

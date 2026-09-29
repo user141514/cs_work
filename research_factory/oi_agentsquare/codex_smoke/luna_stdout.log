@@ -1,0 +1,28 @@
+Reading additional input from stdin...
+2026-09-29T12:22:06.863609Z ERROR codex_skills_extension::loader::host: failed to scan skill path file:///C:/Users/Administrator/.agents/skills/top-conference-topic-selection/nul: 函数不正确。 (os error 1)
+OpenAI Codex v0.149.1
+--------
+workdir: D:\cs_work
+model: gpt-5.6-luna
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a0ed1d-7708-7ba0-a9e3-3eb44a64f218
+--------
+user
+Return exactly a JSON object. Set answer to "OI_LUNA_SMOKE_OK" and model_condition to "gpt-5.6-luna-medium". Do not inspect files or use tools.
+warning: Skill descriptions were shortened to fit the skills context budget. Codex can still see every skill, but some descriptions are shorter. Disable unused skills or plugins to leave more room for the rest.
+hook: SessionStart
+hook: SessionStart Failed
+ERROR: Reconnecting... 2/5
+ERROR: Reconnecting... 3/5
+ERROR: Reconnecting... 4/5
+ERROR: Reconnecting... 5/5
+warning: Falling back from WebSockets to HTTPS transport. request timed out
+codex
+{"answer":"OI_LUNA_SMOKE_OK","model_condition":"gpt-5.6-luna-medium"}
+tokens used
+18,982
+{"answer":"OI_LUNA_SMOKE_OK","model_condition":"gpt-5.6-luna-medium"}

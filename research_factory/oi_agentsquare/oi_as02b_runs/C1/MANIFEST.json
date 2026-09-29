@@ -1,0 +1,20 @@
+{
+  "action_schema_sha256": "9458cbca2c12f17d8083350eacfba739b238980a1b7336ea3a22f135380b1bf8",
+  "arms": {
+    "oi": {
+      "bytes": 1761,
+      "prompt_file": "D:/cs_work/research_factory/oi_agentsquare/oi_as02b_runs/C1/oi.prompt.txt",
+      "sha256": "a68279af4a5a87eccdf7a2c5d60623d6fa6d30e0cd9a3e0a97ce94a2047adbc0"
+    },
+    "original": {
+      "bytes": 1440,
+      "prompt_file": "D:/cs_work/research_factory/oi_agentsquare/oi_as02b_runs/C1/original.prompt.txt",
+      "sha256": "6a5359e6572ae32c52a1d1fba5d8a8f5887ab694af2c5c5ca7bb1fc221c85d03"
+    }
+  },
+  "checkpoint": "C1",
+  "gold_action": "open fridge 1",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "template_sha256": "11a131b74e2e505827ad961a977df079837b6db8e10d99637b78d75058a4d0e3"
+}

@@ -1,0 +1,20 @@
+{
+  "action_schema_sha256": "9458cbca2c12f17d8083350eacfba739b238980a1b7336ea3a22f135380b1bf8",
+  "arms": {
+    "oi": {
+      "bytes": 2352,
+      "prompt_file": "D:/cs_work/research_factory/oi_agentsquare/oi_as02b_runs/C3/oi.prompt.txt",
+      "sha256": "cc52cd24be74da5d171da06050d3be12855c4940151a3c2fde98deb61fd86307"
+    },
+    "original": {
+      "bytes": 2031,
+      "prompt_file": "D:/cs_work/research_factory/oi_agentsquare/oi_as02b_runs/C3/original.prompt.txt",
+      "sha256": "f6599b782a104cc09120605a5a221df7b7ec6c582e13396e655e34a5d8287ec4"
+    }
+  },
+  "checkpoint": "C3",
+  "gold_action": "go to microwave 1",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "template_sha256": "c1e53294bf7d6eb092d914a0d4aa7eb2e06250905f6a42a5e29aa568d3686183"
+}

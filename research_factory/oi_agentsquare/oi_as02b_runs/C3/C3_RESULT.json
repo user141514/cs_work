@@ -1,0 +1,38 @@
+{
+  "arms": {
+    "oi": {
+      "action": "go to microwave 1",
+      "correct": true,
+      "elapsed_seconds": 132.9244589805603,
+      "normalized": "go to microwave 1",
+      "thread_id": "01a0edad-a04a-70f0-a1f2-0c6d4ed2cc4d",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 19644,
+        "output_tokens": 40,
+        "reasoning_output_tokens": 19
+      }
+    },
+    "original": {
+      "action": "go to microwave 1",
+      "correct": true,
+      "elapsed_seconds": 132.92348289489746,
+      "normalized": "go to microwave 1",
+      "thread_id": "01a0edad-a0f3-7233-8fd9-33fe99b6cc5d",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 19606,
+        "output_tokens": 45,
+        "reasoning_output_tokens": 24
+      }
+    }
+  },
+  "checkpoint": "C3",
+  "checkpoint_verdict": "TIE_BOTH_CORRECT",
+  "gold_action": "go to microwave 1",
+  "gold_normalized": "go to microwave 1",
+  "paired_difference": 0,
+  "scoring_boundary": "exact-normalized only; no post-hoc fuzzy or semantic partial credit"
+}

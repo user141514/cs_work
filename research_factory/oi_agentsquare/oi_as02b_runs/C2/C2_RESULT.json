@@ -1,0 +1,38 @@
+{
+  "arms": {
+    "oi": {
+      "action": "take apple 1",
+      "correct": false,
+      "elapsed_seconds": 132.1005516052246,
+      "normalized": "take apple 1",
+      "thread_id": "01a0ed92-6828-7892-ac7f-3373c906ea6c",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 19590,
+        "output_tokens": 41,
+        "reasoning_output_tokens": 21
+      }
+    },
+    "original": {
+      "action": "take apple 1",
+      "correct": false,
+      "elapsed_seconds": 132.09957194328308,
+      "normalized": "take apple 1",
+      "thread_id": "01a0ed92-6825-7d60-b088-c9fdb4d8ef69",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 19552,
+        "output_tokens": 52,
+        "reasoning_output_tokens": 32
+      }
+    }
+  },
+  "checkpoint": "C2",
+  "checkpoint_verdict": "TIE_BOTH_WRONG",
+  "gold_action": "take apple 1 from diningtable 1",
+  "gold_normalized": "take apple 1 from diningtable 1",
+  "paired_difference": 0,
+  "scoring_boundary": "exact-normalized only; no post-hoc fuzzy or semantic partial credit"
+}

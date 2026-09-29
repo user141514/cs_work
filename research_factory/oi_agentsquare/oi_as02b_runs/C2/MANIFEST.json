@@ -1,0 +1,20 @@
+{
+  "action_schema_sha256": "9458cbca2c12f17d8083350eacfba739b238980a1b7336ea3a22f135380b1bf8",
+  "arms": {
+    "oi": {
+      "bytes": 2177,
+      "prompt_file": "D:/cs_work/research_factory/oi_agentsquare/oi_as02b_runs/C2/oi.prompt.txt",
+      "sha256": "11bbe1747c1766392fe1e81d4edddfb2e92708bbe747825c71116c3f2ec8dd93"
+    },
+    "original": {
+      "bytes": 1856,
+      "prompt_file": "D:/cs_work/research_factory/oi_agentsquare/oi_as02b_runs/C2/original.prompt.txt",
+      "sha256": "4fcf6e41fb81697327b78555698d1bc5b7e79396effc249e6bf8cc3d0cc6284d"
+    }
+  },
+  "checkpoint": "C2",
+  "gold_action": "take apple 1 from diningtable 1",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "template_sha256": "a3970b6e94eaa88992a729efbe5cd87fefca64cdd702c5cb0ed45f0ff37a8bfd"
+}

@@ -1,0 +1,17 @@
+{
+  "agent_text": "{\"action\":\"put apple 1 in fridge 1\"}",
+  "complete": true,
+  "elapsed_seconds": 129.8872709274292,
+  "jsonl": "research_factory\\oi_agentsquare\\oi_as02b_runs\\C5\\original.jsonl",
+  "parsed": {
+    "action": "put apple 1 in fridge 1"
+  },
+  "thread_id": "01a0edd6-b14b-7610-a233-38594d18e2ef",
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 0,
+    "input_tokens": 19698,
+    "output_tokens": 81,
+    "reasoning_output_tokens": 57
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "agent_text": "{\"action\":\"open microwave 1\"}",
+  "complete": true,
+  "elapsed_seconds": 125.81815028190613,
+  "jsonl": "research_factory\\oi_agentsquare\\oi_as02b_runs\\C4\\oi.jsonl",
+  "parsed": {
+    "action": "open microwave 1"
+  },
+  "thread_id": "01a0edc8-ceaf-7103-8ab0-914b0fba0777",
+  "usage": {
+    "cache_write_input_tokens": 0,
+    "cached_input_tokens": 0,
+    "input_tokens": 19293,
+    "output_tokens": 38,
+    "reasoning_output_tokens": 18
+  }
+}

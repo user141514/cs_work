@@ -1,0 +1,37 @@
+{
+  "arms": {
+    "oi": {
+      "action": "open fridge 1",
+      "correct": true,
+      "elapsed_seconds": 141.23313760757446,
+      "normalized": "open fridge 1",
+      "thread_id": "01a0ed84-e1b1-7bd2-877f-684782d696bd",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 19426,
+        "output_tokens": 51,
+        "reasoning_output_tokens": 31
+      }
+    },
+    "original": {
+      "action": "open fridge 1",
+      "correct": true,
+      "elapsed_seconds": 139.231614112854,
+      "normalized": "open fridge 1",
+      "thread_id": "01a0ed84-e1c8-7c83-9108-d907bba056fd",
+      "usage": {
+        "cache_write_input_tokens": 0,
+        "cached_input_tokens": 0,
+        "input_tokens": 19388,
+        "output_tokens": 52,
+        "reasoning_output_tokens": 32
+      }
+    }
+  },
+  "checkpoint": "C1",
+  "checkpoint_verdict": "TIE_BOTH_CORRECT",
+  "gold_action": "open fridge 1",
+  "gold_normalized": "open fridge 1",
+  "paired_difference": 0
+}

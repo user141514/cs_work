@@ -1,0 +1,20 @@
+{
+  "action_schema_sha256": "9458cbca2c12f17d8083350eacfba739b238980a1b7336ea3a22f135380b1bf8",
+  "arms": {
+    "oi": {
+      "bytes": 2636,
+      "prompt_file": "D:/cs_work/research_factory/oi_agentsquare/oi_as02b_runs/C5/oi.prompt.txt",
+      "sha256": "d64fd80730d2b225c80c608f7152efbaf2b6d3b7bc6736c8c0c18d8ce2acdbe4"
+    },
+    "original": {
+      "bytes": 2315,
+      "prompt_file": "D:/cs_work/research_factory/oi_agentsquare/oi_as02b_runs/C5/original.prompt.txt",
+      "sha256": "2c81d393a60a24d979d2ea447f13533e1b9b7be6150b0460e47f33dd59ff8683"
+    }
+  },
+  "checkpoint": "C5",
+  "gold_action": "put apple 1 in/on fridge 1",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "template_sha256": "857c42af517c3cd660cb35a27c6067ba51ac0a7a41c833bd4f7b407a066cc05b"
+}

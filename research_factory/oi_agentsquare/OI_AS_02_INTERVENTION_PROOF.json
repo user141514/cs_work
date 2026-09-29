@@ -1,0 +1,21 @@
+{
+  "changed_files": [
+    "memory_modules.py",
+    "module_map.py"
+  ],
+  "fixed_agent_config": {
+    "memory_oi": "TP-OI",
+    "memory_original": "TP",
+    "planning": "IO",
+    "reasoning": "IO",
+    "tooluse": "None"
+  },
+  "model_condition": "GPT-5.6 Luna / medium / Codex",
+  "oi_memory_llm_calls_per_retrieved_result": 1,
+  "oi_output_authority": "bounded non-authoritative guidance",
+  "original_memory_llm_calls_per_retrieved_result": 1,
+  "original_output_authority": "current-task plan",
+  "original_runtime_byte_identical": true,
+  "retrieval_k": 1,
+  "storage_addMemory_inherited_unchanged": true
+}
