@@ -10,8 +10,7 @@ Build and validate a reusable research-task workflow on the dedicated D:/cs_work
 
 ## Plan
 1. Verify the mechanisms and implementation seams of the selected papers; inspect existing local authority and execution assets; define one versioned integration and hard-constraint contract.
-2. Implement the smallest offline admission/receipt gate; use deterministic counterexamples and one historical audit fixture before any live wiring or paid replay.
-   Native-verification insertion after WFE-02: verify the exact checker on PC2 before considering a real execution adapter; independent tests do not establish Windows runtime parity.
+2. COMPLETE / FROZEN: gate, native verification and bounded real local execution are accepted through consolidated WFE-05. Historical Stage-B live integration is not a research prerequisite. Do not add another engineering stage without a concrete blocker in an actual research task.
 3. Freeze one real complex task's initial information, old-workflow baseline, common resources, evaluator and stopping rules; label contaminated retrospective material as development-only.
 4. Execute one bounded paired replay from isolated initial states; compare delivered-task correctness/quality, cost, wall time and rework under a method-neutral evaluator. Do not equate document quality or constraint counts with success.
 5. Keep, modify or terminate this workflow version according to real evidence. Add further tasks only when the preceding decision justifies them.
@@ -19,13 +18,14 @@ Build and validate a reusable research-task workflow on the dedicated D:/cs_work
 Only the current step is authorized. Listing future steps is NOT execution authorization.
 
 ## CURRENT_STEP
-ID: WFE-04
-Status: COMPLETED_DRY_RUN_ADAPTER__LIVE_BLOCKED
-Authorization: explicit user request on 2026-09-29 to execute WFE-04.
-Result authority: WFE04_RESULT.md.
-Observed: gate lease revalidation and dry-run command preparation are implemented and verified; the actual Stage-B launcher hash is pinned and its command can be prepared without invoking PowerShell/model/network. Native PC2 full suite passes 74/74 with 0 failures/errors/skips.
-Live blocker: the real launcher mutates `D:/stageb_agent_runtime/arms|venvs/...` and `D:/cs_work/external/spec_stageb_logs`, which are outside the valid lease's declared session/write scopes. The new repository also lacks the historical backend freeze receipt and source arm. Atomic dispatch claim and gate-owned executor parameter freezing are not yet implemented.
-Decision: KEEP the gate and dry-run adapter; BLOCK live launch. No model/agent/API/GPU launch, Watchdog change or historical replay occurred.
+ID: WFE-05
+Status: COMPLETE_LOCAL_BASELINE_FROZEN
+Authorization: user requests ending the engineering spiral and resolving the remaining engineering together in this turn.
+Result authority: WFE05_RESULT.md.
+Delivered: local_runner.py and real-process acceptance tests. Reused Gate.initialize/admit for exclusive invocation ownership and atomic unit admission, without another dispatch service/state machine. Frozen contract -> actual local Python execution -> artifacts/receipt -> STOP is now verified on PC2.
+Evidence: 10/10 native real-process acceptance cases passed; the existing offline verifier ran as a real child and reported 74/74 pass, 0 failures/errors/skips. A subsequent same-run CLI invocation was rejected as STATE_EXISTS. Two independent workers overlapped; conflicting scopes serialized; failed dependent work did not advance. Core gate and historical launcher were not changed.
+Decision: KEEP and FREEZE the bounded engineering baseline; retire the historical Stage-B adapter from the critical path. No WFE-06 infrastructure prerequisite.
+Boundary: trusted, audited, bounded local Python scripts only; no OS sandbox, paid/model/agent launch, Watchdog change or scientific effectiveness claim. No automatic retry of uncertain RUNNING work. See WFE05_RESULT.md for exact limits.
 
 ## Previous completed step
 ID: WFE-01
@@ -64,7 +64,7 @@ Decision: KEEP this engineering master plan. Adopt v0.1 as the implementation sp
 
 Unsupported: no superiority over any baseline, no historical counterfactual victory, no live runtime enforcement, no full reproduction, no publishable-method claim. No paid model/agent/GPU run or workflow search was started in WFE-01.
 
-## Current-step acceptance (promoted from previous NEXT_STEP)
+## Historical WFE-02 acceptance (not current authorization)
 ID: WFE-02
 Status: AUTHORIZED_BY_CURRENT_USER
 Action: implement the smallest offline admission/receipt gate for the frozen v0.1 interfaces, using a fake dispatch/receipt driver first. Reuse local snapshot/accounting helpers only after inspection; do not call legacy launch/setup scripts for smoke.
@@ -94,11 +94,16 @@ Result authority: WFE04_RESULT.md. The decisive result is not merely that argv c
 
 Decision: KEEP the engineering plan, but insert one model-free dispatch-contract step before any live executor work.
 
+## WFE-05 decision
+
+The earlier plan to add another dispatch contract/state-machine layer is superseded. The existing gate primitive plus one direct runner closes the required trusted-local execution path. This is a simplification of implementation, not a changed research goal or a rewritten negative result.
+
+Freeze the baseline. Repair engineering only when an actual research task exposes a decision-changing defect. Historical Stage-B revival, general agent-platform work, background services, and speculative sandbox/lease extensions are not automatic next steps.
+
 ## NEXT_STEP
-ID: WFE-05
+ID: RESEARCH-01
 Status: PLANNED_NOT_AUTHORIZED
-Action: add a gate-owned immutable dispatch contract and atomic single-use claim transition, freezing executor identity/hash, prompt, executor parameters and all projected mutation paths. Every claimed path must be inside declared session/write authority.
-Acceptance: deterministic concurrent tests prove one claim wins, drift is rejected, claimed paths are authorized, and no process/model/network call occurs.
-Boundary: do not modify or launch the historical Stage-B PowerShell runner in WFE-05. Its current path mismatch remains evidence, not something to hide.
-Forbidden: model/API/GPU/agent launch, historical replay, Watchdog changes, automatic WFE-06.
-STOP: WFE-04 is complete; WFE-05 has not been executed.
+Action: choose one reconstructable real complex historical task as DEVELOPMENT_ONLY, freeze common initial inputs/resources and method-neutral endpoint evaluation, then perform the first bounded workflow replay using existing authorized tools. Keep known outcomes outside the executing arm. Do not call a retrospective developmental task held-out evidence.
+Acceptance: actual task artifacts and independent endpoint checks, with comparable resources and reported rework/cost; no claim that passing gate tests proves a better scientific workflow.
+Boundary: no paid model run or new engineering expansion is authorized by this plan alone.
+STOP: consolidated WFE-05 complete. No WFE-06 prerequisite and no automatic RESEARCH-01 execution.

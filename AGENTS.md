@@ -48,9 +48,11 @@ Workflow-policy changes require a new version. Scientific negative evidence only
 
 ## Current execution state
 
-WFE-04 is complete under `research_factory/workflow_engineering/WFE04_RESULT.md`: a real Stage-B launcher command can be prepared behind a revalidated gate lease without launching PowerShell/model/network, but live integration is BLOCKED because the historical launcher owns arm/venv/log paths outside the lease scope and atomic dispatch/parameter freezing are not yet gate-owned.
+Consolidated WFE-05 is complete: `local_runner.py` executes one frozen step of audited local Python work, collects receipts and stops. Native real-process acceptance: 10/10; the existing verifier executed as a real child: 74/74. Details: `research_factory/workflow_engineering/WFE05_RESULT.md`. The runtime overlay is `0.2-local`; usage is in the workflow README.
 
-The next planned step is WFE-05: add a model-free immutable dispatch contract and atomic single-use claim inside the gate. It is not authorized merely by being listed. Do not launch or modify the historical Stage-B PowerShell runner in WFE-05.
+The engineering baseline is FROZEN. The historical Stage-B adapter is not on the active critical path. Do not add WFE-06, revive the old launcher, build a general agent platform, or expand sandbox/lease infrastructure without a concrete failure of an actual research task that requires the change. The next planned step is RESEARCH-01, a bounded developmental historical-task replay under common inputs/resources and a method-neutral evaluator. Listing it does not authorize execution or model spending.
+
+This baseline covers trusted local scripts, not arbitrary untrusted agents or OS-level isolation. Direct MCP/shell bypass and automatic crash recovery are not claimed solved. Do not translate local execution success into scientific superiority.
 
 The historical BFSC / selector work in `research_factory/computer_topconf_2027/` is PAUSED_UNRESOLVED scientific evidence, not current launch authorization.
 

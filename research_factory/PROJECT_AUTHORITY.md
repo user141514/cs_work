@@ -50,9 +50,16 @@ Completed execution-boundary probe:
 - No PowerShell/model/network launch occurred.
 - Live launch remains BLOCKED: projected arm/venv/log paths fall outside the valid lease's declared path authority; the new repo also lacks the historical backend freeze receipt/source arm; atomic dispatch claim and gate-owned executor parameter freezing are not implemented.
 
+Current accepted baseline:
+- Consolidated WFE-05: real trusted-local execution using existing Gate.initialize/admit, with no additional dispatch service or state machine.
+- Native PC2 real-process suite: 10/10 passed. Existing offline verifier launched through the runner: 74/74, STOPPED, repeated invocation STATE_EXISTS.
+- Active entry: workflow_engineering/local_runner.py; runtime overlay 0.2-local; result: workflow_engineering/WFE05_RESULT.md.
+- Baseline FROZEN; the old Stage-B adapter is historical and no longer a prerequisite. This does not make the historical runner live-ready or establish a paid-agent/OS-sandbox capability.
+
 Next planned step:
-- WFE-05: model-free immutable dispatch contract + atomic single-use claim in the gate.
+- RESEARCH-01: first bounded DEVELOPMENT_ONLY historical complex-task replay with common inputs/resources and method-neutral endpoint evaluation.
 - Status: PLANNED_NOT_AUTHORIZED.
+- No further engineering stage absent a concrete, decision-changing research-task blocker.
 
 ## 4. Retained scientific state
 

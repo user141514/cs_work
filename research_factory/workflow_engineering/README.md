@@ -1,6 +1,42 @@
-# WFE-02：离线执行准入与结果提交检查器
+# WFE：本地任务执行基线
 
-## 当前状态
+## 当前入口：local_runner.py（0.2-local，WFE-05 后冻结）
+
+一次完成：冻结任务契约 → 原子准入 → 实际执行本地 Python 任务 → 收取产物与回执 → STOP。
+不再把旧 Stage-B launcher 作为前置条件，不继续造 dispatcher、服务或 agent 平台。
+
+在本目录运行一个完整示例（自动在系统临时目录准备独立快照；无模型费用）：
+
+```sh
+python -B runtime_tests/test_local_runner.py --smoke
+```
+
+它实际启动现有离线验证器，检查结果与数据库，随后再次尝试同一命令并确认被拒绝；输出真实契约、产物与数据库路径。
+
+对已有的受信本地任务契约使用：
+
+```sh
+python -B local_runner.py --contract PATH_TO_CONTRACT_JSON --state-dir PATH_TO_NEW_CONTROL_DIR
+```
+
+契约沿用原 gate 的 TaskContract。额外固定 `identity.workflow_version=0.2-local`、`runner.kind=local-python-v1`、`runner.python_sha256`、未授权的 `next_step`；每个单元增加 `execution={script,args,timeout_seconds,log_dir}`。脚本必须位于已冻结输入和声明的读集合内，日志必须位于该单元写集合内。当前解释器固定，不接受运行后另传命令或 lease。完整可运行模板见 `runtime_tests/test_local_runner.py` 的 `fixture` / `verifier_fixture`。
+
+最多两个独立单元并行；真实依赖等待前置证据；冲突写入串行；失败停止后续单元。状态目录与 contract 必须放在 worker 工作区外。相同数据库不重置、不自动恢复重跑；中断留下的 RUNNING 状态需检查，不能直接假定执行没发生。
+
+完整验收分为两组，后一组有意启动真实本地子进程：
+
+```sh
+python -B -m unittest discover -s tests -v
+python -B -m unittest discover -s runtime_tests -v
+```
+
+验收结果：74 个无模型 gate/adapter 测试通过；10 个真实进程验收用例通过（含多个反例子情况）。这不是工作流效果或科学结论的评分。
+
+边界：只适用于已审查、有限时、不会产生子进程树的受信本地 Python 脚本，不是任意代码沙箱。路径/哈希/回执检查不能阻止脚本未声明的操作；模型调用、网络计量、外部 agent、OS 权限隔离都没有被此基线证明。非零退出/超时/缺产物是执行无效，不是科研负例。`KEEP/MODIFY` 只收尾执行契约，不自动修改科研总计划。
+
+工程已收尾，下一步是历史复杂任务验证。仅当真实任务暴露影响结论的故障时，才做最小工程修补；不自动开 WFE-06。
+
+## 历史背景：WFE-02 至 WFE-04
 
 实现的是一个独立的、无模型的检查器，不是完整工作流平台，也不是操作系统沙箱。WFE-03.1 后的活跃目录为 `D:/cs_work/research_factory/workflow_engineering/`；`D:/bio_paper` 中的旧副本仅保留为历史来源。
 
