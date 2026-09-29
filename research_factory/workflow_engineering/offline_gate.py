@@ -288,6 +288,7 @@ class Gate:
             require(attempt["status"] == "RUNNING", "LEASE_NOT_ACTIVE")
             require(attempt["action"] == lease.get("action") and attempt["identity"] == lease.get("identity"),
                     "STALE_LEASE")
+            check_hashes(attempt["read_hashes"], "READ_SET_CHANGED")
             return {"attempt": copy.deepcopy(attempt), "workspace": state["contract"]["workspace"]}
 
     @staticmethod
