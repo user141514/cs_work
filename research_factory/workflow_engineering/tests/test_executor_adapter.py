@@ -12,6 +12,7 @@ from pathlib import Path
 from unittest.mock import patch
 
 import offline_gate as gate_mod
+import verify_offline as verifier_mod
 
 try:
     import executor_adapter as adapter
@@ -183,6 +184,10 @@ class AdapterTests(unittest.TestCase):
              patch.object(subprocess, "Popen", side_effect=AssertionError("process forbidden")):
             plan = self.prepare()
         self.assertFalse(plan["would_launch"])
+
+    def test_verifier_metadata_is_repo_neutral(self):
+        self.assertEqual(verifier_mod.SUITE_ID, "workflow_engineering_offline")
+        self.assertNotIn("bio_paper", verifier_mod.SCOPE)
 
     def test_cli_emits_json_plan_without_launch(self):
         lease_path = self.base / "lease.json"

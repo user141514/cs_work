@@ -17,6 +17,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import patch
 
+SUITE_ID = "workflow_engineering_offline"
+SCOPE = "Only the workflow-engineering offline gate/adapter subsystem; not the whole cs_work project or a live executor"
+
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
@@ -42,7 +45,7 @@ def main():
             ast.parse(source.read_text(encoding="utf-8"), filename=str(source), feature_version=(3, 7))
             syntax = "PYTHON_3_7_GRAMMAR_PASS_NOT_RUNTIME_PROOF"
     report = {
-        "step": "WFE-02", "utc": datetime.now(timezone.utc).isoformat(),
+        "suite": SUITE_ID, "utc": datetime.now(timezone.utc).isoformat(),
         "python": platform.python_version(), "platform": platform.platform(),
         "tests_run": result.testsRun, "failures": len(result.failures),
         "errors": len(result.errors), "skipped": len(result.skipped),
@@ -52,7 +55,7 @@ def main():
         "gate_has_model_or_network_client": False,
         "historical_fixture": "DEVELOPMENT_ONLY_SYNTHETIC_REGRESSION_NOT_REPLAY",
         "source_sha256": hashes,
-        "scope": "Only the offline checker subsystem; not the whole bio_paper project or a live executor"
+        "scope": SCOPE
     }
     (output / "test_output.txt").write_text(transcript.getvalue(), encoding="utf-8")
     (output / "result.json").write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
