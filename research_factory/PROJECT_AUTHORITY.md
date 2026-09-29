@@ -50,14 +50,20 @@ Completed execution-boundary probe:
 - No PowerShell/model/network launch occurred.
 - Live launch remains BLOCKED: projected arm/venv/log paths fall outside the valid lease's declared path authority; the new repo also lacks the historical backend freeze receipt/source arm; atomic dispatch claim and gate-owned executor parameter freezing are not implemented.
 
-Current accepted baseline:
+Current accepted engineering baseline:
 - Consolidated WFE-05: real trusted-local execution using existing Gate.initialize/admit, with no additional dispatch service or state machine.
-- Native PC2 real-process suite: 10/10 passed. Existing offline verifier launched through the runner: 74/74, STOPPED, repeated invocation STATE_EXISTS.
-- Active entry: workflow_engineering/local_runner.py; runtime overlay 0.2-local; result: workflow_engineering/WFE05_RESULT.md.
-- Baseline FROZEN; the old Stage-B adapter is historical and no longer a prerequisite. This does not make the historical runner live-ready or establish a paid-agent/OS-sandbox capability.
+- Baseline FROZEN; the old Stage-B adapter is historical and no longer a prerequisite.
+
+Completed developmental replay:
+- RESEARCH-01: S3 `pi-mono-auto-93c17d3b`, base `5133697bc454da5595cf4b0c70d3c2c725677`, fresh GPT-5.6 Sol/xhigh.
+- Assistant history, oracle files, reference patch, fix summary and verifier outcomes were not supplied in the task checkout/prompt; no observed artifact indicates their use. The provider session was not OS-sandboxed, so strict non-access is not mechanically proven.
+- Same independent evaluator: authoritative Phase-A extension public behavior PASS / lifecycle FAIL; final Phase-B extension public behavior PASS / lifecycle PASS / overall PASS.
+- Mechanism: the late typing freeze came from `ctx.ui.custom()` replacing/focusing away from the editor, not repeated streaming-update recreation. The final repair changed only UI projection to keyed `setWidget()` while preserving protocol/state boundaries.
+- Temporal validity limit: an unexplained extra provider turn after valid Phase-A completion changed the focused test by +20/-3 before the late revision. The actual Phase-B checkout inherited this drift. Therefore RESEARCH-01 is a DEVELOPMENTAL_MECHANISM_PASS but an invalid clean workflow-transition comparison. The first-completion `phase_a/` snapshot is authoritative; the post-completion incident state is retained separately.
+- Phase A also made a blocked npx registry attempt.
 
 Next planned step:
-- RESEARCH-01: first bounded DEVELOPMENT_ONLY historical complex-task replay with common inputs/resources and method-neutral endpoint evaluation.
+- RESEARCH-02: from the authoritative Phase-A bytes, create two isolated fresh late-revision arms (STRUCTURED vs RAW_AGENT) with identical GPT-5.6 Sol/xhigh, requirements, runtime constraints and frozen evaluator; differ only in mandatory workflow scaffolding. Do not expose historical Phase-B artifacts.
 - Status: PLANNED_NOT_AUTHORIZED.
 - No further engineering stage absent a concrete, decision-changing research-task blocker.
 

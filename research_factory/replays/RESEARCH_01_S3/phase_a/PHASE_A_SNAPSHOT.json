@@ -1,0 +1,18 @@
+{
+  ".pi/extensions/signal-ui.ts": {
+    "sha256": "4b161319e53b11fc8d2e8e6cd7fc64fb1fa2c3f003cfe2b41bae0befb5792f3e",
+    "bytes": 2881,
+    "lines": 100
+  },
+  "packages/coding-agent/test/signal-ui-extension.test.ts": {
+    "sha256": "b0392576cd62b2bcd82d6c75a10b8179dba8efd1654a125f3d42deb3ad5ffef5",
+    "bytes": 4178,
+    "lines": 142
+  },
+  "phase_a_patch_sha256": "af6c01467bf0085e3df666e3f11e71ae86827a96ed27df43e9962f6b91a1b6a3",
+  "head": "5133697bc454da5595655cf4b0c70d3c2c725677",
+  "tracked_status": [
+    "?? .pi/extensions/signal-ui.ts",
+    "?? packages/coding-agent/test/signal-ui-extension.test.ts"
+  ]
+}

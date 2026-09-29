@@ -1,0 +1,255 @@
+diff --git "a/C:\\Users\\Administrator\\AppData\\Local\\Temp\\research01_s3_pi_mono\\.pi\\extensions\\signal-ui.ts" "b/C:\\Users\\Administrator\\AppData\\Local\\Temp\\research01_s3_pi_mono\\.pi\\extensions\\signal-ui.ts"
+new file mode 100644
+index 0000000..b1f0b9d
+--- /dev/null
++++ "b/C:\\Users\\Administrator\\AppData\\Local\\Temp\\research01_s3_pi_mono\\.pi\\extensions\\signal-ui.ts"
+@@ -0,0 +1,100 @@
++import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
++
++export const OPEN_SIGNAL = "[[SIGNAL_UI_OPEN]]";
++export const CLOSE_SIGNAL = "[[SIGNAL_UI_CLOSE]]";
++export const CONTROL_MESSAGE_TYPE = "signal-ui-control";
++
++const CONTROL_MESSAGE = `## Signal UI protocol
++
++For the next multi-turn task, coordinate with the signal UI using these exact signals:
++
++- On the first assistant turn, emit ${OPEN_SIGNAL} as the entire textual content of the response. You may call a tool in that response to continue the task.
++- On the final assistant turn, emit ${CLOSE_SIGNAL} as the entire textual content of the response.
++- Keep working normally between those turns.
++
++Never emit both signals in the same response. Do not quote, wrap, explain, or combine a signal with other text.`;
++
++type Signal = "open" | "close";
++
++function getSignal(message: { role: string; content?: unknown }): Signal | undefined {
++	if (message.role !== "assistant" || !Array.isArray(message.content)) return undefined;
++
++	const text = message.content
++		.filter((block): block is { type: "text"; text: string } => {
++			if (typeof block !== "object" || block === null) return false;
++			return "type" in block && block.type === "text" && "text" in block && typeof block.text === "string";
++		})
++		.map((block) => block.text)
++		.join("")
++		.trim();
++
++	if (text === OPEN_SIGNAL) return "open";
++	if (text === CLOSE_SIGNAL) return "close";
++	return undefined;
++}
++
++export default function signalUiExtension(pi: ExtensionAPI) {
++	let active = false;
++	let dismissUi: (() => void) | undefined;
++
++	const closeUi = () => {
++		const dismiss = dismissUi;
++		dismissUi = undefined;
++		dismiss?.();
++	};
++
++	pi.registerCommand("start", {
++		description: "Start the signal-driven UI test",
++		handler: async (_args, ctx) => {
++			if (!ctx.hasUI) {
++				ctx.ui.notify("Signal UI test requires interactive mode", "error");
++				return;
++			}
++
++			closeUi();
++			active = true;
++			pi.sendMessage({
++				customType: CONTROL_MESSAGE_TYPE,
++				content: CONTROL_MESSAGE,
++				display: false,
++			});
++		},
++	});
++
++	pi.on("message_end", async (event, ctx) => {
++		if (!active) return;
++
++		const signal = getSignal(event.message);
++		if (signal === "open" && !dismissUi) {
++			let thisUiDismiss: (() => void) | undefined;
++			const uiClosed = ctx.ui.custom<void>((_tui, theme, _keybindings, done) => {
++				thisUiDismiss = () => done();
++				dismissUi = thisUiDismiss;
++
++				return {
++					render: () => [
++						theme.fg("accent", "Signal UI is open"),
++						theme.fg("dim", `Waiting for signal: ${CLOSE_SIGNAL}`),
++					],
++					invalidate: () => {},
++				};
++			});
++
++			void uiClosed.then(
++				() => {
++					if (dismissUi === thisUiDismiss) dismissUi = undefined;
++				},
++				() => {
++					if (dismissUi === thisUiDismiss) dismissUi = undefined;
++					active = false;
++				},
++			);
++			return;
++		}
++
++		if (signal === "close" && dismissUi) {
++			active = false;
++			closeUi();
++		}
++	});
++}
+
+diff --git "a/C:\\Users\\Administrator\\AppData\\Local\\Temp\\research01_s3_pi_mono\\packages\\coding-agent\\test\\signal-ui-extension.test.ts" "b/C:\\Users\\Administrator\\AppData\\Local\\Temp\\research01_s3_pi_mono\\packages\\coding-agent\\test\\signal-ui-extension.test.ts"
+new file mode 100644
+index 0000000..b7d8d57
+--- /dev/null
++++ "b/C:\\Users\\Administrator\\AppData\\Local\\Temp\\research01_s3_pi_mono\\packages\\coding-agent\\test\\signal-ui-extension.test.ts"
+@@ -0,0 +1,142 @@
++import { describe, expect, it, vi } from "vitest";
++import signalUiExtension, {
++	CLOSE_SIGNAL,
++	CONTROL_MESSAGE_TYPE,
++	OPEN_SIGNAL,
++} from "../../../.pi/extensions/signal-ui.js";
++import type { MessageEndEvent } from "../src/core/extensions/types.js";
++import type {
++	ExtensionAPI,
++	ExtensionCommandContext,
++	ExtensionContext,
++	ExtensionHandler,
++	ExtensionUIContext,
++	RegisteredCommand,
++} from "../src/index.js";
++
++type MessageEndHandler = ExtensionHandler<MessageEndEvent>;
++type CommandOptions = Omit<RegisteredCommand, "name">;
++
++function assistantMessageEnd(text: string): MessageEndEvent {
++	return {
++		type: "message_end",
++		message: {
++			role: "assistant",
++			content: [{ type: "text", text }],
++		} as MessageEndEvent["message"],
++	};
++}
++
++function createHarness() {
++	let messageEndHandler: MessageEndHandler | undefined;
++	let uiOpen = false;
++
++	const commands = new Map<string, CommandOptions>();
++	const sendMessage = vi.fn();
++	const notify = vi.fn();
++	const custom = vi.fn(
++		(
++			factory: (
++				tui: never,
++				theme: never,
++				keybindings: never,
++				done: (result: void) => void,
++			) => unknown,
++		): Promise<void> =>
++			new Promise<void>((resolve) => {
++				factory(
++					undefined as never,
++					{ fg: (_color: string, text: string) => text } as never,
++					undefined as never,
++					() => {
++						uiOpen = false;
++						resolve();
++					},
++				);
++				uiOpen = true;
++			}),
++	);
++
++	const api = {
++		registerCommand: (name: string, options: CommandOptions) => commands.set(name, options),
++		on: (event: string, handler: MessageEndHandler) => {
++			if (event === "message_end") messageEndHandler = handler;
++		},
++		sendMessage,
++	} as unknown as ExtensionAPI;
++
++	const context = {
++		hasUI: true,
++		ui: { custom, notify } as unknown as ExtensionUIContext,
++	} as unknown as ExtensionCommandContext;
++
++	signalUiExtension(api);
++
++	return {
++		commands,
++		context,
++		custom,
++		getMessageEndHandler: () => {
++			if (!messageEndHandler) throw new Error("message_end handler was not registered");
++			return messageEndHandler;
++		},
++		isUiOpen: () => uiOpen,
++		sendMessage,
++	};
++}
++
++async function start(harness: ReturnType<typeof createHarness>): Promise<void> {
++	const command = harness.commands.get("start");
++	if (!command) throw new Error("/start command was not registered");
++	await command.handler("", harness.context);
++}
++
++describe("signal UI extension", () => {
++	it("starts the protocol with one hidden custom message", async () => {
++		const harness = createHarness();
++
++		await start(harness);
++
++		expect(harness.sendMessage).toHaveBeenCalledOnce();
++		expect(harness.sendMessage).toHaveBeenCalledWith(
++			{
++				customType: CONTROL_MESSAGE_TYPE,
++				content: expect.stringContaining(OPEN_SIGNAL),
++				display: false,
++			},
++		);
++		const [{ content }] = harness.sendMessage.mock.calls[0] as [{ content: string }];
++		expect(content).toContain(CLOSE_SIGNAL);
++		expect(content).toContain("Never emit both signals in the same response");
++	});
++
++	it("opens and closes the UI only on separate exact assistant signals", async () => {
++		const harness = createHarness();
++		const handleMessageEnd = harness.getMessageEndHandler();
++
++		await start(harness);
++		await handleMessageEnd(assistantMessageEnd(`${OPEN_SIGNAL}\n${CLOSE_SIGNAL}`), harness.context as ExtensionContext);
++		expect(harness.custom).not.toHaveBeenCalled();
++
++		await handleMessageEnd(assistantMessageEnd(OPEN_SIGNAL), harness.context as ExtensionContext);
++		expect(harness.custom).toHaveBeenCalledOnce();
++		expect(harness.isUiOpen()).toBe(true);
++
++		await handleMessageEnd(assistantMessageEnd(`still working; ${CLOSE_SIGNAL}`), harness.context as ExtensionContext);
++		expect(harness.isUiOpen()).toBe(true);
++
++		await handleMessageEnd(assistantMessageEnd(CLOSE_SIGNAL), harness.context as ExtensionContext);
++		expect(harness.isUiOpen()).toBe(false);
++	});
++
++	it("ignores a close signal until the UI has been opened", async () => {
++		const harness = createHarness();
++		const handleMessageEnd = harness.getMessageEndHandler();
++
++		await start(harness);
++		await handleMessageEnd(assistantMessageEnd(CLOSE_SIGNAL), harness.context as ExtensionContext);
++
++		expect(harness.custom).not.toHaveBeenCalled();
++		expect(harness.isUiOpen()).toBe(false);
++	});
++});

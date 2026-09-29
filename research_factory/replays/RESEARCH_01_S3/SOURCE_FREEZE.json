@@ -1,0 +1,15 @@
+{
+  "task_id": "pi-mono-auto-93c17d3b",
+  "source_file": "D:\\bio_paper\\external\\swe_together_official_20260928\\tasks\\pi-mono-auto-93c17d3b\\original_session.json",
+  "user_message_count": 12,
+  "source_sha256": "26495c9053988e949284ff227b4219aa1c9ae59be704ab0ddc9d7ebdaa723d5e",
+  "raw_user_requirements_sha256": "2d1a65f1df329e90ded685ac9b7a183be03f07d67b8a3d34a7d27bda62af1b89",
+  "excluded": [
+    "assistant messages",
+    "oracle_intents.json",
+    "oracle_session.jsonl",
+    "reference_patch.json",
+    "fix_summary.md",
+    "verifier outcomes"
+  ]
+}

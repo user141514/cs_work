@@ -37,7 +37,8 @@ Historical files are intentionally retained even when a line of research is paus
 - WFE-03.1: repository separation/migration.
 - WFE-04: historical Stage-B dry-run probe completed; historical live launcher remains blocked.
 - WFE-05: consolidated real local execution completed. Engineering baseline frozen; 10 native real-process acceptance cases passed, plus the existing 74-test verifier executed as a real child.
-- RESEARCH-01: planned developmental historical-task replay; no additional engineering stage is a prerequisite.
+- RESEARCH-01: completed DEVELOPMENT_ONLY S3 replay. Final implementation passes the frozen public+lifecycle endpoint, but the workflow transition is boundary-contaminated by an extra post-Phase-A provider turn that changed the focused test before the late revision; do not use it as comparative evidence.
+- RESEARCH-02: planned clean paired late-revision replay from the exact authoritative Phase-A bytes (STRUCTURED vs RAW_AGENT); not authorized merely by being listed.
 
 Runnable model-free end-to-end example (from `research_factory/workflow_engineering`):
 

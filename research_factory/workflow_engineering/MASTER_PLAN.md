@@ -18,14 +18,15 @@ Build and validate a reusable research-task workflow on the dedicated D:/cs_work
 Only the current step is authorized. Listing future steps is NOT execution authorization.
 
 ## CURRENT_STEP
-ID: WFE-05
-Status: COMPLETE_LOCAL_BASELINE_FROZEN
-Authorization: user requests ending the engineering spiral and resolving the remaining engineering together in this turn.
-Result authority: WFE05_RESULT.md.
-Delivered: local_runner.py and real-process acceptance tests. Reused Gate.initialize/admit for exclusive invocation ownership and atomic unit admission, without another dispatch service/state machine. Frozen contract -> actual local Python execution -> artifacts/receipt -> STOP is now verified on PC2.
-Evidence: 10/10 native real-process acceptance cases passed; the existing offline verifier ran as a real child and reported 74/74 pass, 0 failures/errors/skips. A subsequent same-run CLI invocation was rejected as STATE_EXISTS. Two independent workers overlapped; conflicting scopes serialized; failed dependent work did not advance. Core gate and historical launcher were not changed.
-Decision: KEEP and FREEZE the bounded engineering baseline; retire the historical Stage-B adapter from the critical path. No WFE-06 infrastructure prerequisite.
-Boundary: trusted, audited, bounded local Python scripts only; no OS sandbox, paid/model/agent launch, Watchdog change or scientific effectiveness claim. No automatic retry of uncertain RUNNING work. See WFE05_RESULT.md for exact limits.
+ID: RESEARCH-01
+Status: COMPLETED_DEVELOPMENTAL_MECHANISM_PASS__WORKFLOW_TRANSITION_BOUNDARY_CONTAMINATED
+Authorization: user explicitly resumed research work in D:/cs_work and then continued the in-progress S3 replay.
+Result authority: ../replays/RESEARCH_01_S3/RESULT.md.
+Task: SWE-Together S3 `pi-mono-auto-93c17d3b`, base `5133697bc454da5595cf4b0c70d3c2c725677`, DEVELOPMENT_ONLY.
+Observed: a fresh GPT-5.6 Sol/xhigh arm froze a six-responsibility/six-invariant Phase-A plan and implemented a functional signal UI. The authoritative first-completion Phase-A extension later calibrated as public-behavior PASS / lifecycle FAIL. After the late complaint, the arm localized the real cause to `ctx.ui.custom()` replacing/focusing away from the editor, not to `message_update` recreation, and the final implementation changed only the UI projection to keyed `setWidget()`, yielding public-behavior PASS / lifecycle PASS under the same evaluator.
+Boundary contamination: after valid Phase-A completion an unexplained extra provider turn began before the late revision. It left the extension and Phase-A plan unchanged but changed the focused test by +20/-3 lines. The valid Phase-A snapshot captured before that turn is authoritative; the actual Phase-B checkout inherited the drifted test state. Therefore the final mechanism result is useful DEVELOPMENT_ONLY evidence, but the Phase-A→B workflow transition is not a clean controlled intervention.
+Correct authoritative Phase-A→final rework: extension +14/-33 with 67% exact-line preservation; focused test +27/-3 with 97.89% exact-line preservation, but part of test rework is pre-late contamination and not attributable to the workflow intervention. Phase A also attempted an ordinary npx command that was blocked by the no-network environment. Hidden historical result files were not supplied; strict host-filesystem non-access was not mechanically sandboxed.
+Decision: KEEP the workflow hypothesis, but do NOT compare a RAW_AGENT baseline against this contaminated treatment run. The next comparison must start both arms from the same authoritative Phase-A bytes.
 
 ## Previous completed step
 ID: WFE-01
@@ -100,10 +101,18 @@ The earlier plan to add another dispatch contract/state-machine layer is superse
 
 Freeze the baseline. Repair engineering only when an actual research task exposes a decision-changing defect. Historical Stage-B revival, general agent-platform work, background services, and speculative sandbox/lease extensions are not automatic next steps.
 
+## RESEARCH-01 observations and decision
+
+Authority: `../replays/RESEARCH_01_S3/RESULT.md` plus the authoritative `phase_a/` freeze, retained post-completion incident snapshot, final Phase-B snapshot and endpoint JSON. The implementation demonstrates a real model→invariant→counterexample→local repair→independent endpoint loop, but the temporal workflow transition is boundary-contaminated and cannot establish comparative benefit.
+
+The most important result is not merely endpoint PASS. The late complaint initially suggested repeated streaming recreation, but source inspection falsified that causal story: the extension had no message_update handler; the blocking behavior came from `ctx.ui.custom()` replacing/focusing away from the editor for the whole open interval. The workflow preserved independent protocol behavior and replaced only the UI projection responsibility.
+
+Decision: KEEP the hypothesis for a clean paired late-revision replay; do not use this run as a treatment arm, add engineering, or extrapolate to paper value.
+
 ## NEXT_STEP
-ID: RESEARCH-01
+ID: RESEARCH-02
 Status: PLANNED_NOT_AUTHORIZED
-Action: choose one reconstructable real complex historical task as DEVELOPMENT_ONLY, freeze common initial inputs/resources and method-neutral endpoint evaluation, then perform the first bounded workflow replay using existing authorized tools. Keep known outcomes outside the executing arm. Do not call a retrospective developmental task held-out evidence.
-Acceptance: actual task artifacts and independent endpoint checks, with comparable resources and reported rework/cost; no claim that passing gate tests proves a better scientific workflow.
-Boundary: no paid model run or new engineering expansion is authorized by this plan alone.
-STOP: consolidated WFE-05 complete. No WFE-06 prerequisite and no automatic RESEARCH-01 execution.
+Action: from the exact authoritative first-completion `phase_a/` bytes, create two isolated identical late-revision arms. STRUCTURED receives the same pre-revision + late requirements plus mandatory goal/responsibility/invariant/counterexample/one-step replanning scaffolding; RAW_AGENT receives the same requirements and contamination boundary without that scaffolding. Both use fresh GPT-5.6 Sol/xhigh sessions, the same dependency-free constraints and the already-frozen evaluator. Do not expose the historical Phase-B plan/code/result to either arm.
+Acceptance: compare final endpoint, provider wall time, process deviations, authoritative Phase-A→final rework and preservation of valid pre-revision behavior. Keep all attempts in the denominator.
+Boundary: RESEARCH-02 is DEVELOPMENT_ONLY, isolates the late-revision workflow intervention only, and does not authorize publication claims, new engineering, benchmark expansion or a different task.
+STOP: RESEARCH-01 is complete; RESEARCH-02 has not been executed.

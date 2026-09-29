@@ -48,11 +48,11 @@ Workflow-policy changes require a new version. Scientific negative evidence only
 
 ## Current execution state
 
-Consolidated WFE-05 is complete: `local_runner.py` executes one frozen step of audited local Python work, collects receipts and stops. Native real-process acceptance: 10/10; the existing verifier executed as a real child: 74/74. Details: `research_factory/workflow_engineering/WFE05_RESULT.md`. The runtime overlay is `0.2-local`; usage is in the workflow README.
+Consolidated WFE-05 remains the frozen engineering baseline. `local_runner.py` executes one frozen step of audited local Python work, collects receipts and stops. Details: `research_factory/workflow_engineering/WFE05_RESULT.md`.
 
-The engineering baseline is FROZEN. The historical Stage-B adapter is not on the active critical path. Do not add WFE-06, revive the old launcher, build a general agent platform, or expand sandbox/lease infrastructure without a concrete failure of an actual research task that requires the change. The next planned step is RESEARCH-01, a bounded developmental historical-task replay under common inputs/resources and a method-neutral evaluator. Listing it does not authorize execution or model spending.
+RESEARCH-01 is complete under `research_factory/replays/RESEARCH_01_S3/RESULT.md`. The final S3 implementation provides DEVELOPMENT_ONLY mechanism evidence: the same independent evaluator gives authoritative Phase-A public PASS/lifecycle FAIL and final Phase-B public PASS/lifecycle PASS after the UI projection changed from editor-replacing `ctx.ui.custom()` to keyed `setWidget()`. However, an unexplained extra provider turn after Phase-A completion changed the focused test by +20/-3 before the late revision; the actual Phase-B checkout inherited that drift. The valid `phase_a/` first-completion snapshot is authoritative, and the RESEARCH-01 workflow transition is boundary-contaminated. Do not use it as a treatment arm for superiority claims.
 
-This baseline covers trusted local scripts, not arbitrary untrusted agents or OS-level isolation. Direct MCP/shell bypass and automatic crash recovery are not claimed solved. Do not translate local execution success into scientific superiority.
+The engineering baseline stays FROZEN. The next planned step is RESEARCH-02: from the exact authoritative Phase-A bytes, run two isolated fresh GPT-5.6 Sol/xhigh late-revision arms—STRUCTURED vs RAW_AGENT—under the same requirements/runtime/evaluator, differing only in mandatory responsibility/invariant/counterexample/replanning scaffolding. Listing it does not authorize execution or model spending. Do not add WFE-06 or translate RESEARCH-01 into workflow superiority.
 
 The historical BFSC / selector work in `research_factory/computer_topconf_2027/` is PAUSED_UNRESOLVED scientific evidence, not current launch authorization.
 

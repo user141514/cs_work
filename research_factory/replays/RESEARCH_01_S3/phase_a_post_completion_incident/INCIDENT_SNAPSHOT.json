@@ -1,0 +1,32 @@
+{
+  "task_id": "pi-mono-auto-93c17d3b",
+  "base_commit": "5133697bc454da5595655cf4b0c70d3c2c725677",
+  "agent_id": "agt_4cb18c56",
+  "phase_a_completed_at_utc": "2026-09-29T06:50:51.366Z",
+  "provider_session_prefix": "01a0ebd4",
+  "late_revision_visible": false,
+  "tracked_status": [
+    "?? .pi/extensions/signal-ui.ts",
+    "?? packages/coding-agent/test/signal-ui-extension.test.ts"
+  ],
+  "files": {
+    ".pi/extensions/signal-ui.ts": "4b161319e53b11fc8d2e8e6cd7fc64fb1fa2c3f003cfe2b41bae0befb5792f3e",
+    "packages/coding-agent/test/signal-ui-extension.test.ts": "d48e1e643902f392792fd8d2fbb0b9e7403065c3d6149da38d20ce58f8a666a5",
+    "control/PHASE_A_PLAN.md": "8260575e608f202d2a61c8a61f8938a883379a576572325fe9d0be1fd53ed5ca"
+  },
+  "status": "INVALID_FOR_PHASE_A_BOUNDARY__POST_COMPLETION_EXTRA_TURN",
+  "authoritative_phase_a": "phase_a/PHASE_A_SNAPSHOT.json",
+  "extra_turn_started_at_utc": "2026-09-29T06:51:55.057Z",
+  "extra_turn_terminated_at_utc": "2026-09-29T06:58:00.178Z",
+  "observed_drift": {
+    "extension_changed": false,
+    "phase_a_plan_changed": false,
+    "focused_test_changed": true,
+    "focused_test_diff_numstat": {
+      "added": 20,
+      "deleted": 3
+    },
+    "authoritative_test_sha256": "b0392576cd62b2bcd82d6c75a10b8179dba8efd1654a125f3d42deb3ad5ffef5",
+    "post_incident_test_sha256": "d48e1e643902f392792fd8d2fbb0b9e7403065c3d6149da38d20ce58f8a666a5"
+  }
+}

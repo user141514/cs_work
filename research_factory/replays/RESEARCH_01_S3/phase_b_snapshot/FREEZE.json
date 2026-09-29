@@ -1,0 +1,25 @@
+{
+  "task_id": "pi-mono-auto-93c17d3b",
+  "base_commit": "5133697bc454da5595655cf4b0c70d3c2c725677",
+  "agent_id": "agt_4cb18c56",
+  "phase_b_started_at_utc": "2026-09-29T06:59:20.959Z",
+  "phase_b_completed_at_utc": "2026-09-29T07:07:57.390Z",
+  "provider_session_prefix": "01a0ebd4",
+  "late_revision_sha256": "f7635fb88bb2ce578ace71acbbe36d352a7888abf4e20b16ea9313d83a970ca7",
+  "files": {
+    ".pi/extensions/signal-ui.ts": "9be232b9b3e09c646332fb75bceef1aacab701f1506d21135b79f83f2896e6d9",
+    "packages/coding-agent/test/signal-ui-extension.test.ts": "898904595989e2be243ea598c6820b000d131d4e5dba92363fe237587fc02f10",
+    "control/PHASE_B_PLAN.md": "ddb5547df85b12b417465955d6e66507c71bbddb746493b30a179c0f840d3e98"
+  },
+  "phase_a_to_b_numstat": {
+    ".pi/extensions/signal-ui.ts": {
+      "added": 14,
+      "deleted": 33
+    },
+    "packages/coding-agent/test/signal-ui-extension.test.ts": {
+      "added": 27,
+      "deleted": 3
+    }
+  },
+  "authoritative_phase_a": "phase_a/PHASE_A_SNAPSHOT.json"
+}

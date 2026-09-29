@@ -1,0 +1,29 @@
+{
+  "target": "D:\\cs_work\\research_factory\\replays\\RESEARCH_01_S3\\phase_b_snapshot\\.pi\\extensions\\signal-ui.ts",
+  "pass": true,
+  "public_behavior_pass": true,
+  "lifecycle_pass": true,
+  "checks": {
+    "command_registered": true,
+    "inactive_no_reaction": true,
+    "hidden_protocol": true,
+    "combined_signal_ignored": true,
+    "embedded_open_ignored": true,
+    "open_visible": true,
+    "editor_available_while_open": true,
+    "open_uses_nonblocking_projection": true,
+    "repeated_open_idempotent": true,
+    "streaming_updates_do_not_recreate_ui": true,
+    "editor_available_during_streaming": true,
+    "embedded_close_ignored": true,
+    "close_hides_ui": true,
+    "editor_available_after_close": true,
+    "no_tool_registration": true
+  },
+  "counters": {
+    "customCalls": 0,
+    "widgetSetCalls": 1,
+    "widgetClearCalls": 1,
+    "registeredTools": 0
+  }
+}
