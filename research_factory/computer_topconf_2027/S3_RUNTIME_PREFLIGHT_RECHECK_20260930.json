@@ -1,0 +1,15 @@
+{
+  "experiment": "S3_RUNTIME_PREFLIGHT_RECHECK_20260930",
+  "user_reboot_reported": true,
+  "daemon_reachable_after_reboot": false,
+  "docker_desktop_backend_running": false,
+  "repeated_host_log_error": "cannot find registry key \"SOFTWARE\\\\Docker Inc.\\\\Docker Desktop\"",
+  "post_reboot_error_timestamps": [
+    "2026-09-30T12:45:51.855379700Z",
+    "2026-09-30T12:46:52.645326600Z"
+  ],
+  "conclusion": "REBOOT_DID_NOT_RESOLVE",
+  "current_preflight_verdict": "DAEMON_NOT_READY",
+  "paid_model_authorized_now": false,
+  "required_user_action": "Repair or reinstall Docker Desktop as Administrator, then start Docker Engine."
+}
