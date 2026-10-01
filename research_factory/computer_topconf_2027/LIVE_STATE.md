@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-01
-status: BFSC_S3_COMMON_PRESTATE_ACTIVE__U3_PASS__U4_NEXT
+status: BFSC_S3_COMMON_PRESTATE_ACTIVE__U4_PASS__U5_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -269,12 +269,12 @@ The previous `S3_RUNTIME_PREFLIGHT_V1 = DAEMON_NOT_READY` result is retained as 
 
 Current runtime evidence: Docker Desktop 4.91.0 / Engine 29.8.0 is reachable in `desktop-linux`; the exact official S3 image `ghcr.io/togetherbench/multi-user-turn-codebench/pi-mono-auto-93c17d3b:2f7d1992e60d` is locally locked to `sha256:4805e21fa2f3d38ed5dacc320ec0400b3fd402194051124b3a8a85cf826455fa`; container execution as the intended non-root `agent` user gives clean HEAD `5133697bc454da5595655cf4b0c70d3c2c725677`, Node `v20.20.2`, Bun `1.3.13`, and the required repository structure. The official verifier logic executes in the exact image; the Windows-host CRLF shell-script transport was normalized to LF only inside the ephemeral container, and the no-patch baseline produces the expected reward `0.0000` with both runtime/P2P checks passing.
 
-Runtime admission is complete and S3 common-prestate execution is now ACTIVE. U1-v1 is retained as `INVALID_SUPERVISOR_INTERRUPTION` only. U1-v2, U2 and U3 have now all passed in the exact same frozen GPT-5.6 Sol/xhigh durable session/checkout. U3 is the third user turn verbatim at source_message_index=36; model/thinking identity remains unchanged with no fallback, forbidden-source scan remains clean, and Lifetime exited normally/quiescently. The resulting `.pi/extensions/message-signals.ts` now explicitly ends an assistant response after INPUT, waits for the hidden follow-up before continuing, scans standalone signals, and gives INPUT precedence over an invalid same-response DONE. Its SHA256 after U3 is `1d76a1742be2dee3356f770cb6bb7385565d3aaa1e4eaa5bc64f665875ac4080`; the checkout remains at frozen HEAD with no tracked diff. This establishes the U3 implementation state but not yet a sustained real multi-turn UI interval. Authority: `S3_COMMON_PRESTATE_U1_INVALID_V1.md/json`, `S3_COMMON_PRESTATE_RUN_V1.md`, `S3_COMMON_PRESTATE_U1_RESULT_V2.md/json`, `S3_COMMON_PRESTATE_U2_RESULT_V1.md/json`, and `S3_COMMON_PRESTATE_U3_RESULT_V1.md/json`.
+Runtime admission is complete and S3 common-prestate execution is now ACTIVE. U1-v1 is retained as `INVALID_SUPERVISOR_INTERRUPTION` only. U1-v2 through U4 have now all produced valid controlled trajectory turns in the exact same frozen GPT-5.6 Sol/xhigh durable session/checkout. U4 is the fourth user turn verbatim at source_message_index=42; model/thinking identity remains unchanged with no fallback, forbidden-source scan remains clean, and Lifetime exited normally/quiescently. U4 made no implementation change: `.pi/extensions/message-signals.ts` remains byte-identical to U3 with SHA256 `1d76a1742be2dee3356f770cb6bb7385565d3aaa1e4eaa5bc64f665875ac4080`. The agent ended with `[[PI_EXTENSION_INPUT]]`, which is valid first/open-wait protocol trajectory evidence. It is not independent proof of a live sustained multi-turn UI interval because this scientific OMP runner itself uses `--no-extensions`; no arbitrary UI answer is injected. Authority now additionally includes `S3_COMMON_PRESTATE_U4_RESULT_V1.md/json`.
 
 The exact next scientific transition is now:
 
-`S3_COMMON_PRESTATE_U4`
+`S3_COMMON_PRESTATE_U5`
 ->
-deliver only source_message_index=42 (`ok, i started, now do a bunch of turns, in the first turn open the ui, in the last turn clos eit`) by `--continue` in the same v2 durable session and same checkout. Historical observations source_message_index=38/40 remain excluded from the scientific requirement sequence.
+deliver only source_message_index=44 (`dude, if you output open and close, close is also executed. let's try again. 10 turns, read all the @README.md files 10 lines each. open on first turn, close on last turn`) by `--continue` in the same v2 durable session and same checkout. Historical observations source_message_index=38/40 remain excluded from the scientific requirement sequence.
 
-Do not send U5/U6 in the same supervisor turn. The final immutable common-prestate freeze and exact R3 artifact scope remain pending U4-U5 completion. R2/R3 are not yet authorized.
+Do not send U6 in the same supervisor turn. The final immutable common-prestate freeze and exact R3 artifact scope remain pending U5 completion. R2/R3 are not yet authorized.

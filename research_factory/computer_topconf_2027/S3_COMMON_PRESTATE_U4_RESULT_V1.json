@@ -1,0 +1,42 @@
+{
+  "experiment": "S3_COMMON_PRESTATE_U4_V1",
+  "status": "PASS_U4_TRAJECTORY__U5_NEXT",
+  "task": "pi-mono-auto-93c17d3b",
+  "checkout": "D:/cs_work/external/spec_stageb_s3_common_pre_v2",
+  "root_commit": "5133697bc454da5595655cf4b0c70d3c2c725677",
+  "session_dir": "D:/cs_work/external/spec_stageb_sessions/s3_common_pre_v2",
+  "session_id": "01a0f62d-3227-7000-ac03-03b36dfb1b6b",
+  "session_sha256_after_u4": "f495f7995abe1e3d1caccb225570db7035d5cc2cb73b0f3bbe419c642c36b6ad",
+  "lifetime_turn_id": "turn_d949df57bcba4ca3b595ed26dc37e02e",
+  "model": "openai-codex/gpt-5.6-sol",
+  "model_fallback": false,
+  "thinking": "xhigh",
+  "user_turn_count": 4,
+  "u4_source_message_index": 42,
+  "u4_verbatim": "ok, i started, now do a bunch of turns, in the first turn open the ui, in the last turn clos eit",
+  "session_exit": "normal",
+  "quiescent": true,
+  "forbidden_source_scan": "PASS",
+  "checkout_changed_by_u4": false,
+  "extension_sha256_after_u4": "1d76a1742be2dee3356f770cb6bb7385565d3aaa1e4eaa5bc64f665875ac4080",
+  "u4_observation": {
+    "assistant_text": "What value should the UI return for the next turn?\n\n[[PI_EXTENSION_INPUT]]",
+    "stop_reason": "stop",
+    "input_signal_final": true,
+    "live_ui_independently_observed": false,
+    "full_multiturn_requirement_verified": false
+  },
+  "accounting": {
+    "model_calls": 1,
+    "tool_calls": 0,
+    "mutating_tool_calls": 0,
+    "input_tokens": 290,
+    "output_tokens": 168,
+    "cache_read_tokens": 138880,
+    "reasoning_tokens": 146,
+    "reported_cost_usd": 0.060072,
+    "wall_seconds": 9.929
+  },
+  "next_step": "S3_COMMON_PRESTATE_U5",
+  "next_source_message_index": 44
+}

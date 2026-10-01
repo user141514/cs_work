@@ -1,7 +1,7 @@
 # S3 Common Prestate Run Contract V1
 
 date: 2026-10-01
-status: U3_PASS__U4_NEXT
+status: U4_PASS_TRAJECTORY__U5_NEXT
 task: pi-mono-auto-93c17d3b
 parent:
 - S3_STAGE_B_BOUNDARY_FREEZE_V1.md
@@ -12,7 +12,7 @@ parent:
 
 Generate exactly one scientific pre-revision trajectory for S3.
 
-Execution advances one user-authorized supervisor turn at a time in the same durable OMP session and checkout. U1-v2, U2 and U3 are complete/PASS. U4 is the next planned continuation, but this file alone does not automatically authorize executing it.
+Execution advances one user-authorized supervisor turn at a time in the same durable OMP session and checkout. U1-v2 through U4 are complete as valid controlled trajectory turns. U5 is the next planned continuation, but this file alone does not automatically authorize executing it.
 
 No late revision U6, R0, R1, R2 or R3 is authorized by this file.
 
@@ -125,10 +125,18 @@ U3 passed in the same v2 checkout/session. Authority:
 
 The exact frozen U3 was the third user turn; model/thinking identity and forbidden-source boundary remained unchanged. The resulting extension explicitly requires response termination after INPUT and waits for a hidden follow-up; INPUT wins over an invalid same-response DONE. A sustained real multi-turn interval remains for U4/U5 rather than being backfilled into U3.
 
+## U4 result
+
+U4 passed as a valid controlled trajectory turn in the same v2 checkout/session. Authority:
+- `S3_COMMON_PRESTATE_U4_RESULT_V1.md`
+- `S3_COMMON_PRESTATE_U4_RESULT_V1.json`
+
+The exact frozen U4 was the fourth user turn; identity and forbidden-source boundaries remained intact. The agent made no code change and ended with standalone `[[PI_EXTENSION_INPUT]]`, creating first/open-wait protocol evidence. Because the runner uses `--no-extensions`, this is not independent live-UI verification and no arbitrary answer is injected.
+
 ## Exact next step
 
-U4 only:
-source_message_index=42
-`ok, i started, now do a bunch of turns, in the first turn open the ui, in the last turn clos eit`
+U5 only:
+source_message_index=44
+`dude, if you output open and close, close is also executed. let's try again. 10 turns, read all the @README.md files 10 lines each. open on first turn, close on last turn`
 
-Source_message_index=38/40 are historical observations and remain excluded. No U5 in the same supervisor turn.
+Source_message_index=38/40 remain historical observations and excluded. No U6 in the same supervisor turn.

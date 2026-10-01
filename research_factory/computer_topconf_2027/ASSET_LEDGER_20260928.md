@@ -268,10 +268,10 @@ S3 execution leverage is now adjudicated: scientific leverage = PASS, but paid e
 
 The earlier `S3_RUNTIME_PREFLIGHT_V1 = DAEMON_NOT_READY` result remains historical evidence of the broken Docker installation. After user repair/reinstall, the same preflight resumed with zero model calls and now passes `PASS_RUNTIME_READY`. Exact image/runtime authority: `S3_RUNTIME_PREFLIGHT_RESUME_RESULT_V2.md/json`. Docker Desktop/Engine is reachable; exact official image `pi-mono-auto-93c17d3b:2f7d1992e60d` is locked to `sha256:4805e21fa2f3d38ed5dacc320ec0400b3fd402194051124b3a8a85cf826455fa`; container HEAD/toolchain match the frozen task; official verifier baseline executes with expected reward 0 and runtime/P2P gates passing.
 
-S3 common-prestate execution has begun. U1-v1 is excluded as supervisor-interrupted invalid overhead; U1-v2, U2 and U3 are valid/PASS in the same frozen GPT-5.6 Sol/xhigh durable session/checkout. U3 was delivered verbatim at source_message_index=36 with identity/forbidden-source boundaries intact and normal/quiescent exit; the extension now enforces INPUT-response termination and later follow-up continuation, with INPUT precedence over invalid same-response DONE. Current first unresolved transition:
+S3 common-prestate execution has begun. U1-v1 is excluded as supervisor-interrupted invalid overhead; U1-v2 through U4 are valid controlled trajectory turns in the same frozen GPT-5.6 Sol/xhigh durable session/checkout. U4 was delivered verbatim at source_message_index=42 with identity/forbidden-source boundaries intact and normal/quiescent exit; it made no code change and ended with standalone `[[PI_EXTENSION_INPUT]]`, valid first/open-wait trajectory evidence but not independent live-UI verification. Current first unresolved transition:
 
-`S3_COMMON_PRESTATE_U4`
+`S3_COMMON_PRESTATE_U5`
 ->
-continue the same v2 durable session with source_message_index=42 only; historical observations source_message_index=38/40 remain excluded.
+continue the same v2 durable session with source_message_index=44 only; historical observations source_message_index=38/40 remain excluded and no arbitrary UI answer is injected.
 
 U5 remains the final pre-revision continuation. Final immutable common-prestate freeze and exact outcome-blind R3 artifact scope occur only after U5. Only then proceed to `R2_FULL_RESTART -> R3_ORACLE_SCOPED`; R0 remains conditional on R3 headroom and R1 is not authorized for symmetry.
