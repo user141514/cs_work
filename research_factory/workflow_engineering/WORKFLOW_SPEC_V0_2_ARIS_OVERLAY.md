@@ -66,6 +66,7 @@ The output path is exclusive: an existing output is rejected.
 ```json
 {
   "schema": "aris-governance-request-v1",
+  "projection_root": "<dedicated derived-state directory>",
   "identity": {
     "task_id": "...",
     "task_version": 1,
@@ -85,7 +86,11 @@ The output path is exclusive: an existing output is rejected.
   "review": {
     "kind": "NONE | SAME_FAMILY | INDEPENDENT | DETERMINISTIC",
     "reviewer": "...",
-    "verdict_id": "..."
+    "verdict_id": "...",
+    "receipt_path": "<frozen authoritative receipt>",
+    "receipt_sha256": "<64 hex>",
+    "executor_family": "...",
+    "reviewer_family": "..."
   },
   "evidence": [
     {"path": "<declared file>", "sha256": "<64 hex>"}
@@ -103,16 +108,21 @@ The output path is exclusive: an existing output is rejected.
 Execution state is read from the existing Gate:
 - source Gate must be `STOPPED`;
 - request identity must exactly equal the frozen Gate contract identity;
-- evidence paths must exist and hashes must match;
+- evidence paths must be frozen Gate inputs/evaluator or ACCEPTED attempt artifacts, and hashes must match the Gate-owned hashes and current bytes;
+- `projection_root` and output must be outside both the Gate state directory and the executed contract workspace;
 - overlay never changes Gate state.
 
 Claim rules:
-- `UNASSESSED` requires `review.kind=NONE`;
-- `PROVISIONAL` may use `SAME_FAMILY` and requires reviewer + verdict id;
+- `UNASSESSED` requires `review.kind=NONE` and no review receipt;
+- any non-NONE review must bind to a structured `aris-governance-review-receipt-v1` that was already frozen as a Gate input/evaluator or ACCEPTED attempt artifact;
+- the receipt must match claim id, verdict, review kind, reviewer, verdict id and executor/reviewer family fields exactly;
+- `PROVISIONAL` uses `SAME_FAMILY`, with equal non-empty executor/reviewer families;
 - `SUPPORTED` or `REFUTED` require either:
-  - `INDEPENDENT` with reviewer + verdict id; or
-  - `DETERMINISTIC` with verifier identity + receipt id.
+  - `INDEPENDENT`, with unequal non-empty executor/reviewer families in the frozen receipt; or
+  - `DETERMINISTIC`, with reviewer family `deterministic` and verifier identity prefixed `deterministic:`.
 - same-family review can never produce `SUPPORTED` or `REFUTED`.
+
+The overlay verifies consistency against an immutable Gate-authorized provenance receipt; it does not cryptographically prove external model identity. Producing truthful reviewer-family receipts remains the upstream reviewer/runtime owner's responsibility.
 
 This imports ARIS's "a loop may drive but cannot acquit" boundary without forcing an extra review when the workflow already owns a deterministic decision contract.
 
@@ -123,7 +133,8 @@ This imports ARIS's "a loop may drive but cannot acquit" boundary without forcin
 - `projection_only: true`;
 - source identity and Gate contract fingerprint;
 - source phase/decision and attempt summary;
-- claim + review provenance;
+- claim + Gate-bound review provenance receipt;
+- dedicated projection-root boundary;
 - evidence hashes;
 - kill boundary / anti-repeat state;
 - copied next-step pointer with `authorized=false`;
@@ -136,10 +147,11 @@ No mutable wiki/database is required for V0.2. A future index may derive typed P
 Reject before output creation when:
 - source Gate is not STOPPED;
 - identity mismatches;
-- evidence is missing or hash-drifted;
-- verdict/reviewer combination violates section 4;
+- evidence is not Gate-authoritative, missing or hash-drifted;
+- projection output overlaps Gate or execution-workspace authority;
+- verdict/reviewer/receipt combination violates section 4;
 - kill boundary is malformed;
-- output exists;
+- output exists; final creation is atomic/exclusive so an interrupted serialization cannot strand a partial authoritative-looking projection;
 - request tries to carry an authorized next step or another authority field.
 
 Failure of the overlay never converts scientific PASS to FAIL or vice versa; it is a governance/integration error.
@@ -157,16 +169,17 @@ No dependency on the cloned ARIS repository is required at runtime.
 TDD acceptance:
 1. RED before implementation.
 2. Finished Gate + UNASSESSED claim -> projection, `authoritative=false`, next step remains unauthorized.
-3. Same-family SUPPORTED -> reject.
-4. Same-family PROVISIONAL -> pass.
-5. Independent/deterministic SUPPORTED or REFUTED -> pass with provenance.
+3. Same-family SUPPORTED -> reject; Same-family PROVISIONAL -> pass only with a frozen receipt.
+4. Independent/deterministic SUPPORTED or REFUTED -> pass only when a Gate-authoritative structured receipt matches all provenance fields.
+5. Caller-created post-hoc review receipt -> reject.
 6. RUNNING/non-STOPPED Gate -> reject.
 7. identity mismatch -> reject.
-8. evidence hash drift -> reject.
-9. duplicate output -> reject.
-10. projection write cannot mutate Gate state.
-11. existing WFE offline + local_runner suites stay green.
-12. Native PC2 Python 3.7 compatibility is required.
+8. arbitrary/post-hoc evidence or hash drift -> reject.
+9. projection root overlapping Gate state or execution workspace -> reject.
+10. duplicate output -> reject without changing the existing bytes; no temp partial remains.
+11. projection write cannot mutate Gate state.
+12. existing WFE offline + local_runner suites stay green.
+13. Native PC2 Python 3.7 compatibility is required.
 
 ## 9. Non-goals
 

@@ -5,18 +5,28 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 from pathlib import Path
 import re
 import sys
+import uuid
 
 import offline_gate as gate_mod
 
 SCHEMA = "aris-governance-request-v1"
 PROJECTION_SCHEMA = "aris-governance-projection-v1"
+REVIEW_RECEIPT_SCHEMA = "aris-governance-review-receipt-v1"
 SHA256_RE = re.compile(r"^[0-9a-fA-F]{64}$")
-TOP_KEYS = {"schema", "identity", "claim", "review", "evidence", "kill_boundary"}
+TOP_KEYS = {"schema", "projection_root", "identity", "claim", "review", "evidence", "kill_boundary"}
 CLAIM_KEYS = {"claim_id", "statement", "scope", "verdict"}
-REVIEW_KEYS = {"kind", "reviewer", "verdict_id"}
+REVIEW_KEYS = {
+    "kind", "reviewer", "verdict_id", "receipt_path", "receipt_sha256",
+    "executor_family", "reviewer_family",
+}
+RECEIPT_KEYS = {
+    "schema", "claim_id", "verdict", "kind", "reviewer", "verdict_id",
+    "executor_family", "reviewer_family",
+}
 KILL_KEYS = {"closed", "scope", "anti_repeat"}
 VERDICTS = {"UNASSESSED", "PROVISIONAL", "SUPPORTED", "REFUTED"}
 REVIEW_KINDS = {"NONE", "SAME_FAMILY", "INDEPENDENT", "DETERMINISTIC"}
@@ -33,12 +43,12 @@ def fail(condition, code, message=""):
         raise OverlayError(code, message)
 
 
-def read_json(path):
+def read_json(path, code="INVALID_REQUEST"):
     try:
         value = json.loads(Path(path).read_text(encoding="utf-8"))
     except Exception as error:
-        raise OverlayError("INVALID_REQUEST", str(error))
-    fail(isinstance(value, dict), "INVALID_REQUEST")
+        raise OverlayError(code, str(error))
+    fail(isinstance(value, dict), code)
     return value
 
 
@@ -56,37 +66,159 @@ def nonempty(value):
     return isinstance(value, str) and bool(value.strip())
 
 
+def normpath(value):
+    # Path.resolve() normalizes Windows 8.3 aliases (ADMINI~1) to the same
+    # canonical spelling Gate.scoped_path() uses. strict=False keeps future
+    # projection roots valid before their directory exists.
+    return os.path.normcase(str(Path(value).resolve(strict=False)))
+
+
+def inside(path, root):
+    path = normpath(path)
+    root = normpath(root)
+    try:
+        return os.path.commonpath([path, root]) == root
+    except ValueError:
+        return False
+
+
+def overlaps(left, right):
+    return inside(left, right) or inside(right, left)
+
+
+def authoritative_evidence(source):
+    contract = source["contract"]
+    workspace = contract["workspace"]
+    result = {}
+    for item in list(contract.get("inputs", [])) + [contract.get("evaluator")]:
+        if not isinstance(item, dict):
+            continue
+        path = gate_mod.scoped_path(item["path"], workspace)
+        result[normpath(path)] = item["sha256"]
+    for attempt in source.get("attempts", {}).values():
+        if attempt.get("status") != "ACCEPTED":
+            continue
+        # Gate stores absolute artifact hashes after submit, while the frozen
+        # submitted receipt retains the contract-relative artifact path.
+        # On Windows those two views may differ only by an 8.3 short-path alias
+        # (ADMINI~1 vs Administrator). Admit both Gate-owned spellings instead
+        # of trying to guess filesystem alias equivalence.
+        submitted = attempt.get("submitted_receipt", {})
+        for item in submitted.get("artifacts", []):
+            if not isinstance(item, dict):
+                continue
+            relative = item.get("path")
+            digest = item.get("sha256")
+            if nonempty(relative) and isinstance(digest, str):
+                path = gate_mod.scoped_path(relative, workspace)
+                result[normpath(path)] = digest
+        for path, digest in attempt.get("artifact_hashes", {}).items():
+            result[normpath(path)] = digest
+    return result
+
+
+def verify_authoritative_file(path, expected, allowed, not_authoritative_code):
+    key = normpath(path)
+    fail(key in allowed, not_authoritative_code, str(path))
+    fail(isinstance(expected, str) and bool(SHA256_RE.fullmatch(expected)),
+         "INVALID_EVIDENCE")
+    authoritative_hash = allowed[key]
+    fail(expected.lower() == authoritative_hash.lower(), "EVIDENCE_HASH_MISMATCH")
+    actual = file_sha256(path)
+    fail(actual.lower() == authoritative_hash.lower(), "EVIDENCE_HASH_MISMATCH")
+    return actual
+
+
+def validate_output_scope(state_dir, source, request, output):
+    root_value = request.get("projection_root")
+    fail(nonempty(root_value), "INVALID_REQUEST_SCHEMA")
+    projection_root = Path(root_value)
+    output = Path(output)
+    fail(inside(output, projection_root) and normpath(output) != normpath(projection_root),
+         "OUTPUT_OUTSIDE_PROJECTION_ROOT")
+    workspace = source["contract"]["workspace"]
+    fail(not overlaps(projection_root, state_dir)
+         and not overlaps(projection_root, workspace), "OUTPUT_SCOPE_CONFLICT")
+    return projection_root
+
+
+def validate_review(claim, review, allowed):
+    fail(isinstance(review, dict) and set(review) == REVIEW_KEYS, "INVALID_REVIEW")
+    kind = review.get("kind")
+    fail(kind in REVIEW_KINDS, "INVALID_REVIEW_KIND")
+    for key in ("reviewer", "verdict_id", "receipt_path", "receipt_sha256",
+                "executor_family", "reviewer_family"):
+        fail(isinstance(review.get(key), str), "INVALID_REVIEW")
+
+    verdict = claim["verdict"]
+    if verdict == "UNASSESSED":
+        fail(kind == "NONE"
+             and all(not review[key] for key in REVIEW_KEYS - {"kind"}),
+             "INVALID_REVIEW")
+        return None
+
+    fail(kind != "NONE", "INVALID_REVIEW")
+    for key in ("reviewer", "verdict_id", "receipt_path", "receipt_sha256",
+                "executor_family", "reviewer_family"):
+        fail(nonempty(review[key]), "INVALID_REVIEW")
+
+    receipt_hash = verify_authoritative_file(
+        review["receipt_path"], review["receipt_sha256"], allowed,
+        "REVIEW_RECEIPT_NOT_AUTHORITATIVE")
+    receipt = read_json(review["receipt_path"], "INVALID_REVIEW_RECEIPT")
+    fail(set(receipt) == RECEIPT_KEYS
+         and receipt.get("schema") == REVIEW_RECEIPT_SCHEMA,
+         "INVALID_REVIEW_RECEIPT")
+    for key in ("claim_id", "verdict", "kind", "reviewer", "verdict_id",
+                "executor_family", "reviewer_family"):
+        expected = claim["claim_id"] if key == "claim_id" else (
+            claim["verdict"] if key == "verdict" else review[key])
+        fail(receipt.get(key) == expected, "REVIEW_RECEIPT_MISMATCH")
+
+    if verdict == "PROVISIONAL":
+        fail(kind == "SAME_FAMILY"
+             and review["executor_family"].casefold() == review["reviewer_family"].casefold(),
+             "INVALID_REVIEW")
+    else:
+        if kind == "SAME_FAMILY":
+            raise OverlayError("SELF_ACQUITTAL")
+        fail(kind in ("INDEPENDENT", "DETERMINISTIC"), "INVALID_REVIEW")
+        if kind == "INDEPENDENT":
+            fail(review["executor_family"].casefold() != review["reviewer_family"].casefold(),
+                 "SELF_ACQUITTAL")
+        else:
+            fail(review["reviewer_family"].casefold() == "deterministic"
+                 and review["reviewer"].startswith("deterministic:"),
+                 "INVALID_REVIEW")
+    return {"path": review["receipt_path"], "sha256": receipt_hash}
+
+
 def validate_request(request, source):
     fail(set(request) == TOP_KEYS and request.get("schema") == SCHEMA,
          "INVALID_REQUEST_SCHEMA")
     fail(request["identity"] == source["contract"]["identity"], "IDENTITY_MISMATCH")
 
     claim = request["claim"]
-    review = request["review"]
     kill = request["kill_boundary"]
     fail(isinstance(claim, dict) and set(claim) == CLAIM_KEYS, "INVALID_CLAIM")
-    fail(isinstance(review, dict) and set(review) == REVIEW_KEYS, "INVALID_REVIEW")
     fail(isinstance(kill, dict) and set(kill) == KILL_KEYS, "INVALID_KILL_BOUNDARY")
     fail(all(nonempty(claim[key]) for key in ("claim_id", "statement", "scope")),
          "INVALID_CLAIM")
-    verdict = claim.get("verdict")
-    kind = review.get("kind")
-    fail(verdict in VERDICTS, "INVALID_CLAIM_VERDICT")
-    fail(kind in REVIEW_KINDS, "INVALID_REVIEW_KIND")
+    fail(claim.get("verdict") in VERDICTS, "INVALID_CLAIM_VERDICT")
 
-    reviewer = review.get("reviewer")
-    verdict_id = review.get("verdict_id")
-    fail(isinstance(reviewer, str) and isinstance(verdict_id, str), "INVALID_REVIEW")
-    if verdict == "UNASSESSED":
-        fail(kind == "NONE" and not reviewer and not verdict_id, "INVALID_REVIEW")
-    elif verdict == "PROVISIONAL":
-        fail(kind != "NONE" and nonempty(reviewer) and nonempty(verdict_id),
-             "INVALID_REVIEW")
-    else:
-        if kind == "SAME_FAMILY":
-            raise OverlayError("SELF_ACQUITTAL")
-        fail(kind in ("INDEPENDENT", "DETERMINISTIC")
-             and nonempty(reviewer) and nonempty(verdict_id), "INVALID_REVIEW")
+    allowed = authoritative_evidence(source)
+    verified = []
+    evidence = request["evidence"]
+    fail(isinstance(evidence, list) and evidence, "INVALID_EVIDENCE")
+    for item in evidence:
+        fail(isinstance(item, dict) and set(item) == {"path", "sha256"},
+             "INVALID_EVIDENCE")
+        fail(nonempty(item.get("path")), "INVALID_EVIDENCE")
+        actual = verify_authoritative_file(
+            item["path"], item.get("sha256"), allowed, "EVIDENCE_NOT_AUTHORITATIVE")
+        verified.append({"path": item["path"], "sha256": actual})
+
+    review_receipt = validate_review(claim, request["review"], allowed)
 
     fail(type(kill.get("closed")) is bool and nonempty(kill.get("scope")),
          "INVALID_KILL_BOUNDARY")
@@ -95,32 +227,39 @@ def validate_request(request, source):
          and all(nonempty(item) for item in anti_repeat), "INVALID_KILL_BOUNDARY")
     if kill["closed"]:
         fail(bool(anti_repeat), "INVALID_KILL_BOUNDARY")
+    return verified, review_receipt
 
-    evidence = request["evidence"]
-    fail(isinstance(evidence, list) and evidence, "INVALID_EVIDENCE")
-    verified = []
-    for item in evidence:
-        fail(isinstance(item, dict) and set(item) == {"path", "sha256"},
-             "INVALID_EVIDENCE")
-        expected = item.get("sha256")
-        fail(nonempty(item.get("path")) and isinstance(expected, str)
-             and bool(SHA256_RE.fullmatch(expected)), "INVALID_EVIDENCE")
-        actual = file_sha256(item["path"])
-        fail(actual.lower() == expected.lower(), "EVIDENCE_HASH_MISMATCH")
-        verified.append({"path": item["path"], "sha256": actual})
-    return verified
+
+def write_atomic_exclusive(output, result):
+    output = Path(output)
+    fail(not output.exists(), "OUTPUT_EXISTS", str(output))
+    output.parent.mkdir(parents=True, exist_ok=True)
+    temporary = output.with_name(output.name + ".tmp-" + uuid.uuid4().hex)
+    raw = (json.dumps(result, indent=2, sort_keys=True) + "\n").encode("utf-8")
+    try:
+        with temporary.open("xb") as handle:
+            handle.write(raw)
+            handle.flush()
+            os.fsync(handle.fileno())
+        try:
+            os.link(str(temporary), str(output))
+        except FileExistsError:
+            raise OverlayError("OUTPUT_EXISTS", str(output))
+    finally:
+        if temporary.exists():
+            temporary.unlink()
+    fail(output.read_bytes() == raw, "OUTPUT_READBACK_MISMATCH")
 
 
 def project(state_dir, request_path, output_path):
     output = Path(output_path)
-    fail(not output.exists(), "OUTPUT_EXISTS", str(output))
-
     gate = gate_mod.Gate(state_dir)
     source = gate.status()
     fail(source.get("phase") == "STOPPED", "SOURCE_NOT_STOPPED")
 
     request = read_json(request_path)
-    evidence = validate_request(request, source)
+    projection_root = validate_output_scope(state_dir, source, request, output)
+    evidence, review_receipt = validate_request(request, source)
 
     statuses = {}
     for attempt in source.get("attempts", {}).values():
@@ -136,6 +275,7 @@ def project(state_dir, request_path, output_path):
         "schema": PROJECTION_SCHEMA,
         "authoritative": False,
         "projection_only": True,
+        "projection_root": str(projection_root),
         "source": {
             "identity": source["contract"]["identity"],
             "contract_fingerprint": gate_mod.fingerprint(source["contract"]),
@@ -147,19 +287,12 @@ def project(state_dir, request_path, output_path):
         },
         "claim": request["claim"],
         "review": request["review"],
+        "review_receipt": review_receipt,
         "evidence": evidence,
         "kill_boundary": request["kill_boundary"],
         "next_step": next_step,
     }
-
-    output.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        with output.open("x", encoding="utf-8") as handle:
-            json.dump(result, handle, indent=2, sort_keys=True)
-            handle.write("\n")
-    except FileExistsError:
-        raise OverlayError("OUTPUT_EXISTS", str(output))
-    fail(json.loads(output.read_text(encoding="utf-8")) == result, "OUTPUT_READBACK_MISMATCH")
+    write_atomic_exclusive(output, result)
     return result
 
 
