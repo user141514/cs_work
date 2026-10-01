@@ -1,0 +1,20 @@
+{
+  "freeze_id": "S2_COMMON_PRESTATE_FREEZE_V1",
+  "base_commit": "e54dff7efb460e364a39e4a22369991a20c105b9",
+  "reconstruction": [
+    "Create a clean checkout at the exact base commit.",
+    "Apply tracked_dirty.patch with git apply --binary.",
+    "No tracked deletions are required.",
+    "No untracked task artifacts are required.",
+    "Verify git status matches git_status_porcelain_v1.txt.",
+    "Verify the seven final modified-file SHA256 receipts in derived_work_manifest.json."
+  ],
+  "tracked_patch": {
+    "path": "tracked_dirty.patch",
+    "bytes": 8292,
+    "sha256": "6d072b1f42bc39306b9a9e494ee631cd19712eac979aeca52f79fb2149a71c75"
+  },
+  "deletions": [],
+  "untracked_task_artifacts": [],
+  "mutable_wsl_worktree_is_snapshot": false
+}

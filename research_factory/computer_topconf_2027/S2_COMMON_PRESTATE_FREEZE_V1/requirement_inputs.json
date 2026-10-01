@@ -1,0 +1,42 @@
+{
+  "task": "pi-mono-auto-a4fca584",
+  "original_session_sha256": "ae10c249ef12dcc1bd3e57b692360386c82a6e848c3a9d1730f72c116a3b53c4",
+  "frozen_inputs": [
+    {"path": "S2_ISSUE_1216_SOURCE_V1.md", "sha256": "917ee0ada34443673003fd30219bca9d5600033d5b2a1077543e51d573640968", "role": "public initial requirement receipt"},
+    {"path": "S2_COMMON_PRESTATE_SOURCE_ADAPTER_V1.md", "sha256": "cb67aec5cc4ccae4e8f0beaaf414b5c8399909e0fe02882a598d385c8d67b6a4", "role": "context-only replay adapter"},
+    {"path": "s2_arm_prompts/S2_COMMON_PRE_U0.txt", "sha256": "fb2568144b28f27af54954482a3d2aa843a66459ebcd9a2d73bc0aa781c763c6", "source_message_index": 0},
+    {"path": "s2_arm_prompts/S2_COMMON_PRE_U1.txt", "sha256": "74c374b1a0c3d522a9b1d90cb92e23be569c721940def088461198f378b8db89", "source_message_index": 6},
+    {"path": "s2_arm_prompts/S2_COMMON_PRE_U2.txt", "sha256": "ee45029de3b053c1f648c1339ec7b6a60936a2119f2f98740c89adb62b6fc747", "source_message_index": 8},
+    {"path": "s2_arm_prompts/S2_COMMON_PRE_U3.txt", "sha256": "cebe7791d109d74047ebd025ca82f546c64111c4acaab6e9dda0a4b82bf55de0", "source_message_index": 20},
+    {"path": "S2_MECHANISM_EXPOSURE_SOURCE_V1.json", "sha256": "505062e8d72e9556550444397b41dcae26c0de5a613ab5f9261505fc48bcc6b6", "role": "user-only source receipt"},
+    {"path": "S2_STAGE_B_BOUNDARY_FREEZE_V1.md", "sha256": "572fd7cbf68d4305687543a426d8b6198ed96cee8d0fc2893e95b2a99f74e1b9", "role": "frozen boundary and consolidated specs"},
+    {"path": "S2_STAGE_B_BOUNDARY_FREEZE_V1.json", "sha256": "89dadcad2b4654cc64dcfc0e2d639240071ff168540d418e480bf146cf692ead", "role": "structured boundary receipt"}
+  ],
+  "late_revision_bundle": [
+    {
+      "source_message_index": 37,
+      "text": "so, i guess when we write to settings.json, we need to make these paths relative to the settings.json, no? or how can they be resolved otherwise if we just have the cwd relative path in settings.json, both user and project?"
+    },
+    {
+      "source_message_index": 39,
+      "text": "i want the path to be resolved relative to the settings.json we write it to, anything else makes no sense."
+    }
+  ],
+  "frozen_semantic_delta": "persist/interpret local package paths relative to the specific settings.json receiving the entry rather than persisting caller-cwd-derived absolute-path semantics",
+  "late_revision_delivered_to_common_prestate": false,
+  "forbidden_sources_excluded": [
+    "assistant historical trajectory outside the controlled scientific session",
+    "oracle_session.jsonl",
+    "oracle_intents.json",
+    "canonical_goals.json",
+    "reference_patch.json",
+    "verifier outcomes",
+    "future successful implementation"
+  ],
+  "common_prestate_result_receipts": [
+    {"path": "S2_COMMON_PRESTATE_U0_RESULT_V2.json", "sha256": "3873561a0d39492f45f4e7259b56ef2a2b7d900a7501ac472b70ef99e19fc668"},
+    {"path": "S2_COMMON_PRESTATE_U1_RESULT_V1.json", "sha256": "c9fc155c959f462b0279075fc5922e7fb012ba62db0aa6640db8ebe675d44c5a"},
+    {"path": "S2_COMMON_PRESTATE_U2_RESULT_V1.json", "sha256": "33e5dcc8a485068cfa7cc36394ea3ea86ca46b81e744231eb1e1f0cab986b56a"},
+    {"path": "S2_COMMON_PRESTATE_U3_RESULT_V1.json", "sha256": "367ba01213b1cca363c5ad6a6852f2d950ea839482e590001df1116a12d1f8c8"}
+  ]
+}

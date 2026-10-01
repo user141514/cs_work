@@ -1,0 +1,22 @@
+{
+  "task": "pi-mono-auto-a4fca584",
+  "freeze_id": "S2_COMMON_PRESTATE_FREEZE_V1",
+  "session_id": "01a0f7cc-4a3e-7000-8639-ae33f7a25a58",
+  "live_source_path": "/home/agent/s2-common-pre-v3-sessions/2026-10-01T14-09-15-838Z_01a0f7cc-4a3e-7000-8639-ae33f7a25a58.jsonl",
+  "frozen_copy_path": "D:/cs_work/external/spec_stageb_sessions/s2_common_pre_frozen_v1/2026-10-01T14-09-15-838Z_01a0f7cc-4a3e-7000-8639-ae33f7a25a58.jsonl",
+  "sha256": "27de34edff19712f382c5086bfc96adc123b04a00f32618f89b8ea847e850000",
+  "bytes": 2037536,
+  "lines": 217,
+  "scientific_user_turns": 4,
+  "user_turns": [
+    {"source_message_index": 0, "sha256": "fb2568144b28f27af54954482a3d2aa843a66459ebcd9a2d73bc0aa781c763c6"},
+    {"source_message_index": 6, "sha256": "74c374b1a0c3d522a9b1d90cb92e23be569c721940def088461198f378b8db89"},
+    {"source_message_index": 8, "sha256": "ee45029de3b053c1f648c1339ec7b6a60936a2119f2f98740c89adb62b6fc747"},
+    {"source_message_index": 20, "sha256": "cebe7791d109d74047ebd025ca82f546c64111c4acaab6e9dda0a4b82bf55de0"}
+  ],
+  "late_revision_indices_absent": [37, 39],
+  "model": "openai-codex/gpt-5.6-sol",
+  "resolved_model_is_fallback": false,
+  "thinking": "xhigh",
+  "frozen_no_further_continue": true
+}

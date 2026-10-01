@@ -1,0 +1,41 @@
+{
+  "task": "pi-mono-auto-a4fca584",
+  "status": "FROZEN_OUTCOME_BLIND",
+  "common_prestate": "S2_COMMON_PRESTATE_FREEZE_V1",
+  "post_revision_outcome_exposed": false,
+  "reference_patch_exposed": false,
+  "verifier_outcome_exposed": false,
+  "late_revision_bundle": [37, 39],
+  "affected": [
+    {"path": "packages/coding-agent/src/main.ts", "lines": "8-9", "unit": "absolute-path helper imports"},
+    {"path": "packages/coding-agent/src/main.ts", "lines": "87-93", "unit": "resolveLocalPackagePath"},
+    {"path": "packages/coding-agent/src/main.ts", "lines": "110", "unit": "local normalization to absolute key"},
+    {"path": "packages/coding-agent/src/main.ts", "lines": "136-137", "unit": "storedSource derivation from affected normalization"},
+    {"path": "packages/coding-agent/src/main.ts", "lines": "142", "unit": "persist normalized absolute source"},
+    {"path": "packages/coding-agent/docs/packages.md", "line": 77, "clause": "Relative paths passed to pi install are stored as absolute paths."}
+  ],
+  "revalidate_only": [
+    {"path": "packages/coding-agent/src/core/package-manager.ts", "lines": "724-727", "unit": "CLI local-source existence validation via caller-cwd resolvePath"},
+    {"path": "packages/coding-agent/README.md", "line": 339, "unit": "local paths referenced in place / project-local settings description"}
+  ],
+  "independent_reusable": [
+    {"path": "packages/coding-agent/CHANGELOG.md", "line": 12},
+    {"path": "packages/coding-agent/README.md", "line": 332},
+    {"path": "packages/coding-agent/docs/packages.md", "lines": "26-27"},
+    {"path": "packages/coding-agent/docs/packages.md", "line": 77, "clause": "local install/settings support"},
+    {"path": "packages/coding-agent/docs/packages.md", "line": 77, "clause": "reference-in-place/remove-preserves-source/file-directory behavior"},
+    {"path": "packages/coding-agent/docs/settings.md", "line": 143},
+    {"path": "packages/coding-agent/src/core/package-manager.ts", "lines": "742-744"},
+    {"path": "packages/coding-agent/src/core/settings-manager.ts", "lines": "44,74"}
+  ],
+  "affected_context_no_reuse_credit": [
+    {"path": "packages/coding-agent/src/main.ts", "lines": "113-125", "reason": "sourcesMatch/packageSourcesMatch consume affected local normalization"},
+    {"path": "packages/coding-agent/src/main.ts", "lines": "134-150", "reason": "user/project settings scope and write context surrounds affected persistence logic"},
+    {"path": "packages/coding-agent/src/core/package-manager.ts", "lines": "1180-1193", "reason": "base cwd/baseDir path-resolution primitives"}
+  ],
+  "reuse_invariants": {
+    "whole_file_reuse_forbidden": true,
+    "mixed_line_77_whole_line_reuse_forbidden": true,
+    "unchanged_base_context_gets_reuse_credit": false
+  }
+}

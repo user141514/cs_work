@@ -5,3 +5,4 @@ research_factory/computer_topconf_2027/S3_R2_FULL_RESTART_SNAPSHOT_V1/artifacts/
 research_factory/computer_topconf_2027/S3_R3_ORACLE_SCOPED_SNAPSHOT_V1/artifacts/** -text
 research_factory/computer_topconf_2027/s2_arm_prompts/** -text
 research_factory/computer_topconf_2027/S2_COMMON_PRESTATE_SOURCE_ADAPTER_V1.md -text
+research_factory/computer_topconf_2027/S2_COMMON_PRESTATE_FREEZE_V1/** -text

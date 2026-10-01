@@ -1,0 +1,167 @@
+diff --git a/packages/coding-agent/CHANGELOG.md b/packages/coding-agent/CHANGELOG.md
+index e2eafdec..9f6cc5cb 100644
+--- a/packages/coding-agent/CHANGELOG.md
++++ b/packages/coding-agent/CHANGELOG.md
+@@ -9,6 +9,7 @@
+ ### Added
+ 
+ - Added `ExtensionAPI.getCommands()` to let extensions list available slash commands (extensions, prompt templates, skills) for invocation via `prompt` ([#1210](https://github.com/badlogic/pi-mono/pull/1210) by [@w-winter](https://github.com/w-winter))
++- Added local path support to `pi install` and `pi remove` ([#1216](https://github.com/badlogic/pi-mono/issues/1216))
+ 
+ ## [0.51.2] - 2026-02-03
+ 
+diff --git a/packages/coding-agent/README.md b/packages/coding-agent/README.md
+index e07ace6c..4c3d6125 100644
+--- a/packages/coding-agent/README.md
++++ b/packages/coding-agent/README.md
+@@ -329,13 +329,14 @@ pi install npm:@foo/pi-tools@1.2.3      # pinned version
+ pi install git:github.com/user/repo
+ pi install git:github.com/user/repo@v1  # tag or commit
+ pi install https://github.com/user/repo
++pi install ./path/to/local-package
+ pi remove npm:@foo/pi-tools
+ pi list
+ pi update                               # skips pinned packages
+ pi config                               # enable/disable extensions, skills, prompts, themes
+ ```
+ 
+-Packages install to `~/.pi/agent/git/` (git) or global npm. Use `-l` for project-local installs (`.pi/git/`, `.pi/npm/`).
++Git packages install to `~/.pi/agent/git/`, npm packages install globally, and local paths are referenced in place. Use `-l` for project-local entries (`.pi/git/`, `.pi/npm/`, or `.pi/settings.json`).
+ 
+ Create a package by adding a `pi` key to `package.json`:
+ 
+diff --git a/packages/coding-agent/docs/packages.md b/packages/coding-agent/docs/packages.md
+index 4928c831..4ec2c7a6 100644
+--- a/packages/coding-agent/docs/packages.md
++++ b/packages/coding-agent/docs/packages.md
+@@ -23,6 +23,8 @@ Pi packages bundle extensions, skills, prompt templates, and themes so you can s
+ pi install npm:@foo/bar@1.0.0
+ pi install git:github.com/user/repo@v1
+ pi install https://github.com/user/repo  # raw URLs work too
++pi install ./path/to/local-package
++pi install /absolute/path/to/extension.ts
+ 
+ pi remove npm:@foo/bar
+ pi list    # show installed packages from settings
+@@ -72,7 +74,7 @@ https://github.com/user/repo@v1
+ ./relative/path/to/package
+ ```
+ 
+-Local paths work in settings but not with `pi install`. If the path is a file, it loads as a single extension. If it is a directory, pi loads resources using package rules.
++Local paths can be registered with `pi install` or added directly to settings. Relative paths passed to `pi install` are stored as absolute paths. Local sources are referenced in place: Pi does not copy them, install their dependencies, or delete them on `pi remove`. If the path is a file, it loads as a single extension. If it is a directory, Pi loads resources using package rules.
+ 
+ ## Creating a Pi Package
+ 
+diff --git a/packages/coding-agent/docs/settings.md b/packages/coding-agent/docs/settings.md
+index 7bcf58e0..e67ac287 100644
+--- a/packages/coding-agent/docs/settings.md
++++ b/packages/coding-agent/docs/settings.md
+@@ -140,7 +140,7 @@ Paths in `~/.pi/agent/settings.json` resolve relative to `~/.pi/agent`. Paths in
+ 
+ | Setting | Type | Default | Description |
+ |---------|------|---------|-------------|
+-| `packages` | array | `[]` | npm/git packages to load resources from |
++| `packages` | array | `[]` | npm, git, or local packages to load resources from |
+ | `extensions` | string[] | `[]` | Local extension file paths or directories |
+ | `skills` | string[] | `[]` | Local skill file paths or directories |
+ | `prompts` | string[] | `[]` | Local prompt template paths or directories |
+diff --git a/packages/coding-agent/src/core/package-manager.ts b/packages/coding-agent/src/core/package-manager.ts
+index 2047d027..111f8694 100644
+--- a/packages/coding-agent/src/core/package-manager.ts
++++ b/packages/coding-agent/src/core/package-manager.ts
+@@ -721,7 +721,10 @@ export class DefaultPackageManager implements PackageManager {
+ 				await this.installGit(parsed, scope);
+ 				return;
+ 			}
+-			throw new Error(`Unsupported install source: ${source}`);
++			const localPath = this.resolvePath(parsed.path);
++			if (!existsSync(localPath)) {
++				throw new Error(`Local package not found: ${localPath}`);
++			}
+ 		});
+ 	}
+ 
+@@ -737,6 +740,9 @@ export class DefaultPackageManager implements PackageManager {
+ 				await this.removeGit(parsed, scope);
+ 				return;
+ 			}
++			if (parsed.type === "local") {
++				return;
++			}
+ 			throw new Error(`Unsupported remove source: ${source}`);
+ 		});
+ 	}
+diff --git a/packages/coding-agent/src/core/settings-manager.ts b/packages/coding-agent/src/core/settings-manager.ts
+index 6111da1d..68eb075d 100644
+--- a/packages/coding-agent/src/core/settings-manager.ts
++++ b/packages/coding-agent/src/core/settings-manager.ts
+@@ -41,7 +41,7 @@ export interface MarkdownSettings {
+ }
+ 
+ /**
+- * Package source for npm/git packages.
++ * Package source for npm, git, or local packages.
+  * - String form: load all resources from the package
+  * - Object form: filter which resources to load
+  */
+@@ -71,7 +71,7 @@ export interface Settings {
+ 	quietStartup?: boolean;
+ 	shellCommandPrefix?: string; // Prefix prepended to every bash command (e.g., "shopt -s expand_aliases" for alias support)
+ 	collapseChangelog?: boolean; // Show condensed changelog after update (use /changelog for full)
+-	packages?: PackageSource[]; // Array of npm/git package sources (string or object with filtering)
++	packages?: PackageSource[]; // Array of npm, git, or local package sources (string or object with filtering)
+ 	extensions?: string[]; // Array of local extension file paths or directories
+ 	skills?: string[]; // Array of local skill file paths or directories
+ 	prompts?: string[]; // Array of local prompt template paths or directories
+diff --git a/packages/coding-agent/src/main.ts b/packages/coding-agent/src/main.ts
+index 35ec57d4..9e5413ef 100644
+--- a/packages/coding-agent/src/main.ts
++++ b/packages/coding-agent/src/main.ts
+@@ -5,6 +5,8 @@
+  * createAgentSession() options. The SDK does the heavy lifting.
+  */
+ 
++import { homedir } from "node:os";
++import { join, resolve } from "node:path";
+ import { type ImageContent, modelsAreEqual, supportsXhigh } from "@mariozechner/pi-ai";
+ import chalk from "chalk";
+ import { createInterface } from "readline";
+@@ -82,6 +84,14 @@ function parsePackageCommand(args: string[]): PackageCommandOptions | undefined
+ 	return { command, source: sources[0], local };
+ }
+ 
++function resolveLocalPackagePath(source: string): string {
++	const trimmed = source.trim();
++	if (trimmed === "~") return homedir();
++	if (trimmed.startsWith("~/")) return join(homedir(), trimmed.slice(2));
++	if (trimmed.startsWith("~")) return join(homedir(), trimmed.slice(1));
++	return resolve(trimmed);
++}
++
+ function normalizeExtensionSource(source: string): { type: "npm" | "git" | "local"; key: string } {
+ 	if (source.startsWith("npm:")) {
+ 		const spec = source.slice("npm:".length).trim();
+@@ -97,7 +107,7 @@ function normalizeExtensionSource(source: string): { type: "npm" | "git" | "loca
+ 		const repo = source.split("@")[0] ?? "";
+ 		return { type: "git", key: repo.replace(/^https?:\/\//, "").replace(/\.git$/, "") };
+ 	}
+-	return { type: "local", key: source };
++	return { type: "local", key: resolveLocalPackagePath(source) };
+ }
+ 
+ function sourcesMatch(a: string, b: string): boolean {
+@@ -123,11 +133,13 @@ function updatePackageSources(
+ ): void {
+ 	const currentSettings = local ? settingsManager.getProjectSettings() : settingsManager.getGlobalSettings();
+ 	const currentPackages = currentSettings.packages ?? [];
++	const normalizedSource = normalizeExtensionSource(source);
++	const storedSource = normalizedSource.type === "local" ? normalizedSource.key : source;
+ 
+ 	let nextPackages: PackageSource[];
+ 	if (action === "add") {
+ 		const exists = currentPackages.some((existing) => packageSourcesMatch(existing, source));
+-		nextPackages = exists ? currentPackages : [...currentPackages, source];
++		nextPackages = exists ? currentPackages : [...currentPackages, storedSource];
+ 	} else {
+ 		nextPackages = currentPackages.filter((existing) => !packageSourcesMatch(existing, source));
+ 	}

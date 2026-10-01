@@ -1,0 +1,22 @@
+{
+  "freeze_id": "S2_COMMON_PRESTATE_FREEZE_V1",
+  "task": "pi-mono-auto-a4fca584",
+  "validator": "fresh exact official Docker image",
+  "image": "ghcr.io/togetherbench/multi-user-turn-codebench/pi-mono-auto-a4fca584:d1a6ee81ebeb",
+  "image_id": "sha256:24df21b472314647843bab5009a4f5b443a129e7bd42904936e0176277bf8148",
+  "base_head": "e54dff7efb460e364a39e4a22369991a20c105b9",
+  "git_apply_check": "PASS",
+  "git_apply_binary": "PASS",
+  "final_status_matches_freeze": true,
+  "untracked_artifacts_after_reconstruction": 0,
+  "final_file_hashes": {
+    "packages/coding-agent/CHANGELOG.md": "9b9a48ae82a389c886717b03957fbd7389800973fbafbc9f3d08d15c862c631f",
+    "packages/coding-agent/README.md": "1cadf59bb5864959e3c45c0594507315c1ea6e3d69691a003cb03a371a2ff70a",
+    "packages/coding-agent/docs/packages.md": "458f8535c36c0db3fdfb4954e02970f9c1cf45b54fcafd0b7bd2289a9d92bc89",
+    "packages/coding-agent/docs/settings.md": "4c4042c344ab1e93e76a3c041e34cb52812a3f552537c87116036da60b72b6a3",
+    "packages/coding-agent/src/core/package-manager.ts": "5ec392966ca1caf1c4fc47f00d2eb9956bed3ad754f901043b207f287266f6b8",
+    "packages/coding-agent/src/core/settings-manager.ts": "3b7431539980cad3e68ec3ebe8017d96dbc0f17a5370b217e1a146718fe746f5",
+    "packages/coding-agent/src/main.ts": "54db7ccc7fc2407f33998550ace7a3d791541b623b6d75be7ff519fddeeb15d8"
+  },
+  "all_final_file_hashes_match_live_post_u3_prestate": true
+}

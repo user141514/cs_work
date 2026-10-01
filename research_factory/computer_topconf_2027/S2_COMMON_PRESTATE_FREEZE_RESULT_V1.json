@@ -1,0 +1,32 @@
+{
+  "experiment": "S2_COMMON_PRESTATE_FREEZE_V1",
+  "status": "PASS_COMMON_PRESTATE_FROZEN__R3_SCOPE_FROZEN__R2_NEXT",
+  "task": "pi-mono-auto-a4fca584",
+  "freeze_manifest_sha256": "22498a753aeda06a14d612e3fa825db84504249902e2d9d71f928df09f44e5f5",
+  "snapshot": {
+    "base_commit": "e54dff7efb460e364a39e4a22369991a20c105b9",
+    "tracked_patch_bytes": 8292,
+    "tracked_patch_sha256": "6d072b1f42bc39306b9a9e494ee631cd19712eac979aeca52f79fb2149a71c75",
+    "modified_tracked_files": 7,
+    "untracked_artifacts": 0,
+    "deletions": 0,
+    "fresh_official_image_reconstruction_pass": true
+  },
+  "session": {
+    "id": "01a0f7cc-4a3e-7000-8639-ae33f7a25a58",
+    "frozen_copy_sha256": "27de34edff19712f382c5086bfc96adc123b04a00f32618f89b8ea847e850000",
+    "bytes": 2037536,
+    "lines": 217,
+    "scientific_user_turns": 4,
+    "late_revision_delivered": false,
+    "must_not_continue": true
+  },
+  "material_derived_work": true,
+  "r3_scope": {
+    "status": "FROZEN_OUTCOME_BLIND",
+    "whole_file_reuse_forbidden": true,
+    "mixed_line_reuse_forbidden": true
+  },
+  "partial_reference_guard": true,
+  "next_step": "S2_R2_FULL_RESTART"
+}

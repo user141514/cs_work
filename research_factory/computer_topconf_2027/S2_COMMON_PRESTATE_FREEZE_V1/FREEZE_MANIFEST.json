@@ -1,0 +1,46 @@
+{
+  "freeze_id": "S2_COMMON_PRESTATE_FREEZE_V1",
+  "task": "pi-mono-auto-a4fca584",
+  "status": "FROZEN_POST_U3__OUTCOME_BLIND_R3_SCOPE_FROZEN",
+  "revision_boundary": "after valid U3/source_message_index=20, before late-revision bundle 37/39 and before any R2/R3 outcome",
+  "snapshot": {
+    "base_commit": "e54dff7efb460e364a39e4a22369991a20c105b9",
+    "tracked_patch_sha256": "6d072b1f42bc39306b9a9e494ee631cd19712eac979aeca52f79fb2149a71c75",
+    "tracked_patch_bytes": 8292,
+    "modified_tracked_files": 7,
+    "untracked_artifact_count": 0,
+    "deletion_count": 0
+  },
+  "session": {
+    "frozen_copy_path": "D:/cs_work/external/spec_stageb_sessions/s2_common_pre_frozen_v1/2026-10-01T14-09-15-838Z_01a0f7cc-4a3e-7000-8639-ae33f7a25a58.jsonl",
+    "sha256": "27de34edff19712f382c5086bfc96adc123b04a00f32618f89b8ea847e850000",
+    "bytes": 2037536,
+    "lines": 217,
+    "scientific_user_turns": 4,
+    "frozen_no_further_continue": true
+  },
+  "items": [
+    {"path": "HEAD.txt", "bytes": 41, "sha256": "7c722795a53fa09ea8da8e6ed3b97050bc8a4d85111dfdb9e9130a01bec355c4"},
+    {"path": "R3_SCOPE_V1.json", "bytes": 2771, "sha256": "4182826dc66bbfe5a3dff15c3e8a6e40d08f1b781497e70885ff2dba36cb0466"},
+    {"path": "R3_SCOPE_V1.md", "bytes": 6977, "sha256": "63c44241183e3bc6128adf9a1386f57b6b53b52f552b6f4f688c62fa68d70a78"},
+    {"path": "README.md", "bytes": 875, "sha256": "8112343d6e4f9fd11bbf7e811a878c59240f84c85cb9372590f8d481ee0e0a91"},
+    {"path": "deletions.json", "bytes": 34, "sha256": "4d251dbf148d9f3ebca908ca16b8c9f4fe53176640b3e4169133c8e1929ed7e4"},
+    {"path": "derived_work_manifest.json", "bytes": 4593, "sha256": "3df2360e08bc868aae083a242d4c3b3b2e17fd9fef038908fda2b3c72f39720a"},
+    {"path": "git_status_porcelain_v1.txt", "bytes": 301, "sha256": "d1bd21a48a223c9474d844598460925ca9ace6e6edcd0645d819c3c379b3e5a3"},
+    {"path": "reconstruction_validation.json", "bytes": 1424, "sha256": "a95f6f499c7935d03dcd234de1bee91e040d12298bbf775b102bc2a4cfe12a38"},
+    {"path": "requirement_inputs.json", "bytes": 3253, "sha256": "5f2991510789007dfb5f6651fc5869cdc5531d2c3a5086ac2d56ba027083e38b"},
+    {"path": "runtime_identity.json", "bytes": 1450, "sha256": "54030349949114706d749445867d5a4718b199a67c03a1605c16ea69b306d142"},
+    {"path": "session_receipt.json", "bytes": 1226, "sha256": "33340b0bf5946d2d424ace17dce3b5e617f4d66163f1ce1275c63028d6c490c3"},
+    {"path": "snapshot_recipe.json", "bytes": 755, "sha256": "0f6fc6634b3bb3e0ce3063a2a884c0c788b7c699d0b102280d1bd30c03dc462a"},
+    {"path": "tracked_dirty.patch", "bytes": 8292, "sha256": "6d072b1f42bc39306b9a9e494ee631cd19712eac979aeca52f79fb2149a71c75"},
+    {"path": "untracked_artifacts.json", "bytes": 37, "sha256": "0ca1439aafeb77108d951315e32b21b5239d7dd715fc39818a730b50e49bbfd5"}
+  ],
+  "invariants": [
+    "The mutable WSL scientific worktree is not the snapshot.",
+    "The frozen project state reconstructs exactly as base commit plus tracked_dirty.patch; there are no untracked task artifacts or deletions.",
+    "The frozen scientific session contains exactly U0/U1/U2/U3 and must not be continued.",
+    "Late-revision bundle 37/39 has not been delivered at freeze time.",
+    "R3 reuse accounting must use the frozen semantic-hunk/clause classification rather than whole-file or mixed-line survival.",
+    "No post-revision outcome, R2/R3 result, reference patch, verifier outcome, oracle/canonical-goal material, or future successful solution was used to construct R3 scope."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "material_derived_work": true,
+  "artifact_count": 7,
+  "tracked_patch_sha256": "6d072b1f42bc39306b9a9e494ee631cd19712eac979aeca52f79fb2149a71c75",
+  "artifacts": [
+    {
+      "path": "packages/coding-agent/CHANGELOG.md",
+      "sha256": "9b9a48ae82a389c886717b03957fbd7389800973fbafbc9f3d08d15c862c631f",
+      "units": [
+        {"id": "DW1_CHANGELOG_FEATURE_CLAIM", "line": 12, "class": "INDEPENDENT_REUSABLE"}
+      ]
+    },
+    {
+      "path": "packages/coding-agent/README.md",
+      "sha256": "1cadf59bb5864959e3c45c0594507315c1ea6e3d69691a003cb03a371a2ff70a",
+      "units": [
+        {"id": "DW2_README_LOCAL_INSTALL_EXAMPLE", "line": 332, "class": "INDEPENDENT_REUSABLE"},
+        {"id": "DW3_README_LOCAL_REFERENCE_SCOPE", "line": 339, "class": "REVALIDATE_ONLY"}
+      ]
+    },
+    {
+      "path": "packages/coding-agent/docs/packages.md",
+      "sha256": "458f8535c36c0db3fdfb4954e02970f9c1cf45b54fcafd0b7bd2289a9d92bc89",
+      "units": [
+        {"id": "DW4_PACKAGE_DOC_INSTALL_EXAMPLES", "lines": "26-27", "class": "INDEPENDENT_REUSABLE"},
+        {"id": "DW5_PACKAGE_DOC_LOCAL_SUPPORT_CLAUSE", "line": 77, "clause": "Local paths can be registered with pi install or added directly to settings.", "class": "INDEPENDENT_REUSABLE"},
+        {"id": "DW6_PACKAGE_DOC_ABSOLUTE_PERSISTENCE_CLAUSE", "line": 77, "clause": "Relative paths passed to pi install are stored as absolute paths.", "class": "AFFECTED"},
+        {"id": "DW7_PACKAGE_DOC_REFERENCE_IN_PLACE_CLAUSES", "line": 77, "clause": "Local sources are referenced in place; remove does not delete source; file/directory package behavior.", "class": "INDEPENDENT_REUSABLE"}
+      ]
+    },
+    {
+      "path": "packages/coding-agent/docs/settings.md",
+      "sha256": "4c4042c344ab1e93e76a3c041e34cb52812a3f552537c87116036da60b72b6a3",
+      "units": [
+        {"id": "DW8_SETTINGS_DOC_LOCAL_PACKAGE_TYPE", "line": 143, "class": "INDEPENDENT_REUSABLE"}
+      ]
+    },
+    {
+      "path": "packages/coding-agent/src/core/package-manager.ts",
+      "sha256": "5ec392966ca1caf1c4fc47f00d2eb9956bed3ad754f901043b207f287266f6b8",
+      "units": [
+        {"id": "DW9_LOCAL_SOURCE_EXISTENCE_VALIDATION", "lines": "724-727", "class": "REVALIDATE_ONLY", "reason": "CLI source existence still uses caller-cwd resolution; intent is retained but must remain separated from settings persistence basis."},
+        {"id": "DW10_LOCAL_REMOVE_NOOP", "lines": "742-744", "class": "INDEPENDENT_REUSABLE"}
+      ]
+    },
+    {
+      "path": "packages/coding-agent/src/core/settings-manager.ts",
+      "sha256": "3b7431539980cad3e68ec3ebe8017d96dbc0f17a5370b217e1a146718fe746f5",
+      "units": [
+        {"id": "DW11_SETTINGS_TYPE_LOCAL_PACKAGE_COMMENTS", "lines": "44,74", "class": "INDEPENDENT_REUSABLE"}
+      ]
+    },
+    {
+      "path": "packages/coding-agent/src/main.ts",
+      "sha256": "54db7ccc7fc2407f33998550ace7a3d791541b623b6d75be7ff519fddeeb15d8",
+      "units": [
+        {"id": "DW12_ABSOLUTE_PATH_HELPER_IMPORTS", "lines": "8-9", "class": "AFFECTED"},
+        {"id": "DW13_RESOLVE_LOCAL_PACKAGE_PATH", "lines": "87-93", "class": "AFFECTED"},
+        {"id": "DW14_LOCAL_NORMALIZATION_TO_ABSOLUTE_KEY", "line": 110, "class": "AFFECTED"},
+        {"id": "DW15_STORED_SOURCE_DERIVATION", "lines": "136-137", "class": "AFFECTED"},
+        {"id": "DW16_STORE_NORMALIZED_ABSOLUTE_SOURCE", "line": 142, "class": "AFFECTED"}
+      ]
+    }
+  ],
+  "affected_context_no_reuse_credit": [
+    {
+      "path": "packages/coding-agent/src/main.ts",
+      "lines": "113-125",
+      "reason": "Existing sourcesMatch/packageSourcesMatch behavior consumes the affected local normalization key and must be rederived/revalidated for settings-file-relative equivalence."
+    },
+    {
+      "path": "packages/coding-agent/src/main.ts",
+      "lines": "134-150",
+      "reason": "Existing settings-scope selection/write context surrounds the affected storage/dedup/remove semantics; unchanged base lines are not derived-work reuse units."
+    },
+    {
+      "path": "packages/coding-agent/src/core/package-manager.ts",
+      "lines": "1180-1193",
+      "reason": "Existing cwd-based resolvePath and baseDir-aware resolvePathFromBase define the path-resolution primitives R3 must reason about; unchanged base code receives no derived-work reuse credit."
+    }
+  ],
+  "reuse_denominator": {
+    "kind": "semantic_hunks_or_clauses",
+    "whole_file_reuse_forbidden": true,
+    "whole_line_reuse_forbidden_for_mixed_line_77": true,
+    "reason": "Several files mix feature-support work with late-revision-dependent path persistence semantics."
+  }
+}

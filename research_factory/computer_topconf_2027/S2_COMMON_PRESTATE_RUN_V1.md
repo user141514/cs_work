@@ -1,7 +1,7 @@
 # S2 Common Prestate Run V1
 
 date: 2026-10-01
-status: U0_U1_U2_U3_PASS__COMMON_PRESTATE_FREEZE_NEXT
+status: U0_U1_U2_U3_PASS__COMMON_PRESTATE_FROZEN__R3_SCOPE_FROZEN__R2_NEXT
 task: pi-mono-auto-a4fca584
 
 ## Historical U0-v1 checkout — INVALID runtime trajectory
@@ -100,7 +100,7 @@ Authoritative delivery after runtime repair:
 `U0-v2 PASS -> U1 PASS -> U2 PASS -> U3 PASS`
 through the same WSL-native durable session.
 
-The scientific session is now FROZEN for turn delivery. Do not append any further user turn before the immutable common-prestate bundle and exact outcome-blind R3 scope are materialized.
+The scientific session is now permanently FROZEN for turn delivery. The immutable common-prestate bundle and exact outcome-blind R3 scope have been materialized; this session must never be continued.
 
 U0-v2 authority:
 - result: `S2_COMMON_PRESTATE_U0_RESULT_V2.md/json`
@@ -135,15 +135,40 @@ U3 authority:
 - relative-path basis is caller cwd, not settings.json directory
 - no new edit/write calls; no temporary smoke directories remain.
 
-Do not deliver late revision indices 37/39.
+Do not deliver late revision indices 37/39 to this frozen session.
 
-## Stop/freeze rule
+## Freeze result
 
-After U3 completes:
-- stop all scientific turns;
-- verify exact session identity and four user turns;
-- freeze project/session/artifact bytes;
-- classify exact R3 affected/revalidate/independent scope outcome-blind;
-- if no material derived work exists, mark reuse NONIDENTIFIABLE.
+`S2_COMMON_PRESTATE_FREEZE_V1 = PASS`
 
-R2/R3/R0/R1 are not authorized in this run.
+Authority:
+- `S2_COMMON_PRESTATE_FREEZE_V1/`
+- `S2_COMMON_PRESTATE_FREEZE_RESULT_V1.md/json`
+
+Frozen snapshot:
+- base `e54dff7efb460e364a39e4a22369991a20c105b9`
+- tracked patch SHA256 `6d072b1f42bc39306b9a9e494ee631cd19712eac979aeca52f79fb2149a71c75`
+- patch bytes 8,292
+- 7 tracked modified files
+- 0 untracked task artifacts
+- 0 deletions
+- fresh official-image reconstruction PASS
+
+Frozen session:
+- external frozen copy SHA256 `27de34edff19712f382c5086bfc96adc123b04a00f32618f89b8ea847e850000`
+- 2,037,536 bytes / 217 lines
+- exactly four scientific user turns: 0,6,8,20
+- 37/39 absent
+
+Freeze manifest SHA256:
+`22498a753aeda06a14d612e3fa825db84504249902e2d9d71f928df09f44e5f5`
+
+Exact outcome-blind R3 semantic scope is frozen in `R3_SCOPE_V1.md/json`; whole-file reuse and whole-line credit for mixed `docs/packages.md:77` are forbidden.
+
+## Exact next step
+
+`S2_R2_FULL_RESTART` only.
+
+R2 must start independently from TASK_INITIAL_STATE + frozen final spec including 37/39 and must not inherit this common-prestate implementation/session.
+
+PARTIAL_REFERENCE_GUARD remains binding. R3/R0/R1 are not authorized in the same supervisor step.
