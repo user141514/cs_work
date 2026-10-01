@@ -1,0 +1,32 @@
+{
+  "task": "pi-mono-auto-93c17d3b",
+  "arm": "R3_ORACLE_SCOPED",
+  "request_key": "s3-r3-oracle-scoped-v1",
+  "lifetime_turn_id": "turn_a51099283112420dad0d832ac59ee71e",
+  "agent_id": "agt_42c0b9cf349a41d7b9f222b3c04b0680",
+  "session_path": "D:/cs_work/external/spec_stageb_sessions/s3_r3_oracle_v1/2026-10-01T09-25-09-683Z_01a0f6c8-2fb4-7000-8556-5160bdf1584d.jsonl",
+  "session_sha256": "b3594a6f5c6e6b68414a09f3562d909734cb231b8d9110f998a72e3821de80b5",
+  "session_bytes": 852403,
+  "session_lines": 164,
+  "model": "openai-codex/gpt-5.6-sol",
+  "resolved_model_is_fallback": false,
+  "thinking": "xhigh",
+  "outcome": "succeeded",
+  "quiescent": true,
+  "prompt_file": "research_factory/computer_topconf_2027/S3_R3_ORACLE_SCOPED_PROMPT_V1.txt",
+  "prompt_sha256": "9381bf01972d16ffb524544ddce47e91f1ed89e9208415735edc1fe842f9ae76",
+  "scientific_user_turn_count": 1,
+  "forbidden_tool_path_scan_hits": 0,
+  "accounting": {
+    "model_calls": 38,
+    "tool_calls": 60,
+    "mutating_tool_calls": 5,
+    "noncached_input_output": 165390,
+    "reported_cost_usd": 1.9431120000000006,
+    "wall_seconds": 377.848,
+    "input_tokens": 148045,
+    "output_tokens": 17345,
+    "cache_read_tokens": 2510080,
+    "reasoning_tokens": 11750
+  }
+}

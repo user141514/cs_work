@@ -1,0 +1,27 @@
+{
+  "task": "pi-mono-auto-93c17d3b",
+  "arm": "R3_ORACLE_SCOPED",
+  "verifier_source": "D:/bio_paper/external/swe_together_official_20260928/tasks/pi-mono-auto-93c17d3b/tests/test.sh",
+  "task_toml_sha256": "4676cc1660709cd1da6030a9e1e47cebc741409e96b8fb19ddbf1fc7d4d6c8e3",
+  "normalized_verifier_sha256": "b64d2ffa9e79d382e46fcd2d3f87ede26a9f04fabb4328e4a9f39bc4f89576ee",
+  "host_verifier_mutated": false,
+  "container_crlf_to_lf_only": true,
+  "image": "ghcr.io/togetherbench/multi-user-turn-codebench/pi-mono-auto-93c17d3b:2f7d1992e60d",
+  "image_id": "sha256:4805e21fa2f3d38ed5dacc320ec0400b3fd402194051124b3a8a85cf826455fa",
+  "inner_reward_before_upstream_adjustment": 0.65,
+  "final_reward": 0.585,
+  "full_verifier_success": false,
+  "gates": {
+    "f2p_gate1_cmd_and_handler": true,
+    "f2p_gate2_protocol_injected": false,
+    "f2p_gate3_reacts_to_signals": true,
+    "f2p_gate4_distinct_signals": false,
+    "f2p_gate5_inactive_no_reaction": true,
+    "f2p_gate6_pattern_fidelity": true,
+    "f2p_upstream_file_exists": false,
+    "f2p_upstream_ext_loadable": false,
+    "p2p_upstream_extensions_dir": true,
+    "p2p_upstream_existing_ext_compiles": true
+  },
+  "runtime_invalid": false
+}

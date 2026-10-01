@@ -1,0 +1,42 @@
+{
+  "experiment": "S3_R3_ORACLE_SCOPED_V1",
+  "status": "VALID_R3__REUSE_PASS__INCONCLUSIVE_PRE_REGISTERED_RULE_GAP__R0_R1_NOT_AUTHORIZED",
+  "task": "pi-mono-auto-93c17d3b",
+  "arm": "R3_ORACLE_SCOPED",
+  "artifact_sha256": "66e09ad68c282c81e2b20417808ad1c888f406b4f90f483f9116b9e0ddef44b8",
+  "session_sha256": "b3594a6f5c6e6b68414a09f3562d909734cb231b8d9110f998a72e3821de80b5",
+  "verifier_reward_r3": 0.585,
+  "verifier_reward_r2": 0.765,
+  "r3_full_success": false,
+  "r2_full_success": false,
+  "reuse": {
+    "independent_lines_preserved": "103/103",
+    "independent_units_preserved": "10/10",
+    "conservative_reuse_floor": 0.673202614379085,
+    "threshold_30_percent_pass": true
+  },
+  "r3_accounting": {
+    "model_calls": 38,
+    "tool_calls": 60,
+    "noncached_input_output": 165390,
+    "reported_cost_usd": 1.9431120000000006,
+    "wall_seconds": 377.848
+  },
+  "relative_to_r2": {
+    "model_calls_fraction_change": -0.2962962962962963,
+    "tool_calls_fraction_change": -0.4339622641509434,
+    "noncached_input_output_fraction_change": -0.06451503427679359,
+    "reported_cost_fraction_change": -0.4480126646946638,
+    "wall_fraction_change": -0.4021855900412784,
+    "verifier_reward_fraction_change": -0.23529411764705888
+  },
+  "adjudication": {
+    "local_headroom_pass": false,
+    "local_headroom_negative": false,
+    "reason": "Pre-registered S3 rule does not define match/approach for R2 and R3 when both full_verifier_success are false; post-hoc reward or gate-vector threshold is forbidden.",
+    "r0_authorized": false,
+    "r1_authorized": false,
+    "independent_review": "not_run"
+  },
+  "next_step": "BFSC_SELECTOR_REPLAN_AFTER_S3_PARTIAL_ADJUDICATION_GAP"
+}

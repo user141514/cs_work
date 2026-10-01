@@ -1,0 +1,21 @@
+{
+  "snapshot_id": "S3_R3_ORACLE_SCOPED_SNAPSHOT_V1",
+  "task": "pi-mono-auto-93c17d3b",
+  "arm": "R3_ORACLE_SCOPED",
+  "status": "VALID_EXECUTION__VERIFIER_REWARD_0_5850__REUSE_THRESHOLD_PASS",
+  "base_commit": "5133697bc454da5595655cf4b0c70d3c2c725677",
+  "common_prestate_manifest_sha256": "06b55884fbca4169175cfc178a145b2a68937f810a1be268da346f6b185a195d",
+  "items": [
+    {"path": "artifacts/.pi/extensions/message-signals.ts", "bytes": 4720, "sha256": "66e09ad68c282c81e2b20417808ad1c888f406b4f90f483f9116b9e0ddef44b8"},
+    {"path": "reuse_accounting.json", "bytes": 1014, "sha256": "d2490a8878513ce9bc9d29d2115779c5091b212fbfccd62b3f5d7517f73f2b97"},
+    {"path": "session_receipt.json", "bytes": 1243, "sha256": "18363374cf4af2e2b355e3e5bc2ccff917b5aedc57c141944191386b01d12e95"},
+    {"path": "verifier_result.json", "bytes": 1203, "sha256": "78a1b7d93197cba6a1d306e06342baa1c81eed7293359152bcdaecfa36a143f9"}
+  ],
+  "invariants": [
+    "R3 started from an exact reconstruction of the frozen post-U5 common prestate.",
+    "R3 used a fresh session with only the frozen final requirements and outcome-blind capsule/scope.",
+    "R3 received no R2 implementation or verifier result as solution context.",
+    "Whole-file reuse credit is forbidden; only frozen independent semantic units count toward reuse.",
+    "No R3 rescue/retry is authorized after outcome observation."
+  ]
+}

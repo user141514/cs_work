@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-01
-status: BFSC_S3_R2_VALID_PARTIAL__REWARD_0_765__R3_NEXT
+status: BFSC_S3_R3_VALID__REUSE_PASS__PARTIAL_ADJUDICATION_GAP__R0_R1_NOT_AUTHORIZED__SELECTOR_REPLAN_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -275,10 +275,12 @@ Runtime admission is complete and the S3 pre-revision requirement trajectory has
 
 `S3_R2_FULL_RESTART` is now COMPLETE as a valid but partial-correctness arm. Authority: `S3_R2_FULL_RESTART_RESULT_V1.md/json`, frozen prompt `S3_R2_FULL_RESTART_PROMPT_V1.txt`, and snapshot `S3_R2_FULL_RESTART_SNAPSHOT_V1/`. R2 started from a fresh isolated exact-base worktree/session with no common-prestate inheritance and ended with only `.pi/extensions/signal-ui.ts` (SHA256 `886a067d...`) untracked. Native accounting: 54 model calls, 106 tool calls, 176,796 noncached input+output tokens, $3.5202112 reported cost, 632.049 s. The frozen official verifier yields `0.7650`: Gate1/2/3/5/6 PASS, Gate4 distinct-signal behavior FAIL, informational upstream canonical-file/loadable gates FAIL, P2P runtime gates PASS. This is not runtime INVALID and is not full verifier success. R2 is frozen as-is; no repair/retry/rename/rescore is allowed.
 
+`S3_R3_ORACLE_SCOPED` is now COMPLETE as a valid arm. Authority: `S3_R3_ORACLE_SCOPED_PROMPT_V1.txt`, `S3_R3_ORACLE_SCOPED_RESULT_V1.md/json`, snapshot `S3_R3_ORACLE_SCOPED_SNAPSHOT_V1/`, and `S3_R3_ADVERSARIAL_REVIEW_V1.json`. R3 reconstructed the immutable post-U5 common prestate and used only the outcome-blind frozen capsule/scope. It selectively replaced the affected setWidget/clearWidget projection with setStatus/clearStatus while preserving every frozen-independent semantic unit. Credited reuse floor is 67.32%; 10/10 independent semantic units and 103/103 independent lines are unchanged. Native accounting: 38 model calls, 60 tool calls, 165,390 noncached input+output tokens, $1.943112 reported cost, 377.848 s. Versus R2 this is cheaper by 44.80% reported cost and 43.40% tool calls. The frozen official verifier yields R3 `0.5850` versus R2 `0.7650`; both have full_success=false, but R3 fails Gate2 in addition to the shared Gate4 failure. Real source confirms extension slash commands may execute during streaming, so the Gate2 state is reachable and cannot be discarded as impossible-state measurement noise.
+
+The R2/R3 comparison cannot be promoted to either LOCAL_HEADROOM_PASS or LOCAL_HEADROOM_NEGATIVE because the pre-registered S3 leverage rule never defines `matches/approaches` for two partial verifier failures. Creating a scalar-reward or gate-vector closeness threshold now would be post-outcome rule drift. Scientific status: `INCONCLUSIVE_PRE_REGISTERED_RULE_GAP`. R0/R1 remain unauthorized because R0 is permitted only after headroom survives. R2/R3 must not be rescued or rerun under a new criterion. Independent adversarial review was attempted but the current host cannot execute a fresh worker; review gate is recorded BLOCKED/not_run rather than faked PASS.
+
 The exact next scientific transition is now:
 
-`S3_R3_ORACLE_SCOPED`
+`BFSC_SELECTOR_REPLAN_AFTER_S3_PARTIAL_ADJUDICATION_GAP`
 ->
-branch from the immutable post-U5 common-prestate bundle and expose only the already-frozen outcome-blind independent/revalidate/affected scope plus U6/final requirements. Do not provide R2 implementation, gate outcomes, or verifier result as solution context.
-
-R0 remains conditional on the later frozen R3-vs-R2 headroom/reuse decision. R1 remains unauthorized for symmetry.
+return the frozen S3 evidence to the higher-level selector/replanning layer. Do not run additional S3 arms before that selector decision.

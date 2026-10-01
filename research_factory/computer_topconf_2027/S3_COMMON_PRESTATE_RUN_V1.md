@@ -164,8 +164,18 @@ R2 FULL_RESTART is complete as `VALID_EXECUTION__PARTIAL_CORRECTNESS__REWARD_0_7
 
 R2 used a fresh exact-base worktree and new session with no common-prestate inheritance. The frozen verifier did not reach full success; no R2 rescue/retry is authorized.
 
+## R3 result
+
+R3 ORACLE_SCOPED is complete and valid. Authority:
+- `S3_R3_ORACLE_SCOPED_PROMPT_V1.txt`
+- `S3_R3_ORACLE_SCOPED_RESULT_V1.md/json`
+- `S3_R3_ORACLE_SCOPED_SNAPSHOT_V1/`
+- `S3_R3_ADVERSARIAL_REVIEW_V1.json`
+
+R3 preserved all frozen-independent semantic units (reuse floor 67.32%) and reduced work/cost substantially versus R2, but its frozen verifier result is lower (`0.5850` vs `0.7650`) and both arms remain partial failures. The pre-registered S3 gate does not define partial-vs-partial match/approach, so the local-headroom verdict is `INCONCLUSIVE_PRE_REGISTERED_RULE_GAP`; do not retrofit a threshold. R0/R1 remain unauthorized.
+
 ## Exact next step
 
-`S3_R3_ORACLE_SCOPED` only.
+`BFSC_SELECTOR_REPLAN_AFTER_S3_PARTIAL_ADJUDICATION_GAP` only.
 
-R3 must reconstruct the immutable post-U5 common prestate and use only the already-frozen outcome-blind R3 scope. Do not expose R2 implementation/verifier result as solution context and do not run R0/R1 in the same supervisor turn.
+Return control to the higher-level selector/replanning layer. Do not rerun/rescue R2/R3 and do not execute additional S3 arms before that decision.

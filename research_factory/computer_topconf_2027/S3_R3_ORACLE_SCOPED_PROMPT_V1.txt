@@ -1,0 +1,71 @@
+You are starting a fresh post-revision controlled coding-agent run from the frozen S3 pre-revision common state at task-initial commit 5133697bc454da5595655cf4b0c70d3c2c725677.
+
+This is the ORACLE_DEPENDENCY_SCOPED_REDERIVATION arm.
+
+The workspace already contains the exact frozen pre-revision project artifact at:
+.pi/extensions/message-signals.ts
+
+That file exists as pre-revision derived state. Its existence does NOT make the whole file valid after the late requirement. Reuse is allowed only at the semantic/hunk level described below.
+
+Final authoritative requirements:
+
+1. Provide a repository-local test extension under `.pi/extensions`.
+2. Provide a slash-command activation path such as `/start`.
+3. Activation injects a hidden custom/session control message rather than exposing the control protocol as normal visible transcript content.
+4. Completed assistant messages can emit distinct open/input and close/done signals that the extension observes.
+5. Open/input and close/done are separate events; combined same-response open+close does not satisfy the contract.
+6. The signal UI can remain active across multiple intervening turns/work and a later/final signal closes it.
+7. The extension remains inactive until explicitly activated.
+8. While assistant output/streaming occurs with the signal UI active, the user must retain usable typing/input/editor responsiveness.
+9. The UI projection/lifecycle must not repeatedly recreate, replace, focus-steal, or otherwise block the interactive input surface as output arrives.
+10. Preserve command activation, hidden protocol injection, distinct signal semantics, extension loadability, multi-turn behavior, and inactive-before-start behavior while fixing the late lifecycle/responsiveness defect.
+11. Run task-appropriate correctness checks for both the retained signal behavior and the late lifecycle/responsiveness requirement.
+
+The historical 10-turn README exercise is a verification scenario, not a product feature; do not hardcode that workload.
+
+Outcome-blind pre-revision reuse capsule:
+
+The following pre-revision semantic/code units are independent of the late UI lifecycle defect and may be preserved if still compatible:
+- signal/control constants other than the persistent widget identity;
+- assistant text extraction and standalone signal classification;
+- hidden control-protocol construction and ordered INPUT/DONE contract;
+- command registration, idle/UI admission, active/awaiting state initialization;
+- hidden custom-message injection on start;
+- message-end admission, assistant/stop filtering, signal extraction and DONE state transition, excluding UI projection calls;
+- INPUT state transition excluding UI projection/input calls;
+- retained post-input control flow excluding UI side effects;
+- hidden follow-up injection using `deliverAs: "followUp"`;
+- session-switch state reset excluding widget clearing/projection.
+
+The following pre-revision seam is INVALIDATED by the late requirement and must be rederived or explicitly revalidated rather than trusted:
+- persistent widget identity as part of the projection mechanism;
+- `setWorkflowWidget` / `clearWorkflowWidget`;
+- every widget projection/clear call during /start, DONE, INPUT, empty-input handling, hidden follow-up and session switch;
+- any assumption that the pre-revision projection remains responsive while assistant output/streaming occurs.
+
+The following retained UI-facing behaviors are REVALIDATE_ONLY:
+- direct `ctx.ui.input(...)` interaction;
+- completion/cancel UI notifications.
+
+Whole-file reuse is forbidden. Existing bytes may remain present so you can inspect them, but only the independent capsule above is declared reusable. Affected reasoning/implementation decisions must be rederived under the final requirements.
+
+Tasks:
+1. Preserve independent pre-revision work where it remains valid.
+2. Re-derive the affected UI projection/lifecycle seam from current source/API behavior and the final requirements.
+3. Revalidate retained UI-input/notification behavior if it remains in the solution.
+4. Implement only the changes required by the final authoritative requirements.
+5. Run repository-relevant correctness checks.
+
+Experimental boundaries:
+- Diagnose and implement only from the current repository state, final requirements, and the outcome-blind capsule above.
+- Do not inspect later git history, reference/gold patches, hidden verifier files/results, benchmark canonical goals, RESEARCH-01 Phase-B artifacts/diagnosis/repair, R2 implementation/results, or future successful trajectories.
+- Do not use another agent or external project context.
+- Do not commit, push, publish, or release.
+- Do not change the stated requirements or optimize to hidden evaluator behavior.
+- Do not treat the affected pre-revision projection code as authoritative merely because it is present.
+
+At the end, report:
+- files changed;
+- which pre-revision work was preserved versus rederived/revalidated;
+- correctness checks actually run and their results;
+- any unresolved requirement.

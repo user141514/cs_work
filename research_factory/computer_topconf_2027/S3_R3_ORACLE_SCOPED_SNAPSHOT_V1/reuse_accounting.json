@@ -1,0 +1,21 @@
+{
+  "task": "pi-mono-auto-93c17d3b",
+  "arm": "R3_ORACLE_SCOPED",
+  "pre_revision_artifact": ".pi/extensions/message-signals.ts",
+  "pre_revision_sha256": "1d76a1742be2dee3356f770cb6bb7385565d3aaa1e4eaa5bc64f665875ac4080",
+  "post_revision_sha256": "66e09ad68c282c81e2b20417808ad1c888f406b4f90f483f9116b9e0ddef44b8",
+  "pre_lines": 153,
+  "post_lines": 153,
+  "position_identical_lines": 142,
+  "position_identical_fraction": 0.9281045751633987,
+  "frozen_independent_lines": 103,
+  "frozen_independent_lines_preserved": 103,
+  "independent_line_preservation_fraction": 1.0,
+  "frozen_independent_semantic_units": 10,
+  "frozen_independent_semantic_units_preserved": 10,
+  "independent_semantic_unit_preservation_fraction": 1.0,
+  "conservative_reuse_floor_over_full_artifact_lines": 0.673202614379085,
+  "reuse_threshold_30_percent_pass": true,
+  "whole_file_reuse_credit_forbidden": true,
+  "affected_projection_change": "setWidget/clearWidget seam and lifecycle call sites rederived to setStatus/clearStatus"
+}

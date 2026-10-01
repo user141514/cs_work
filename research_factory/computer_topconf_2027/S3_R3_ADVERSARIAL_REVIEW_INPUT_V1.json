@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "work_id": "S3_R3_VS_R2_HEADROOM_ADJUDICATION",
+  "run_id": "review-s3-r3-vs-r2-v1",
+  "claim_version": "S3_LOCAL_HEADROOM_CLAIM_V1",
+  "context_mode": "independent",
+  "claim": "R3 ORACLE_SCOPED validly preserves at least 30% meaningful pre-revision work but is strictly worse than R2 FULL_RESTART on the frozen verifier; therefore S3 local selective-rederivation headroom does not survive and R0/R1 should not be run under the pre-registered S3 Execution Leverage Gate.",
+  "scope": "S3 R2-vs-R3 local headroom and the immediate R0/R1 authorization decision only; not the full five-task Stage-B verdict and not a paper-candidate verdict.",
+  "input_manifest": [
+    {"path": "research_factory/computer_topconf_2027/S3_EXECUTION_LEVERAGE_GATE_V1.md", "sha256": "5ff996e4f393459ff069e528b895bf3296a637370d19b63f3c58bcd81fc41d09", "role": "pre_registered_decision_rule"},
+    {"path": "research_factory/computer_topconf_2027/S3_COMMON_PRESTATE_FREEZE_V1/R3_SCOPE_V1.json", "sha256": "3cdb79725f4b1b04c8ef3ff0075288c560b06cb3d086e52f198f83888db10410", "role": "outcome_blind_reuse_scope"},
+    {"path": "research_factory/computer_topconf_2027/S3_R2_FULL_RESTART_SNAPSHOT_V1/verifier_result.json", "sha256": "eb949c45f6179dafe5aa72fca86dc3b1f67e5f37d7dc8fccc531eb787e20bcbf", "role": "raw_r2_correctness"},
+    {"path": "research_factory/computer_topconf_2027/S3_R2_FULL_RESTART_SNAPSHOT_V1/session_receipt.json", "sha256": "bf3eca1b26b4c8a83889a3b6ae650d209e06ef4b40cfb8271fbaaafad7e10c05", "role": "raw_r2_work_accounting"},
+    {"path": "research_factory/computer_topconf_2027/S3_R3_ORACLE_SCOPED_SNAPSHOT_V1/verifier_result.json", "sha256": "78a1b7d93197cba6a1d306e06342baa1c81eed7293359152bcdaecfa36a143f9", "role": "raw_r3_correctness"},
+    {"path": "research_factory/computer_topconf_2027/S3_R3_ORACLE_SCOPED_SNAPSHOT_V1/session_receipt.json", "sha256": "18363374cf4af2e2b355e3e5bc2ccff917b5aedc57c141944191386b01d12e95", "role": "raw_r3_work_accounting"},
+    {"path": "research_factory/computer_topconf_2027/S3_R3_ORACLE_SCOPED_SNAPSHOT_V1/reuse_accounting.json", "sha256": "d2490a8878513ce9bc9d29d2115779c5091b212fbfccd62b3f5d7517f73f2b97", "role": "raw_r3_reuse_accounting"},
+    {"path": "external/spec_stageb_s3_common_pre_v2/packages/coding-agent/src/modes/interactive/interactive-mode.ts", "sha256": "84857ed420ab8e81c7b724d4449504b9c66c0b5d0ea8ef9bcd591e75dd8759cd", "role": "runtime_reachability_of_extension_commands_while_streaming"},
+    {"path": "external/spec_stageb_s3_common_pre_v2/packages/coding-agent/src/core/extensions/types.ts", "sha256": "c2b28f20c5f1b4ea9280b7f13e0b34b2b605e64a56cf96af61b3596d4c79adf7", "role": "isIdle_semantics"}
+  ],
+  "excluded": [
+    "R2 implementation source as a solution hint",
+    "reference/gold patch",
+    "RESEARCH-01 Phase-B repair",
+    "future R0/R1 outcomes",
+    "author conclusion narrative beyond the claim text"
+  ]
+}

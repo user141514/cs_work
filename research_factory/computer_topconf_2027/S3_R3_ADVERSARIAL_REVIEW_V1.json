@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_type": "ReviewArtifact",
+  "artifact_id": "s3-r3-vs-r2-review-v1",
+  "run_id": "review-s3-r3-vs-r2-v1",
+  "work_id": "S3_R3_VS_R2_HEADROOM_ADJUDICATION",
+  "claim_version": "S3_LOCAL_HEADROOM_CLAIM_V1",
+  "is_example": false,
+  "input_manifest": [
+    {"path": "research_factory/computer_topconf_2027/S3_EXECUTION_LEVERAGE_GATE_V1.md", "sha256": "5ff996e4f393459ff069e528b895bf3296a637370d19b63f3c58bcd81fc41d09", "role": "pre_registered_decision_rule"},
+    {"path": "research_factory/computer_topconf_2027/S3_COMMON_PRESTATE_FREEZE_V1/R3_SCOPE_V1.json", "sha256": "3cdb79725f4b1b04c8ef3ff0075288c560b06cb3d086e52f198f83888db10410", "role": "outcome_blind_reuse_scope"},
+    {"path": "research_factory/computer_topconf_2027/S3_R2_FULL_RESTART_SNAPSHOT_V1/verifier_result.json", "sha256": "eb949c45f6179dafe5aa72fca86dc3b1f67e5f37d7dc8fccc531eb787e20bcbf", "role": "raw_r2_correctness"},
+    {"path": "research_factory/computer_topconf_2027/S3_R2_FULL_RESTART_SNAPSHOT_V1/session_receipt.json", "sha256": "bf3eca1b26b4c8a83889a3b6ae650d209e06ef4b40cfb8271fbaaafad7e10c05", "role": "raw_r2_work"},
+    {"path": "research_factory/computer_topconf_2027/S3_R3_ORACLE_SCOPED_SNAPSHOT_V1/verifier_result.json", "sha256": "78a1b7d93197cba6a1d306e06342baa1c81eed7293359152bcdaecfa36a143f9", "role": "raw_r3_correctness"},
+    {"path": "research_factory/computer_topconf_2027/S3_R3_ORACLE_SCOPED_SNAPSHOT_V1/session_receipt.json", "sha256": "18363374cf4af2e2b355e3e5bc2ccff917b5aedc57c141944191386b01d12e95", "role": "raw_r3_work"},
+    {"path": "research_factory/computer_topconf_2027/S3_R3_ORACLE_SCOPED_SNAPSHOT_V1/reuse_accounting.json", "sha256": "d2490a8878513ce9bc9d29d2115779c5091b212fbfccd62b3f5d7517f73f2b97", "role": "raw_r3_reuse"},
+    {"path": "external/spec_stageb_s3_common_pre_v2/packages/coding-agent/src/modes/interactive/interactive-mode.ts", "sha256": "84857ed420ab8e81c7b724d4449504b9c66c0b5d0ea8ef9bcd591e75dd8759cd", "role": "streaming_command_reachability"},
+    {"path": "external/spec_stageb_s3_common_pre_v2/packages/coding-agent/src/core/extensions/types.ts", "sha256": "c2b28f20c5f1b4ea9280b7f13e0b34b2b605e64a56cf96af61b3596d4c79adf7", "role": "isIdle_semantics"}
+  ],
+  "context_mode": "independent",
+  "coverage": {
+    "declared": [
+      "S3 execution gate",
+      "frozen R3 reuse scope",
+      "raw R2 verifier/work",
+      "raw R3 verifier/work/reuse",
+      "streaming slash-command reachability"
+    ],
+    "read": [
+      "S3 execution gate",
+      "frozen R3 reuse scope",
+      "raw R2 verifier/work",
+      "raw R3 verifier/work/reuse",
+      "streaming slash-command reachability"
+    ],
+    "missing": [
+      "fresh independent reviewer execution"
+    ],
+    "excluded": [
+      {"path": "R2 implementation source", "reason": "forbidden as solution hint; not needed for gate-vector comparison"},
+      {"path": "reference/gold patch", "reason": "forbidden post-hoc solution evidence"},
+      {"path": "RESEARCH-01 Phase-B repair", "reason": "boundary-contaminated development evidence"}
+    ],
+    "complete": false
+  },
+  "reviewer": {
+    "executor_family": "GPT-5.6 Sol",
+    "reviewer_family": "unknown",
+    "fresh_context": false,
+    "independent_review": "not_run"
+  },
+  "attack": "The strongest attack on the proposed LOCAL_HEADROOM_NEGATIVE claim is a pre-registration gap: R2 and R3 are both full_verifier_success=false, while the S3 gate defines an explicit negative case only for valid R2 success followed by R3 failure and defines the positive case as R3 matching/approaching R2 without freezing how partial verifier rewards or gate vectors should be compared. Using the observed 0.585/0.765 ratio or extra failed gate as a new threshold would be post-outcome rule creation.",
+  "findings": [
+    {
+      "id": "F1_PARTIAL_PARTIAL_RULE_GAP",
+      "claim": "The evidence is sufficient to label S3 local headroom negative.",
+      "observation": "R2 full_success=false at reward 0.765; R3 full_success=false at reward 0.585. R3 fails Gate2 in addition to the shared Gate4 failure. The pre-registered S3 gate does not define a scalar or gate-vector closeness rule for two partial failures.",
+      "evidence": [
+        "S3_EXECUTION_LEVERAGE_GATE_V1.md OWNED_DECISION/KILL_OR_PROMOTION_POWER/EARLY_STOP_RULE",
+        "S3_R2_FULL_RESTART_SNAPSHOT_V1/verifier_result.json",
+        "S3_R3_ORACLE_SCOPED_SNAPSHOT_V1/verifier_result.json"
+      ],
+      "impact": "Blocks promotion of the comparison to either LOCAL_HEADROOM_PASS or LOCAL_HEADROOM_NEGATIVE without a post-hoc criterion.",
+      "blocking": true,
+      "severity": "critical",
+      "status": "still_unresolved",
+      "action": "Freeze the result as INCONCLUSIVE_PRE_REGISTERED_RULE_GAP; do not retrofit a reward/gate-vector threshold to this completed task.",
+      "falsifier": "A pre-outcome artifact defining how partial R2/R3 verifier outcomes map to match/approach would answer this finding."
+    },
+    {
+      "id": "F2_REUSE_THRESHOLD",
+      "claim": "R3 preserves at least 30% meaningful pre-revision work.",
+      "observation": "103/103 frozen-independent lines and 10/10 independent semantic units remain byte-identical; conservative credited reuse floor is 103/153 = 0.6732.",
+      "evidence": [
+        "S3_R3_ORACLE_SCOPED_SNAPSHOT_V1/reuse_accounting.json",
+        "S3_COMMON_PRESTATE_FREEZE_V1/R3_SCOPE_V1.json"
+      ],
+      "impact": "The reuse-side necessary condition is satisfied and is not the source of inconclusiveness.",
+      "blocking": false,
+      "severity": "major",
+      "status": "answered_by_current_artifact",
+      "action": "Retain the frozen reuse accounting unchanged.",
+      "falsifier": "A byte-level audit showing frozen independent units were rederived or changed would overturn the reuse claim."
+    },
+    {
+      "id": "F3_GATE2_REACHABILITY",
+      "claim": "R3 Gate2 failure is an impossible-state verifier artifact because /start cannot be invoked while streaming.",
+      "observation": "interactive-mode.ts explicitly says extension commands execute immediately during compaction and while session.isStreaming; ExtensionContext.isIdle is defined as not streaming. Thus isIdle=false at extension-command invocation is a real reachable state.",
+      "evidence": [
+        "external/spec_stageb_s3_common_pre_v2/packages/coding-agent/src/modes/interactive/interactive-mode.ts around streaming command dispatch",
+        "external/spec_stageb_s3_common_pre_v2/packages/coding-agent/src/core/extensions/types.ts isIdle documentation"
+      ],
+      "impact": "The additional Gate2 failure cannot be dismissed solely as an impossible-state measurement bug.",
+      "blocking": false,
+      "severity": "major",
+      "status": "answered_by_current_artifact",
+      "action": "Keep the Gate2 observation in the raw result, but do not invent a new partial-outcome threshold.",
+      "falsifier": "Source evidence that extension commands cannot execute while streaming would reopen measurement validity."
+    },
+    {
+      "id": "F4_INDEPENDENT_REVIEW_TOOLING",
+      "claim": "A fresh independent reviewer has approved this adjudication.",
+      "observation": "The host reports provider-backed workers available but fresh workers cannot be continued/executed: sampling_tools_not_supported and worker_not_found were returned.",
+      "evidence": [
+        "current host worker capability/result receipts"
+      ],
+      "impact": "Independent adversarial PASS cannot be claimed.",
+      "blocking": true,
+      "severity": "major",
+      "status": "not_assessed",
+      "action": "Report independent_review=not_run and do not use reviewer approval as evidence.",
+      "falsifier": "A successfully executed fresh reviewer over the frozen manifest would resolve this limitation."
+    }
+  ],
+  "verdict": "BLOCKED",
+  "limitations": [
+    "No independent reviewer execution completed on the current host.",
+    "The pre-registered S3 gate does not define partial-vs-partial verifier closeness.",
+    "This artifact does not adjudicate the full five-task Stage-B claim or paper candidacy."
+  ],
+  "next_action": "Freeze S3 R3 evidence as INCONCLUSIVE_PRE_REGISTERED_RULE_GAP; keep R0/R1 unauthorized because the gate only authorizes R0 after headroom survives; return control to the higher-level selector/replanning layer without rerunning R2/R3."
+}
