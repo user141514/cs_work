@@ -1,7 +1,7 @@
 # S3 Common Prestate Run Contract V1
 
 date: 2026-10-01
-status: U4_PASS_TRAJECTORY__U5_NEXT
+status: U5_PASS_PRESTATE_TURN__FREEZE_NEXT
 task: pi-mono-auto-93c17d3b
 parent:
 - S3_STAGE_B_BOUNDARY_FREEZE_V1.md
@@ -12,7 +12,7 @@ parent:
 
 Generate exactly one scientific pre-revision trajectory for S3.
 
-Execution advances one user-authorized supervisor turn at a time in the same durable OMP session and checkout. U1-v2 through U4 are complete as valid controlled trajectory turns. U5 is the next planned continuation, but this file alone does not automatically authorize executing it.
+Execution advances one user-authorized supervisor turn at a time in the same durable OMP session and checkout. U1-v2 through valid U5-v2 are now complete. The first U5 launch is excluded as `INVALID_PROMPT_MISMATCH`; exact post-U4 session state was restored by byte hash before valid U5-v2. The next planned action is the common-prestate freeze, but this file alone does not automatically authorize R2/R3.
 
 No late revision U6, R0, R1, R2 or R3 is authorized by this file.
 
@@ -133,10 +133,20 @@ U4 passed as a valid controlled trajectory turn in the same v2 checkout/session.
 
 The exact frozen U4 was the fourth user turn; identity and forbidden-source boundaries remained intact. The agent made no code change and ended with standalone `[[PI_EXTENSION_INPUT]]`, creating first/open-wait protocol evidence. Because the runner uses `--no-extensions`, this is not independent live-UI verification and no arbitrary answer is injected.
 
+## U5 result
+
+The first U5 launch is invalid execution evidence only:
+- `S3_COMMON_PRESTATE_U5_INVALID_V1.md`
+- `S3_COMMON_PRESTATE_U5_INVALID_V1.json`
+
+After exact hash-proven restoration to the recorded post-U4 session bytes, valid U5-v2 passed as the final pre-revision requirement-assimilation turn. Authority:
+- `S3_COMMON_PRESTATE_U5_RESULT_V2.md`
+- `S3_COMMON_PRESTATE_U5_RESULT_V2.json`
+
+The exact frozen U5 is the fifth scientific user turn. It made no code change and ended after workload turn 1/10 with standalone `[[PI_EXTENSION_INPUT]]`. This does not claim live 10-turn UI verification in the frozen `--no-extensions` scientific runner; no arbitrary follow-up answer and no workflow-only U6-equivalent turn was injected.
+
 ## Exact next step
 
-U5 only:
-source_message_index=44
-`dude, if you output open and close, close is also executed. let's try again. 10 turns, read all the @README.md files 10 lines each. open on first turn, close on last turn`
+`S3_COMMON_PRESTATE_FREEZE` only.
 
-Source_message_index=38/40 remain historical observations and excluded. No U6 in the same supervisor turn.
+Materialize and hash the immutable post-U5 common prestate, account the exact derived artifacts, and freeze the outcome-blind R3 dependency/file-hunk scope before authorizing R2 or R3. Do not deliver U6.

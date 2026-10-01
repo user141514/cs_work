@@ -1,0 +1,17 @@
+{
+  "experiment": "S3_COMMON_PRESTATE_U5_INVALID_V1",
+  "status": "INVALID_PROMPT_MISMATCH__RECOVERED",
+  "task": "pi-mono-auto-93c17d3b",
+  "lifetime_turn_id": "turn_ef0a43d36e464683ace3ead07d1db1b0",
+  "expected_prompt": "dude, if you output open and close, close is also executed. let's try again. 10 turns, read all the @README.md files 10 lines each. open on first turn, close on last turn",
+  "delivered_prompt": "dude, if you output open and close, close is also executed. lets try again. 10 turns, read all the @README.md files 10 lines each. open on first turn, close on last turn",
+  "outcome": "cancelled",
+  "quiescent": true,
+  "checkout_changed": false,
+  "extension_sha256": "1d76a1742be2dee3356f770cb6bb7385565d3aaa1e4eaa5bc64f665875ac4080",
+  "contaminated_session_sha256": "78e22a544087b4223716570dd6f6f3c484170b0bedb613140e15f6ea3a53ecf2",
+  "appended_records_removed": 2,
+  "pre_invalid_prefix_sha256": "f495f7995abe1e3d1caccb225570db7035d5cc2cb73b0f3bbe419c642c36b6ad",
+  "restored_session_sha256": "f495f7995abe1e3d1caccb225570db7035d5cc2cb73b0f3bbe419c642c36b6ad",
+  "scientific_evidence": false
+}
