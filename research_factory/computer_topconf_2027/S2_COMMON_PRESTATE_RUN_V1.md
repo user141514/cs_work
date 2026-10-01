@@ -196,8 +196,15 @@ The exact frozen S4 verifier executes against the frozen base with exit 0. Obser
 
 The user-only source shows a correction after choosing `pi-package`, but not the concrete already-created target/package implementation that the correction invalidates. Assistant trajectory evidence would be required to identify it and is forbidden by the gate. S4 paid execution remains closed.
 
+## BFSC closure result
+
+`BFSC_SELECTOR_REPLAN_AFTER_S4_EXPOSURE_NONIDENTIFIABLE` is complete. Authority:
+- `BFSC_SELECTOR_REPLAN_AFTER_S4_EXPOSURE_NONIDENTIFIABLE_20261002.md/json`
+
+The current BFSC route is closed as `PRECARD_NONIDENTIFIABLE__FROZEN_STAGE_B_EXHAUSTED`. This is not a method negative. No legal H/V completion path remains under the frozen protocol, and no S2/S4 rescue, Stage-C expansion, learned dependency estimator, or F1/F2/F3 implementation is authorized.
+
 ## Exact next step
 
-`BFSC_SELECTOR_REPLAN_AFTER_S4_EXPOSURE_NONIDENTIFIABLE` only.
+`HIGHER_LEVEL_TOPIC_SELECTOR_REENTRY_AFTER_BFSC_CLOSURE` only.
 
-Do not repair/rescore S2, do not run S2 R3/R0/R1, and do not run S4 common-prestate/R2/R3/R0/R1 before the selector decision.
+Do not reopen BFSC or activate a new topic in the same supervisor step.

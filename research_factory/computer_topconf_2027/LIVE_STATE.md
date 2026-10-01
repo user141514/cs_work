@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-02
-status: BFSC_S4_EXPOSURE_NONIDENTIFIABLE__SELECTOR_REPLAN_NEXT
+status: BFSC_CLOSED_NONIDENTIFIABLE__HIGHER_LEVEL_SELECTOR_REENTRY_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 remains `NONIDENTIFIABLE_VERIFIER_STRUCTURAL_INVALIDITY`; S2 R3/R0/R1 remain unauthorized. S4 verifier compatibility is PASS, but S4 mechanism exposure is now `EXPOSURE_NONIDENTIFIABLE`. The user-only source shows a correction at message index10, but does not identify any concrete already-created target/package implementation state before that correction; learning what was corrected requires the assistant trajectory, which the frozen gate forbids. Frozen base static evidence also lacks the missing state and the three named sibling targets are absent. Therefore S4 is measurement-admitted but not exposure-admitted, and no S4 common-prestate/paid arm is authorized. Authority: `S4_MECHANISM_EXPOSURE_SOURCE_V1.json`, `S4_MECHANISM_EXPOSURE_GATE_V1.md`, `S4_MECHANISM_EXPOSURE_RESULT_V1.md/json`. The only authorized continuation is `BFSC_SELECTOR_REPLAN_AFTER_S4_EXPOSURE_NONIDENTIFIABLE`. No new TOPIC_BET/PAPER_CANDIDATE is activated. The AgentSquare/ALFWorld O+I line remains terminated.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. The BFSC PRECARD is now CLOSED as `PRECARD_NONIDENTIFIABLE__FROZEN_STAGE_B_EXHAUSTED`, not scientifically killed. The complete frozen portfolio cannot yield a valid H+V decision without breaking prospective rules: S5 is V-negative; S3 is V-ineligible under the frozen partial-reference rule gap; S2 has valid R2 execution but structurally invalid primary measurement; S4 is verifier-compatible but mechanism-exposure nonidentifiable under the frozen user-only source policy; S1 cannot satisfy V. No BFSC paid arm, S2/S4 rescue, Stage-C expansion, learned dependency estimator, or F1/F2/F3 implementation is authorized. Authority: `BFSC_SELECTOR_REPLAN_AFTER_S4_EXPOSURE_NONIDENTIFIABLE_20261002.md/json`. The only authorized continuation is `HIGHER_LEVEL_TOPIC_SELECTOR_REENTRY_AFTER_BFSC_CLOSURE`; no new TOPIC_BET/PAPER_CANDIDATE is activated by this closure. The AgentSquare/ALFWorld O+I line remains terminated.
 
 ## 1. Retained scientific objective
 
@@ -292,12 +292,10 @@ The R2/R3 comparison cannot be promoted to either LOCAL_HEADROOM_PASS or LOCAL_H
 
 `S2_R2_FULL_RESTART` is now COMPLETE as a valid independent execution. Authority: `S2_R2_FULL_RESTART_SNAPSHOT_V1/` and `S2_R2_FULL_RESTART_RESULT_V1.md/json`. Snapshot manifest SHA256 is `a6e75270dd4ab9e109efb8b49788e447379efb2e0b41d8a33a962a250e01fd05`; frozen R2 session SHA256 is `18ce317dc49fabd818b4dcebb83fb467ab98e5497f19a8f9c5996f7dcfffd6c8`. The raw frozen verifier reward is `0.0000`, but the primary F2P measurement is structurally invalid for the frozen base because it instantiates a runtime `PackageManager` class that does not exist. PRG-1 therefore blocks a scientific correctness verdict and blocks PARTIAL_REFERENCE qualification; R3/R0/R1 remain unauthorized.
 
-`BFSC_SELECTOR_REPLAN_AFTER_S2_VERIFIER_INVALID` and `S4_VERIFIER_COMPATIBILITY_GATE_V1` remain COMPLETE. `S4_MECHANISM_EXPOSURE_GATE_V1` is now also COMPLETE as `EXPOSURE_NONIDENTIFIABLE`. Authority: `S4_MECHANISM_EXPOSURE_SOURCE_V1.json`, `S4_MECHANISM_EXPOSURE_GATE_V1.md`, and `S4_MECHANISM_EXPOSURE_RESULT_V1.md/json`. The correction marker at user message index10 cannot be mapped to a concrete pre-existing derived implementation without reading forbidden assistant trajectory content; later publish/docs/search requirements are additive. Frozen base evidence cannot supply the missing prior state.
+`BFSC_SELECTOR_REPLAN_AFTER_S4_EXPOSURE_NONIDENTIFIABLE` is now COMPLETE. Authority: `BFSC_SELECTOR_REPLAN_AFTER_S4_EXPOSURE_NONIDENTIFIABLE_20261002.md/json`. The current BFSC PRECARD is closed as `PRECARD_NONIDENTIFIABLE__FROZEN_STAGE_B_EXHAUSTED`: original H cannot be validly adjudicated on the complete frozen set, no V-positive witness was established, and no legal path remains to acquire one without repairing/rescoring completed arms, reading forbidden evidence, changing frozen rules, or expanding the benchmark to rescue the route. This is route closure, not a BFSC method negative.
 
 The exact next scientific transition is now:
 
-`BFSC_SELECTOR_REPLAN_AFTER_S4_EXPOSURE_NONIDENTIFIABLE`
+`HIGHER_LEVEL_TOPIC_SELECTOR_REENTRY_AFTER_BFSC_CLOSURE`
 ->
-adjudicate BFSC PRECARD identifiability under the now-exhausted frozen S2-S5 portfolio without turning measurement/exposure nonidentifiability into a method negative.
-
-Do not run S4 common-prestate/R2/R3/R0/R1, S2 R3/R0/R1, or any new topic family before that selector decision.
+return control to the general top-conference topic selector using the updated factory rules learned from BFSC. Do not reopen BFSC or activate a new topic in the same supervisor step.

@@ -1,0 +1,26 @@
+{
+  "decision": "BFSC_SELECTOR_REPLAN_AFTER_S4_EXPOSURE_NONIDENTIFIABLE_20261002",
+  "status": "PRECARD_NONIDENTIFIABLE__FROZEN_STAGE_B_EXHAUSTED__RETURN_TO_HIGHER_LEVEL_SELECTOR",
+  "formal_paper_candidate": false,
+  "bfsc_scientifically_falsified": false,
+  "bfsc_current_paper_route_closed": true,
+  "headroom_adjudication": "NONIDENTIFIABLE_INCOMPLETE_FROZEN_SET",
+  "value_gate_adjudication": "NO_V_POSITIVE_WITNESS__PORTFOLIO_NOT_FULLY_IDENTIFIABLE",
+  "portfolio": {
+    "S1": "CALIBRATION_ONLY_FOR_V",
+    "S5": "V_NEGATIVE",
+    "S3": "V_INELIGIBLE__PARTIAL_RULE_GAP",
+    "S2": "CORRECTNESS_NONIDENTIFIABLE__VERIFIER_STRUCTURAL_INVALIDITY",
+    "S4": "VERIFIER_COMPATIBLE__MECHANISM_EXPOSURE_NONIDENTIFIABLE"
+  },
+  "legal_decision_changing_paths_remaining": 0,
+  "forbidden_rescues": [
+    "repair/rescore S2 completed R2",
+    "read S4 assistant trajectory to rescue exposure",
+    "invent post-hoc S3 partial closeness rule",
+    "change H/V thresholds",
+    "add tasks or Stage-C expansion to rescue BFSC",
+    "add a new BFSC mechanism family from these outcomes"
+  ],
+  "next_step": "HIGHER_LEVEL_TOPIC_SELECTOR_REENTRY_AFTER_BFSC_CLOSURE"
+}
