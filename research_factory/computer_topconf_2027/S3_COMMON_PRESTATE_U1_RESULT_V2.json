@@ -1,0 +1,42 @@
+{
+  "experiment": "S3_COMMON_PRESTATE_U1_V2",
+  "status": "PASS_U1__U2_NEXT",
+  "task": "pi-mono-auto-93c17d3b",
+  "checkout": "D:/cs_work/external/spec_stageb_s3_common_pre_v2",
+  "root_commit": "5133697bc454da5595655cf4b0c70d3c2c725677",
+  "session_dir": "D:/cs_work/external/spec_stageb_sessions/s3_common_pre_v2",
+  "session_id": "01a0f62d-3227-7000-ac03-03b36dfb1b6b",
+  "session_sha256": "bd20ff811635f75b11d7a0126c2803a84699b8890ff129a0368709c63af3e8fe",
+  "model": "openai-codex/gpt-5.6-sol",
+  "model_fallback": false,
+  "thinking": "xhigh",
+  "session_exit": "normal",
+  "forbidden_source_scan": "PASS",
+  "tracked_changes": [
+    {
+      "path": "packages/coding-agent/examples/extensions/README.md",
+      "added": 1,
+      "deleted": 0
+    }
+  ],
+  "untracked_changes": [
+    {
+      "path": "packages/coding-agent/examples/extensions/message-signals.ts",
+      "sha256": "de39ddacdcbc7213b7c1c2c9bf7b95572c952ad828eed76bf161c615d5531691"
+    }
+  ],
+  "tracked_diff_hash": "177375f819d67d288b9b8a14140fc63eaa69f633",
+  "diff_check": "PASS",
+  "accounting": {
+    "model_calls": 40,
+    "tool_calls": 73,
+    "mutating_tool_calls": 6,
+    "input_tokens": 125171,
+    "output_tokens": 19137,
+    "cache_read_tokens": 3541504,
+    "reasoning_tokens": 12347,
+    "reported_cost_usd": 2.3000256,
+    "wall_seconds": 448.342
+  },
+  "next_step": "S3_COMMON_PRESTATE_U2"
+}

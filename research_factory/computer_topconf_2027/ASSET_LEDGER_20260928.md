@@ -268,12 +268,10 @@ S3 execution leverage is now adjudicated: scientific leverage = PASS, but paid e
 
 The earlier `S3_RUNTIME_PREFLIGHT_V1 = DAEMON_NOT_READY` result remains historical evidence of the broken Docker installation. After user repair/reinstall, the same preflight resumed with zero model calls and now passes `PASS_RUNTIME_READY`. Exact image/runtime authority: `S3_RUNTIME_PREFLIGHT_RESUME_RESULT_V2.md/json`. Docker Desktop/Engine is reachable; exact official image `pi-mono-auto-93c17d3b:2f7d1992e60d` is locked to `sha256:4805e21fa2f3d38ed5dacc320ec0400b3fd402194051124b3a8a85cf826455fa`; container HEAD/toolchain match the frozen task; official verifier baseline executes with expected reward 0 and runtime/P2P gates passing.
 
-Current first unresolved transition:
+S3 common-prestate execution has begun. U1-v1 is excluded as supervisor-interrupted invalid overhead; U1-v2 is valid/PASS with exact frozen U1, GPT-5.6 Sol/xhigh, no fallback, normal exit, and only the intended extension/example documentation state. Current first unresolved transition:
 
-`S3_COMMON_PRESTATE`
+`S3_COMMON_PRESTATE_U2`
 ->
-produce one fixed GPT-5.6 Sol/xhigh pre-revision scientific state and immutable freeze bundle
-->
-freeze exact outcome-blind R3 artifact scope.
+continue the same v2 durable session with source_message_index=31 only.
 
-Only after that common-prestate freeze proceed to `R2_FULL_RESTART -> R3_ORACLE_SCOPED`. R0 is conditional on R3 headroom surviving; R1 is not authorized for symmetry. No paid/model run was started during runtime preflight.
+U3-U5 remain subsequent one-turn continuations. Final immutable common-prestate freeze and exact outcome-blind R3 artifact scope occur only after U5. Only then proceed to `R2_FULL_RESTART -> R3_ORACLE_SCOPED`; R0 remains conditional on R3 headroom and R1 is not authorized for symmetry.

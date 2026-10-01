@@ -269,10 +269,12 @@ The previous `S3_RUNTIME_PREFLIGHT_V1 = DAEMON_NOT_READY` result is retained as 
 
 Current runtime evidence: Docker Desktop 4.91.0 / Engine 29.8.0 is reachable in `desktop-linux`; the exact official S3 image `ghcr.io/togetherbench/multi-user-turn-codebench/pi-mono-auto-93c17d3b:2f7d1992e60d` is locally locked to `sha256:4805e21fa2f3d38ed5dacc320ec0400b3fd402194051124b3a8a85cf826455fa`; container execution as the intended non-root `agent` user gives clean HEAD `5133697bc454da5595655cf4b0c70d3c2c725677`, Node `v20.20.2`, Bun `1.3.13`, and the required repository structure. The official verifier logic executes in the exact image; the Windows-host CRLF shell-script transport was normalized to LF only inside the ephemeral container, and the no-patch baseline produces the expected reward `0.0000` with both runtime/P2P checks passing.
 
-Runtime admission is therefore complete. The exact next scientific transition is now:
+Runtime admission is complete and S3 common-prestate execution is now ACTIVE. U1-v1 is retained as `INVALID_SUPERVISOR_INTERRUPTION` only; tracked state was clean after the agent's own formatter rollback, but the supervisor killed the process before normal completion, so it is excluded from science. U1-v2 then ran from a fresh checkout/session and passed: exact frozen U1, GPT-5.6 Sol/xhigh, no fallback, forbidden-source scan PASS, normal session exit, and final derived state limited to `packages/coding-agent/examples/extensions/README.md` plus new `message-signals.ts`. Authority: `S3_COMMON_PRESTATE_U1_INVALID_V1.md/json`, `S3_COMMON_PRESTATE_RUN_V1.md`, and `S3_COMMON_PRESTATE_U1_RESULT_V2.md/json`.
 
-`S3_COMMON_PRESTATE`
+The exact next scientific transition is now:
+
+`S3_COMMON_PRESTATE_U2`
 ->
-materialize one immutable pre-revision scientific snapshot and freeze exact outcome-blind R3 file/hunk scope.
+deliver only source_message_index=31 (`move that to cwd/.pi/extensions so i can relaod`) by `--continue` in the same v2 durable session and same checkout.
 
-After that, the already-frozen paid sequence is `R2_FULL_RESTART -> R3_ORACLE_SCOPED`. R0 remains conditional on R3-vs-R2 headroom surviving; R1 is not authorized for symmetry. No common-prestate/model execution was started during runtime preflight.
+Do not send U3/U4/U5/U6 in the same supervisor turn. The final immutable common-prestate freeze and exact R3 artifact scope remain pending U2-U5 completion. R2/R3 are not yet authorized.

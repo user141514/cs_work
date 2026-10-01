@@ -1,0 +1,1 @@
+can we write a test extension. basically, i want a slash command, something like /start which injects a hidden custom message in the session that instructs the model to output a specific string when it's done or when it wants to do a thing. the extension can then listen for message_end and react accordingly, e.g. by showing ui, or closing ui, or whatever

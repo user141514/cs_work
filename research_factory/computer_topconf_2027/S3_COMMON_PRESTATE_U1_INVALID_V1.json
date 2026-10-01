@@ -1,0 +1,24 @@
+{
+  "experiment": "S3_COMMON_PRESTATE_U1_V1",
+  "verdict": "INVALID_SUPERVISOR_INTERRUPTION",
+  "scientific_negative": false,
+  "session": "D:/cs_work/external/spec_stageb_sessions/s3_common_pre_v1/2026-10-01T06-30-37-691Z_01a0f628-657c-7000-9edc-85d0a4cc338e.jsonl",
+  "session_sha256": "f05fc364cb0ecfd2527bb19064155ded01e425ee328904fdd7760811956a8367",
+  "session_exit_count": 0,
+  "final_tracked_diff_count": 0,
+  "final_untracked": [
+    ".pi/extensions/start.ts"
+  ],
+  "accounting": {
+    "model_calls": 14,
+    "tool_calls": 38,
+    "mutating_tool_calls": 1,
+    "input_tokens": 120343,
+    "output_tokens": 8186,
+    "cache_read_tokens": 862592,
+    "reasoning_tokens": 5335,
+    "reported_cost_usd": 0.9901288,
+    "wall_seconds": 190.717
+  },
+  "next_step": "RETRY_EXACT_U1_FROM_FRESH_CHECKOUT_AND_SESSION"
+}
