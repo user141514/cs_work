@@ -1,7 +1,7 @@
 # S2 Common Prestate Run V1
 
 date: 2026-10-01
-status: U0_U1_PASS__U2_NEXT
+status: U0_U1_U2_PASS__MATERIAL_DERIVED_WORK__U3_NEXT
 task: pi-mono-auto-a4fca584
 
 ## Historical U0-v1 checkout — INVALID runtime trajectory
@@ -97,7 +97,7 @@ U3:
 - SHA256 `cebe7791d109d74047ebd025ca82f546c64111c4acaab6e9dda0a4b82bf55de0`
 
 Authoritative delivery after runtime repair:
-`U0-v2 PASS -> U1 PASS -> U2 -> U3`
+`U0-v2 PASS -> U1 PASS -> U2 PASS -> U3`
 through the same WSL-native durable session using `--continue`.
 
 U0-v2 authority:
@@ -113,6 +113,16 @@ U1 authority:
 - post-U1 session SHA256: `1482ce0c2958fd1517f965bf2c27fcf943ce010d1220f3172611cd691a07d9f4`
 - project remains exact/clean
 - pre-implementation clarification contract satisfied with 0 tool calls.
+
+U2 authority:
+- result: `S2_COMMON_PRESTATE_U2_RESULT_V1.md/json`
+- same session ID: `01a0f7cc-4a3e-7000-8639-ae33f7a25a58`
+- post-U2 session SHA256: `bc039ce82b8b5d2ae222ac7c96a050b44fb7bffdcdb3864a0fd3845e4a5e4424`
+- 7 tracked modified files, 0 untracked files
+- patch SHA256: `6d072b1f42bc39306b9a9e494ee631cd19712eac979aeca52f79fb2149a71c75`
+- material derived work is now non-empty
+- pre-revision implementation persists relative CLI paths as lexical absolute paths
+- no settings.json-relative late-revision semantics are present.
 
 Do not deliver late revision indices 37/39.
 

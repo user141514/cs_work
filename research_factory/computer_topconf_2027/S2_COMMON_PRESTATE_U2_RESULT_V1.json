@@ -1,0 +1,67 @@
+{
+  "experiment": "S2_COMMON_PRESTATE_U2_V1",
+  "status": "PASS_PRE_REVISION_IMPLEMENTATION__MATERIAL_DERIVED_WORK__U3_NEXT",
+  "task": "pi-mono-auto-a4fca584",
+  "source_message_index": 8,
+  "prompt_sha256": "ee45029de3b053c1f648c1339ec7b6a60936a2119f2f98740c89adb62b6fc747",
+  "repo": {
+    "path": "/home/agent/s2-common-pre-v3",
+    "base_head": "e54dff7efb460e364a39e4a22369991a20c105b9",
+    "tracked_modified_files": 7,
+    "untracked_files": 0,
+    "patch_bytes": 8292,
+    "patch_sha256": "6d072b1f42bc39306b9a9e494ee631cd19712eac979aeca52f79fb2149a71c75",
+    "late_settings_relative_semantics_detected": false
+  },
+  "pre_revision_semantics": {
+    "local_path_supported": true,
+    "relative_cli_path_persisted_as_absolute": true,
+    "local_source_referenced_in_place": true,
+    "remove_preserves_source": true,
+    "material_derived_work": true
+  },
+  "session": {
+    "id": "01a0f7cc-4a3e-7000-8639-ae33f7a25a58",
+    "sha256_after_u2": "bc039ce82b8b5d2ae222ac7c96a050b44fb7bffdcdb3864a0fd3845e4a5e4424",
+    "bytes": 1961019,
+    "lines": 172,
+    "scientific_user_turns": 3
+  },
+  "runtime": {
+    "model": "openai-codex/gpt-5.6-sol",
+    "fallback": false,
+    "thinking": "xhigh",
+    "node": "v20.20.2",
+    "task_bun": "1.3.13",
+    "harness_bun": "1.3.14",
+    "omp": "18.1.15"
+  },
+  "lifetime": {
+    "request_key": "s2-common-pre-u2-wsl-v1",
+    "turn_id": "turn_02047112a3254160b52b6d05f205c17d",
+    "outcome": "succeeded",
+    "quiescent": true,
+    "wall_seconds": 288.081
+  },
+  "accounting": {
+    "model_calls": 13,
+    "tool_calls": 20,
+    "mutating_edit_write": 2,
+    "input_tokens": 310396,
+    "output_tokens": 7201,
+    "cache_read_tokens": 2065024,
+    "reasoning_tokens": 4997,
+    "reported_cost_usd": 2.2116136
+  },
+  "verification": {
+    "smoke_install_absolute_persistence": "PASS",
+    "cross_cwd_list": "PASS",
+    "remove_settings_only": "PASS",
+    "missing_source_rejection": "PASS",
+    "root_biome_tsgo": "PASS",
+    "web_ui_typecheck": "BASE_BUILD_ARTIFACT_DEPENDENCY_FAILURE",
+    "task_tests_run": false
+  },
+  "forbidden_source_scan": "PASS",
+  "next_step": "S2_COMMON_PRESTATE_U3"
+}
