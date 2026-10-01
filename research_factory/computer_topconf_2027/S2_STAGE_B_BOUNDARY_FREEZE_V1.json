@@ -1,0 +1,35 @@
+{
+  "task": "pi-mono-auto-a4fca584",
+  "status": "OFFLINE_BOUNDARY_FROZEN__COMMON_PRESTATE_PENDING__R3_EXACT_SCOPE_PENDING",
+  "task_initial_state": "e54dff7efb460e364a39e4a22369991a20c105b9",
+  "official_docker_image": "ghcr.io/togetherbench/multi-user-turn-codebench/pi-mono-auto-a4fca584:d1a6ee81ebeb",
+  "controlled_sequence": [
+    {"index": 0, "class": "ANALYSIS_ONLY_INITIAL_CONTRACT"},
+    {"index": 6, "class": "PRE_IMPLEMENTATION_SETTINGS_SEMANTICS_CLARIFICATION"},
+    {"index": 8, "class": "AUTHORITATIVE_IMPLEMENTATION_AUTHORIZATION"},
+    {"index": 20, "class": "AUTHORITATIVE_PRE_REVISION_VERIFICATION_REQUIREMENT"},
+    {"index": 37, "class": "AUTHORITATIVE_LATE_REVISION_PRECURSOR"},
+    {"index": 39, "class": "AUTHORITATIVE_LATE_REVISION"},
+    {"index": 76, "class": "POST_REVISION_VERIFICATION_WORKFLOW"},
+    {"index": 108, "class": "EXPLANATION_ONLY"},
+    {"index": 110, "class": "PUBLICATION_WORKFLOW"},
+    {"index": 112, "class": "PUBLICATION_WORKFLOW"},
+    {"index": 114, "class": "AMBIGUOUS_POST_REVISION_DOC_CHECK"}
+  ],
+  "revision_boundary": "after controlled messages 0/6/8/20 are implemented/persisted, before late-revision bundle 37/39",
+  "late_revision_bundle": [37,39],
+  "post_revision_non_product_workflow": [76,108,110,112],
+  "doc_check_index": 114,
+  "source_hashes": {
+    "task_toml": "ef07e5601a1ea034f91613826367ec003154ab6a7ff4f86249641a940509e6f3",
+    "dockerfile": "cbe4b94cc413226505d89320c183ad1b597a965be58231433aea3bb775872a86",
+    "instruction": "aed069e0e6154a1c25cc39999f6f57acec654f275e7fbfefe13877b8b69ffa28",
+    "original_session": "ae10c249ef12dcc1bd3e57b692360386c82a6e848c3a9d1730f72c116a3b53c4",
+    "stage_a_freeze": "e34ceeb68d5de194add6079b44ac2457c0283776c7d11fde600cc1af3d213181",
+    "issue_1216_source_receipt": "917ee0ada34443673003fd30219bca9d5600033d5b2a1077543e51d573640968"
+  },
+  "partial_reference_guard": true,
+  "exact_r3_scope_status": "PENDING_COMMON_PRESTATE",
+  "paid_arm_authorized": false,
+  "next_step": "S2_EXECUTION_LEVERAGE_GATE_V1"
+}

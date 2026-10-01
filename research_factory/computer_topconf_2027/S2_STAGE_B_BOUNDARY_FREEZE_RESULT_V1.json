@@ -1,0 +1,10 @@
+{
+  "experiment": "S2_STAGE_B_BOUNDARY_FREEZE_V1",
+  "status": "PASS_OFFLINE_BOUNDARY_FREEZE__EXECUTION_LEVERAGE_NEXT",
+  "task": "pi-mono-auto-a4fca584",
+  "revision_boundary": "after 0/6/8/20; before 37/39",
+  "late_revision_bundle": [37,39],
+  "partial_reference_guard": true,
+  "paid_model_authorized": false,
+  "next_step": "S2_EXECUTION_LEVERAGE_GATE_V1"
+}
