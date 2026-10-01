@@ -1,0 +1,29 @@
+{
+  "experiment": "FEEDBACK_UTILITY_G0_ASSET_PREFLIGHT_V1",
+  "status": "PASS_PUBLIC_ASSET__INTERFACE_OBSERVABLE__LOCAL_LEVEL2_FEASIBLE",
+  "model_calls": 0,
+  "gpu_runs": 0,
+  "weights_downloaded": false,
+  "asset": {
+    "repo": "ByteDance/Ouro-1.4B",
+    "revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+    "public": true,
+    "gated": false,
+    "disabled": false,
+    "reported_storage_bytes": 2870191799,
+    "total_ut_steps": 4,
+    "recurrent_hidden_states_exposed": true,
+    "exit_gates_exposed": true,
+    "exit_at_step_supported": true
+  },
+  "pc2": {
+    "gpu": "NVIDIA GeForce RTX 5070 Ti",
+    "vram_total_mib": 16303,
+    "vram_free_mib": 14542,
+    "driver": "616.92",
+    "download_proxy": "http://127.0.0.1:7897",
+    "download_route_verified": true
+  },
+  "execution_level_next_max": "Level_1_until_decision_contract_and_evaluator_admission",
+  "next_step": "FEEDBACK_UTILITY_DECISION_CONTRACT_FREEZE_V1"
+}

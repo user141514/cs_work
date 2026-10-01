@@ -20,25 +20,27 @@ Current research generator / selector mutation:
 - TRANSFER_PRIOR_ATTACK_20260928.md
 
 Current selector state:
-- mechanism-space mutation backtest: PASS for greedy-kill correction, with Agentic-AI family-identity drift retained as a calibration failure;
-- Synthetic Data is retrospective calibration only because ERU outcome is already known;
-- canonical gate: C:/Users/Administrator/.agents/skills/top-conference-topic-selection/training/live/MECHANISM_SPACE_FORMATION_GATE.md;
-- no new broad-field Phase 0 / Unlearning continuation is authorized while the current Rank-1 remaining-horizon validation is unresolved.
+- mechanism-space mutation backtest remains retained calibration;
+- BFSC prospective route is CLOSED_NONIDENTIFIABLE and must not be rescued;
+- higher-level selector re-entry is COMPLETE without a new broad-field scan;
+- canonical gate: C:/Users/Administrator/.agents/skills/top-conference-topic-selection/training/live/MECHANISM_SPACE_FORMATION_GATE.md.
 
 Current Rank 1 object:
-- Behavioral Self-Adjustment / Behavioral From-Scratch Consistency for Coding Agents under Requirement Evolution.
-- lifecycle: PRE_TOPIC_TRANSFER_PROBE / STAGE_B / SELECTOR_V2_REMAINING_HORIZON_VALIDATION.
-- formal PAPER_CANDIDATE: false.
-- Stage A: PASS_WITH_LIMITED_REPO_DIVERSITY.
-- S1 Stage B: valid calibration result; R3 matches R2 with reuse/cost headroom, but R0 raw history matches correctness and is cheaper than R3 locally.
-- S5 R2/R3: valid local headroom result; R2=1.0000, R3=1.0000, conservative credited reuse=36.84%, R3 reported cost 11.23% below R2.
-- S5 R0/R1: currently authorized and are the first unresolved transition for prospective value gate V.
-- S3/S2/S4: remain frozen future horizon; no paid run authorized yet.
-
-Current Rank 2 fallback:
 - Feedback Utility State = finite-horizon propagation risk + extrinsic progress.
-- state: TRANSFER_OPEN_BUT_CROWDED.
-- do not activate as scientific WIP while selector mechanism-space prospective validation is unresolved.
+- lifecycle: PRECARD_LEVERAGE__ASSET_ADMITTED__DECISION_CONTRACT_PENDING.
+- formal PAPER_CANDIDATE: false.
+- prior attack: BOUNDED_DIRECT_PRIOR_ATTACK_COMPLETE; DIRECT_VETO=false; TRANSFER_OPEN_BUT_CROWDED.
+- G0 asset/interface: PASS_PUBLIC_ASSET__INTERFACE_OBSERVABLE__LOCAL_LEVEL2_FEASIBLE.
+- exact Ouro public revision: 574fa66cb8bf5abdc979642d01cf2b79b16bfab1.
+- no checkpoint download / GPU inference yet.
+- first unresolved transition: FEEDBACK_UTILITY_DECISION_CONTRACT_FREEZE_V1.
+
+Closed previous Rank 1:
+- BFSC/selective rederivation — PRECARD_NONIDENTIFIABLE__FROZEN_STAGE_B_EXHAUSTED; archive only.
+
+Remaining portfolio:
+- N3 Minimal Decision-Complete Specification State — WATCHLIST.
+- BET-COMP-02 Minimal Sufficient State — QUEUED.
 
 ## 2. Factory infrastructure assets
 

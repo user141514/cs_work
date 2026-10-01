@@ -1,0 +1,12 @@
+{
+  "decision": "HIGHER_LEVEL_TOPIC_SELECTOR_REENTRY_AFTER_BFSC_CLOSURE_20261002",
+  "status": "REENTRY_COMPLETE__FEEDBACK_UTILITY_RANK1__G0_ASSET_PREFLIGHT_PASS__DECISION_CONTRACT_NEXT",
+  "previous_rank1": "BFSC_CLOSED_NONIDENTIFIABLE",
+  "new_rank1": "Feedback Utility State",
+  "new_rank1_identity": "finite-horizon propagation risk + extrinsic progress",
+  "new_candidate_generated": false,
+  "prior_attack_repeated": false,
+  "formal_paper_candidate": false,
+  "lifecycle": "PRECARD_LEVERAGE__ASSET_ADMITTED__DECISION_CONTRACT_PENDING",
+  "next_step": "FEEDBACK_UTILITY_DECISION_CONTRACT_FREEZE_V1"
+}

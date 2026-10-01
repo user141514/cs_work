@@ -1,9 +1,25 @@
 # BET-COMP-01 — Feedback Stability for Iterative Generative Inference
 
 date: 2026-09-28
-state: TOPIC_BET_ACTIVE
+state: REFORMULATED_AS_FEEDBACK_UTILITY_STATE__RANK1_PRECARD__G0_PASS__DECISION_CONTRACT_PENDING
 formal_paper_candidate: false
 target: ICML 2027 / NeurIPS 2027
+
+## Current authority override
+
+The original single-coordinate "Feedback Stability" framing below is historical.
+
+Current object is the ancestry-derived reformulation:
+
+**Feedback Utility State = finite-horizon propagation risk + extrinsic progress**.
+
+Bounded direct-prior attack is already complete with `DIRECT_VETO=false / TRANSFER_OPEN_BUT_CROWDED`.
+
+`FEEDBACK_UTILITY_G0_ASSET_PREFLIGHT_V1 = PASS` on public Ouro-1.4B revision `574fa66...` and PC2 local resources.
+
+Exact next step: `FEEDBACK_UTILITY_DECISION_CONTRACT_FREEZE_V1`.
+
+No model download/GPU run is authorized before that freeze.
 
 ## Organizer
 

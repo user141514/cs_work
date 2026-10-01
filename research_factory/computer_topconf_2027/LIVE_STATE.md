@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-02
-status: BFSC_CLOSED_NONIDENTIFIABLE__HIGHER_LEVEL_SELECTOR_REENTRY_NEXT
+status: FEEDBACK_UTILITY_RANK1__G0_PASS__DECISION_CONTRACT_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. The BFSC PRECARD is now CLOSED as `PRECARD_NONIDENTIFIABLE__FROZEN_STAGE_B_EXHAUSTED`, not scientifically killed. The complete frozen portfolio cannot yield a valid H+V decision without breaking prospective rules: S5 is V-negative; S3 is V-ineligible under the frozen partial-reference rule gap; S2 has valid R2 execution but structurally invalid primary measurement; S4 is verifier-compatible but mechanism-exposure nonidentifiable under the frozen user-only source policy; S1 cannot satisfy V. No BFSC paid arm, S2/S4 rescue, Stage-C expansion, learned dependency estimator, or F1/F2/F3 implementation is authorized. Authority: `BFSC_SELECTOR_REPLAN_AFTER_S4_EXPOSURE_NONIDENTIFIABLE_20261002.md/json`. The only authorized continuation is `HIGHER_LEVEL_TOPIC_SELECTOR_REENTRY_AFTER_BFSC_CLOSURE`; no new TOPIC_BET/PAPER_CANDIDATE is activated by this closure. The AgentSquare/ALFWorld O+I line remains terminated.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. BFSC is CLOSED as `PRECARD_NONIDENTIFIABLE__FROZEN_STAGE_B_EXHAUSTED` and cannot be rescued. Higher-level selector re-entry is now COMPLETE from the already-frozen portfolio. The new live Rank 1 is **Feedback Utility State = finite-horizon propagation risk + extrinsic progress**, promoted from the pre-existing Rank-2 fallback rather than generated anew. Its bounded direct-prior attack was already complete (`TRANSFER_OPEN_BUT_CROWDED`), and G0 asset/interface preflight now PASSes: current public `ByteDance/Ouro-1.4B` revision `574fa66...`, recurrent hidden states/exit gates and fixed-step exits observable, RTX 5070 Ti 16GB local Level-2 inference class feasible, sufficient disk, and HF reachable through existing proxy. No model weights were downloaded and no GPU run occurred. Authority: `HIGHER_LEVEL_TOPIC_SELECTOR_REENTRY_AFTER_BFSC_CLOSURE_20261002.md/json` and `FEEDBACK_UTILITY_G0_ASSET_PREFLIGHT_V1.md/json`. The only authorized continuation is `FEEDBACK_UTILITY_DECISION_CONTRACT_FREEZE_V1`. N3 remains watchlist; BET-COMP-02 remains queued; no PAPER_CANDIDATE is active.
 
 ## 1. Retained scientific objective
 
@@ -44,7 +44,22 @@ Primary gates:
 - MECHANISM_EXPOSURE_GATE_CALIBRATION_20260930.md
 - BFSC_SELECTOR_REPLAN_AFTER_S3_20261001.md
 
-## 2. Historical Rank-1 research object — paused
+## 2. Current Rank-1 research object
+
+Feedback Utility State = finite-horizon propagation risk + extrinsic progress.
+
+Lifecycle:
+PRECARD_LEVERAGE__ASSET_ADMITTED__DECISION_CONTRACT_PENDING.
+
+Authority:
+- FEEDBACK_ANCESTRY_TRANSFER_V1.md
+- TRANSFER_PRIOR_ATTACK_20260928.md
+- HIGHER_LEVEL_TOPIC_SELECTOR_REENTRY_AFTER_BFSC_CLOSURE_20261002.md/json
+- FEEDBACK_UTILITY_G0_ASSET_PREFLIGHT_V1.md/json
+
+Do not download weights or run Ouro inference before `FEEDBACK_UTILITY_DECISION_CONTRACT_FREEZE_V1`.
+
+### Historical closed Rank-1 object
 
 Behavioral Self-Adjustment / Behavioral From-Scratch Consistency for Coding Agents under Requirement Evolution.
 
@@ -75,9 +90,13 @@ Not yet:
 - PAPER_CANDIDATE;
 - learned dependency model.
 
-Rank-2 fallback remains:
-Feedback Utility State = finite-horizon propagation risk + extrinsic progress.
-Do not activate while Rank-1 necessary-condition probe is unresolved.
+Previous Rank-2 fallback is now promoted to Rank 1 after BFSC closure.
+
+Remaining portfolio:
+- N3 Minimal Decision-Complete Specification State — WATCHLIST;
+- BET-COMP-02 Minimal Sufficient State — QUEUED.
+
+Do not activate either while Feedback Utility State Decision Contract / first discriminator remains unresolved.
 
 ## 3. Stage-A frozen substrate
 

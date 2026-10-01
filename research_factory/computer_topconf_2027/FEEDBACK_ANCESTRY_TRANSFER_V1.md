@@ -1,10 +1,11 @@
 # Feedback Stability — Ancestry / Neighbor / Invariant / Transfer V1
 
 date: 2026-09-28
-status: ANCESTRY_TRANSFER_ACTIVE
+status: ANCESTRY_TRANSFER_COMPLETE__TRANSFER_OPEN_BUT_CROWDED__RANK1_REACTIVATED
 target_object: iterative generative / recurrent inference with reused derived state
 previous_object: BET-COMP-01 Feedback Stability
-experiment_status: PAUSED_PENDING_TRANSFER_ADJUDICATION
+current_object: Feedback Utility State = finite-horizon propagation risk + extrinsic progress
+experiment_status: G0_ASSET_PREFLIGHT_PASS__DECISION_CONTRACT_PENDING
 
 ## 1. Target residual abstraction
 
