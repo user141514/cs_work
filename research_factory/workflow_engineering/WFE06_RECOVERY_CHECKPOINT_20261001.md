@@ -115,8 +115,6 @@ Fresh smoke evidence:
 
 Plan decision: **KEEP** WFE-06 completion path. The prior stale smoke receipt is superseded by this fresh receipt.
 
-## First unresolved transition
-
 ## Latest accepted transition after smoke regeneration
 
 **Current-main reconciliation: NO_REBASE_REQUIRED.**
@@ -225,19 +223,29 @@ Accepted evidence:
 - merge first-parent diff contains exactly the six intended WFE-06 paths: `MASTER_PLAN.md`, `WFE06_RECOVERY_CHECKPOINT_20261001.md`, `WFE06_SMOKE_RECEIPT.json`, `WORKFLOW_SPEC_V0_2_ARIS_OVERLAY.md`, `governance_overlay.py`, and `runtime_tests/test_governance_overlay.py`;
 - merged-main whole workflow-engineering runtime suite: **26/26 PASS**, zero failures/errors/skips.
 
-Decision: **MERGED_MAIN_VERIFIED**. Local main integration is complete; remote push and feature-worktree resolution remain pending.
+Decision: **MERGED_MAIN_VERIFIED**. Local main integration is complete.
+
+## Latest accepted transition after merged-main verification
+
+**Remote push + feature-worktree lifecycle resolution: PASS.**
+
+Accepted evidence:
+- immediately before push, `fetch origin main` confirmed `origin/main...main = 0 behind / 58 ahead`; remote had no unique commits;
+- non-force push advanced remote `main` from `ca03be9...` to WFE-06 merged commit `47377932cbfd25a559b0ed22e985119d7fd63d17`;
+- `git ls-remote origin refs/heads/main` returned exactly `47377932cbfd25a559b0ed22e985119d7fd63d17`, and a fresh fetch reduced local/remote divergence to `0 / 0` at that point;
+- later local `main` commits belong to the independent Feedback Utility scientific line and do not alter WFE-06 authority/interfaces;
+- feature commit `55917cd09f06edbe8d659f08a603873af61f9b7a` was confirmed as an ancestor of current `main`;
+- feature worktree residual audit found only a zero-byte `NUL` file and `graft/.cache/telemetry-repo-id.json` containing a tool-generated repoId; no unique business artifact remained;
+- Git worktree registration was removed, the residual zero-byte `NUL` was deleted, `git worktree prune` completed, and `D:/cs_work_aris_overlay` no longer exists;
+- local feature branch ref was intentionally preserved; branch cleanup is separate from worktree lifecycle.
+
+Decision: **WFE-06 COMPLETE.** No WFE-06 unresolved transition remains.
 
 ## First unresolved transition
 
-**Push verified merged main.**
+**NONE — WFE-06 closed.**
 
-Required next action:
-- re-read local `main`, its remote tracking state and the repository remote identity immediately before push;
-- push the verified merged `main` without force;
-- independently verify the remote/main ref reaches the pushed commit;
-- do not resume scientific work in the same step.
-
-Merge and merged-main verification are closed by the accepted transition above.
+Do not resume implementation, review, push, merge, or worktree cleanup for this task unless new evidence shows a concrete WFE-06 defect.
 
 ## Recovery procedure
 
@@ -247,6 +255,4 @@ Merge and merged-main verification are closed by the accepted transition above.
 4. Re-hash the current WFE-06 files and run:
    `E:/Anaconda3/python.exe -B -m unittest runtime_tests.test_governance_overlay -q`
    Expected current focused baseline: **16 tests PASS**.
-5. Resume only at the push transition above.
-
-After remote push is verified, resolve the feature worktree lifecycle separately; do not silently discard out-of-scope files.
+5. WFE-06 is closed. Recovery should report COMPLETE and stop unless a new concrete defect is introduced.

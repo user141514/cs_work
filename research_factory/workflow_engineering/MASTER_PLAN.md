@@ -11,9 +11,9 @@ Build and validate a reusable research-task workflow on the dedicated D:/cs_work
 ## Current user-directed engineering override — 2026-10-01
 
 ID: WFE-06
-Status: MERGED_MAIN_VERIFIED__PUSH_PENDING
+Status: COMPLETE__REMOTE_VERIFIED__WORKTREE_RESOLVED
 Workflow policy: WORKFLOW_SPEC_V0_2_ARIS_OVERLAY.md
-Integration: merged into main @ D:/cs_work; feature worktree retained pending final resolution
+Integration: merged into main @ D:/cs_work; verified remote main contains WFE-06 merge; feature worktree resolved and removed
 Recovery checkpoint: WFE06_RECOVERY_CHECKPOINT_20261001.md
 Owner: current ARIS migration task
 Exit condition: verified governance projection integrated or branch discarded; no idle retained worktree.
@@ -26,7 +26,7 @@ Why this step exists:
 - user explicitly authorized migration into current facilities.
 
 Current single step:
-WFE-06 implementation, path-scoped branch integration, merge into `main`, and merged-main verification are COMPLETE under `WORKFLOW_SPEC_V0_2_ARIS_OVERLAY.md`. The merge introduced exactly the six intended WFE-06 paths relative to its first parent, and the whole workflow-engineering runtime suite passed **26/26** on merged `main`. Accepted completion evidence also includes: focused governance suite 16/16 PASS; fresh native Python 3.7 smoke + independent readback PASS; source Gate semantic fingerprint and raw `gate.sqlite3` SHA256 unchanged across projection; fresh independent whole-diff reviewer returned PASS with no BLOCKER/IMPORTANT findings; no authority owner changed. Resume only through `WFE06_RECOVERY_CHECKPOINT_20261001.md`. The only next frontier is push of the verified merged `main`, followed by explicit feature-worktree resolution. Root `NUL` and generated `graft/` remain out-of-scope noise in the feature worktree. Do not modify Gate/local_runner ownership, Watchdog, Observatory, selector lifecycle or scientific evidence.
+WFE-06 is COMPLETE under `WORKFLOW_SPEC_V0_2_ARIS_OVERLAY.md`. Implementation, path-scoped branch integration, merge into `main`, merged-main verification, non-force remote push, remote-ref verification, and feature-worktree lifecycle resolution are all closed. The WFE-06 merge is present on remote `main` at verified commit `47377932cbfd25a559b0ed22e985119d7fd63d17`; later local `main` commits belong to the independent scientific line and do not reopen WFE-06. Accepted completion evidence: focused governance suite 16/16 PASS; whole workflow-engineering runtime suite 26/26 PASS on merged main; fresh native Python 3.7 smoke + independent readback PASS; source Gate semantic fingerprint and raw `gate.sqlite3` SHA256 unchanged across projection; fresh independent whole-diff reviewer PASS with no BLOCKER/IMPORTANT findings; no authority owner changed; feature worktree `D:/cs_work_aris_overlay` removed after confirming its only residuals were zero-value recovery/tool noise. There is no WFE-06 NEXT_STEP. Do not resume this engineering line unless a new concrete research-task blocker is explicitly introduced.
 
 The previously retained scientific next step `S2_STAGE_B_BOUNDARY_FREEZE_V1` is PAUSED_BY_USER_REDIRECTION, not killed or rewritten. WFE-06 completion does not automatically authorize resuming it.
 
