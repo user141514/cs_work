@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-02
-status: FEEDBACK_UTILITY_LEVEL1_REPAIR_NEGATIVE__DECISION_CONTRACT_V2_NEXT
+status: FEEDBACK_UTILITY_DECISION_CONTRACT_V2_FROZEN__LEVEL1_HOOK_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. BFSC is CLOSED and cannot be rescued. Feedback Utility State is live Rank 1. Prior attack, G0 and Decision Contract V1 are complete. Level-1 tokenizer/data admission PASSes: 299/299 valid ARC-Challenge validation questions, 1794 frozen units, deterministic folds/seeds, and canonical A–E single-token answer scoring under prompt terminator `Answer:` with no trailing separator. Before reduced/random-model hook execution, Level-1 found a frozen-contract defect: scientific depth d={2,3} is 1-based, but Ouro `exit_at_step` is a zero-based list index; V1's `exit_at_step=t` invariant compares the wrong recurrent step. Level-1 therefore ends as `REPAIR_NEGATIVE__EXIT_AT_STEP_INDEXING_CONTRACT_MISMATCH`, with no scientific candidate conclusion and no checkpoint/GPU run. Authority: `FEEDBACK_UTILITY_LEVEL1_DATA_RECEIPT_V1.json` and `FEEDBACK_UTILITY_LEVEL1_HARNESS_PREFLIGHT_V1.md/json`. The only authorized continuation is `FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2`, restricted to the indexing repair; all scientific thresholds/population/features remain frozen. N3 remains watchlist; BET-COMP-02 remains queued.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. BFSC is CLOSED and cannot be rescued. Feedback Utility State is live Rank 1. Prior attack and G0 are complete; V1 tokenizer/data admission PASSed but the V1 hook contract was repair-negative before model execution. `FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2` is now COMPLETE/PASS and changes only the scientific-depth/runtime-index mapping: 1-based `d in {2,3}` maps to zero-based `u=d-1`, with `h_d = hidden_states_list[d-1]` and `exit_at_step=d-1`. Structured V1/V2 comparison confirms all scientific population/features/epsilon/margins/statistics/verdict rules are unchanged. The 299-question/1794-unit V1 tokenizer/data receipt remains valid and must be reused. No checkpoint download, reduced/random hook, or GPU science has run under V2. Authority: `FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2.md/json` and result. The only authorized continuation is `FEEDBACK_UTILITY_LEVEL1_HOOK_PREFLIGHT_V2`. N3 remains watchlist; BET-COMP-02 remains queued.
 
 ## 1. Retained scientific objective
 
@@ -49,7 +49,7 @@ Primary gates:
 Feedback Utility State = finite-horizon propagation risk + extrinsic progress.
 
 Lifecycle:
-PRECARD_LEVERAGE__LEVEL1_REPAIR_NEGATIVE__DECISION_CONTRACT_V2_PENDING.
+PRECARD_LEVERAGE__DECISION_CONTRACT_V2_FROZEN__LEVEL1_HOOK_PENDING.
 
 Authority:
 - FEEDBACK_ANCESTRY_TRANSFER_V1.md
@@ -60,8 +60,10 @@ Authority:
 - FEEDBACK_UTILITY_DECISION_CONTRACT_FREEZE_RESULT_V1.md/json
 - FEEDBACK_UTILITY_LEVEL1_DATA_RECEIPT_V1.json
 - FEEDBACK_UTILITY_LEVEL1_HARNESS_PREFLIGHT_V1.md/json
+- FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2.md/json
+- FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2_RESULT.md/json
 
-Do not download weights or run Ouro scientific inference before Decision Contract V2 is frozen and the remaining Level-1 hook preflight PASSes.
+Do not download weights or run Ouro scientific inference before `FEEDBACK_UTILITY_LEVEL1_HOOK_PREFLIGHT_V2` PASSes.
 
 ### Historical closed Rank-1 object
 

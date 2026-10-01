@@ -1,0 +1,19 @@
+{
+  "experiment": "FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2",
+  "status": "PASS_REPAIR_ONLY__LEVEL1_HOOK_PREFLIGHT_NEXT",
+  "v1_md_sha256": "ac691b22bd6024c06541d79987626bd5b4b7907e37ad5f7b37b89ca0ff17c024",
+  "v1_json_sha256": "15272a0ad635a6c6947afab973614e7b94a7e50f3fe52bfb591ccbe029423d94",
+  "v2_md_sha256": "27dd5372f12668ed267770259836ae7edb94140df713ad1f7c2d3066382c3ea4",
+  "v2_json_sha256": "653f5f56922c4c6ddb2f57eb8c209c78fdf45fb08da03f29ab8831cbfea1236b",
+  "repair_scope": {
+    "scientific_depth": "1-based d in {2,3}",
+    "runtime_index": "0-based u=d-1",
+    "recorded_hidden": "hidden_states_list[d-1]",
+    "exit_at_step": "d-1"
+  },
+  "structured_nonrepair_field_drift": false,
+  "reuse_level1_data_receipt_v1": true,
+  "checkpoint_download_authorized": false,
+  "gpu_science_authorized": false,
+  "next_step": "FEEDBACK_UTILITY_LEVEL1_HOOK_PREFLIGHT_V2"
+}
