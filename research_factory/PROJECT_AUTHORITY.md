@@ -83,7 +83,7 @@ Current scientific redirection:
 - OI-AS-05 Residual O+I Decision Gate completed `TERMINATE_AGENT_SQUARE_ALFWORLD_OI`: no residual soft seam passes all pre-registered A-E admission criteria. `PLANNING_TO_REASONING_GUIDANCE` is an explicit hierarchical planner→executor handoff, lacks an identifiable active-planner exposed/unexposed contrast, and has no pre-existing directional harm evidence; `MEMORY_TO_REASONING_GUIDANCE` is the already-terminated TP seam; `PLANNING_TO_TOOL_GUIDANCE` has zero executable ALFWorld exposure.
 - The current AgentSquare/ALFWorld O+I line is TERMINATED. Hard-gate integration and new soft-guidance interventions are not authorized; do not create OI-AS-06 without genuinely new external evidence.
 - Selector feedback from this negative line is now applied: the live top-conference selector has a MECHANISM_EXPOSURE_GATE enforcing `STATIC_HEADROOM != MECHANISM_EXPOSURE` whenever a causal claim requires an instantiable runtime conflict/mismatch/competition/stale-state relation. Calibration authority: `computer_topconf_2027/MECHANISM_EXPOSURE_GATE_CALIBRATION_20260930.md`.
-- No new research candidate was invented by the selector mutation. The surviving pre-existing Rank-1 BFSC line remains scientifically active but is operationally blocked at S3 runtime preflight. Mechanism exposure PASS, offline boundary freeze PASS, and execution leverage PASS remain unchanged. `S3_RUNTIME_PREFLIGHT_V1` executed with zero model calls and returned `DAEMON_NOT_READY`: Docker Desktop frontend starts but backend/daemon cannot start because the local installation is incomplete/broken (missing Docker Desktop registry key; prior hyper-v installer attempt exited status 1). Exact image/verifier runtime has therefore not passed. User action is required: repair/reinstall Docker Desktop as Administrator, start the engine, then resume this same preflight at daemon/image checks. No common-prestate or R0/R1/R2/R3 paid arm is authorized.
+- No new research candidate was invented by the selector mutation. The surviving pre-existing Rank-1 BFSC line is scientifically active at S3. Mechanism exposure PASS, offline boundary freeze PASS, and execution leverage PASS remain unchanged. The historical `DAEMON_NOT_READY` Docker blocker is preserved, but after user repair/reinstall the same zero-model runtime preflight now passes as `PASS_RUNTIME_READY`: Docker Desktop/Engine is reachable, the exact official S3 image is locked to `sha256:4805e21fa2f3d38ed5dacc320ec0400b3fd402194051124b3a8a85cf826455fa`, the image runs the frozen commit under user `agent` with Node 20/Bun 1.3.13, and the official verifier baseline executes. Authority: `computer_topconf_2027/S3_RUNTIME_PREFLIGHT_RESUME_RESULT_V2.md/json`. Exact next step is `S3_COMMON_PRESTATE`; no common-prestate/model run or R0/R1/R2/R3 paid arm was started in the runtime-preflight turn.
 - No further engineering stage absent a concrete, decision-changing research-task blocker.
 
 ## 4. Retained scientific state
@@ -91,7 +91,7 @@ Current scientific redirection:
 `computer_topconf_2027/LIVE_STATE.md` preserves the selector/BFSC research evidence.
 
 Current retained scientific status:
-`BFSC_S3_RUNTIME_BLOCKED__DOCKER_REPAIR_REQUIRED`.
+`BFSC_S3_RUNTIME_READY__COMMON_PRESTATE_NEXT`.
 
 Do not infer a scientific PASS/KILL from the repository move. No historical R0/R3 arm becomes evidence for the new workflow by migration.
 

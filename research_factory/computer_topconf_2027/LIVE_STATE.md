@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-09-30
-status: BFSC_S3_RUNTIME_BLOCKED__DOCKER_REPAIR_REQUIRED
+status: BFSC_S3_RUNTIME_READY__PAID_EXECUTION_NOT_STARTED
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -265,8 +265,14 @@ S3 offline boundary freeze is now COMPLETE/PASS. Authority: `S3_STAGE_B_BOUNDARY
 
 `S3_EXECUTION_LEVERAGE_GATE` is now COMPLETE: scientific leverage = PASS, but current execution authorization = `DEFERRED_RUNTIME_NOT_READY`. Lower-level evidence cannot replace a controlled R2/R3 comparison, and S3 has nontrivial work headroom; however the installed Docker client cannot currently reach a Docker daemon, so the official S3 image/runtime is not yet locally verified. Authority: `S3_EXECUTION_LEVERAGE_GATE_V1.md`, `S3_EXECUTION_LEVERAGE_RESULT_V1.md`, and `S3_EXECUTION_LEVERAGE_RESULT_V1.json`.
 
-`S3_RUNTIME_PREFLIGHT_V1` has been executed with zero model calls and returns `DAEMON_NOT_READY`. Docker CLI/client exists and Docker Desktop frontend starts, but the backend daemon is unreachable. The Docker Desktop host log reports a missing `SOFTWARE\\Docker Inc.\\Docker Desktop` registry installation key, and the prior local installer log records the `--backend=hyper-v` install attempt exiting with status 1. Exact image inspection/pull and verifier execution therefore did not run. Authority: `S3_RUNTIME_PREFLIGHT_V1.md`, `S3_RUNTIME_PREFLIGHT_RESULT_V1.md/json`, `S3_RUNTIME_PREFLIGHT_EVIDENCE_V1.txt`, and `S3_RUNTIME_PREFLIGHT_VERIFY_V1.json`.
+The previous `S3_RUNTIME_PREFLIGHT_V1 = DAEMON_NOT_READY` result is retained as historical operational evidence. After Docker Desktop repair/reinstall, the same zero-model preflight was resumed and now returns `PASS_RUNTIME_READY`. Authority: `S3_RUNTIME_PREFLIGHT_RESUME_RESULT_V2.md/json`.
 
-Current blocker is operational and requires Docker Desktop repair/reinstall with administrator privileges, then a running Docker engine. After that, resume the **same** preflight at daemon reachability / exact image inspection; do not redo mechanism exposure, boundary freeze, or execution leverage.
+Current runtime evidence: Docker Desktop 4.91.0 / Engine 29.8.0 is reachable in `desktop-linux`; the exact official S3 image `ghcr.io/togetherbench/multi-user-turn-codebench/pi-mono-auto-93c17d3b:2f7d1992e60d` is locally locked to `sha256:4805e21fa2f3d38ed5dacc320ec0400b3fd402194051124b3a8a85cf826455fa`; container execution as the intended non-root `agent` user gives clean HEAD `5133697bc454da5595655cf4b0c70d3c2c725677`, Node `v20.20.2`, Bun `1.3.13`, and the required repository structure. The official verifier logic executes in the exact image; the Windows-host CRLF shell-script transport was normalized to LF only inside the ephemeral container, and the no-patch baseline produces the expected reward `0.0000` with both runtime/P2P checks passing.
 
-Only a later `PASS_RUNTIME_READY` may authorize COMMON_PRESTATE -> R2 -> R3. No S3 paid arm, common-prestate model run, S2/S4 run, broad topic scan, new TOPIC_BET, or PAPER_CANDIDATE is authorized while this runtime blocker remains.
+Runtime admission is therefore complete. The exact next scientific transition is now:
+
+`S3_COMMON_PRESTATE`
+->
+materialize one immutable pre-revision scientific snapshot and freeze exact outcome-blind R3 file/hunk scope.
+
+After that, the already-frozen paid sequence is `R2_FULL_RESTART -> R3_ORACLE_SCOPED`. R0 remains conditional on R3-vs-R2 headroom surviving; R1 is not authorized for symmetry. No common-prestate/model execution was started during runtime preflight.

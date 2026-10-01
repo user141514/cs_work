@@ -266,14 +266,14 @@ S3 mechanism exposure is `EXPOSURE_SOURCE_PROVEN` and S3 offline boundary freeze
 
 S3 execution leverage is now adjudicated: scientific leverage = PASS, but paid execution is deferred because the exact Docker runtime is not currently ready. The installed Docker client exists, but the Docker daemon is not reachable; the old development checkout is not an admissible scientific prestate.
 
-`S3_RUNTIME_PREFLIGHT_V1` has run with zero model calls and returns `DAEMON_NOT_READY`: installed Docker client 29.8.0 exists, Docker Desktop frontend starts, but the daemon is unreachable; host log reports a missing Docker Desktop registry installation key and prior installer log records a failed hyper-v install (`status 1`). Exact official image inspection/pull and verifier execution were not attempted after the daemon failure.
+The earlier `S3_RUNTIME_PREFLIGHT_V1 = DAEMON_NOT_READY` result remains historical evidence of the broken Docker installation. After user repair/reinstall, the same preflight resumed with zero model calls and now passes `PASS_RUNTIME_READY`. Exact image/runtime authority: `S3_RUNTIME_PREFLIGHT_RESUME_RESULT_V2.md/json`. Docker Desktop/Engine is reachable; exact official image `pi-mono-auto-93c17d3b:2f7d1992e60d` is locked to `sha256:4805e21fa2f3d38ed5dacc320ec0400b3fd402194051124b3a8a85cf826455fa`; container HEAD/toolchain match the frozen task; official verifier baseline executes with expected reward 0 and runtime/P2P gates passing.
 
-Current first unresolved transition is operational input repair:
+Current first unresolved transition:
 
-repair/reinstall Docker Desktop as Administrator
+`S3_COMMON_PRESTATE`
 ->
-start Docker engine
+produce one fixed GPT-5.6 Sol/xhigh pre-revision scientific state and immutable freeze bundle
 ->
-resume `S3_RUNTIME_PREFLIGHT_V1` at daemon/image checks.
+freeze exact outcome-blind R3 artifact scope.
 
-Only a later `PASS_RUNTIME_READY` may authorize COMMON_PRESTATE -> R2 -> R3. No S3 paid arm, common-prestate model run, S2/S4 run, new topic generation, learned dependency model, benchmark expansion, or new TOPIC_BET is authorized while this blocker remains.
+Only after that common-prestate freeze proceed to `R2_FULL_RESTART -> R3_ORACLE_SCOPED`. R0 is conditional on R3 headroom surviving; R1 is not authorized for symmetry. No paid/model run was started during runtime preflight.

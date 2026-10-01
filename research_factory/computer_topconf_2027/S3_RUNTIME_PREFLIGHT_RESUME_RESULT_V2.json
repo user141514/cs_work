@@ -1,0 +1,47 @@
+{
+  "experiment": "S3_RUNTIME_PREFLIGHT_RESUME_V2",
+  "date": "2026-10-01",
+  "task": "pi-mono-auto-93c17d3b",
+  "verdict": "PASS_RUNTIME_READY",
+  "model_calls_made": 0,
+  "scientific_state_mutated": false,
+  "prior_blocker_preserved": "DAEMON_NOT_READY",
+  "docker": {
+    "install_root": "E:/DockerDesktop",
+    "client_version": "29.8.0",
+    "server_version": "29.8.0",
+    "desktop_version": "4.91.0 (239619)",
+    "context": "desktop-linux",
+    "os_type": "linux",
+    "arch": "amd64",
+    "kernel": "6.18.40.1-microsoft-standard-WSL2"
+  },
+  "image": {
+    "ref": "ghcr.io/togetherbench/multi-user-turn-codebench/pi-mono-auto-93c17d3b:2f7d1992e60d",
+    "id": "sha256:4805e21fa2f3d38ed5dacc320ec0400b3fd402194051124b3a8a85cf826455fa",
+    "os": "linux",
+    "arch": "amd64",
+    "size_bytes": 3334974820,
+    "substitute_used": false
+  },
+  "runtime_identity": {
+    "user": "agent",
+    "uid": 1001,
+    "git_head": "5133697bc454da5595655cf4b0c70d3c2c725677",
+    "working_tree_clean": true,
+    "node": "v20.20.2",
+    "bun": "1.3.13"
+  },
+  "verifier": {
+    "host_crlf_transport_issue": true,
+    "host_file_mutated": false,
+    "container_lf_normalization_only": true,
+    "normalized_sha256": "b64d2ffa9e79d382e46fcd2d3f87ede26a9f04fabb4328e4a9f39bc4f89576ee",
+    "baseline_reward": 0,
+    "p2p_extensions_dir": true,
+    "p2p_existing_ext_compiles": true,
+    "scientific_negative": false
+  },
+  "paid_model_authorized_now": false,
+  "next_step": "S3_COMMON_PRESTATE"
+}
