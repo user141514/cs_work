@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-01
-status: BFSC_S2_COMMON_PRESTATE_ACTIVE__U0_V1_INVALID__LINUX_SUBSTRATE_READY__U0_RETRY_NEXT
+status: BFSC_S2_COMMON_PRESTATE_ACTIVE__U0_V1_INVALID__WSL_SUBSTRATE_READY__U0_RETRY_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 COMMON_PRESTATE is active, but U0-v1 is INVALID due to the wrong Windows tool-runtime substrate and must never be continued. The corrected Linux substrate is now verified; the only authorized continuation is `S2_COMMON_PRESTATE_U0_RETRY` in a fresh v2 session. No U1, late revision 37/39, R2/R3/R0/R1 or S4 activation is authorized yet. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 COMMON_PRESTATE is active, but U0-v1 is INVALID due to the wrong Windows tool-runtime substrate and must never be continued. The authoritative repaired runtime is now WSL-native Linux, not the persistent Docker container: exact official task bytes/runtime are reproduced under uid1001, host command-backed Codex auth is consumed through Windows interop without credential-file copying, and the host PI proxy is reached through a temporary user-space relay. The only authorized continuation is `S2_COMMON_PRESTATE_U0_RETRY` in a fresh WSL-native session. No U1, late revision 37/39, R2/R3/R0/R1 or S4 activation is authorized yet. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
 
 ## 1. Retained scientific objective
 
@@ -286,7 +286,7 @@ The R2/R3 comparison cannot be promoted to either LOCAL_HEADROOM_PASS or LOCAL_H
 
 `S2_RUNTIME_PREFLIGHT_V1` remains COMPLETE/PASS as `PASS_RUNTIME_READY`. S2 COMMON_PRESTATE execution then began, but the first U0 attempt is invalid: `s2-common-pre-u0-v1` used exact user/source inputs and made zero project changes, yet its agent tool shell ran on Windows Node24/Bun1.3.14 with Linux node_modules, violating the frozen Linux task runtime. Authority: `S2_COMMON_PRESTATE_U0_INVALID_V1.md/json`. That session is frozen and excluded.
 
-`S2_COMMON_PRESTATE_LINUX_SUBSTRATE_V1 = PASS`: persistent container `s2-common-pre-v2` uses the exact official image/base, agent uid1001, Node20.20.2 and task Bun1.3.13; OMP18.1.15 is launched with an isolated harness Bun1.3.14 under `/opt/omp-bun` while PATH remains on task Bun1.3.13. Proxy, session bind and frozen input hashes are verified.
+`S2_COMMON_PRESTATE_LINUX_SUBSTRATE_V1` remains historical execution-repair evidence for the Docker-native route, but that route is operationally superseded for scientific turns because it cannot consume the host's command-backed openai-codex credential without credential projection. `S2_COMMON_PRESTATE_WSL_SUBSTRATE_V1 = PASS`: WSL Ubuntu26.04/x86_64, uid1001 agent, exact clean base `e54dff7...`, task Node20.20.2/npm10.8.2/Bun1.3.13 copied byte/mode-preserving from the official image, OMP18.1.15 with isolated harness Bun1.3.14, Windows-interoperated command-backed Codex resolver, and user-space PI-proxy relay. Credential-aware model discovery includes `openai-codex/gpt-5.6-sol`.
 
 The exact next scientific transition is now:
 

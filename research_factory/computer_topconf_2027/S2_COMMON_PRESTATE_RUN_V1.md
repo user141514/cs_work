@@ -1,7 +1,7 @@
 # S2 Common Prestate Run V1
 
 date: 2026-10-01
-status: U0_V1_INVALID_RUNTIME__LINUX_SUBSTRATE_READY__U0_RETRY_NEXT
+status: U0_V1_INVALID_RUNTIME__WSL_SUBSTRATE_READY__U0_RETRY_NEXT
 task: pi-mono-auto-a4fca584
 
 ## Historical U0-v1 checkout — INVALID runtime trajectory
@@ -26,31 +26,34 @@ Session directory:
 
 This session is frozen as `INVALID_RUNTIME_SUBSTRATE__NO_PROJECT_EFFECT` and must never be continued. Authority: `S2_COMMON_PRESTATE_U0_INVALID_V1.md/json`.
 
-## Authoritative Linux substrate for retry
+## Authoritative WSL-native substrate for retry
 
-Persistent container:
-`s2-common-pre-v2`
-
-Task project:
-`/workspace/pi-mono`
+Scientific project:
+`/home/agent/s2-common-pre-v3`
 
 Frozen task runtime:
-- Linux/amd64 official image `sha256:24df21b472314647843bab5009a4f5b443a129e7bd42904936e0176277bf8148`
+- WSL Ubuntu 26.04 / x86_64
 - user `agent` uid 1001
-- Node v20.20.2
-- task Bun 1.3.13
 - exact clean HEAD `e54dff7efb460e364a39e4a22369991a20c105b9`
+- Node v20.20.2
+- npm 10.8.2
+- task Bun 1.3.13
+- task repo/runtime bytes copied from the locked official Docker image with Linux modes preserved
 
 OMP harness:
 - OMP 18.1.15
-- harness-only Bun 1.3.14 under `/opt/omp-bun`
-- PATH remains on official task Bun 1.3.13 for all agent tool commands
+- harness-only Bun 1.3.14 under separate `/opt/s2-omp*` prefixes
+- host command-backed `openai-codex` resolver invoked through Windows interop
+- credential files are not copied into WSL
+- PI proxy reached through temporary user-space relay at `http://172.20.208.1:17897`
 
-Fresh v2 session directory:
-`D:/cs_work/external/spec_stageb_sessions/s2_common_pre_v2`
-mounted at `/sessions`.
+Auth/model discovery:
+- `omp models openai-codex --json` uses `discoverAuthStorage()` + `ModelRegistry.getAvailable()`
+- available set includes `openai-codex/gpt-5.6-sol`
 
-Authority: `S2_COMMON_PRESTATE_LINUX_SUBSTRATE_V1.md/json`.
+The previous persistent Docker container remains runtime-donor/repair evidence only and is not the authoritative scientific execution substrate.
+
+Authority: `S2_COMMON_PRESTATE_WSL_SUBSTRATE_V1.md/json`.
 
 Agent identity:
 - `openai-codex/gpt-5.6-sol`
