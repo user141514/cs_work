@@ -1,0 +1,42 @@
+{
+  "status": "FROZEN_OUTCOME_BLIND",
+  "task": "pi-mono-auto-93c17d3b",
+  "artifact": ".pi/extensions/message-signals.ts",
+  "artifact_sha256": "1d76a1742be2dee3356f770cb6bb7385565d3aaa1e4eaa5bc64f665875ac4080",
+  "whole_file_reuse_forbidden": true,
+  "affected": [
+    {"lines": "19", "reason": "persistent widget identity"},
+    {"lines": "51-59", "reason": "setWidget/clearWidget projection seam"},
+    {"lines": "96", "reason": "initial active widget projection"},
+    {"lines": "120", "reason": "DONE widget clear"},
+    {"lines": "126", "reason": "INPUT paused-widget projection"},
+    {"lines": "132", "reason": "empty-input widget clear"},
+    {"lines": "137", "reason": "follow-up active-widget projection"},
+    {"lines": "151", "reason": "session-switch widget clear"}
+  ],
+  "revalidate_only": [
+    {"lines": "127", "reason": "direct UI input interaction"},
+    {"lines": "121", "reason": "completion UI notification"},
+    {"lines": "133", "reason": "cancelled-input UI notification"}
+  ],
+  "independent_reusable": [
+    {"lines": "18,20-21", "unit": "signal/control constants excluding widget identity"},
+    {"lines": "25-48", "unit": "assistant text extraction and signal classification"},
+    {"lines": "61-76", "unit": "hidden protocol and ordered signal contract"},
+    {"lines": "79-95", "unit": "command admission and state initialization"},
+    {"lines": "98-107", "unit": "hidden activation message injection"},
+    {"lines": "109-119", "unit": "message_end filtering and DONE state transition before projection"},
+    {"lines": "122-125,128-131", "unit": "INPUT state transition excluding projection/input UI"},
+    {"lines": "134-136", "unit": "retained post-input control flow excluding UI side effects"},
+    {"lines": "138-145", "unit": "hidden follow-up message injection"},
+    {"lines": "148-150", "unit": "session-switch state reset excluding projection"}
+  ],
+  "forbidden_evidence": [
+    "post-U6 arm outcome",
+    "reference/gold patch",
+    "verifier outcome",
+    "canonical goals",
+    "RESEARCH-01 Phase-B diagnosis or repair"
+  ],
+  "post_revision_outcome_exposed": false
+}

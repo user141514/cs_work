@@ -1,0 +1,18 @@
+{
+  "source_hashes": {
+    "research_factory/replays/RESEARCH_01_S3/USER_REQUIREMENTS_RAW.json": "2d1a65f1df329e90ded685ac9b7a183be03f07d67b8a3d34a7d27bda62af1b89",
+    "research_factory/replays/RESEARCH_01_S3/PRE_REVISION_REQUIREMENTS.md": "f1010e3e37e5ae5f042d5bd442840275cf00de0837dd496712edaea5f2211c30",
+    "research_factory/replays/RESEARCH_01_S3/LATE_REVISION.md": "f7635fb88bb2ce578ace71acbbe36d352a7888abf4e20b16ea9313d83a970ca7",
+    "research_factory/replays/RESEARCH_01_S3/SOURCE_FREEZE.json": "f3740ba43264ee36afddc08b6744d72c98e1ad3d5f9c7e73916fd8a282a4e7d4",
+    "research_factory/computer_topconf_2027/s3_arm_prompts/S3_COMMON_PRE_U1.txt": "972ec6c61c5b53777b3ee0888721e069a028b7955863c95cb04cc5a37f13ae8b"
+  },
+  "scientific_user_turns": [
+    {"source_message_index": 2, "text": "can we write a test extension. basically, i want a slash command, something like /start which injects a hidden custom message in the session that instructs the model to output a specific string when it's done or when it wants to do a thing. the extension can then listen for message_end and react accordingly, e.g. by showing ui, or closing ui, or whatever\n"},
+    {"source_message_index": 31, "text": "move that to cwd/.pi/extensions so i can relaod"},
+    {"source_message_index": 36, "text": "ok, if you do it all in one message then the ui will not open i guess"},
+    {"source_message_index": 42, "text": "ok, i started, now do a bunch of turns, in the first turn open the ui, in the last turn clos eit"},
+    {"source_message_index": 44, "text": "dude, if you output open and close, close is also executed. let's try again. 10 turns, read all the @README.md files 10 lines each. open on first turn, close on last turn"}
+  ],
+  "excluded_from_scientific_requirement_sequence": [34, 38, 40, 48, 51],
+  "late_revision_not_delivered": 54
+}

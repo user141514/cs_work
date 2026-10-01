@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-01
-status: BFSC_S3_COMMON_PRESTATE_U5_PASS__FREEZE_NEXT
+status: BFSC_S3_COMMON_PRESTATE_FROZEN__R3_SCOPE_FROZEN__R2_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -271,10 +271,12 @@ Current runtime evidence: Docker Desktop 4.91.0 / Engine 29.8.0 is reachable in 
 
 Runtime admission is complete and the S3 pre-revision requirement trajectory has now reached U5. U1-v1 remains `INVALID_SUPERVISOR_INTERRUPTION`. U5-v1 is also excluded, as `INVALID_PROMPT_MISMATCH`: shell quoting corrupted `let's` to `lets`; that running attempt was cancelled, made no checkout change, and appended exactly two JSONL records. After quiescence, the byte prefix before those records independently hashed to the recorded post-U4 authority `f495f7995abe1e3d1caccb225570db7035d5cc2cb73b0f3bbe419c642c36b6ad`, so only the invalid suffix was removed and the session re-hashed to the same value before retry. Valid U5-v2 then became the fifth scientific user turn verbatim at source_message_index=44 under unchanged GPT-5.6 Sol/xhigh/no-fallback identity with clean forbidden-source scan and normal/quiescent exit. It made no implementation change: `.pi/extensions/message-signals.ts` remains SHA256 `1d76a1742be2dee3356f770cb6bb7385565d3aaa1e4eaa5bc64f665875ac4080`; the valid post-U5 session SHA256 is `71f2d3fcff1807d757d7c8b7e3b528d5fe5936cc11c2fce4d4002829f4b3a153`. The assistant completed workload turn 1/10 then ended with `[[PI_EXTENSION_INPUT]]`. This is final pre-revision requirement-assimilation evidence, not a live 10-turn UI PASS, because the scientific runner is frozen with `--no-extensions` and no arbitrary follow-up answer was injected. Authority additionally includes `S3_COMMON_PRESTATE_U5_INVALID_V1.md/json` and `S3_COMMON_PRESTATE_U5_RESULT_V2.md/json`.
 
+`S3_COMMON_PRESTATE_FREEZE` is now COMPLETE/PASS. Authority: `S3_COMMON_PRESTATE_FREEZE_RESULT_V1.md/json` and bundle `S3_COMMON_PRESTATE_FREEZE_V1/`. The exact post-U5 state is reconstructable from frozen base `5133697...`, an empty tracked patch, one byte-exact untracked extension artifact SHA256 `1d76a174...`, and an empty deletion manifest. Frozen session SHA256 is `71f2d3fc...`; freeze manifest SHA256 is `06b55884...`; all bundle item hashes and session size/hash validated. Material derived work exists. Exact outcome-blind R3 scope is frozen at semantic/file-hunk level before U6: projection lifecycle hunks are AFFECTED, direct UI-input/notification hunks REVALIDATE_ONLY, retained protocol/classifier/state/follow-up hunks potentially independent; whole-file reuse is forbidden. No U6/post-revision/reference/verifier/RESEARCH-01 Phase-B evidence was used.
+
 The exact next scientific transition is now:
 
-`S3_COMMON_PRESTATE_FREEZE`
+`S3_R2_FULL_RESTART`
 ->
-materialize/hash the immutable post-U5 common prestate, account the exact derived artifacts, and freeze the outcome-blind R3 dependency/file-hunk scope.
+run the full-restart arm independently from TASK_INITIAL_STATE + the frozen consolidated final spec including U6.
 
-Do not deliver U6. R2/R3 are not yet authorized until this freeze is complete.
+Do not continue the frozen common-prestate session. Do not start R3 in the same supervisor turn. R0 remains conditional on later R3-vs-R2 headroom; R1 remains unauthorized for symmetry.

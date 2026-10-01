@@ -1,0 +1,11 @@
+{
+  "status": "FROZEN_POST_U5",
+  "session_bytes_location": "D:/cs_work/external/spec_stageb_sessions/s3_common_pre_v2/2026-10-01T06-35-52-231Z_01a0f62d-3227-7000-ac03-03b36dfb1b6b.jsonl",
+  "session_id": "01a0f62d-3227-7000-ac03-03b36dfb1b6b",
+  "sha256": "71f2d3fcff1807d757d7c8b7e3b528d5fe5936cc11c2fce4d4002829f4b3a153",
+  "bytes": 1355748,
+  "lines": 271,
+  "scientific_user_turn_count": 5,
+  "frozen_no_further_continue": true,
+  "note": "The session bytes already reside outside the mutable scientific worktree. This exact file becomes the frozen history authority at the post-U5 revision boundary; later arms must not continue or mutate it."
+}

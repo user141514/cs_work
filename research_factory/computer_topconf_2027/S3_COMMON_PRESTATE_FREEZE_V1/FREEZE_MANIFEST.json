@@ -1,0 +1,41 @@
+{
+  "freeze_id": "S3_COMMON_PRESTATE_FREEZE_V1",
+  "task": "pi-mono-auto-93c17d3b",
+  "status": "FROZEN_POST_U5__OUTCOME_BLIND_R3_SCOPE_FROZEN",
+  "revision_boundary": "after valid U5-v2, before U6/source_message_index=54 and before any R2/R3 outcome",
+  "snapshot": {
+    "base_commit": "5133697bc454da5595655cf4b0c70d3c2c725677",
+    "tracked_patch_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tracked_patch_bytes": 0,
+    "untracked_artifact_count": 1,
+    "deletion_count": 0
+  },
+  "session": {
+    "path": "D:/cs_work/external/spec_stageb_sessions/s3_common_pre_v2/2026-10-01T06-35-52-231Z_01a0f62d-3227-7000-ac03-03b36dfb1b6b.jsonl",
+    "sha256": "71f2d3fcff1807d757d7c8b7e3b528d5fe5936cc11c2fce4d4002829f4b3a153",
+    "bytes": 1355748,
+    "frozen_no_further_continue": true
+  },
+  "items": [
+    {"path": "HEAD.txt", "bytes": 41, "sha256": "3661b2e7cf638cdea1bb203ca36c41d50235cc4df048d8115d20c92895455c50"},
+    {"path": "git_status_porcelain_v1.txt", "bytes": 37, "sha256": "4cafa3a189a028a3f692de1c6171cb9919f36dbf4c9931d6faf30fb7f703dbd8"},
+    {"path": "tracked_dirty.patch", "bytes": 0, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+    {"path": "deletions.json", "bytes": 34, "sha256": "4d251dbf148d9f3ebca908ca16b8c9f4fe53176640b3e4169133c8e1929ed7e4"},
+    {"path": "artifacts/.pi/extensions/message-signals.ts", "bytes": 4752, "sha256": "1d76a1742be2dee3356f770cb6bb7385565d3aaa1e4eaa5bc64f665875ac4080"},
+    {"path": "session_receipt.json", "bytes": 652, "sha256": "881203ccfdb8607a7c31077d1c0a4f50e34a5f17fc94483a2ba1e46f7ede3ac9"},
+    {"path": "runtime_identity.json", "bytes": 1171, "sha256": "4c890971ffa7183e6d3c5c62b4363efe85e01f020373752c31ba0062982eb116"},
+    {"path": "requirement_inputs.json", "bytes": 1842, "sha256": "b0dd405c98511c032fca530e329fb50e551bbaebe807238dd69bc062ffdd16b2"},
+    {"path": "derived_work_manifest.json", "bytes": 1510, "sha256": "6335530552e9f64aa309a9e1d0116de4802f45a10c60bf800690910137994088"},
+    {"path": "snapshot_recipe.json", "bytes": 779, "sha256": "06dd71ffad406178c1088a62238cc2f1e8694efcb8b02ac0319bb38972ca4757"},
+    {"path": "R3_SCOPE_V1.md", "bytes": 4555, "sha256": "c7fdf3515d61d847ab4ded394661590b7085a0b0da854ba281d671f8ffac22d1"},
+    {"path": "R3_SCOPE_V1.json", "bytes": 2118, "sha256": "3cdb79725f4b1b04c8ef3ff0075288c560b06cb3d086e52f198f83888db10410"},
+    {"path": "README.md", "bytes": 632, "sha256": "a4c9298e6e147c698d2ef2b3a396baeb40722876760760d9e08f66d9cc815480"}
+  ],
+  "invariants": [
+    "The mutable scientific checkout is not the snapshot.",
+    "R0/R1/R3, if later authorized, must branch from reconstruction of this exact bundle rather than independently recreating pre-revision state.",
+    "R3 reuse accounting must use the frozen semantic/file-hunk classification, not whole-file survival.",
+    "U6/source_message_index=54 has not been delivered at freeze time.",
+    "No post-revision outcome/reference/verifier/RESEARCH-01 Phase-B evidence was used to construct R3 scope."
+  ]
+}

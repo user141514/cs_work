@@ -1,0 +1,19 @@
+{
+  "snapshot_kind": "base_plus_delta",
+  "base_commit": "5133697bc454da5595655cf4b0c70d3c2c725677",
+  "tracked_patch": {
+    "path": "tracked_dirty.patch",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "untracked_artifacts": [
+    {
+      "target_path": ".pi/extensions/message-signals.ts",
+      "bundle_path": "artifacts/.pi/extensions/message-signals.ts",
+      "bytes": 4752,
+      "sha256": "1d76a1742be2dee3356f770cb6bb7385565d3aaa1e4eaa5bc64f665875ac4080"
+    }
+  ],
+  "deleted_tracked_files": [],
+  "reconstruction_invariant": "Checkout the exact base commit, apply tracked_dirty.patch, restore each untracked artifact byte-for-byte at target_path, and do not use the mutable source checkout as the snapshot."
+}

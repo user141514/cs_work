@@ -1,0 +1,29 @@
+{
+  "material_derived_work": true,
+  "artifact_count": 1,
+  "artifacts": [
+    {
+      "path": ".pi/extensions/message-signals.ts",
+      "snapshot_copy": "artifacts/.pi/extensions/message-signals.ts",
+      "sha256": "1d76a1742be2dee3356f770cb6bb7385565d3aaa1e4eaa5bc64f665875ac4080",
+      "bytes": 4752,
+      "lines": 153,
+      "units": [
+        {"id": "DW1_SIGNAL_DEFINITION_AND_CLASSIFICATION", "lines": "18,20-48", "class": "POTENTIALLY_INDEPENDENT"},
+        {"id": "DW2_UI_PROJECTION_HELPERS", "lines": "19,51-59", "class": "AFFECTED"},
+        {"id": "DW3_HIDDEN_PROTOCOL_PROMPT", "lines": "61-76", "class": "POTENTIALLY_INDEPENDENT"},
+        {"id": "DW4_ACTIVATION_AND_HIDDEN_INJECTION", "lines": "79-95,98-107", "class": "POTENTIALLY_INDEPENDENT"},
+        {"id": "DW5_INITIAL_WIDGET_PROJECTION", "lines": "96", "class": "AFFECTED"},
+        {"id": "DW6_SIGNAL_RECOGNITION_AND_STATE_TRANSITION", "lines": "109-119,122-125,128-131,134-145,148-150", "class": "POTENTIALLY_INDEPENDENT"},
+        {"id": "DW7_WIDGET_LIFECYCLE_CALLS", "lines": "120,126,132,137,151", "class": "AFFECTED"},
+        {"id": "DW8_DIRECT_UI_INPUT_SEAM", "lines": "127", "class": "REVALIDATE_ONLY"},
+        {"id": "DW9_UI_NOTIFICATIONS", "lines": "121,133", "class": "REVALIDATE_ONLY"}
+      ]
+    }
+  ],
+  "reuse_denominator": {
+    "kind": "semantic_hunks",
+    "whole_file_reuse_forbidden": true,
+    "reason": "The single file mixes late-revision-dependent UI projection with independent signal/protocol state."
+  }
+}

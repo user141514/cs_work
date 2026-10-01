@@ -1,7 +1,7 @@
 # S3 Common Prestate Run Contract V1
 
 date: 2026-10-01
-status: U5_PASS_PRESTATE_TURN__FREEZE_NEXT
+status: COMMON_PRESTATE_FROZEN__R3_SCOPE_FROZEN__R2_NEXT
 task: pi-mono-auto-93c17d3b
 parent:
 - S3_STAGE_B_BOUNDARY_FREEZE_V1.md
@@ -12,7 +12,7 @@ parent:
 
 Generate exactly one scientific pre-revision trajectory for S3.
 
-Execution advances one user-authorized supervisor turn at a time in the same durable OMP session and checkout. U1-v2 through valid U5-v2 are now complete. The first U5 launch is excluded as `INVALID_PROMPT_MISMATCH`; exact post-U4 session state was restored by byte hash before valid U5-v2. The next planned action is the common-prestate freeze, but this file alone does not automatically authorize R2/R3.
+Execution advanced one user-authorized supervisor turn at a time through valid U5-v2. The first U5 launch remains excluded as `INVALID_PROMPT_MISMATCH`; exact post-U4 session state was restored by byte hash before valid U5-v2. The post-U5 state is now frozen in `S3_COMMON_PRESTATE_FREEZE_V1` with manifest SHA256 `06b55884fbca4169175cfc178a145b2a68937f810a1be268da346f6b185a195d`, and exact outcome-blind R3 file/hunk scope is frozen. The original v2 session is now a frozen history artifact and must not be continued.
 
 No late revision U6, R0, R1, R2 or R3 is authorized by this file.
 
@@ -145,8 +145,18 @@ After exact hash-proven restoration to the recorded post-U4 session bytes, valid
 
 The exact frozen U5 is the fifth scientific user turn. It made no code change and ended after workload turn 1/10 with standalone `[[PI_EXTENSION_INPUT]]`. This does not claim live 10-turn UI verification in the frozen `--no-extensions` scientific runner; no arbitrary follow-up answer and no workflow-only U6-equivalent turn was injected.
 
+## Common-prestate freeze result
+
+Freeze passed. Authority:
+- `S3_COMMON_PRESTATE_FREEZE_RESULT_V1.md`
+- `S3_COMMON_PRESTATE_FREEZE_RESULT_V1.json`
+- `S3_COMMON_PRESTATE_FREEZE_V1/FREEZE_MANIFEST.json`
+- `S3_COMMON_PRESTATE_FREEZE_V1/R3_SCOPE_V1.md/json`
+
+The exact post-U5 state is reconstructable from frozen base + empty tracked patch + one byte-exact untracked artifact copy + empty deletion manifest. The session history is frozen by exact bytes/hash outside the mutable worktree. Material derived work is present, and whole-file R3 reuse is forbidden by the frozen mixed-seam classification.
+
 ## Exact next step
 
-`S3_COMMON_PRESTATE_FREEZE` only.
+`S3_R2_FULL_RESTART` only.
 
-Materialize and hash the immutable post-U5 common prestate, account the exact derived artifacts, and freeze the outcome-blind R3 dependency/file-hunk scope before authorizing R2 or R3. Do not deliver U6.
+R2 must start independently from TASK_INITIAL_STATE plus the frozen final specification including U6. Do not continue the common-prestate session and do not start R3 in the same supervisor turn.

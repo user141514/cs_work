@@ -268,10 +268,10 @@ S3 execution leverage is now adjudicated: scientific leverage = PASS, but paid e
 
 The earlier `S3_RUNTIME_PREFLIGHT_V1 = DAEMON_NOT_READY` result remains historical evidence of the broken Docker installation. After user repair/reinstall, the same preflight resumed with zero model calls and now passes `PASS_RUNTIME_READY`. Exact image/runtime authority: `S3_RUNTIME_PREFLIGHT_RESUME_RESULT_V2.md/json`. Docker Desktop/Engine is reachable; exact official image `pi-mono-auto-93c17d3b:2f7d1992e60d` is locked to `sha256:4805e21fa2f3d38ed5dacc320ec0400b3fd402194051124b3a8a85cf826455fa`; container HEAD/toolchain match the frozen task; official verifier baseline executes with expected reward 0 and runtime/P2P gates passing.
 
-S3 pre-revision requirement delivery is complete through valid U5-v2 in the same frozen GPT-5.6 Sol/xhigh durable session/checkout. U5-v1 is excluded as `INVALID_PROMPT_MISMATCH`; after cancellation/quiescence, its two-record suffix was removed only because the preceding byte prefix exactly matched the recorded post-U4 session hash, restoring that authority before retry. Valid U5-v2 delivered source_message_index=44 verbatim, made no code change, and ended after workload turn 1/10 with standalone `[[PI_EXTENSION_INPUT]]`; this is final pre-revision requirement-assimilation evidence, not independent live-UI verification in the frozen `--no-extensions` runner. Current first unresolved transition:
+S3 pre-revision requirement delivery is complete through valid U5-v2, and the post-U5 common prestate is now immutably frozen. `S3_COMMON_PRESTATE_FREEZE_V1` contains the exact reconstruction substrate, runtime/requirement receipts, derived-work manifest and outcome-blind R3 scope; bundle manifest SHA256 is `06b55884...`. Frozen state is base `5133697...` + empty tracked patch + one byte-exact `.pi/extensions/message-signals.ts` artifact SHA256 `1d76a174...` + empty deletion manifest; frozen session SHA256 is `71f2d3fc...`. Material derived work exists. R3 whole-file reuse is forbidden: UI projection lifecycle hunks are AFFECTED, direct UI input/notification hunks REVALIDATE_ONLY, protocol/classifier/state/follow-up hunks potentially independent. No U6/post-revision outcome or forbidden solution evidence was used. Current first unresolved transition:
 
-`S3_COMMON_PRESTATE_FREEZE`
+`S3_R2_FULL_RESTART`
 ->
-materialize/hash the immutable post-U5 common prestate and freeze exact outcome-blind R3 artifact scope.
+run R2 independently from TASK_INITIAL_STATE + frozen final spec.
 
-Only after that freeze may execution proceed to `R2_FULL_RESTART -> R3_ORACLE_SCOPED`; R0 remains conditional on R3 headroom and R1 is not authorized for symmetry. U6 has not been delivered.
+R3 follows only after the authorized R2 step completes. R0 remains conditional on R3 headroom and R1 is not authorized for symmetry. The frozen common-prestate session must not be continued.
