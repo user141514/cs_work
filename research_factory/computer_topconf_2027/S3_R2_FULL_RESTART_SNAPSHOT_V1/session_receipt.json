@@ -1,0 +1,32 @@
+{
+  "task": "pi-mono-auto-93c17d3b",
+  "arm": "R2_FULL_RESTART",
+  "request_key": "s3-r2-full-restart-v1",
+  "lifetime_turn_id": "turn_ed8b41698dbd440ea78ff232c6834499",
+  "agent_id": "agt_29582e657852474588781ef79d65c633",
+  "session_path": "D:/cs_work/external/spec_stageb_sessions/s3_r2_full_v1/2026-10-01T08-55-22-389Z_01a0f6ac-ea11-7000-a4b4-df734d0cc779.jsonl",
+  "session_sha256": "666bdc1892a443d7cae819528c91925a90f9275eccc37373168e82da752fa9db",
+  "session_bytes": 1331607,
+  "session_lines": 272,
+  "model": "openai-codex/gpt-5.6-sol",
+  "resolved_model_is_fallback": false,
+  "thinking": "xhigh",
+  "outcome": "succeeded",
+  "quiescent": true,
+  "prompt_file": "research_factory/computer_topconf_2027/S3_R2_FULL_RESTART_PROMPT_V1.txt",
+  "prompt_sha256": "cbcdd757cbcec0bb4e1118487f9a964ad990b605ad86c195dac03265d86b1551",
+  "user_message_form": "@file wrapper around the exact frozen prompt file",
+  "forbidden_tool_path_scan_hits": 0,
+  "accounting": {
+    "model_calls": 54,
+    "tool_calls": 106,
+    "mutating_tool_calls": 10,
+    "noncached_input_output": 176796,
+    "reported_cost_usd": 3.5202112,
+    "wall_seconds": 632.049,
+    "input_tokens": 151625,
+    "output_tokens": 25171,
+    "cache_read_tokens": 6025728,
+    "reasoning_tokens": 15455
+  }
+}

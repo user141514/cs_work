@@ -1,0 +1,21 @@
+{
+  "snapshot_id": "S3_R2_FULL_RESTART_SNAPSHOT_V1",
+  "task": "pi-mono-auto-93c17d3b",
+  "arm": "R2_FULL_RESTART",
+  "status": "VALID_EXECUTION__PARTIAL_CORRECTNESS__REWARD_0_7650",
+  "base_commit": "5133697bc454da5595cf4b0c70d3c2c725677",
+  "worktree_final_status": "?? .pi/extensions/signal-ui.ts",
+  "items": [
+    {"path": "README.md", "bytes": 544, "sha256": "5b3cd6de55037d5cce652ded79e8a7199ccca3cec67aac0a22a29a5936b0cab6"},
+    {"path": "artifacts/.pi/extensions/signal-ui.ts", "bytes": 4049, "sha256": "886a067d86e30d220fcc5a6fa4884ce81cef4c6ab91746406198c203625a5673"},
+    {"path": "session_receipt.json", "bytes": 1273, "sha256": "bf3eca1b26b4c8a83889a3b6ae650d209e06ef4b40cfb8271fbaaafad7e10c05"},
+    {"path": "verifier_result.json", "bytes": 1607, "sha256": "eb949c45f6179dafe5aa72fca86dc3b1f67e5f37d7dc8fccc531eb787e20bcbf"}
+  ],
+  "invariants": [
+    "R2 started from the exact task-initial commit in a fresh isolated worktree and new session.",
+    "R2 did not inherit the frozen common-prestate implementation or session.",
+    "The official frozen verifier was used without host mutation; CRLF to LF normalization occurred only inside the ephemeral Linux container.",
+    "R2 is not to be repaired, retried, renamed, or rescored after observing reward 0.7650.",
+    "R3 is the next pre-registered arm; R0/R1 remain unauthorized at this point."
+  ]
+}

@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-01
-status: BFSC_S3_COMMON_PRESTATE_FROZEN__R3_SCOPE_FROZEN__R2_NEXT
+status: BFSC_S3_R2_VALID_PARTIAL__REWARD_0_765__R3_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -273,10 +273,12 @@ Runtime admission is complete and the S3 pre-revision requirement trajectory has
 
 `S3_COMMON_PRESTATE_FREEZE` is now COMPLETE/PASS. Authority: `S3_COMMON_PRESTATE_FREEZE_RESULT_V1.md/json` and bundle `S3_COMMON_PRESTATE_FREEZE_V1/`. The exact post-U5 state is reconstructable from frozen base `5133697...`, an empty tracked patch, one byte-exact untracked extension artifact SHA256 `1d76a174...`, and an empty deletion manifest. Frozen session SHA256 is `71f2d3fc...`; freeze manifest SHA256 is `06b55884...`; all bundle item hashes and session size/hash validated. Material derived work exists. Exact outcome-blind R3 scope is frozen at semantic/file-hunk level before U6: projection lifecycle hunks are AFFECTED, direct UI-input/notification hunks REVALIDATE_ONLY, retained protocol/classifier/state/follow-up hunks potentially independent; whole-file reuse is forbidden. No U6/post-revision/reference/verifier/RESEARCH-01 Phase-B evidence was used.
 
+`S3_R2_FULL_RESTART` is now COMPLETE as a valid but partial-correctness arm. Authority: `S3_R2_FULL_RESTART_RESULT_V1.md/json`, frozen prompt `S3_R2_FULL_RESTART_PROMPT_V1.txt`, and snapshot `S3_R2_FULL_RESTART_SNAPSHOT_V1/`. R2 started from a fresh isolated exact-base worktree/session with no common-prestate inheritance and ended with only `.pi/extensions/signal-ui.ts` (SHA256 `886a067d...`) untracked. Native accounting: 54 model calls, 106 tool calls, 176,796 noncached input+output tokens, $3.5202112 reported cost, 632.049 s. The frozen official verifier yields `0.7650`: Gate1/2/3/5/6 PASS, Gate4 distinct-signal behavior FAIL, informational upstream canonical-file/loadable gates FAIL, P2P runtime gates PASS. This is not runtime INVALID and is not full verifier success. R2 is frozen as-is; no repair/retry/rename/rescore is allowed.
+
 The exact next scientific transition is now:
 
-`S3_R2_FULL_RESTART`
+`S3_R3_ORACLE_SCOPED`
 ->
-run the full-restart arm independently from TASK_INITIAL_STATE + the frozen consolidated final spec including U6.
+branch from the immutable post-U5 common-prestate bundle and expose only the already-frozen outcome-blind independent/revalidate/affected scope plus U6/final requirements. Do not provide R2 implementation, gate outcomes, or verifier result as solution context.
 
-Do not continue the frozen common-prestate session. Do not start R3 in the same supervisor turn. R0 remains conditional on later R3-vs-R2 headroom; R1 remains unauthorized for symmetry.
+R0 remains conditional on the later frozen R3-vs-R2 headroom/reuse decision. R1 remains unauthorized for symmetry.

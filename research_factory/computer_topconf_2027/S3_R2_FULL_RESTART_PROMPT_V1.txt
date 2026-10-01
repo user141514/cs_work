@@ -1,0 +1,32 @@
+You are starting a fresh controlled coding-agent run from the frozen task-initial repository state at commit 5133697bc454da5595655cf4b0c70d3c2c725677.
+
+Implement the consolidated final authoritative requirements below without relying on any prior agent session or pre-revision implementation.
+
+Final authoritative requirements:
+
+1. Provide a repository-local test extension under `.pi/extensions`.
+2. Provide a slash-command activation path such as `/start`.
+3. Activation injects a hidden custom/session control message rather than exposing the control protocol as normal visible transcript content.
+4. Completed assistant messages can emit distinct open/input and close/done signals that the extension observes.
+5. Open/input and close/done are separate events; combined same-response open+close does not satisfy the contract.
+6. The signal UI can remain active across multiple intervening turns/work and a later/final signal closes it.
+7. The extension remains inactive until explicitly activated.
+8. While assistant output/streaming occurs with the signal UI active, the user must retain usable typing/input/editor responsiveness.
+9. The UI projection/lifecycle must not repeatedly recreate, replace, focus-steal, or otherwise block the interactive input surface as output arrives.
+10. Preserve command activation, hidden protocol injection, distinct signal semantics, extension loadability, multi-turn behavior, and inactive-before-start behavior while fixing the late lifecycle/responsiveness defect.
+11. Run task-appropriate correctness checks for both the retained signal behavior and the late lifecycle/responsiveness requirement.
+
+The historical 10-turn README exercise is a verification scenario, not a product feature; do not hardcode that workload.
+
+Experimental boundaries:
+- Diagnose and implement only from the current repository state and the requirements above.
+- This is a fresh FULL_RESTART arm. Do not inspect or reuse the frozen common-prestate implementation/session.
+- Do not inspect later git history, reference/gold patches, hidden verifier files/results, benchmark canonical goals, RESEARCH-01 Phase-B artifacts/diagnosis/repair, or future successful trajectories.
+- Do not use another agent or external project context.
+- Do not commit, push, publish, or release.
+- Do not change the stated requirements or optimize to hidden evaluator behavior.
+
+At the end, report:
+- files changed;
+- correctness checks actually run and their results;
+- any unresolved requirement.

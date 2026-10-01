@@ -155,8 +155,17 @@ Freeze passed. Authority:
 
 The exact post-U5 state is reconstructable from frozen base + empty tracked patch + one byte-exact untracked artifact copy + empty deletion manifest. The session history is frozen by exact bytes/hash outside the mutable worktree. Material derived work is present, and whole-file R3 reuse is forbidden by the frozen mixed-seam classification.
 
+## R2 result
+
+R2 FULL_RESTART is complete as `VALID_EXECUTION__PARTIAL_CORRECTNESS__REWARD_0_7650`. Authority:
+- `S3_R2_FULL_RESTART_PROMPT_V1.txt`
+- `S3_R2_FULL_RESTART_RESULT_V1.md/json`
+- `S3_R2_FULL_RESTART_SNAPSHOT_V1/`
+
+R2 used a fresh exact-base worktree and new session with no common-prestate inheritance. The frozen verifier did not reach full success; no R2 rescue/retry is authorized.
+
 ## Exact next step
 
-`S3_R2_FULL_RESTART` only.
+`S3_R3_ORACLE_SCOPED` only.
 
-R2 must start independently from TASK_INITIAL_STATE plus the frozen final specification including U6. Do not continue the common-prestate session and do not start R3 in the same supervisor turn.
+R3 must reconstruct the immutable post-U5 common prestate and use only the already-frozen outcome-blind R3 scope. Do not expose R2 implementation/verifier result as solution context and do not run R0/R1 in the same supervisor turn.

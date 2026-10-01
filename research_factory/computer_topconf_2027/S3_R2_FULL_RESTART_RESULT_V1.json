@@ -1,0 +1,45 @@
+{
+  "experiment": "S3_R2_FULL_RESTART_V1",
+  "status": "VALID_EXECUTION__PARTIAL_CORRECTNESS__REWARD_0_7650__R3_NEXT",
+  "task": "pi-mono-auto-93c17d3b",
+  "arm": "R2_FULL_RESTART",
+  "base_commit": "5133697bc454da5595cf4b0c70d3c2c725677",
+  "prompt_sha256": "cbcdd757cbcec0bb4e1118487f9a964ad990b605ad86c195dac03265d86b1551",
+  "lifetime_turn_id": "turn_ed8b41698dbd440ea78ff232c6834499",
+  "agent_id": "agt_29582e657852474588781ef79d65c633",
+  "outcome": "succeeded",
+  "quiescent": true,
+  "model": "openai-codex/gpt-5.6-sol",
+  "fallback": false,
+  "thinking": "xhigh",
+  "final_artifact": {
+    "path": ".pi/extensions/signal-ui.ts",
+    "bytes": 4049,
+    "lines": 139,
+    "sha256": "886a067d86e30d220fcc5a6fa4884ce81cef4c6ab91746406198c203625a5673"
+  },
+  "session": {
+    "sha256": "666bdc1892a443d7cae819528c91925a90f9275eccc37373168e82da752fa9db",
+    "bytes": 1331607,
+    "lines": 272
+  },
+  "accounting": {
+    "model_calls": 54,
+    "tool_calls": 106,
+    "mutating_tool_calls": 10,
+    "noncached_input_output": 176796,
+    "reported_cost_usd": 3.5202112,
+    "wall_seconds": 632.049
+  },
+  "verifier": {
+    "inner_reward": 0.85,
+    "final_reward": 0.765,
+    "full_success": false,
+    "gate4_distinct_signals": false,
+    "upstream_file_exists": false,
+    "upstream_ext_loadable": false,
+    "runtime_invalid": false
+  },
+  "r2_rescue_authorized": false,
+  "next_step": "S3_R3_ORACLE_SCOPED"
+}
