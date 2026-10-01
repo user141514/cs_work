@@ -268,10 +268,10 @@ S3 execution leverage is now adjudicated: scientific leverage = PASS, but paid e
 
 The earlier `S3_RUNTIME_PREFLIGHT_V1 = DAEMON_NOT_READY` result remains historical evidence of the broken Docker installation. After user repair/reinstall, the same preflight resumed with zero model calls and now passes `PASS_RUNTIME_READY`. Exact image/runtime authority: `S3_RUNTIME_PREFLIGHT_RESUME_RESULT_V2.md/json`. Docker Desktop/Engine is reachable; exact official image `pi-mono-auto-93c17d3b:2f7d1992e60d` is locked to `sha256:4805e21fa2f3d38ed5dacc320ec0400b3fd402194051124b3a8a85cf826455fa`; container HEAD/toolchain match the frozen task; official verifier baseline executes with expected reward 0 and runtime/P2P gates passing.
 
-S3 pre-revision requirement delivery is complete through valid U5-v2, and the post-U5 common prestate is immutably frozen. S2 COMMON_PRESTATE/R2 and selector replan are complete; S2 remains verifier-structural-invalidity nonidentifiable. S4 `VERIFIER_COMPATIBILITY_GATE_V1` is now COMPLETE/PASS. Exact frozen image `sha256:06a5e300...`, base `353ac792...`, Node20.20.2/Bun1.3.13, clean history-isolated repo; no-patch verifier exit 0 with all observed P2P gates passing and all F2P failures corresponding to the intended missing `pi-package`, documentation and simulated-search behavior. No S2-style harness structural mismatch is present. Frozen H/V metrics and historical outcomes remain unchanged. Current first unresolved transition:
+S3 pre-revision requirement delivery is complete through valid U5-v2 and its common prestate is frozen. S2 COMMON_PRESTATE/R2 and selector replan are complete; S2 remains verifier-structural-invalidity nonidentifiable. S4 verifier compatibility is COMPLETE/PASS, but `S4_MECHANISM_EXPOSURE_GATE_V1 = EXPOSURE_NONIDENTIFIABLE`. The user-only trace contains a corrective `no, add it to ...` turn after choosing `pi-package`, yet does not prove a concrete already-created target/package implementation before that correction. Identifying that prior derived state would require forbidden assistant trajectory evidence. Frozen base evidence also lacks the missing task-derived keyword state and named sibling targets. Therefore S4 paid execution/common-prestate remains closed; H/V metrics and historical outcomes are unchanged. Current first unresolved transition:
 
-`S4_MECHANISM_EXPOSURE_GATE_V1`
+`BFSC_SELECTOR_REPLAN_AFTER_S4_EXPOSURE_NONIDENTIFIABLE`
 ->
-use zero model calls and frozen S4 ordered requirements/base source only to prove or refute actual stale-state/selective-invalidation exposure.
+adjudicate BFSC PRECARD identifiability over the exhausted frozen Stage-B portfolio without converting nonidentifiability into a method negative.
 
-Do not run S4 common-prestate/paid arms, S2 R3/R0/R1, or any new topic family before that gate.
+Do not run S4 paid arms/common-prestate, S2 R3/R0/R1, or any new topic family before that selector decision.

@@ -187,8 +187,17 @@ The selector keeps BFSC at PRECARD because S4 is the only still-unobserved froze
 
 The exact frozen S4 verifier executes against the frozen base with exit 0. Observed P2P gates pass; F2P failures are the intended absent `pi-package`/documentation/search behavior, not a structurally impossible harness assumption.
 
+## S4 mechanism-exposure result
+
+`S4_MECHANISM_EXPOSURE_GATE_V1 = EXPOSURE_NONIDENTIFIABLE`. Authority:
+- `S4_MECHANISM_EXPOSURE_SOURCE_V1.json`
+- `S4_MECHANISM_EXPOSURE_GATE_V1.md`
+- `S4_MECHANISM_EXPOSURE_RESULT_V1.md/json`
+
+The user-only source shows a correction after choosing `pi-package`, but not the concrete already-created target/package implementation that the correction invalidates. Assistant trajectory evidence would be required to identify it and is forbidden by the gate. S4 paid execution remains closed.
+
 ## Exact next step
 
-`S4_MECHANISM_EXPOSURE_GATE_V1` only.
+`BFSC_SELECTOR_REPLAN_AFTER_S4_EXPOSURE_NONIDENTIFIABLE` only.
 
-Use zero model calls and frozen S4 ordered requirements/base source only. Do not repair/rescore S2, do not run S2 R3/R0/R1, and do not run S4 common-prestate/paid arms in the same supervisor step.
+Do not repair/rescore S2, do not run S2 R3/R0/R1, and do not run S4 common-prestate/R2/R3/R0/R1 before the selector decision.

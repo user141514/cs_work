@@ -1,0 +1,20 @@
+{
+  "experiment": "S4_MECHANISM_EXPOSURE_GATE_V1",
+  "status": "EXPOSURE_NONIDENTIFIABLE__SELECTOR_REPLAN_NEXT",
+  "task": "pi-mono-auto-d3b2130d",
+  "model_calls": 0,
+  "candidate_revision_message_index": 10,
+  "predicate": {
+    "E1_concrete_preexisting_derived_state_proven": false,
+    "E2_exact_invalidated_prior_responsibility_identifiable": false,
+    "E3_mixed_validity_derived_work_relation_proven": false,
+    "E4_forbidden_sources_excluded": true,
+    "E5_frozen_base_supplies_missing_state": false
+  },
+  "verdict": "EXPOSURE_NONIDENTIFIABLE",
+  "reason": "The user-only trace shows a correction ('no, add it to ...') but does not state what concrete previously derived target/implementation is being corrected. Resolving that requires assistant trajectory evidence, which the frozen exposure policy forbids.",
+  "paid_execution_authorized": false,
+  "s4_common_prestate_authorized": false,
+  "s4_r2_r3_authorized": false,
+  "next_step": "BFSC_SELECTOR_REPLAN_AFTER_S4_EXPOSURE_NONIDENTIFIABLE"
+}

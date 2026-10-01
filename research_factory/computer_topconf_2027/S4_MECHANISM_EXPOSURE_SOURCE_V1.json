@@ -1,0 +1,69 @@
+{
+  "task": "pi-mono-auto-d3b2130d",
+  "source": "D:/bio_paper/external/swe_together_official_20260928/tasks/pi-mono-auto-d3b2130d/original_session.json",
+  "source_sha256": "1ebbc0b78e4f0d981b4bcc0d044d0de49a601458f01bbddb504b896b997d1234",
+  "source_bytes": 17411,
+  "task_toml_sha256": "513c94f45312d31ec9f52602b3ed4c8837f8a6f7fd7744f2cd0d812573d19775",
+  "evidence_policy": "user_messages_only; assistant content excluded",
+  "selected_user_messages": [
+    {
+      "message_index": 0,
+      "role": "initial_discovery_request",
+      "text": "can we search the npm registry for keywords specified in package.json of packages? i have a few packages published that have the keyword \"pi\" in them. can you try to search and tell me how that works and what packages come up?"
+    },
+    {
+      "message_index": 4,
+      "role": "discovery_clarification",
+      "text": "so we can't search just by keywords?"
+    },
+    {
+      "message_index": 7,
+      "role": "unique_keyword_requirement",
+      "text": "ok, i think we should ensure that we have a unique keyword we can search for, how about pi-package?"
+    },
+    {
+      "message_index": 10,
+      "role": "candidate_late_target_correction",
+      "text": "no, add it to ../pi-doom/ ../pi-package-test/ and ../pi-gitlab-duo/"
+    },
+    {
+      "message_index": 13,
+      "role": "additive_publish_requirement",
+      "text": "then publish new versions of these"
+    },
+    {
+      "message_index": 19,
+      "role": "additive_documentation_requirement",
+      "text": "ok, we should document this keyword in @packages/coding-agent/docs/extensions.md @packages/coding-agent/README.md and any other .md file that talks about pi packages."
+    },
+    {
+      "message_index": 28,
+      "role": "verification_search_request",
+      "text": "search"
+    },
+    {
+      "message_index": 32,
+      "role": "workflow_only_commit_push",
+      "text": "ok commit an dpush the changes in the working dir"
+    }
+  ],
+  "frozen_base_static_checks": {
+    "base_commit": "353ac792ebb99931c640ee55af90881d3a45c4d9",
+    "exact_pi_package_keyword_state_proven_in_base": false,
+    "note": "Base contains documentation examples with the string other-pi-package, but no source-proven task-derived pi-package keyword metadata state.",
+    "candidate_sibling_targets_in_workspace": {
+      "../pi-doom/": false,
+      "../pi-package-test/": false,
+      "../pi-gitlab-duo/": false
+    }
+  },
+  "forbidden_for_exposure_verdict": [
+    "assistant trajectory content",
+    "oracle_session.jsonl",
+    "oracle_intents.json",
+    "canonical_goals.json",
+    "reference_patch.json",
+    "verifier outcome as a solution template",
+    "future successful diff"
+  ]
+}
