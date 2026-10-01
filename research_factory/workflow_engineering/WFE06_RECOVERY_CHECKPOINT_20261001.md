@@ -249,10 +249,8 @@ Do not resume implementation, review, push, merge, or worktree cleanup for this 
 
 ## Recovery procedure
 
-1. Open `D:/cs_work_aris_overlay` and verify branch/worktree identity.
-2. Re-read this checkpoint, `MASTER_PLAN.md`, and `WORKFLOW_SPEC_V0_2_ARIS_OVERLAY.md`.
-3. Re-read live `main`; if newer commits touch workflow-engineering authority/interfaces, rebase/reconcile before continuing. If they only advance unrelated scientific evidence, do not rebase merely for recency.
-4. Re-hash the current WFE-06 files and run:
-   `E:/Anaconda3/python.exe -B -m unittest runtime_tests.test_governance_overlay -q`
-   Expected current focused baseline: **16 tests PASS**.
-5. WFE-06 is closed. Recovery should report COMPLETE and stop unless a new concrete defect is introduced.
+1. Open the authoritative repository at `D:/cs_work` and read `AGENTS.md`, `research_factory/PROJECT_AUTHORITY.md`, `MASTER_PLAN.md`, and this checkpoint.
+2. Confirm `MASTER_PLAN.md` reports `Status: COMPLETE__REMOTE_VERIFIED__WORKTREE_RESOLVED` and this checkpoint reports `NONE — WFE-06 closed`.
+3. If both completion markers remain present and no new concrete WFE-06 defect/evidence has been introduced, report COMPLETE and stop. Do not recreate `D:/cs_work_aris_overlay`, rerun old acceptance steps, re-review, re-merge, or re-push WFE-06.
+4. Only if new evidence identifies a concrete WFE-06 defect should a fresh bounded branch/worktree be created from the then-current authoritative `main`; preserve existing completion evidence as history rather than rewriting it.
+5. Unrelated scientific `main` advancement does not reopen WFE-06 unless it changes a WFE authority/interface that the defect actually depends on.
