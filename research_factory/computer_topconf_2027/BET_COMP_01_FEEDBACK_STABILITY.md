@@ -1,7 +1,7 @@
 # BET-COMP-01 — Feedback Stability for Iterative Generative Inference
 
 date: 2026-09-28
-state: REFORMULATED_AS_FEEDBACK_UTILITY_STATE__RANK1_PRECARD__G0_PASS__DECISION_CONTRACT_PENDING
+state: REFORMULATED_AS_FEEDBACK_UTILITY_STATE__RANK1_PRECARD__DECISION_CONTRACT_FROZEN__LEVEL1_HARNESS_NEXT
 formal_paper_candidate: false
 target: ICML 2027 / NeurIPS 2027
 
@@ -17,9 +17,11 @@ Bounded direct-prior attack is already complete with `DIRECT_VETO=false / TRANSF
 
 `FEEDBACK_UTILITY_G0_ASSET_PREFLIGHT_V1 = PASS` on public Ouro-1.4B revision `574fa66...` and PC2 local resources.
 
-Exact next step: `FEEDBACK_UTILITY_DECISION_CONTRACT_FREEZE_V1`.
+`FEEDBACK_UTILITY_DECISION_CONTRACT_FREEZE_V1 = PASS`.
 
-No model download/GPU run is authorized before that freeze.
+Exact next step: `FEEDBACK_UTILITY_LEVEL1_HARNESS_PREFLIGHT_V1`.
+
+No full checkpoint download/GPU scientific run is authorized before Level-1 PASS.
 
 ## Organizer
 

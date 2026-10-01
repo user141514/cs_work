@@ -5,7 +5,7 @@ status: ANCESTRY_TRANSFER_COMPLETE__TRANSFER_OPEN_BUT_CROWDED__RANK1_REACTIVATED
 target_object: iterative generative / recurrent inference with reused derived state
 previous_object: BET-COMP-01 Feedback Stability
 current_object: Feedback Utility State = finite-horizon propagation risk + extrinsic progress
-experiment_status: G0_ASSET_PREFLIGHT_PASS__DECISION_CONTRACT_PENDING
+experiment_status: DECISION_CONTRACT_FROZEN__LEVEL1_HARNESS_PENDING
 
 ## 1. Target residual abstraction
 

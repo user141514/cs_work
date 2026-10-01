@@ -1,0 +1,20 @@
+{
+  "experiment": "FEEDBACK_UTILITY_DECISION_CONTRACT_FREEZE_RESULT_V1",
+  "status": "PASS_DECISION_CONTRACT_FROZEN__LEVEL1_HARNESS_NEXT",
+  "candidate": "Feedback Utility State",
+  "formal_paper_candidate": false,
+  "contract": "FEEDBACK_UTILITY_DECISION_CONTRACT_FREEZE_V1",
+  "contract_frozen_before_checkpoint_download": true,
+  "contract_frozen_before_gpu_science": true,
+  "primary_population": "allenai/ai2_arc@210d026faf9955653af8916fad021475a3f00453 / ARC-Challenge / validation / full valid split",
+  "primary_depths": [2,3],
+  "perturbation_scales": [0.01,0.03,0.05],
+  "pass_margins": {
+    "joint_vs_cheap_nrmse_reduction": 0.10,
+    "joint_vs_best_single_nrmse_reduction": 0.05,
+    "bootstrap_lower_bound_positive": true
+  },
+  "checkpoint_download_authorized": false,
+  "gpu_science_authorized": false,
+  "next_step": "FEEDBACK_UTILITY_LEVEL1_HARNESS_PREFLIGHT_V1"
+}
