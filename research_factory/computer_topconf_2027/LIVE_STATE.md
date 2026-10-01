@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-01
-status: BFSC_S3_R3_VALID__REUSE_PASS__PARTIAL_ADJUDICATION_GAP__R0_R1_NOT_AUTHORIZED__SELECTOR_REPLAN_NEXT
+status: BFSC_SELECTOR_REPLAN_COMPLETE__CONTINUE_PRECARD__S2_MECHANISM_EXPOSURE_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not current launch authorization. No S3/BFSC arm is authorized by reading its historical remaining-task order below. BFSC is paused, not scientifically killed. Its R0/R3 results must never be relabeled as evidence for another research line. The AgentSquare/ALFWorld O+I line has now terminated under `../oi_agentsquare/MASTER_PLAN.md`; its negative chain has been fed back into the live selector as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PRECARD is activated by that mutation.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. After valid S3 R2/R3 plus selector replan, the only authorized continuation is the zero-model `S2_MECHANISM_EXPOSURE_GATE_V1`; no S3 arm, S2 paid arm, S4 activation, R0 or R1 is authorized from historical text. Its R0/R3 results must never be relabeled as evidence for another research line. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
 
 ## 1. Retained scientific objective
 
@@ -42,6 +42,7 @@ Primary gates:
 - BFSC_SELECTOR_V2_DECISION_ADDENDUM_20260928.md
 - C:/Users/Administrator/.agents/skills/top-conference-topic-selection/training/live/MECHANISM_SPACE_FORMATION_GATE.md (includes MECHANISM_EXPOSURE_GATE §5.5)
 - MECHANISM_EXPOSURE_GATE_CALIBRATION_20260930.md
+- BFSC_SELECTOR_REPLAN_AFTER_S3_20261001.md
 
 ## 2. Historical Rank-1 research object — paused
 
@@ -279,8 +280,12 @@ Runtime admission is complete and the S3 pre-revision requirement trajectory has
 
 The R2/R3 comparison cannot be promoted to either LOCAL_HEADROOM_PASS or LOCAL_HEADROOM_NEGATIVE because the pre-registered S3 leverage rule never defines `matches/approaches` for two partial verifier failures. Creating a scalar-reward or gate-vector closeness threshold now would be post-outcome rule drift. Scientific status: `INCONCLUSIVE_PRE_REGISTERED_RULE_GAP`. R0/R1 remain unauthorized because R0 is permitted only after headroom survives. R2/R3 must not be rescued or rerun under a new criterion. Independent adversarial review was attempted but the current host cannot execute a fresh worker; review gate is recorded BLOCKED/not_run rather than faked PASS.
 
+`BFSC_SELECTOR_REPLAN_AFTER_S3_PARTIAL_ADJUDICATION_GAP` is now COMPLETE. Authority: `BFSC_SELECTOR_REPLAN_AFTER_S3_20261001.md/json`. BFSC remains PRECARD rather than killed: S5 is V-negative and S3 cannot become V-positive because R2 did not reach frozen verifier success, but S2/S4 remain prospectively unobserved V-witness opportunities. The selector preserves the frozen H/V metrics and adds only a prospective `PARTIAL_REFERENCE_GUARD` for S2/S4 execution: partial R2 outcomes may not be converted to local match/approach by post-hoc score thresholds, and any R3 after a partial R2 requires a new Execution-Leverage proof that it can still change an already-frozen H endpoint. Frozen execution order retains S2 before S4.
+
 The exact next scientific transition is now:
 
-`BFSC_SELECTOR_REPLAN_AFTER_S3_PARTIAL_ADJUDICATION_GAP`
+`S2_MECHANISM_EXPOSURE_GATE_V1`
 ->
-return the frozen S3 evidence to the higher-level selector/replanning layer. Do not run additional S3 arms before that selector decision.
+test, with zero paid model calls and outcome-blind frozen inputs, whether the analyze->implement->revised settings.json-relative path sequence actually exposes stale derived state to the late path-semantics correction.
+
+Do not run S2 paid arms in this step. Do not activate S4. Do not run R0/R1 or revisit S3.

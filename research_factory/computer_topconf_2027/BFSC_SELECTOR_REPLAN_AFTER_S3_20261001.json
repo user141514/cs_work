@@ -1,0 +1,26 @@
+{
+  "decision": "BFSC_SELECTOR_REPLAN_AFTER_S3_20261001",
+  "status": "CONTINUE_PRECARD__S2_MECHANISM_EXPOSURE_NEXT",
+  "formal_paper_candidate": false,
+  "observed_value_horizon": {
+    "S1": "CALIBRATION_ONLY_FOR_V",
+    "S5": "V_NEGATIVE",
+    "S3": "INELIGIBLE_FOR_V__R2_FULL_SUCCESS_FALSE__LOCAL_HEADROOM_INCONCLUSIVE_RULE_GAP",
+    "remaining_unobserved_v_witnesses": ["S2", "S4"]
+  },
+  "partial_reference_guard": {
+    "prospective_tasks": ["S2", "S4"],
+    "changes_h_or_v_metrics": false,
+    "r2_full_success_true": "existing local R2-R3 leverage semantics",
+    "r2_full_success_false": "PARTIAL_REFERENCE__NO_POSTHOC_MATCH_THRESHOLD__TASK_NOT_V_POSITIVE",
+    "r3_after_partial_r2": "only_if_preexisting_H_endpoint_can_still_change",
+    "r0_r1_after_partial_r2": "not_authorized_for_V"
+  },
+  "portfolio": {
+    "bfsc_killed": false,
+    "s2_paid_run_authorized": false,
+    "s4_activated": false,
+    "reason": "S2/S4 remain the only unobserved V-witness opportunities; S2 retains the higher frozen expected falsification leverage."
+  },
+  "next_step": "S2_MECHANISM_EXPOSURE_GATE_V1"
+}
