@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-01
-status: BFSC_SELECTOR_REPLAN_COMPLETE__CONTINUE_PRECARD__S2_MECHANISM_EXPOSURE_NEXT
+status: BFSC_S2_EXPOSURE_SOURCE_PROVEN__BOUNDARY_FREEZE_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. After valid S3 R2/R3 plus selector replan, the only authorized continuation is the zero-model `S2_MECHANISM_EXPOSURE_GATE_V1`; no S3 arm, S2 paid arm, S4 activation, R0 or R1 is authorized from historical text. Its R0/R3 results must never be relabeled as evidence for another research line. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 has now passed the zero-model mechanism-exposure gate using outcome-blind user-only source evidence; the only authorized continuation is `S2_STAGE_B_BOUNDARY_FREEZE_V1`. No S3 arm, S2 paid arm, S4 activation, R0 or R1 is authorized from historical text. Its R0/R3 results must never be relabeled as evidence for another research line. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
 
 ## 1. Retained scientific objective
 
@@ -282,10 +282,12 @@ The R2/R3 comparison cannot be promoted to either LOCAL_HEADROOM_PASS or LOCAL_H
 
 `BFSC_SELECTOR_REPLAN_AFTER_S3_PARTIAL_ADJUDICATION_GAP` is now COMPLETE. Authority: `BFSC_SELECTOR_REPLAN_AFTER_S3_20261001.md/json`. BFSC remains PRECARD rather than killed: S5 is V-negative and S3 cannot become V-positive because R2 did not reach frozen verifier success, but S2/S4 remain prospectively unobserved V-witness opportunities. The selector preserves the frozen H/V metrics and adds only a prospective `PARTIAL_REFERENCE_GUARD` for S2/S4 execution: partial R2 outcomes may not be converted to local match/approach by post-hoc score thresholds, and any R3 after a partial R2 requires a new Execution-Leverage proof that it can still change an already-frozen H endpoint. Frozen execution order retains S2 before S4.
 
+`S2_MECHANISM_EXPOSURE_GATE_V1` is now COMPLETE/PASS as `EXPOSURE_SOURCE_PROVEN`. Authority: `S2_MECHANISM_EXPOSURE_GATE_V1.md`, `S2_MECHANISM_EXPOSURE_SOURCE_V1.json`, and `S2_MECHANISM_EXPOSURE_RESULT_V1.md/json`. User-only source evidence proves a concrete pre-revision implementation/path-persistence state followed by an authoritative cwd-relative -> settings.json-relative semantic correction, while the surrounding local-package/settings feature remains valid. No assistant/oracle/reference/verifier/post-revision-solution evidence entered the gate.
+
 The exact next scientific transition is now:
 
-`S2_MECHANISM_EXPOSURE_GATE_V1`
+`S2_STAGE_B_BOUNDARY_FREEZE_V1`
 ->
-test, with zero paid model calls and outcome-blind frozen inputs, whether the analyze->implement->revised settings.json-relative path sequence actually exposes stale derived state to the late path-semantics correction.
+freeze exact TASK_INITIAL_STATE, authoritative pre-revision requirement sequence, late-revision boundary, consolidated pre/final specs, immutable common-prestate contract and outcome-blind R3 dependency rule, with the prospective PARTIAL_REFERENCE_GUARD preserved.
 
-Do not run S2 paid arms in this step. Do not activate S4. Do not run R0/R1 or revisit S3.
+Do not run any S2 paid model arm in the boundary-freeze step. Do not activate S4. Do not run R0/R1 or revisit S3.

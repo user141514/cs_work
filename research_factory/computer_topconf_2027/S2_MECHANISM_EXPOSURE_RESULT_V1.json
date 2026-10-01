@@ -1,0 +1,15 @@
+{
+  "experiment": "S2_MECHANISM_EXPOSURE_V1",
+  "status": "EXPOSURE_SOURCE_PROVEN__BOUNDARY_FREEZE_NEXT",
+  "task": "pi-mono-auto-a4fca584",
+  "predicate": {
+    "E1_implementation_authorized_before_revision": true,
+    "E2_pre_revision_path_behavior_already_active": true,
+    "E3_late_revision_changes_cwd_relative_to_settings_relative": true,
+    "E4_mixed_validity_not_whole_task_replacement": true,
+    "E5_outcome_blind_sources_only": true
+  },
+  "exposed_relation": "pre-existing package-path persistence/resolution basis becomes stale when authority changes from cwd-relative to settings.json-relative semantics while the broader local-package/settings feature remains valid",
+  "paid_model_authorized": false,
+  "next_step": "S2_STAGE_B_BOUNDARY_FREEZE_V1"
+}
