@@ -1,0 +1,49 @@
+{
+  "experiment": "S2_COMMON_PRESTATE_U0_V2",
+  "status": "PASS_ANALYSIS_ONLY__U1_NEXT",
+  "task": "pi-mono-auto-a4fca584",
+  "source_message_index": 0,
+  "prompt_sha256": "fb2568144b28f27af54954482a3d2aa843a66459ebcd9a2d73bc0aa781c763c6",
+  "adapter_sha256": "cb67aec5cc4ccae4e8f0beaaf414b5c8399909e0fe02882a598d385c8d67b6a4",
+  "repo": {
+    "path": "/home/agent/s2-common-pre-v3",
+    "head": "e54dff7efb460e364a39e4a22369991a20c105b9",
+    "clean_after": true
+  },
+  "runtime": {
+    "node": "v20.20.2",
+    "task_bun": "1.3.13",
+    "harness_bun": "1.3.14",
+    "omp": "18.1.15",
+    "model": "openai-codex/gpt-5.6-sol",
+    "fallback": false,
+    "thinking": "xhigh"
+  },
+  "session": {
+    "id": "01a0f7cc-4a3e-7000-8639-ae33f7a25a58",
+    "path": "/home/agent/s2-common-pre-v3-sessions/2026-10-01T14-09-15-838Z_01a0f7cc-4a3e-7000-8639-ae33f7a25a58.jsonl",
+    "sha256_after_u0": "2caf68e6dde9adcefce8fd990ba9f4d81b4564231cec3069042ed4e2d7eb1033",
+    "bytes": 1172490,
+    "lines": 114,
+    "scientific_user_turns": 1
+  },
+  "lifetime": {
+    "request_key": "s2-common-pre-u0-wsl-v1b",
+    "turn_id": "turn_2172000c55ce474f806019efc0e1a155",
+    "outcome": "succeeded",
+    "quiescent": true,
+    "wall_seconds": 280.771
+  },
+  "accounting": {
+    "model_calls": 12,
+    "tool_calls": 48,
+    "mutating_edit_write": 0,
+    "input_tokens": 119735,
+    "output_tokens": 13796,
+    "cache_read_tokens": 855808,
+    "reasoning_tokens": 10131,
+    "reported_cost_usd": 1.0971832
+  },
+  "forbidden_source_scan": "PASS",
+  "next_step": "S2_COMMON_PRESTATE_U1"
+}

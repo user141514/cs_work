@@ -1,7 +1,7 @@
 # S2 Common Prestate Run V1
 
 date: 2026-10-01
-status: U0_V1_INVALID_RUNTIME__WSL_SUBSTRATE_READY__U0_RETRY_NEXT
+status: U0_V2_PASS_ANALYSIS_ONLY__U1_NEXT
 task: pi-mono-auto-a4fca584
 
 ## Historical U0-v1 checkout — INVALID runtime trajectory
@@ -97,8 +97,15 @@ U3:
 - SHA256 `cebe7791d109d74047ebd025ca82f546c64111c4acaab6e9dda0a4b82bf55de0`
 
 Authoritative delivery after runtime repair:
-`U0-retry -> U1 -> U2 -> U3`
-through the same fresh v2 durable session using `--continue`.
+`U0-v2 PASS -> U1 -> U2 -> U3`
+through the same WSL-native durable session using `--continue`.
+
+U0-v2 authority:
+- result: `S2_COMMON_PRESTATE_U0_RESULT_V2.md/json`
+- session ID: `01a0f7cc-4a3e-7000-8639-ae33f7a25a58`
+- post-U0 session SHA256: `2caf68e6dde9adcefce8fd990ba9f4d81b4564231cec3069042ed4e2d7eb1033`
+- project remains exact/clean
+- analysis-only contract satisfied with 0 edit/write calls.
 
 Do not deliver late revision indices 37/39.
 
