@@ -27,14 +27,16 @@ Current selector state:
 
 Current Rank 1 object:
 - Feedback Utility State = finite-horizon propagation risk + extrinsic progress.
-- lifecycle: PRECARD_LEVERAGE__DECISION_CONTRACT_FROZEN__LEVEL1_HARNESS_PENDING.
+- lifecycle: PRECARD_LEVERAGE__LEVEL1_REPAIR_NEGATIVE__DECISION_CONTRACT_V2_PENDING.
 - formal PAPER_CANDIDATE: false.
 - prior attack: BOUNDED_DIRECT_PRIOR_ATTACK_COMPLETE; DIRECT_VETO=false; TRANSFER_OPEN_BUT_CROWDED.
 - G0 asset/interface: PASS_PUBLIC_ASSET__INTERFACE_OBSERVABLE__LOCAL_LEVEL2_FEASIBLE.
 - exact Ouro public revision: 574fa66cb8bf5abdc979642d01cf2b79b16bfab1.
-- Decision Contract: FROZEN before checkpoint download/GPU science; exact ARC-Challenge validation population, perturbation semantics, cheap rival, headroom, practical margins and verdict scope fixed.
+- Decision Contract V1: frozen but contains a pre-science off-by-one runtime-index mapping defect.
+- Level-1 tokenizer/data/manifest: PASS; 299 valid questions, 1794 units, answer-token scoring compatible.
+- Level-1 overall: REPAIR_NEGATIVE__EXIT_AT_STEP_INDEXING_CONTRACT_MISMATCH; no model/hook science executed after discovery.
 - no checkpoint download / GPU inference yet.
-- first unresolved transition: FEEDBACK_UTILITY_LEVEL1_HARNESS_PREFLIGHT_V1.
+- first unresolved transition: FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2.
 
 Closed previous Rank 1:
 - BFSC/selective rederivation — PRECARD_NONIDENTIFIABLE__FROZEN_STAGE_B_EXHAUSTED; archive only.

@@ -1,7 +1,7 @@
 # BET-COMP-01 — Feedback Stability for Iterative Generative Inference
 
 date: 2026-09-28
-state: REFORMULATED_AS_FEEDBACK_UTILITY_STATE__RANK1_PRECARD__DECISION_CONTRACT_FROZEN__LEVEL1_HARNESS_NEXT
+state: REFORMULATED_AS_FEEDBACK_UTILITY_STATE__RANK1_PRECARD__LEVEL1_REPAIR_NEGATIVE__CONTRACT_V2_NEXT
 formal_paper_candidate: false
 target: ICML 2027 / NeurIPS 2027
 
@@ -19,9 +19,11 @@ Bounded direct-prior attack is already complete with `DIRECT_VETO=false / TRANSF
 
 `FEEDBACK_UTILITY_DECISION_CONTRACT_FREEZE_V1 = PASS`.
 
-Exact next step: `FEEDBACK_UTILITY_LEVEL1_HARNESS_PREFLIGHT_V1`.
+`FEEDBACK_UTILITY_LEVEL1_HARNESS_PREFLIGHT_V1 = REPAIR_NEGATIVE__EXIT_AT_STEP_INDEXING_CONTRACT_MISMATCH` after tokenizer/data admission PASS.
 
-No full checkpoint download/GPU scientific run is authorized before Level-1 PASS.
+Exact next step: `FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2`.
+
+No checkpoint download/GPU scientific run is authorized before V2 freeze + remaining Level-1 hook PASS.
 
 ## Organizer
 

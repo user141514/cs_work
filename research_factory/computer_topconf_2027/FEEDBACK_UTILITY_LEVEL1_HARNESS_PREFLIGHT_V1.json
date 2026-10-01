@@ -1,0 +1,20 @@
+{
+  "experiment": "FEEDBACK_UTILITY_LEVEL1_HARNESS_PREFLIGHT_V1",
+  "status": "REPAIR_NEGATIVE__EXIT_AT_STEP_INDEXING_CONTRACT_MISMATCH",
+  "scientific_model_runs": 0,
+  "gpu_science_runs": 0,
+  "checkpoint_downloaded": false,
+  "tokenizer_data_manifest": "PASS",
+  "valid_questions": 299,
+  "primary_units": 1794,
+  "answer_scoring_compatible": true,
+  "repair_negative": {
+    "scientific_depth_convention": "1-based d in {2,3}",
+    "ouro_exit_at_step_convention": "0-based hidden_states_list index",
+    "frozen_v1_mapping": "exit_at_step=t",
+    "correct_mapping": "exit_at_step=d-1",
+    "downstream_hook_test_authorized_under_v1": false
+  },
+  "scientific_verdict": "NONE",
+  "next_step": "FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2"
+}
