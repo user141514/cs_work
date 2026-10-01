@@ -1,0 +1,27 @@
+{
+  "experiment": "S2_EXECUTION_LEVERAGE_GATE_V1",
+  "status": "SCIENTIFIC_LEVERAGE_PASS__EXECUTION_DEFERRED_IMAGE_NOT_READY",
+  "task": "pi-mono-auto-a4fca584",
+  "scientific_execution_leverage": "PASS",
+  "current_execution_authorization": "DEFERRED_IMAGE_NOT_READY",
+  "paid_model_authorized_now": false,
+  "minimum_paid_sequence_after_runtime_pass": [
+    "COMMON_PRESTATE",
+    "R2_FULL_RESTART",
+    "R3_ORACLE_SCOPED_CONDITIONAL"
+  ],
+  "partial_reference_guard": {
+    "r2_full_success_true": "R3 immediately decision-relevant",
+    "r2_full_success_false": "task not V-positive; no R0/R1; defer R3 unless later H bounds show it can change an already-frozen Stage-B endpoint"
+  },
+  "runtime": {
+    "docker_client": "29.8.0",
+    "docker_server": "29.8.0",
+    "server_os": "linux",
+    "server_arch": "amd64",
+    "daemon_ready": true,
+    "required_image": "ghcr.io/togetherbench/multi-user-turn-codebench/pi-mono-auto-a4fca584:d1a6ee81ebeb",
+    "required_image_local": false
+  },
+  "next_step": "S2_RUNTIME_PREFLIGHT_V1"
+}

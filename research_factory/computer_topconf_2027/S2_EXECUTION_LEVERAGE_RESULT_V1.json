@@ -1,0 +1,7 @@
+{
+  "experiment": "S2_EXECUTION_LEVERAGE_RESULT_V1",
+  "status": "SCIENTIFIC_LEVERAGE_PASS__RUNTIME_PREFLIGHT_NEXT",
+  "task": "pi-mono-auto-a4fca584",
+  "paid_model_authorized": false,
+  "next_step": "S2_RUNTIME_PREFLIGHT_V1"
+}
