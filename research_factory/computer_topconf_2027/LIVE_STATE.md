@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-01
-status: BFSC_S2_COMMON_PRESTATE_ACTIVE__U0_V2_PASS__U1_NEXT
+status: BFSC_S2_COMMON_PRESTATE_ACTIVE__U0_U1_PASS__U2_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 COMMON_PRESTATE is active. U0-v1 remains invalid due to the old Windows tool-runtime substrate. The authoritative WSL-native runtime is verified, and valid U0-v2 has now completed in that environment with exact source_message_index=0, GPT-5.6 Sol/xhigh/no-fallback, zero edit/write calls, clean exact base, and terminal/quiescent exit. The only authorized continuation is `S2_COMMON_PRESTATE_U1` in the same WSL-native session. No U2/U3, late revision 37/39, R2/R3/R0/R1 or S4 activation is authorized yet. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 COMMON_PRESTATE is active. U0-v1 remains invalid due to the old Windows tool-runtime substrate. The authoritative WSL-native runtime is verified, and valid U0-v2 plus U1 are now complete in the same session: U0-v2 is exact index0 and analysis-only; U1 is exact index6, pre-implementation clarification, zero project mutation, and establishes durable reasoning that local package paths belong in settings `packages` with pre-revision normalization semantics. The only authorized continuation is `S2_COMMON_PRESTATE_U2` in the same WSL-native session. No U3, late revision 37/39, R2/R3/R0/R1 or S4 activation is authorized yet. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
 
 ## 1. Retained scientific objective
 
@@ -288,12 +288,12 @@ The R2/R3 comparison cannot be promoted to either LOCAL_HEADROOM_PASS or LOCAL_H
 
 `S2_COMMON_PRESTATE_LINUX_SUBSTRATE_V1` remains historical execution-repair evidence for the Docker-native route, but that route is operationally superseded for scientific turns because it cannot consume the host's command-backed openai-codex credential without credential projection. `S2_COMMON_PRESTATE_WSL_SUBSTRATE_V1 = PASS`: WSL Ubuntu26.04/x86_64, uid1001 agent, exact clean base `e54dff7...`, task Node20.20.2/npm10.8.2/Bun1.3.13 copied byte/mode-preserving from the official image, OMP18.1.15 with isolated harness Bun1.3.14, Windows-interoperated command-backed Codex resolver, and user-space PI-proxy relay. Credential-aware model discovery includes `openai-codex/gpt-5.6-sol`.
 
-`S2_COMMON_PRESTATE_U0` is now COMPLETE/PASS under the authoritative WSL-native scientific substrate. Authority: `S2_COMMON_PRESTATE_U0_RESULT_V2.md/json`. Session ID is `01a0f7cc-4a3e-7000-8639-ae33f7a25a58`; post-U0 session SHA256 is `2caf68e6dde9adcefce8fd990ba9f4d81b4564231cec3069042ed4e2d7eb1033`; project remains exact/clean and analysis-only with zero edit/write calls.
+`S2_COMMON_PRESTATE_U0` remains COMPLETE/PASS under the authoritative WSL-native scientific substrate. `S2_COMMON_PRESTATE_U1` is now also COMPLETE/PASS. Authority: `S2_COMMON_PRESTATE_U0_RESULT_V2.md/json` and `S2_COMMON_PRESTATE_U1_RESULT_V1.md/json`. Session ID remains `01a0f7cc-4a3e-7000-8639-ae33f7a25a58`; post-U1 session SHA256 is `1482ce0c2958fd1517f965bf2c27fcf943ce010d1220f3172611cd691a07d9f4`; project remains exact/clean. U1 is pre-implementation clarification only, with zero tool calls and zero project mutation.
 
 The exact next scientific transition is now:
 
-`S2_COMMON_PRESTATE_U1`
+`S2_COMMON_PRESTATE_U2`
 ->
-deliver exact source_message_index=6 in the same WSL-native session using `--continue`.
+deliver exact source_message_index=8 (`oki, implement concisely`) in the same WSL-native session using `--continue`.
 
-Do not deliver U2/U3 or late revision 37/39 in the same supervisor turn. Do not start R2/R3/R0/R1. Do not activate S4.
+Do not deliver U3 or late revision 37/39 in the same supervisor turn. Do not start R2/R3/R0/R1. Do not activate S4.
