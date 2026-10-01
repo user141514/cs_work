@@ -1,0 +1,57 @@
+{
+  "snapshot_id": "S2_R2_FULL_RESTART_SNAPSHOT_V1",
+  "task": "pi-mono-auto-a4fca584",
+  "arm": "R2_FULL_RESTART",
+  "status": "VALID_EXECUTION__VERIFIER_STRUCTURALLY_INVALID__NO_CORRECTNESS_VERDICT",
+  "base_commit": "e54dff7efb460e364a39e4a22369991a20c105b9",
+  "project_state": {
+    "tracked_patch_sha256": "3b6f6c182c9a73539cac1d6b4c2c8a4203ae3d5ef024089b459398d0cd792671",
+    "tracked_patch_bytes": 22862,
+    "tracked_modified_files": 8,
+    "untracked_artifacts": 2,
+    "deleted_tracked_files": 0,
+    "fresh_official_image_reconstruction_pass": true
+  },
+  "session": {
+    "frozen_copy_path": "D:/cs_work/external/spec_stageb_sessions/s2_r2_full_frozen_v1/2026-10-01T16-02-51-821Z_01a0f834-4b2d-7000-9635-54855f211b55.jsonl",
+    "sha256": "18ce317dc49fabd818b4dcebb83fb467ab98e5497f19a8f9c5996f7dcfffd6c8",
+    "bytes": 2203644,
+    "lines": 236,
+    "scientific_user_turns": 1
+  },
+  "prompt_transport": {
+    "frozen_prompt_sha256": "e750cacc11477779443911df78f48510c76a7bf219eee0b22177698f630b77d4",
+    "delivered_sha256": "992ba92d365970b4faa0eda35f8ea15a5b1cf59b65362b8bef2215deb321a0a8",
+    "difference": "single terminal LF stripped by shell command substitution",
+    "semantic_content_exact": true
+  },
+  "verifier": {
+    "raw_reward": 0.0,
+    "raw_full_success": false,
+    "measurement_valid_for_r2_correctness": false,
+    "invalid_reason": "frozen F2P harness instantiates PackageManager although frozen base exposes PackageManager only as a TypeScript interface and DefaultPackageManager as the runtime class"
+  },
+  "items": [
+    {"path": "README.md", "bytes": 996, "sha256": "62c1923fd731b7ca14cb3dd2b5c7ff1206085c486fb287532b59b8609af8535b"},
+    {"path": "artifacts/packages/coding-agent/src/cli/package-command.ts", "bytes": 4731, "sha256": "b39adca3756da54abd4ae27ac901d91459b4bf8861f35c242c514c37f8ff3899"},
+    {"path": "artifacts/packages/coding-agent/test/package-cli.test.ts", "bytes": 4480, "sha256": "f3711e431705b874f00fe107f2b60660e2506874b505a29fc9b49886722d445d"},
+    {"path": "deletions.json", "bytes": 34, "sha256": "4d251dbf148d9f3ebca908ca16b8c9f4fe53176640b3e4169133c8e1929ed7e4"},
+    {"path": "git_status_porcelain_v1.txt", "bytes": 457, "sha256": "f97ed338310034c5c00a73e63c55ed04f0e1cd4bfe7c0d864c86ef9db8322c8b"},
+    {"path": "inputs/S2_R2_FULL_RESTART_PROMPT_V1.txt", "bytes": 2971, "sha256": "e750cacc11477779443911df78f48510c76a7bf219eee0b22177698f630b77d4"},
+    {"path": "prompt_transport.json", "bytes": 782, "sha256": "f557171ff30dabe547fe4fa797b993d9b37c4822bbd462d26bc515bbdab60345"},
+    {"path": "reconstruction_validation.json", "bytes": 1640, "sha256": "29b9f60c53423392f60d8be6c85a6ed3c26257a977aa88fcd374477ab2705c1c"},
+    {"path": "runtime_identity.json", "bytes": 919, "sha256": "a857ec276028b7ad4b20c87153d9f195b004c839f6fbf39d3cd9c5f3cdd8904c"},
+    {"path": "session_receipt.json", "bytes": 1184, "sha256": "4b3fd4950c7dc51e51f7da5f1c0b0a33431920c7c58b46fb4ff2d533226e16b4"},
+    {"path": "test_evidence.json", "bytes": 1121, "sha256": "416cb4655e88061ae2cad6e5b86d9efc35cfdde5da5fc50089dfb4299d60d286"},
+    {"path": "tracked_dirty.patch", "bytes": 22862, "sha256": "3b6f6c182c9a73539cac1d6b4c2c8a4203ae3d5ef024089b459398d0cd792671"},
+    {"path": "untracked_artifacts.json", "bytes": 398, "sha256": "3d9d71604031b9ed1d2a8ab05ac73751a35db206e0aef8867e7d9915363d862f"},
+    {"path": "verifier_result.json", "bytes": 2019, "sha256": "1e31a174d00b328889468900f65dd2894943c187c90569bda59965765ac45b2c"}
+  ],
+  "invariants": [
+    "R2 started from TASK_INITIAL_STATE and inherited no common-prestate implementation/session state.",
+    "No forbidden common-prestate/R3/reference/verifier solution source was accessed by the scientific agent.",
+    "The frozen prompt semantic content was delivered exactly; only one terminal LF was normalized away by shell transport.",
+    "The raw frozen verifier reward is retained but is not promoted to a scientific correctness verdict because the F2P measurement harness is structurally incompatible with the frozen base architecture.",
+    "R3/R0/R1 are not authorized from this R2 result."
+  ]
+}

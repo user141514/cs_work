@@ -165,10 +165,16 @@ Freeze manifest SHA256:
 
 Exact outcome-blind R3 semantic scope is frozen in `R3_SCOPE_V1.md/json`; whole-file reuse and whole-line credit for mixed `docs/packages.md:77` are forbidden.
 
+## R2 result
+
+`S2_R2_FULL_RESTART` is complete as a valid independent execution. Authority:
+- `S2_R2_FULL_RESTART_SNAPSHOT_V1/`
+- `S2_R2_FULL_RESTART_RESULT_V1.md/json`
+
+The raw frozen verifier reward is `0.0000`, but the primary F2P measurement is structurally invalid for the frozen base because the verifier instantiates runtime `PackageManager` while the task base defines `PackageManager` only as an interface and `DefaultPackageManager` as the runtime class. Under PRG-1 this yields no scientific correctness verdict and no PARTIAL_REFERENCE classification. R3/R0/R1 are not authorized.
+
 ## Exact next step
 
-`S2_R2_FULL_RESTART` only.
+`BFSC_SELECTOR_REPLAN_AFTER_S2_VERIFIER_INVALID` only.
 
-R2 must start independently from TASK_INITIAL_STATE + frozen final spec including 37/39 and must not inherit this common-prestate implementation/session.
-
-PARTIAL_REFERENCE_GUARD remains binding. R3/R0/R1 are not authorized in the same supervisor step.
+Do not repair/rescore this completed R2. Do not automatically activate S4 or R3 before the selector decision.

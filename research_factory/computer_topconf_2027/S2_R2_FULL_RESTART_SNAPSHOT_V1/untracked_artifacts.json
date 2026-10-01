@@ -1,0 +1,14 @@
+{
+  "untracked_artifacts": [
+    {
+      "path": "packages/coding-agent/src/cli/package-command.ts",
+      "bytes": 4731,
+      "sha256": "b39adca3756da54abd4ae27ac901d91459b4bf8861f35c242c514c37f8ff3899"
+    },
+    {
+      "path": "packages/coding-agent/test/package-cli.test.ts",
+      "bytes": 4480,
+      "sha256": "f3711e431705b874f00fe107f2b60660e2506874b505a29fc9b49886722d445d"
+    }
+  ]
+}

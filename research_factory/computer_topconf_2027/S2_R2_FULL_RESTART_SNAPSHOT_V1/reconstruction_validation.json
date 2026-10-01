@@ -1,0 +1,24 @@
+{
+  "task": "pi-mono-auto-a4fca584",
+  "arm": "R2_FULL_RESTART",
+  "validator": "fresh exact official Docker image",
+  "base_commit": "e54dff7efb460e364a39e4a22369991a20c105b9",
+  "git_apply_check": "PASS",
+  "git_apply_binary": "PASS",
+  "tracked_patch_sha256": "3b6f6c182c9a73539cac1d6b4c2c8a4203ae3d5ef024089b459398d0cd792671",
+  "tracked_patch_bytes": 22862,
+  "status_matches_live_r2": true,
+  "final_file_hashes": {
+    "packages/coding-agent/CHANGELOG.md": "c87ed490b17de1514d7fd68ab9cd35355f4159510bd6212a88840cfa40e79af8",
+    "packages/coding-agent/README.md": "08d1fbe61e0e5ec0083a1cc2b077d98cbd162cf4e32256758f566341259e198a",
+    "packages/coding-agent/docs/packages.md": "ff148c76a6dfc276a9d7baa0c815be47e1e98fabc3548b7dfc7af1c1183245cb",
+    "packages/coding-agent/docs/settings.md": "4c4042c344ab1e93e76a3c041e34cb52812a3f552537c87116036da60b72b6a3",
+    "packages/coding-agent/src/core/package-manager.ts": "40715db111fa67d91efdc24bdcf4e146fd66f75d0a94ed592d33a18a179b1cb9",
+    "packages/coding-agent/src/core/settings-manager.ts": "3b7431539980cad3e68ec3ebe8017d96dbc0f17a5370b217e1a146718fe746f5",
+    "packages/coding-agent/src/main.ts": "30604363787f843801ebe18cff96be60ee89ccf4b4ae78e8a8981655eb6bc804",
+    "packages/coding-agent/test/package-manager.test.ts": "44f1f41e6eb26c951a015f2a25ac8d0c708400dbf9fa4fda00426dde6f863a3e",
+    "packages/coding-agent/src/cli/package-command.ts": "b39adca3756da54abd4ae27ac901d91459b4bf8861f35c242c514c37f8ff3899",
+    "packages/coding-agent/test/package-cli.test.ts": "f3711e431705b874f00fe107f2b60660e2506874b505a29fc9b49886722d445d"
+  },
+  "all_hashes_match_live_r2": true
+}

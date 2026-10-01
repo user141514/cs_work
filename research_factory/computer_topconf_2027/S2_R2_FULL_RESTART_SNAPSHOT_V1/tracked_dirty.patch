@@ -1,0 +1,514 @@
+diff --git a/packages/coding-agent/CHANGELOG.md b/packages/coding-agent/CHANGELOG.md
+index e2eafdec..e4466255 100644
+--- a/packages/coding-agent/CHANGELOG.md
++++ b/packages/coding-agent/CHANGELOG.md
+@@ -9,6 +9,7 @@
+ ### Added
+ 
+ - Added `ExtensionAPI.getCommands()` to let extensions list available slash commands (extensions, prompt templates, skills) for invocation via `prompt` ([#1210](https://github.com/badlogic/pi-mono/pull/1210) by [@w-winter](https://github.com/w-winter))
++- Added `pi install` and `pi remove` support for local package files and directories, referenced in place with settings-file-relative paths ([#1216](https://github.com/badlogic/pi-mono/issues/1216))
+ 
+ ## [0.51.2] - 2026-02-03
+ 
+diff --git a/packages/coding-agent/README.md b/packages/coding-agent/README.md
+index e07ace6c..a4ba4039 100644
+--- a/packages/coding-agent/README.md
++++ b/packages/coding-agent/README.md
+@@ -329,13 +329,14 @@ pi install npm:@foo/pi-tools@1.2.3      # pinned version
+ pi install git:github.com/user/repo
+ pi install git:github.com/user/repo@v1  # tag or commit
+ pi install https://github.com/user/repo
++pi install ./path/to/local-package        # referenced in place
+ pi remove npm:@foo/pi-tools
+ pi list
+ pi update                               # skips pinned packages
+ pi config                               # enable/disable extensions, skills, prompts, themes
+ ```
+ 
+-Packages install to `~/.pi/agent/git/` (git) or global npm. Use `-l` for project-local installs (`.pi/git/`, `.pi/npm/`).
++Git packages install to `~/.pi/agent/git/`, and npm packages install globally. Local paths are referenced in place without copying, dependency installation, or source deletion on removal. Use `-l` for project-local entries (`.pi/git/`, `.pi/npm/`, or paths stored relative to `.pi/settings.json`).
+ 
+ Create a package by adding a `pi` key to `package.json`:
+ 
+diff --git a/packages/coding-agent/docs/packages.md b/packages/coding-agent/docs/packages.md
+index 4928c831..495a068f 100644
+--- a/packages/coding-agent/docs/packages.md
++++ b/packages/coding-agent/docs/packages.md
+@@ -23,13 +23,14 @@ Pi packages bundle extensions, skills, prompt templates, and themes so you can s
+ pi install npm:@foo/bar@1.0.0
+ pi install git:github.com/user/repo@v1
+ pi install https://github.com/user/repo  # raw URLs work too
++pi install ./path/to/local-package
+ 
+ pi remove npm:@foo/bar
+ pi list    # show installed packages from settings
+ pi update  # update all non-pinned packages
+ ```
+ 
+-By default, `install` and `remove` write to global settings (`~/.pi/agent/settings.json`). Use `-l` to write to project settings (`.pi/settings.json`) instead. Project settings can be shared with your team, and pi installs any missing packages automatically on startup.
++By default, `install` and `remove` write to global settings (`~/.pi/agent/settings.json`). Use `-l` to write to project settings (`.pi/settings.json`) instead. Project settings can be shared with your team, and pi installs any missing npm/git packages automatically on startup. Local packages are referenced in place.
+ 
+ To try a package without installing it, use `--extension` or `-e`. This installs to a temporary directory for the current run only:
+ 
+@@ -72,7 +73,9 @@ https://github.com/user/repo@v1
+ ./relative/path/to/package
+ ```
+ 
+-Local paths work in settings but not with `pi install`. If the path is a file, it loads as a single extension. If it is a directory, pi loads resources using package rules.
++Local paths can be installed and removed through the normal package commands. They are referenced in place: pi does not copy the source, install its dependencies, or delete it on removal. If the path is a file, it loads as a single extension. If it is a directory, pi loads resources using package rules.
++
++When pi writes a local path to settings, it makes the path relative to that settings file: `~/.pi/agent/settings.json` for global installs or `.pi/settings.json` for `-l` installs. The CLI resolves the input path from the current working directory first, so the persisted entry keeps pointing to the same source when pi starts from another directory.
+ 
+ ## Creating a Pi Package
+ 
+diff --git a/packages/coding-agent/docs/settings.md b/packages/coding-agent/docs/settings.md
+index 7bcf58e0..e67ac287 100644
+--- a/packages/coding-agent/docs/settings.md
++++ b/packages/coding-agent/docs/settings.md
+@@ -140,7 +140,7 @@ Paths in `~/.pi/agent/settings.json` resolve relative to `~/.pi/agent`. Paths in
+ 
+ | Setting | Type | Default | Description |
+ |---------|------|---------|-------------|
+-| `packages` | array | `[]` | npm/git packages to load resources from |
++| `packages` | array | `[]` | npm, git, or local packages to load resources from |
+ | `extensions` | string[] | `[]` | Local extension file paths or directories |
+ | `skills` | string[] | `[]` | Local skill file paths or directories |
+ | `prompts` | string[] | `[]` | Local prompt template paths or directories |
+diff --git a/packages/coding-agent/src/core/package-manager.ts b/packages/coding-agent/src/core/package-manager.ts
+index 2047d027..5029e339 100644
+--- a/packages/coding-agent/src/core/package-manager.ts
++++ b/packages/coding-agent/src/core/package-manager.ts
+@@ -51,6 +51,8 @@ export interface PackageManager {
+ 	): Promise<ResolvedPaths>;
+ 	setProgressCallback(callback: ProgressCallback | undefined): void;
+ 	getInstalledPath(source: string, scope: "user" | "project"): string | undefined;
++	getSourceForSettings(source: string, scope: "user" | "project"): string;
++	packageSourcesMatch(a: string, b: string, scope: "user" | "project"): boolean;
+ }
+ 
+ interface PackageManagerOptions {
+@@ -616,11 +618,23 @@ export class DefaultPackageManager implements PackageManager {
+ 			const path = this.getGitInstallPath(parsed, scope);
+ 			return existsSync(path) ? path : undefined;
+ 		}
+-		if (parsed.type === "local") {
+-			const path = this.resolvePath(parsed.path);
+-			return existsSync(path) ? path : undefined;
++		const path = this.resolvePathForScope(parsed.path, scope);
++		return existsSync(path) ? path : undefined;
++	}
++
++	getSourceForSettings(source: string, scope: "user" | "project"): string {
++		const parsed = this.parseSource(source);
++		if (parsed.type !== "local") {
++			return source;
+ 		}
+-		return undefined;
++
++		const absolutePath = this.resolvePath(parsed.path);
++		const settingsPath = relative(this.getSettingsBaseDir(scope), absolutePath) || ".";
++		return settingsPath.startsWith(".") ? settingsPath : `.${sep}${settingsPath}`;
++	}
++
++	packageSourcesMatch(a: string, b: string, scope: "user" | "project"): boolean {
++		return this.getPackageIdentity(a, scope) === this.getPackageIdentity(b, scope);
+ 	}
+ 
+ 	private emitProgress(event: ProgressEvent): void {
+@@ -721,7 +735,14 @@ export class DefaultPackageManager implements PackageManager {
+ 				await this.installGit(parsed, scope);
+ 				return;
+ 			}
+-			throw new Error(`Unsupported install source: ${source}`);
++			const path = this.resolvePath(parsed.path);
++			if (!existsSync(path)) {
++				throw new Error(`Local package not found: ${source}`);
++			}
++			const stats = statSync(path);
++			if (!stats.isFile() && !stats.isDirectory()) {
++				throw new Error(`Local package must be a file or directory: ${source}`);
++			}
+ 		});
+ 	}
+ 
+@@ -737,23 +758,23 @@ export class DefaultPackageManager implements PackageManager {
+ 				await this.removeGit(parsed, scope);
+ 				return;
+ 			}
+-			throw new Error(`Unsupported remove source: ${source}`);
++			return;
+ 		});
+ 	}
+ 
+ 	async update(source?: string): Promise<void> {
+ 		const globalSettings = this.settingsManager.getGlobalSettings();
+ 		const projectSettings = this.settingsManager.getProjectSettings();
+-		const identity = source ? this.getPackageIdentity(source) : undefined;
++		const identity = source ? this.getPackageIdentity(source, "temporary") : undefined;
+ 
+ 		for (const pkg of globalSettings.packages ?? []) {
+ 			const sourceStr = typeof pkg === "string" ? pkg : pkg.source;
+-			if (identity && this.getPackageIdentity(sourceStr) !== identity) continue;
++			if (identity && this.getPackageIdentity(sourceStr, "user") !== identity) continue;
+ 			await this.updateSourceForScope(sourceStr, "user");
+ 		}
+ 		for (const pkg of projectSettings.packages ?? []) {
+ 			const sourceStr = typeof pkg === "string" ? pkg : pkg.source;
+-			if (identity && this.getPackageIdentity(sourceStr) !== identity) continue;
++			if (identity && this.getPackageIdentity(sourceStr, "project") !== identity) continue;
+ 			await this.updateSourceForScope(sourceStr, "project");
+ 		}
+ 	}
+@@ -834,7 +855,7 @@ export class DefaultPackageManager implements PackageManager {
+ 		filter: PackageFilter | undefined,
+ 		metadata: PathMetadata,
+ 	): void {
+-		const resolved = this.resolvePath(source.path);
++		const resolved = this.resolvePathForScope(source.path, metadata.scope);
+ 		if (!existsSync(resolved)) {
+ 			return;
+ 		}
+@@ -949,7 +970,7 @@ export class DefaultPackageManager implements PackageManager {
+ 	 * Get a unique identity for a package, ignoring version/ref.
+ 	 * Used to detect when the same package is in both global and project settings.
+ 	 */
+-	private getPackageIdentity(source: string): string {
++	private getPackageIdentity(source: string, scope: SourceScope): string {
+ 		const parsed = this.parseSource(source);
+ 		if (parsed.type === "npm") {
+ 			return `npm:${parsed.name}`;
+@@ -957,8 +978,7 @@ export class DefaultPackageManager implements PackageManager {
+ 		if (parsed.type === "git") {
+ 			return `git:${parsed.repo}`;
+ 		}
+-		// For local paths, use the absolute resolved path
+-		return `local:${this.resolvePath(parsed.path)}`;
++		return `local:${this.resolvePathForScope(parsed.path, scope)}`;
+ 	}
+ 
+ 	/**
+@@ -972,7 +992,7 @@ export class DefaultPackageManager implements PackageManager {
+ 
+ 		for (const entry of packages) {
+ 			const sourceStr = typeof entry.pkg === "string" ? entry.pkg : entry.pkg.source;
+-			const identity = this.getPackageIdentity(sourceStr);
++			const identity = this.getPackageIdentity(sourceStr, entry.scope);
+ 
+ 			const existing = seen.get(identity);
+ 			if (!existing) {
+@@ -1179,6 +1199,15 @@ export class DefaultPackageManager implements PackageManager {
+ 		return resolve(this.cwd, trimmed);
+ 	}
+ 
++	private resolvePathForScope(input: string, scope: SourceScope): string {
++		const baseDir = scope === "temporary" ? this.cwd : this.getSettingsBaseDir(scope);
++		return this.resolvePathFromBase(input, baseDir);
++	}
++
++	private getSettingsBaseDir(scope: "user" | "project"): string {
++		return scope === "project" ? join(this.cwd, CONFIG_DIR_NAME) : this.agentDir;
++	}
++
+ 	private resolvePathFromBase(input: string, baseDir: string): string {
+ 		const trimmed = input.trim();
+ 		if (trimmed === "~") return homedir();
+diff --git a/packages/coding-agent/src/core/settings-manager.ts b/packages/coding-agent/src/core/settings-manager.ts
+index 6111da1d..68eb075d 100644
+--- a/packages/coding-agent/src/core/settings-manager.ts
++++ b/packages/coding-agent/src/core/settings-manager.ts
+@@ -41,7 +41,7 @@ export interface MarkdownSettings {
+ }
+ 
+ /**
+- * Package source for npm/git packages.
++ * Package source for npm, git, or local packages.
+  * - String form: load all resources from the package
+  * - Object form: filter which resources to load
+  */
+@@ -71,7 +71,7 @@ export interface Settings {
+ 	quietStartup?: boolean;
+ 	shellCommandPrefix?: string; // Prefix prepended to every bash command (e.g., "shopt -s expand_aliases" for alias support)
+ 	collapseChangelog?: boolean; // Show condensed changelog after update (use /changelog for full)
+-	packages?: PackageSource[]; // Array of npm/git package sources (string or object with filtering)
++	packages?: PackageSource[]; // Array of npm, git, or local package sources (string or object with filtering)
+ 	extensions?: string[]; // Array of local extension file paths or directories
+ 	skills?: string[]; // Array of local skill file paths or directories
+ 	prompts?: string[]; // Array of local prompt template paths or directories
+diff --git a/packages/coding-agent/src/main.ts b/packages/coding-agent/src/main.ts
+index 35ec57d4..aa39a140 100644
+--- a/packages/coding-agent/src/main.ts
++++ b/packages/coding-agent/src/main.ts
+@@ -12,6 +12,7 @@ import { type Args, parseArgs, printHelp } from "./cli/args.js";
+ import { selectConfig } from "./cli/config-selector.js";
+ import { processFileArguments } from "./cli/file-processor.js";
+ import { listModels } from "./cli/list-models.js";
++import { handlePackageCommand } from "./cli/package-command.js";
+ import { selectSession } from "./cli/session-picker.js";
+ import { getAgentDir, getModelsPath, VERSION } from "./config.js";
+ import { AuthStorage } from "./core/auth-storage.js";
+@@ -25,7 +26,7 @@ import { DefaultPackageManager } from "./core/package-manager.js";
+ import { DefaultResourceLoader } from "./core/resource-loader.js";
+ import { type CreateAgentSessionOptions, createAgentSession } from "./core/sdk.js";
+ import { SessionManager } from "./core/session-manager.js";
+-import { type PackageSource, SettingsManager } from "./core/settings-manager.js";
++import { SettingsManager } from "./core/settings-manager.js";
+ import { printTimings, time } from "./core/timings.js";
+ import { allTools } from "./core/tools/index.js";
+ import { runMigrations, showDeprecationWarnings } from "./migrations.js";
+@@ -55,182 +56,6 @@ async function readPipedStdin(): Promise<string | undefined> {
+ 	});
+ }
+ 
+-type PackageCommand = "install" | "remove" | "update" | "list";
+-
+-interface PackageCommandOptions {
+-	command: PackageCommand;
+-	source?: string;
+-	local: boolean;
+-}
+-
+-function parsePackageCommand(args: string[]): PackageCommandOptions | undefined {
+-	const [command, ...rest] = args;
+-	if (command !== "install" && command !== "remove" && command !== "update" && command !== "list") {
+-		return undefined;
+-	}
+-
+-	let local = false;
+-	const sources: string[] = [];
+-	for (const arg of rest) {
+-		if (arg === "-l" || arg === "--local") {
+-			local = true;
+-			continue;
+-		}
+-		sources.push(arg);
+-	}
+-
+-	return { command, source: sources[0], local };
+-}
+-
+-function normalizeExtensionSource(source: string): { type: "npm" | "git" | "local"; key: string } {
+-	if (source.startsWith("npm:")) {
+-		const spec = source.slice("npm:".length).trim();
+-		const match = spec.match(/^(@?[^@]+(?:\/[^@]+)?)(?:@.+)?$/);
+-		return { type: "npm", key: match?.[1] ?? spec };
+-	}
+-	if (source.startsWith("git:")) {
+-		const repo = source.slice("git:".length).trim().split("@")[0] ?? "";
+-		return { type: "git", key: repo.replace(/^https?:\/\//, "").replace(/\.git$/, "") };
+-	}
+-	// Raw git URLs
+-	if (source.startsWith("https://") || source.startsWith("http://")) {
+-		const repo = source.split("@")[0] ?? "";
+-		return { type: "git", key: repo.replace(/^https?:\/\//, "").replace(/\.git$/, "") };
+-	}
+-	return { type: "local", key: source };
+-}
+-
+-function sourcesMatch(a: string, b: string): boolean {
+-	const left = normalizeExtensionSource(a);
+-	const right = normalizeExtensionSource(b);
+-	return left.type === right.type && left.key === right.key;
+-}
+-
+-function getPackageSourceString(pkg: PackageSource): string {
+-	return typeof pkg === "string" ? pkg : pkg.source;
+-}
+-
+-function packageSourcesMatch(a: PackageSource, b: string): boolean {
+-	const aSource = getPackageSourceString(a);
+-	return sourcesMatch(aSource, b);
+-}
+-
+-function updatePackageSources(
+-	settingsManager: SettingsManager,
+-	source: string,
+-	local: boolean,
+-	action: "add" | "remove",
+-): void {
+-	const currentSettings = local ? settingsManager.getProjectSettings() : settingsManager.getGlobalSettings();
+-	const currentPackages = currentSettings.packages ?? [];
+-
+-	let nextPackages: PackageSource[];
+-	if (action === "add") {
+-		const exists = currentPackages.some((existing) => packageSourcesMatch(existing, source));
+-		nextPackages = exists ? currentPackages : [...currentPackages, source];
+-	} else {
+-		nextPackages = currentPackages.filter((existing) => !packageSourcesMatch(existing, source));
+-	}
+-
+-	if (local) {
+-		settingsManager.setProjectPackages(nextPackages);
+-	} else {
+-		settingsManager.setPackages(nextPackages);
+-	}
+-}
+-
+-async function handlePackageCommand(args: string[]): Promise<boolean> {
+-	const options = parsePackageCommand(args);
+-	if (!options) {
+-		return false;
+-	}
+-
+-	const cwd = process.cwd();
+-	const agentDir = getAgentDir();
+-	const settingsManager = SettingsManager.create(cwd, agentDir);
+-	const packageManager = new DefaultPackageManager({ cwd, agentDir, settingsManager });
+-
+-	// Set up progress callback for CLI feedback
+-	packageManager.setProgressCallback((event) => {
+-		if (event.type === "start") {
+-			process.stdout.write(chalk.dim(`${event.message}\n`));
+-		} else if (event.type === "error") {
+-			console.error(chalk.red(`Error: ${event.message}`));
+-		}
+-	});
+-
+-	if (options.command === "install") {
+-		if (!options.source) {
+-			console.error(chalk.red("Missing install source."));
+-			process.exit(1);
+-		}
+-		await packageManager.install(options.source, { local: options.local });
+-		updatePackageSources(settingsManager, options.source, options.local, "add");
+-		console.log(chalk.green(`Installed ${options.source}`));
+-		return true;
+-	}
+-
+-	if (options.command === "remove") {
+-		if (!options.source) {
+-			console.error(chalk.red("Missing remove source."));
+-			process.exit(1);
+-		}
+-		await packageManager.remove(options.source, { local: options.local });
+-		updatePackageSources(settingsManager, options.source, options.local, "remove");
+-		console.log(chalk.green(`Removed ${options.source}`));
+-		return true;
+-	}
+-
+-	if (options.command === "list") {
+-		const globalSettings = settingsManager.getGlobalSettings();
+-		const projectSettings = settingsManager.getProjectSettings();
+-		const globalPackages = globalSettings.packages ?? [];
+-		const projectPackages = projectSettings.packages ?? [];
+-
+-		if (globalPackages.length === 0 && projectPackages.length === 0) {
+-			console.log(chalk.dim("No packages installed."));
+-			return true;
+-		}
+-
+-		const formatPackage = (pkg: (typeof globalPackages)[number], scope: "user" | "project") => {
+-			const source = typeof pkg === "string" ? pkg : pkg.source;
+-			const filtered = typeof pkg === "object";
+-			const display = filtered ? `${source} (filtered)` : source;
+-			console.log(`  ${display}`);
+-			// Show resolved path
+-			const path = packageManager.getInstalledPath(source, scope);
+-			if (path) {
+-				console.log(chalk.dim(`    ${path}`));
+-			}
+-		};
+-
+-		if (globalPackages.length > 0) {
+-			console.log(chalk.bold("User packages:"));
+-			for (const pkg of globalPackages) {
+-				formatPackage(pkg, "user");
+-			}
+-		}
+-
+-		if (projectPackages.length > 0) {
+-			if (globalPackages.length > 0) console.log();
+-			console.log(chalk.bold("Project packages:"));
+-			for (const pkg of projectPackages) {
+-				formatPackage(pkg, "project");
+-			}
+-		}
+-
+-		return true;
+-	}
+-
+-	await packageManager.update(options.source);
+-	if (options.source) {
+-		console.log(chalk.green(`Updated ${options.source}`));
+-	} else {
+-		console.log(chalk.green("Updated packages"));
+-	}
+-	return true;
+-}
+-
+ async function prepareInitialMessage(
+ 	parsed: Args,
+ 	autoResizeImages: boolean,
+diff --git a/packages/coding-agent/test/package-manager.test.ts b/packages/coding-agent/test/package-manager.test.ts
+index 32d064a8..55734b73 100644
+--- a/packages/coding-agent/test/package-manager.test.ts
++++ b/packages/coding-agent/test/package-manager.test.ts
+@@ -1,6 +1,6 @@
+ import { mkdirSync, rmSync, writeFileSync } from "node:fs";
+ import { tmpdir } from "node:os";
+-import { join } from "node:path";
++import { join, relative } from "node:path";
+ import { afterEach, beforeEach, describe, expect, it } from "vitest";
+ import { DefaultPackageManager, type ProgressEvent, type ResolvedResource } from "../src/core/package-manager.js";
+ import { SettingsManager } from "../src/core/settings-manager.js";
+@@ -88,6 +88,26 @@ Content`,
+ 			expect(result.extensions.some((r) => r.path === extPath && r.enabled)).toBe(true);
+ 		});
+ 
++		it("should resolve local packages relative to each settings file", async () => {
++			const userPackage = join(tempDir, "user-package");
++			const projectPackage = join(tempDir, "project-package");
++			mkdirSync(join(userPackage, "extensions"), { recursive: true });
++			mkdirSync(join(projectPackage, "extensions"), { recursive: true });
++			const userExtension = join(userPackage, "extensions", "user.ts");
++			const projectExtension = join(projectPackage, "extensions", "project.ts");
++			writeFileSync(userExtension, "export default function() {}");
++			writeFileSync(projectExtension, "export default function() {}");
++
++			settingsManager.setPackages([relative(agentDir, userPackage)]);
++			settingsManager.setProjectPackages([relative(join(tempDir, ".pi"), projectPackage)]);
++
++			const result = await packageManager.resolve();
++			expect(result.extensions.some((resource) => resource.path === userExtension && resource.enabled)).toBe(true);
++			expect(result.extensions.some((resource) => resource.path === projectExtension && resource.enabled)).toBe(
++				true,
++			);
++		});
++
+ 		it("should auto-discover user prompts with overrides", async () => {
+ 			const promptsDir = join(agentDir, "prompts");
+ 			mkdirSync(promptsDir, { recursive: true });
+@@ -215,6 +235,12 @@ Content`,
+ 	});
+ 
+ 	describe("source parsing", () => {
++		it("should reject a missing local package", async () => {
++			await expect(packageManager.install("./missing-package")).rejects.toThrow(
++				"Local package not found: ./missing-package",
++			);
++		});
++
+ 		it("should emit progress events on install attempt", async () => {
+ 			const events: ProgressEvent[] = [];
+ 			packageManager.setProgressCallback((event) => events.push(event));
+@@ -677,15 +703,15 @@ Content`,
+ 			mkdirSync(join(pkgDir, "extensions"), { recursive: true });
+ 			writeFileSync(join(pkgDir, "extensions", "shared.ts"), "export default function() {}");
+ 
+-			// Same package in both global and project
+-			settingsManager.setPackages([pkgDir]); // global
+-			settingsManager.setProjectPackages([pkgDir]); // project
++			const userSource = relative(agentDir, pkgDir);
++			const projectSource = relative(join(tempDir, ".pi"), pkgDir);
++			settingsManager.setPackages([userSource]);
++			settingsManager.setProjectPackages([projectSource]);
+ 
+-			// Debug: verify settings are stored correctly
+ 			const globalSettings = settingsManager.getGlobalSettings();
+ 			const projectSettings = settingsManager.getProjectSettings();
+-			expect(globalSettings.packages).toEqual([pkgDir]);
+-			expect(projectSettings.packages).toEqual([pkgDir]);
++			expect(globalSettings.packages).toEqual([userSource]);
++			expect(projectSettings.packages).toEqual([projectSource]);
+ 
+ 			const result = await packageManager.resolve();
+ 			// Should only appear once (deduped), with project scope

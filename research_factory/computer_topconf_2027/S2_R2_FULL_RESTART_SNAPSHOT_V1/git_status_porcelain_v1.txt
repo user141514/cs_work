@@ -1,0 +1,10 @@
+ M packages/coding-agent/CHANGELOG.md
+ M packages/coding-agent/README.md
+ M packages/coding-agent/docs/packages.md
+ M packages/coding-agent/docs/settings.md
+ M packages/coding-agent/src/core/package-manager.ts
+ M packages/coding-agent/src/core/settings-manager.ts
+ M packages/coding-agent/src/main.ts
+ M packages/coding-agent/test/package-manager.test.ts
+?? packages/coding-agent/src/cli/package-command.ts
+?? packages/coding-agent/test/package-cli.test.ts

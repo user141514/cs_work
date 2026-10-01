@@ -1,0 +1,36 @@
+{
+  "task": "pi-mono-auto-a4fca584",
+  "arm": "R2_FULL_RESTART",
+  "verifier_source": "D:/bio_paper/external/swe_together_official_20260928/tasks/pi-mono-auto-a4fca584/tests/test.sh",
+  "task_toml_sha256": "ef07e5601a1ea034f91613826367ec003154ab6a7ff4f86249641a940509e6f3",
+  "normalized_verifier_sha256": "cefe818bfb78d67eead6662a375387a6b350603016c2775e39affa97cfa5874a",
+  "host_verifier_mutated": false,
+  "official_image_id": "sha256:24df21b472314647843bab5009a4f5b443a129e7bd42904936e0176277bf8148",
+  "raw_final_reward": 0.0,
+  "raw_full_verifier_success": false,
+  "runtime_invalid": false,
+  "measurement_valid_for_r2_correctness": false,
+  "measurement_invalid_reason": "F2P harness imports PackageManager and executes new PackageManager(...), but the frozen task base exports PackageManager only as a TypeScript interface and the runtime constructor is DefaultPackageManager. The harness therefore throws TypeError: PackageManager is not a constructor before evaluating local-install behavior.",
+  "base_architecture_evidence": {
+    "package_manager_ts_line_43": "export interface PackageManager",
+    "package_manager_ts_line_592": "export class DefaultPackageManager implements PackageManager"
+  },
+  "verifier_assumption_evidence": {
+    "test_sh_lines": [80,99,215,234],
+    "assumption": "runtime constructor named PackageManager"
+  },
+  "raw_gates": {
+    "f2p_upstream_vitest_local_install_tests": false,
+    "f2p_upstream_vitest_test_count_gt91": false,
+    "p2p_upstream_vitest_pm_pass": true,
+    "p2p_upstream_tsgo_noEmit": false,
+    "p2p_upstream_biome_pm": true
+  },
+  "baseline_known_tsgo_issue": "TS5112 was already present in frozen no-patch preflight",
+  "scientific_correctness_verdict": "NONIDENTIFIABLE_VERIFIER_STRUCTURAL_INVALIDITY",
+  "partial_reference_guard_applied": false,
+  "partial_reference_guard_reason": "PRG-1 requires a valid verifier before partial/full behavioral-reference qualification.",
+  "r3_authorized": false,
+  "r0_authorized": false,
+  "r1_authorized": false
+}

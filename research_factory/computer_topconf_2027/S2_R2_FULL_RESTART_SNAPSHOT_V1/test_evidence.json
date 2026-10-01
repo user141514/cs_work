@@ -1,0 +1,24 @@
+{
+  "task": "pi-mono-auto-a4fca584",
+  "arm": "R2_FULL_RESTART",
+  "role": "secondary_product_semantic_evidence_not_primary_frozen_endpoint",
+  "agent_reported_checks": {
+    "targeted_vitest": "5 passed",
+    "covered": [
+      "global local-package workflow",
+      "project-local file workflow",
+      "settings-file-relative resolution",
+      "deduplication",
+      "missing-source validation",
+      "listing from another cwd",
+      "non-destructive removal"
+    ],
+    "end_to_end_smoke": "PASS",
+    "tsgo_no_emit": "PASS",
+    "targeted_biome": "PASS",
+    "broader_package_test": "44/45; the single failure was the existing network-dependent nonexistent GitHub URL test timing out",
+    "npm_run_check": "root Biome and TypeScript stages passed; packages/web-ui later failed because the frozen clean repository lacks built pi-ai/pi-agent-core artifacts"
+  },
+  "independent_smoke_observation": "global install/list/remove from multiple cwd values and project-local file install/remove produced settings-file-relative persisted entries and preserved source files",
+  "does_not_override_frozen_verifier": true
+}

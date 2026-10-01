@@ -1,0 +1,31 @@
+{
+  "task": "pi-mono-auto-a4fca584",
+  "arm": "R2_FULL_RESTART",
+  "request_key": "s2-r2-full-restart-v1",
+  "lifetime_turn_id": "turn_bb2aac3bf4754c9ca976da5d572d49cd",
+  "session_id": "01a0f834-4b2d-7000-9635-54855f211b55",
+  "live_session_path": "/home/agent/s2-r2-v1-sessions/2026-10-01T16-02-51-821Z_01a0f834-4b2d-7000-9635-54855f211b55.jsonl",
+  "frozen_copy_path": "D:/cs_work/external/spec_stageb_sessions/s2_r2_full_frozen_v1/2026-10-01T16-02-51-821Z_01a0f834-4b2d-7000-9635-54855f211b55.jsonl",
+  "session_sha256": "18ce317dc49fabd818b4dcebb83fb467ab98e5497f19a8f9c5996f7dcfffd6c8",
+  "session_bytes": 2203644,
+  "session_lines": 236,
+  "scientific_user_turns": 1,
+  "model": "openai-codex/gpt-5.6-sol",
+  "resolved_model_is_fallback": false,
+  "thinking": "xhigh",
+  "outcome": "succeeded",
+  "exit_code": 0,
+  "quiescent": true,
+  "wall_seconds": 718.7863380908966,
+  "accounting": {
+    "model_calls": 50,
+    "tool_calls": 90,
+    "mutating_edit_write_calls": 16,
+    "input_tokens": 221540,
+    "output_tokens": 28778,
+    "cache_read_tokens": 8381952,
+    "reasoning_tokens": 15440,
+    "reported_cost_usd": 4.8145008
+  },
+  "forbidden_solution_source_scan_hits": 0
+}

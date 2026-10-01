@@ -1,8 +1,8 @@
 # Computer Top-Conference Research Factory — Live State
 
 date: 2026-09-28
-execution_authority_updated: 2026-10-01
-status: BFSC_S2_COMMON_PRESTATE_FROZEN__R3_SCOPE_FROZEN__R2_NEXT
+execution_authority_updated: 2026-10-02
+status: BFSC_S2_R2_VALID_EXECUTION__VERIFIER_INVALID__SELECTOR_REPLAN_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 COMMON_PRESTATE is now immutably frozen after valid U0/U1/U2/U3. Exact snapshot is base `e54dff7...` + tracked patch SHA256 `6d072b1f...` (8,292 bytes), 7 tracked modified files, no untracked artifacts/deletions; fresh official-image reconstruction reproduces all final hashes. Frozen external session SHA256 is `27de34ed...`; late 37/39 is absent and the live session is read-only. Exact outcome-blind R3 scope is frozen with whole-file reuse forbidden. The only authorized continuation is `S2_R2_FULL_RESTART` independently from TASK_INITIAL_STATE + frozen final spec. PARTIAL_REFERENCE_GUARD remains binding; no R3/R0/R1 or S4 activation is authorized from historical text. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 COMMON_PRESTATE is frozen and independent R2 FULL_RESTART has completed. R2 execution is valid and isolated from the common prestate; snapshot manifest SHA256 is `a6e75270...`, frozen session SHA256 `18ce317d...`, and the only prompt transport difference is one terminal LF stripped with all semantic content preserved. R2 independently produced the final-spec settings-file-relative implementation with positive secondary tests/smoke. The frozen official verifier nevertheless cannot validly score R2 correctness because its F2P harness executes `new PackageManager(...)` while the frozen task base defines `PackageManager` only as a TypeScript interface and `DefaultPackageManager` as the runtime class; raw reward `0.0000` is therefore not a scientific negative or PARTIAL_REFERENCE. Under PRG-1 R2 correctness is `NONIDENTIFIABLE_VERIFIER_STRUCTURAL_INVALIDITY`; R3/R0/R1 are not authorized and the completed R2 must not be repaired/rescored. The only authorized continuation is `BFSC_SELECTOR_REPLAN_AFTER_S2_VERIFIER_INVALID`. S4 is not automatically activated from historical text. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
 
 ## 1. Retained scientific objective
 
@@ -290,10 +290,10 @@ The R2/R3 comparison cannot be promoted to either LOCAL_HEADROOM_PASS or LOCAL_H
 
 `S2_COMMON_PRESTATE_U0/U1/U2/U3` remain COMPLETE/PASS, and `S2_COMMON_PRESTATE_FREEZE_V1` is now COMPLETE/PASS. Authority: `S2_COMMON_PRESTATE_FREEZE_V1/` and `S2_COMMON_PRESTATE_FREEZE_RESULT_V1.md/json`. Freeze manifest SHA256 is `22498a753aeda06a14d612e3fa825db84504249902e2d9d71f928df09f44e5f5`. Project reconstruction is exact base + 8,292-byte tracked patch; fresh official-image reconstruction PASS. Frozen external session SHA256 is `27de34edff19712f382c5086bfc96adc123b04a00f32618f89b8ea847e850000`, with exactly four scientific user turns and no 37/39. Outcome-blind R3 affected/revalidate/independent scope is frozen; whole-file reuse is forbidden.
 
+`S2_R2_FULL_RESTART` is now COMPLETE as a valid independent execution. Authority: `S2_R2_FULL_RESTART_SNAPSHOT_V1/` and `S2_R2_FULL_RESTART_RESULT_V1.md/json`. Snapshot manifest SHA256 is `a6e75270dd4ab9e109efb8b49788e447379efb2e0b41d8a33a962a250e01fd05`; frozen R2 session SHA256 is `18ce317dc49fabd818b4dcebb83fb467ab98e5497f19a8f9c5996f7dcfffd6c8`. The raw frozen verifier reward is `0.0000`, but the primary F2P measurement is structurally invalid for the frozen base because it instantiates a runtime `PackageManager` class that does not exist. PRG-1 therefore blocks a scientific correctness verdict and blocks PARTIAL_REFERENCE qualification; R3/R0/R1 remain unauthorized.
+
 The exact next scientific transition is now:
 
-`S2_R2_FULL_RESTART`
+`BFSC_SELECTOR_REPLAN_AFTER_S2_VERIFIER_INVALID`
 ->
-run independently from TASK_INITIAL_STATE `e54dff7...` plus the already-frozen final specification including late revision 37/39. Do not inherit the common-prestate implementation or session.
-
-PARTIAL_REFERENCE_GUARD applies after R2: full-success may authorize R3 next; partial R2 makes S2 V-ineligible and does not automatically authorize R3. Do not execute R3/R0/R1 in the same supervisor turn. Do not activate S4.
+replan the remaining frozen BFSC horizon using S2 measurement invalidity plus the already-known S3/S5 evidence. Do not repair/rescore R2 and do not automatically activate S4 or R3 before that selector decision.

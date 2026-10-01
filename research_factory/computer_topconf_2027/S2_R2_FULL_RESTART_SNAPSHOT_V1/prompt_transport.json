@@ -1,0 +1,16 @@
+{
+  "task": "pi-mono-auto-a4fca584",
+  "arm": "R2_FULL_RESTART",
+  "frozen_prompt_path": "research_factory/computer_topconf_2027/S2_R2_FULL_RESTART_PROMPT_V1.txt",
+  "frozen_prompt_sha256": "e750cacc11477779443911df78f48510c76a7bf219eee0b22177698f630b77d4",
+  "frozen_prompt_bytes": 2971,
+  "delivered_user_turn_sha256": "992ba92d365970b4faa0eda35f8ea15a5b1cf59b65362b8bef2215deb321a0a8",
+  "delivered_user_turn_bytes": 2970,
+  "byte_exact": false,
+  "difference": "shell command substitution stripped exactly one terminal LF",
+  "common_prefix_bytes": 2970,
+  "all_semantic_characters_identical": true,
+  "requirement_information_added_or_removed": false,
+  "classification": "VALID_SEMANTIC_CONTENT__SINGLE_TERMINAL_LF_TRANSPORT_NORMALIZATION",
+  "no_rerun_after_outcome": true
+}

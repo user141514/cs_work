@@ -1,0 +1,36 @@
+You are starting the S2 FULL_RESTART arm from the frozen task-initial repository state.
+
+Task: pi-mono-auto-a4fca584
+Task-initial commit: e54dff7efb460e364a39e4a22369991a20c105b9
+
+Implement the consolidated final authoritative requirements below from scratch in the current clean repository.
+
+Final authoritative requirements:
+
+1. Support the issue-1216 use case: local extensions/packages must be installable and removable through the normal pi package/settings workflow rather than requiring destructive/manual settings.json edits.
+2. Preserve the existing npm/git package behavior and the existing user/global versus project-local settings scopes.
+3. Local package paths may be files or directories and are referenced in place. Installing/removing a local package must not copy, install dependencies into, or delete the source.
+4. When a local package path is persisted in settings, its stored/resolved semantics must be relative to the specific settings.json file receiving the entry, not relative to an arbitrary invocation cwd.
+5. Therefore:
+   - user/global settings entries must be relative to the user settings.json location;
+   - project-local settings entries must be relative to the project .pi/settings.json location;
+   - loading those settings later from another cwd must resolve to the same source.
+6. Duplicate detection, comparison, list/remove behavior, and equivalent absolute/relative input forms must remain correct under that settings-file-relative path basis.
+7. The CLI source argument may still need to be resolved from the invocation context to locate/validate the source. Keep runtime source lookup semantics separate from persistent settings serialization semantics.
+8. Exercise relevant package/CLI behavior, including both ordinary/user scope and project-local (-l) behavior. The historical pi-test.sh workflow is a verification intent, not product logic; do not hardcode the command sequence.
+9. Check user-facing package documentation (for example packages.md / README / settings docs) for consistency with the final behavior and update only where needed.
+10. Run task-appropriate correctness checks. Do not commit, push, publish, or close issues.
+
+Experimental boundaries:
+
+- This is FULL_RESTART. Start only from the current clean task-initial repository state and the requirements above.
+- Do not inspect or reuse the S2 common-prestate implementation, common-prestate session, frozen R3 scope/capsule, S2 R2/R3 result files, reference/gold patch, verifier outputs, oracle session/intents, canonical goals, RESEARCH-01 Phase-B artifacts, or any future successful trajectory.
+- Do not inspect later git history beyond the task-initial state as a source of the solution.
+- Do not use another agent or external project context.
+- Do not optimize to hidden evaluator behavior.
+- Do not change the stated requirements.
+
+At the end, report:
+- files changed;
+- correctness checks actually run and their results;
+- any unresolved requirement.

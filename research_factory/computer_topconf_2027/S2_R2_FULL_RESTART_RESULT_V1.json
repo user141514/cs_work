@@ -1,0 +1,35 @@
+{
+  "experiment": "S2_R2_FULL_RESTART_V1",
+  "status": "VALID_R2_EXECUTION__VERIFIER_STRUCTURALLY_INVALID__NO_CORRECTNESS_VERDICT__SELECTOR_REPLAN_NEXT",
+  "task": "pi-mono-auto-a4fca584",
+  "arm": "R2_FULL_RESTART",
+  "execution_valid": true,
+  "prompt_transport": "VALID_SEMANTIC_CONTENT__SINGLE_TERMINAL_LF_TRANSPORT_NORMALIZATION",
+  "snapshot_manifest_sha256": "a6e75270dd4ab9e109efb8b49788e447379efb2e0b41d8a33a962a250e01fd05",
+  "session_sha256": "18ce317dc49fabd818b4dcebb83fb467ab98e5497f19a8f9c5996f7dcfffd6c8",
+  "accounting": {
+    "model_calls": 50,
+    "tool_calls": 90,
+    "mutating_edit_write_calls": 16,
+    "input_tokens": 221540,
+    "output_tokens": 28778,
+    "cache_read_tokens": 8381952,
+    "reasoning_tokens": 15440,
+    "reported_cost_usd": 4.8145008,
+    "wall_seconds": 718.7863380908966
+  },
+  "raw_frozen_verifier": {
+    "reward": 0.0,
+    "full_success": false,
+    "measurement_valid_for_correctness": false,
+    "invalid_reason": "F2P harness instantiates runtime PackageManager, but frozen base PackageManager is a TypeScript interface and DefaultPackageManager is the runtime class"
+  },
+  "scientific_correctness_verdict": "NONIDENTIFIABLE_VERIFIER_STRUCTURAL_INVALIDITY",
+  "partial_reference_classification": "NOT_APPLIED_PRG1",
+  "v_positive_qualified": false,
+  "v_negative_claimed": false,
+  "r3_authorized": false,
+  "r0_authorized": false,
+  "r1_authorized": false,
+  "next_step": "BFSC_SELECTOR_REPLAN_AFTER_S2_VERIFIER_INVALID"
+}
