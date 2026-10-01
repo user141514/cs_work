@@ -1,7 +1,7 @@
 # BET-COMP-01 — Feedback Stability for Iterative Generative Inference
 
 date: 2026-09-28
-state: REFORMULATED_AS_FEEDBACK_UTILITY_STATE__RANK1_PRECARD__CONTRACT_V2_FROZEN__LEVEL1_HOOK_NEXT
+state: REFORMULATED_AS_FEEDBACK_UTILITY_STATE__RANK1_PRECARD__LEVEL1_PASS__EXACT_WEIGHT_SMOKE_NEXT
 formal_paper_candidate: false
 target: ICML 2027 / NeurIPS 2027
 
@@ -23,9 +23,11 @@ Bounded direct-prior attack is already complete with `DIRECT_VETO=false / TRANSF
 
 `FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2 = PASS_REPAIR_ONLY` with no scientific-field drift beyond the indexing mapping.
 
-Exact next step: `FEEDBACK_UTILITY_LEVEL1_HOOK_PREFLIGHT_V2`.
+`FEEDBACK_UTILITY_LEVEL1_HOOK_PREFLIGHT_V2 = PASS`; Level-1 overall is `PASS_HARNESS_ADMITTED`.
 
-No checkpoint download/GPU scientific run is authorized before the remaining Level-1 hook PASS.
+Exact next step: `FEEDBACK_UTILITY_EXACT_WEIGHT_SMOKE_V1`.
+
+Checkpoint download is authorized only for that exact-revision non-primary smoke; ARC validation scientific PRECARD remains unauthorized until smoke PASS.
 
 ## Organizer
 

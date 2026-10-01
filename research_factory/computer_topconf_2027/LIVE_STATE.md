@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-02
-status: FEEDBACK_UTILITY_DECISION_CONTRACT_V2_FROZEN__LEVEL1_HOOK_NEXT
+status: FEEDBACK_UTILITY_LEVEL1_PASS__EXACT_WEIGHT_SMOKE_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. BFSC is CLOSED and cannot be rescued. Feedback Utility State is live Rank 1. Prior attack and G0 are complete; V1 tokenizer/data admission PASSed but the V1 hook contract was repair-negative before model execution. `FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2` is now COMPLETE/PASS and changes only the scientific-depth/runtime-index mapping: 1-based `d in {2,3}` maps to zero-based `u=d-1`, with `h_d = hidden_states_list[d-1]` and `exit_at_step=d-1`. Structured V1/V2 comparison confirms all scientific population/features/epsilon/margins/statistics/verdict rules are unchanged. The 299-question/1794-unit V1 tokenizer/data receipt remains valid and must be reused. No checkpoint download, reduced/random hook, or GPU science has run under V2. Authority: `FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2.md/json` and result. The only authorized continuation is `FEEDBACK_UTILITY_LEVEL1_HOOK_PREFLIGHT_V2`. N3 remains watchlist; BET-COMP-02 remains queued.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. BFSC is CLOSED and cannot be rescued. Feedback Utility State is live Rank 1. Prior attack, G0, Decision Contract V2 and Level-1 harness admission are complete. V1 tokenizer/data admission PASSed with 299 valid ARC-Challenge validation questions and 1794 deterministic units. V2 hook preflight then used exact Ouro recurrence code on a reduced/random CPU fixture and PASSed repaired depth/index mapping, no-op identity, epsilon=0 identity, perturbation locality/future propagation, and state/config immutability. Historical V1 mapping is empirically non-equivalent, confirming the repair mattered. No Ouro checkpoint or GPU science has run yet. Authority: `FEEDBACK_UTILITY_LEVEL1_HOOK_PREFLIGHT_V2.md/json` and frozen hook script. The only authorized continuation is `FEEDBACK_UTILITY_EXACT_WEIGHT_SMOKE_V1`: materialize exact revision `574fa66...` and run a small non-primary ARC-Challenge train smoke. ARC validation primary science remains unauthorized until this exact-weight smoke passes. N3 remains watchlist; BET-COMP-02 remains queued.
 
 ## 1. Retained scientific objective
 
@@ -49,7 +49,7 @@ Primary gates:
 Feedback Utility State = finite-horizon propagation risk + extrinsic progress.
 
 Lifecycle:
-PRECARD_LEVERAGE__DECISION_CONTRACT_V2_FROZEN__LEVEL1_HOOK_PENDING.
+PRECARD_LEVERAGE__LEVEL1_HARNESS_ADMITTED__EXACT_WEIGHT_SMOKE_PENDING.
 
 Authority:
 - FEEDBACK_ANCESTRY_TRANSFER_V1.md
@@ -62,8 +62,10 @@ Authority:
 - FEEDBACK_UTILITY_LEVEL1_HARNESS_PREFLIGHT_V1.md/json
 - FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2.md/json
 - FEEDBACK_UTILITY_DECISION_CONTRACT_REPAIR_V2_RESULT.md/json
+- FEEDBACK_UTILITY_LEVEL1_HOOK_PREFLIGHT_V2.md/json
+- tools/feedback_utility_hook_preflight_v2.py
 
-Do not download weights or run Ouro scientific inference before `FEEDBACK_UTILITY_LEVEL1_HOOK_PREFLIGHT_V2` PASSes.
+Checkpoint download is authorized only for `FEEDBACK_UTILITY_EXACT_WEIGHT_SMOKE_V1` at exact revision `574fa66...`. Do not run ARC-Challenge validation scientific inference before that smoke PASSes.
 
 ### Historical closed Rank-1 object
 

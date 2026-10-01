@@ -27,7 +27,7 @@ Current selector state:
 
 Current Rank 1 object:
 - Feedback Utility State = finite-horizon propagation risk + extrinsic progress.
-- lifecycle: PRECARD_LEVERAGE__DECISION_CONTRACT_V2_FROZEN__LEVEL1_HOOK_PENDING.
+- lifecycle: PRECARD_LEVERAGE__LEVEL1_HARNESS_ADMITTED__EXACT_WEIGHT_SMOKE_PENDING.
 - formal PAPER_CANDIDATE: false.
 - prior attack: BOUNDED_DIRECT_PRIOR_ATTACK_COMPLETE; DIRECT_VETO=false; TRANSFER_OPEN_BUT_CROWDED.
 - G0 asset/interface: PASS_PUBLIC_ASSET__INTERFACE_OBSERVABLE__LOCAL_LEVEL2_FEASIBLE.
@@ -35,8 +35,10 @@ Current Rank 1 object:
 - Decision Contract V1: historical repair-negative due to off-by-one scientific-depth/runtime-index mapping.
 - Decision Contract V2: PASS_REPAIR_ONLY; d is 1-based, runtime u=d-1; all non-index scientific fields unchanged.
 - Level-1 tokenizer/data/manifest: PASS; 299 valid questions, 1794 units, answer-token scoring compatible and reusable.
-- no checkpoint download / GPU inference yet.
-- first unresolved transition: FEEDBACK_UTILITY_LEVEL1_HOOK_PREFLIGHT_V2.
+- Level-1 hook V2: PASS on exact upstream Ouro recurrence with reduced/random CPU fixture; repaired mapping/no-op/epsilon0/locality/future-propagation/state-immutability checks all pass.
+- Level-1 overall: PASS_HARNESS_ADMITTED.
+- checkpoint download now authorized only for exact-weight non-primary smoke; no primary ARC validation science yet.
+- first unresolved transition: FEEDBACK_UTILITY_EXACT_WEIGHT_SMOKE_V1.
 
 Closed previous Rank 1:
 - BFSC/selective rederivation — PRECARD_NONIDENTIFIABLE__FROZEN_STAGE_B_EXHAUSTED; archive only.
