@@ -83,7 +83,7 @@ Current scientific redirection:
 - OI-AS-05 Residual O+I Decision Gate completed `TERMINATE_AGENT_SQUARE_ALFWORLD_OI`: no residual soft seam passes all pre-registered A-E admission criteria. `PLANNING_TO_REASONING_GUIDANCE` is an explicit hierarchical planner→executor handoff, lacks an identifiable active-planner exposed/unexposed contrast, and has no pre-existing directional harm evidence; `MEMORY_TO_REASONING_GUIDANCE` is the already-terminated TP seam; `PLANNING_TO_TOOL_GUIDANCE` has zero executable ALFWorld exposure.
 - The current AgentSquare/ALFWorld O+I line is TERMINATED. Hard-gate integration and new soft-guidance interventions are not authorized; do not create OI-AS-06 without genuinely new external evidence.
 - Selector feedback from this negative line is now applied: the live top-conference selector has a MECHANISM_EXPOSURE_GATE enforcing `STATIC_HEADROOM != MECHANISM_EXPOSURE` whenever a causal claim requires an instantiable runtime conflict/mismatch/competition/stale-state relation. Calibration authority: `computer_topconf_2027/MECHANISM_EXPOSURE_GATE_CALIBRATION_20260930.md`.
-- No new research candidate was invented by the selector mutation. The Rank-1 BFSC line has completed S3, higher-level replanning, S2 mechanism exposure, S2 boundary freeze, and `S2_EXECUTION_LEVERAGE_GATE_V1`. Scientific leverage = PASS, but paid execution is deferred because the exact official S2 image is not yet locally locked although Docker Engine 29.8.0 is reachable. The minimum prospective paid sequence is frozen as `COMMON_PRESTATE -> R2 -> conditional R3`: common-prestate/exact R3 scope must be frozen before any post-revision outcome; if R2 full-successes, R3 remains required for H/V; if R2 is partial, S2 becomes V-ineligible, R0/R1 stay forbidden, and R3 is deferred unless later S4/H bounds prove it can still change an already-frozen H endpoint. Authority: `S2_EXECUTION_LEVERAGE_GATE_V1.md/json` and `S2_EXECUTION_LEVERAGE_RESULT_V1.md/json`. Exact next step is zero-model `S2_RUNTIME_PREFLIGHT_V1` only. No S2 paid model call is authorized.
+- No new research candidate was invented by the selector mutation. The Rank-1 BFSC line has completed S3, higher-level replanning, S2 mechanism exposure, S2 boundary freeze, Execution Leverage, and `S2_RUNTIME_PREFLIGHT_V1 = PASS_RUNTIME_READY`. Exact official S2 image is locally locked to `sha256:24df21b4...8148`; container identity is non-root agent uid 1001, Node v20.20.2, Bun 1.3.13, clean exact base `e54dff7...`, zero remotes/heads/tags. Frozen official verifier executes under this image and the no-patch baseline returns `0.0000`; the baseline TS5112 upstream tsgo failure is recorded as verifier behavior, not runtime invalidity. Authority: `S2_RUNTIME_PREFLIGHT_V1.md/json`. The first paid object is now authorized: `S2_COMMON_PRESTATE` only. It must deliver/persist only controlled pre-revision indices 0/6/8/20 and freeze the exact common-prestate/R3 scope before any late revision or R2/R3 outcome.
 - No further engineering stage absent a concrete, decision-changing research-task blocker.
 
 ## 4. Retained scientific state
@@ -91,7 +91,7 @@ Current scientific redirection:
 `computer_topconf_2027/LIVE_STATE.md` preserves the selector/BFSC research evidence.
 
 Current retained scientific status:
-`BFSC_S2_EXECUTION_LEVERAGE_PASS__RUNTIME_PREFLIGHT_NEXT`.
+`BFSC_S2_RUNTIME_READY__COMMON_PRESTATE_NEXT`.
 
 Do not infer a scientific PASS/KILL from the repository move. No historical R0/R3 arm becomes evidence for the new workflow by migration.
 

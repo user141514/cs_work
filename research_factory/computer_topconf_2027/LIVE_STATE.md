@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-01
-status: BFSC_S2_EXECUTION_LEVERAGE_PASS__RUNTIME_PREFLIGHT_NEXT
+status: BFSC_S2_RUNTIME_READY__COMMON_PRESTATE_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 mechanism exposure, boundary freeze and Execution Leverage are now complete; the only authorized continuation is zero-model `S2_RUNTIME_PREFLIGHT_V1`. No S3 arm, S2 model call, S4 activation, R0 or R1 is authorized from historical text. Its R0/R3 results must never be relabeled as evidence for another research line. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 mechanism exposure, boundary freeze, Execution Leverage and runtime preflight are complete; the only authorized continuation is the paid `S2_COMMON_PRESTATE` object. No S3 arm, S2 late-revision/R2/R3 arm, S4 activation, R0 or R1 is authorized from historical text. Its R0/R3 results must never be relabeled as evidence for another research line. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
 
 ## 1. Retained scientific objective
 
@@ -284,10 +284,12 @@ The R2/R3 comparison cannot be promoted to either LOCAL_HEADROOM_PASS or LOCAL_H
 
 `S2_MECHANISM_EXPOSURE_GATE_V1` remains COMPLETE/PASS as `EXPOSURE_SOURCE_PROVEN`. `S2_STAGE_B_BOUNDARY_FREEZE_V1` is COMPLETE/PASS. `S2_EXECUTION_LEVERAGE_GATE_V1` is now COMPLETE/PASS scientifically, with current execution authorization `DEFERRED_IMAGE_NOT_READY`. Authority: `S2_EXECUTION_LEVERAGE_GATE_V1.md/json` and `S2_EXECUTION_LEVERAGE_RESULT_V1.md/json`. Docker client/server 29.8.0 is reachable on linux/amd64, but the exact official S2 image is not locally present. The prospective minimum paid sequence after runtime PASS is frozen as `COMMON_PRESTATE -> R2 -> conditional R3`; common-prestate must precede R2 so exact R3 scope remains outcome-blind. PARTIAL_REFERENCE_GUARD is binding: R2 full-success keeps R3 immediately decision-relevant; R2 partial makes S2 V-ineligible, forbids R0/R1 for V, and defers R3 unless later S4/H bounds prove it can still change an already-frozen H endpoint.
 
+`S2_RUNTIME_PREFLIGHT_V1` is now COMPLETE/PASS as `PASS_RUNTIME_READY`. Authority: `S2_RUNTIME_PREFLIGHT_V1.md/json`. Exact image digest is `sha256:24df21b472314647843bab5009a4f5b443a129e7bd42904936e0176277bf8148`; runtime identity is agent uid 1001, Node v20.20.2, Bun 1.3.13, clean exact base `e54dff7...`, no remotes/heads/tags. The frozen official verifier executes in the exact image; no-patch reward is `0.0000`. Its baseline upstream tsgo command reports TS5112, retained as verifier-baseline evidence rather than runtime invalidity.
+
 The exact next scientific transition is now:
 
-`S2_RUNTIME_PREFLIGHT_V1`
+`S2_COMMON_PRESTATE`
 ->
-pull/inspect the exact official image, verify base/runtime identity and execute the frozen official verifier baseline with zero model calls.
+deliver only controlled pre-revision requirements 0/6/8/20 under the fixed GPT-5.6 Sol/xhigh identity, persist the resulting project/session state once, then freeze exact artifacts and outcome-blind R3 scope before any late revision.
 
-Do not run any S2 model call in the preflight step. Do not activate S4. Do not run R0/R1 or revisit S3.
+Do not deliver 37/39 or start R2/R3/R0/R1 in the same supervisor turn. Do not activate S4.
