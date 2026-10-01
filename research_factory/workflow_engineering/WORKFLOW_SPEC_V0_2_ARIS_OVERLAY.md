@@ -110,12 +110,15 @@ Execution state is read from the existing Gate:
 - request identity must exactly equal the frozen Gate contract identity;
 - evidence paths must be frozen Gate inputs/evaluator or ACCEPTED attempt artifacts, and hashes must match the Gate-owned hashes and current bytes;
 - `projection_root` and output must be outside both the Gate state directory and the executed contract workspace;
+- in V0.2 the output file is a direct child of `projection_root`; nested output paths are rejected;
+- immediately before serialization, the overlay creates the projection root if needed, locks the Windows directory chain with non-delete-sharing directory handles, rejects reparse points/canonical drift, rechecks authority overlap, and holds those handles through exclusive link + readback;
 - overlay never changes Gate state.
 
 Claim rules:
 - `UNASSESSED` requires `review.kind=NONE` and no review receipt;
-- any non-NONE review must bind to a structured `aris-governance-review-receipt-v1` that was already frozen as a Gate input/evaluator or ACCEPTED attempt artifact;
-- the receipt must match claim id, verdict, review kind, reviewer, verdict id and executor/reviewer family fields exactly;
+- any non-NONE review must bind to a structured `aris-governance-review-receipt-v2` that was already frozen as a Gate input/evaluator or ACCEPTED attempt artifact;
+- the receipt must bind the exact claim id, statement, scope, verdict, source Gate identity, and canonicalized authoritative evidence set, plus review kind, reviewer, verdict id and executor/reviewer family fields;
+- reviewer-family identifiers are canonical lower-case tokens matching `[a-z0-9][a-z0-9._-]*`; whitespace/case aliases are rejected rather than normalized because normalization could turn same-family review into a false independent verdict;
 - `PROVISIONAL` uses `SAME_FAMILY`, with equal non-empty executor/reviewer families;
 - `SUPPORTED` or `REFUTED` require either:
   - `INDEPENDENT`, with unequal non-empty executor/reviewer families in the frozen receipt; or
@@ -158,7 +161,7 @@ Failure of the overlay never converts scientific PASS to FAIL or vice versa; it 
 
 ## 7. Windows/runtime boundary
 
-The migrated production tool emits ASCII-only CLI status, avoiding the upstream ARIS Windows-GBK emoji failure observed in replay smoke tests.
+The migrated production tool emits one ASCII-only JSON CLI status line with `ensure_ascii=true`; non-ASCII output paths are escaped rather than written raw, avoiding the upstream ARIS Windows-GBK post-write `UnicodeEncodeError` observed in replay smoke tests.
 
 If upstream ARIS CLI helpers are invoked manually, PC2 must set `PYTHONUTF8=1`.
 
@@ -170,16 +173,18 @@ TDD acceptance:
 1. RED before implementation.
 2. Finished Gate + UNASSESSED claim -> projection, `authoritative=false`, next step remains unauthorized.
 3. Same-family SUPPORTED -> reject; Same-family PROVISIONAL -> pass only with a frozen receipt.
-4. Independent/deterministic SUPPORTED or REFUTED -> pass only when a Gate-authoritative structured receipt matches all provenance fields.
-5. Caller-created post-hoc review receipt -> reject.
+4. Independent/deterministic SUPPORTED or REFUTED -> pass only when a Gate-authoritative structured receipt matches all provenance fields, exact claim text/scope, source identity and evidence set.
+5. Reusing a valid receipt with changed claim text/scope/evidence/source identity -> reject; caller-created post-hoc review receipt -> reject.
 6. RUNNING/non-STOPPED Gate -> reject.
 7. identity mismatch -> reject.
 8. arbitrary/post-hoc evidence or hash drift -> reject.
 9. projection root overlapping Gate state or execution workspace -> reject.
-10. duplicate output -> reject without changing the existing bytes; no temp partial remains.
-11. projection write cannot mutate Gate state.
-12. existing WFE offline + local_runner suites stay green.
-13. Native PC2 Python 3.7 compatibility is required.
+10. post-validation projection-root retarget to a Windows junction -> reject before output; while the native directory lock is held, directory removal/retarget must fail.
+11. duplicate output -> reject without changing the existing bytes; no temp partial remains.
+12. projection write cannot mutate Gate state.
+13. existing WFE offline + local_runner suites stay green.
+14. Native PC2 Python 3.7 compatibility is required.
+15. Under `PYTHONIOENCODING=cp936:strict`, a non-ASCII projection path must still produce exit 0, strictly decodable CLI output, and an intact non-authoritative projection.
 
 ## 9. Non-goals
 

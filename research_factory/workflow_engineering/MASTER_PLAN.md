@@ -11,9 +11,10 @@ Build and validate a reusable research-task workflow on the dedicated D:/cs_work
 ## Current user-directed engineering override — 2026-10-01
 
 ID: WFE-06
-Status: AUTHORIZED_IN_PROGRESS
+Status: PREMERGE_COMPATIBILITY_PASS__MERGE_READY
 Workflow policy: WORKFLOW_SPEC_V0_2_ARIS_OVERLAY.md
 Branch/worktree: feat/aris-governance-overlay @ D:/cs_work_aris_overlay
+Recovery checkpoint: WFE06_RECOVERY_CHECKPOINT_20261001.md
 Owner: current ARIS migration task
 Exit condition: verified governance projection integrated or branch discarded; no idle retained worktree.
 
@@ -25,7 +26,7 @@ Why this step exists:
 - user explicitly authorized migration into current facilities.
 
 Current single step:
-implement the minimal non-authoritative ARIS governance projection defined in V0.2. Reuse existing Gate state; do not modify Gate/local_runner ownership, Watchdog, Observatory, selector lifecycle or scientific evidence. TDD + native verification + one fresh review are required.
+WFE-06 implementation and path-scoped branch integration are COMPLETE under `WORKFLOW_SPEC_V0_2_ARIS_OVERLAY.md`. Pre-merge compatibility against current `main` `8dc9c9b0f48597bc0a03f4ee495b1e8a254a375b` is PASS: no main-only change touches `research_factory/workflow_engineering/`, repository ownership, recovery order, workflow execution contract, WFE-05 engineering baseline or retained workflow gates; main-only authority edits remain scientific-current-state updates. Accepted completion evidence remains: focused governance suite 16/16 PASS; whole workflow-engineering runtime suite 26/26 PASS; fresh native Python 3.7 smoke + independent readback PASS; source Gate semantic fingerprint and raw `gate.sqlite3` SHA256 unchanged across projection; fresh independent whole-diff reviewer returned PASS with no BLOCKER/IMPORTANT findings; no authority owner changed. Resume only through `WFE06_RECOVERY_CHECKPOINT_20261001.md`. The only next frontier is one merge of `feat/aris-governance-overlay` into the then-current compatible `main`; push remains later. Root `NUL` and generated `graft/` remain out-of-scope noise. Do not modify Gate/local_runner ownership, Watchdog, Observatory, selector lifecycle or scientific evidence.
 
 The previously retained scientific next step `S2_STAGE_B_BOUNDARY_FREEZE_V1` is PAUSED_BY_USER_REDIRECTION, not killed or rewritten. WFE-06 completion does not automatically authorize resuming it.
 
