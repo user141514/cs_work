@@ -1,0 +1,43 @@
+{
+  "experiment": "S3_COMMON_PRESTATE_U3_V1",
+  "status": "PASS_U3__U4_NEXT",
+  "task": "pi-mono-auto-93c17d3b",
+  "checkout": "D:/cs_work/external/spec_stageb_s3_common_pre_v2",
+  "root_commit": "5133697bc454da5595655cf4b0c70d3c2c725677",
+  "session_dir": "D:/cs_work/external/spec_stageb_sessions/s3_common_pre_v2",
+  "session_id": "01a0f62d-3227-7000-ac03-03b36dfb1b6b",
+  "session_sha256_after_u3": "8fcb2578290a6566a0eb3c0b2d123961d6cb54afb6cc4fc537a12931af63c1d4",
+  "lifetime_turn_id": "turn_4278395b4ee8456095f0cee71372b0c4",
+  "model": "openai-codex/gpt-5.6-sol",
+  "model_fallback": false,
+  "thinking": "xhigh",
+  "user_turn_count": 3,
+  "u3_source_message_index": 36,
+  "u3_verbatim": "ok, if you do it all in one message then the ui will not open i guess",
+  "session_exit": "normal",
+  "quiescent": true,
+  "forbidden_source_scan": "PASS",
+  "final_untracked_file": ".pi/extensions/message-signals.ts",
+  "extension_sha256_after_u3": "1d76a1742be2dee3356f770cb6bb7385565d3aaa1e4eaa5bc64f665875ac4080",
+  "tracked_diff_empty": true,
+  "diff_check": "PASS",
+  "u3_semantics": {
+    "input_ends_response": true,
+    "waits_for_hidden_followup": true,
+    "input_precedes_done_on_invalid_combined_signal": true,
+    "real_multiturn_ui_interval_not_yet_finally_verified": true
+  },
+  "accounting": {
+    "model_calls": 12,
+    "tool_calls": 13,
+    "mutating_tool_calls": 4,
+    "input_tokens": 146609,
+    "output_tokens": 3714,
+    "cache_read_tokens": 1474304,
+    "reasoning_tokens": 2049,
+    "reported_cost_usd": 1.2504376,
+    "wall_seconds": 104.289
+  },
+  "next_step": "S3_COMMON_PRESTATE_U4",
+  "next_source_message_index": 42
+}

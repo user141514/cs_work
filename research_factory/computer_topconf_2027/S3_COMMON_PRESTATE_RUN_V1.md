@@ -1,7 +1,7 @@
 # S3 Common Prestate Run Contract V1
 
 date: 2026-10-01
-status: U1_V2_PASS__U2_NEXT
+status: U3_PASS__U4_NEXT
 task: pi-mono-auto-93c17d3b
 parent:
 - S3_STAGE_B_BOUNDARY_FREEZE_V1.md
@@ -12,7 +12,7 @@ parent:
 
 Generate exactly one scientific pre-revision trajectory for S3.
 
-This contract currently authorizes **U1 only**. Later U2/U3/U4/U5 are separate continuation turns in the same durable OMP session and same checkout.
+Execution advances one user-authorized supervisor turn at a time in the same durable OMP session and checkout. U1-v2, U2 and U3 are complete/PASS. U4 is the next planned continuation, but this file alone does not automatically authorize executing it.
 
 No late revision U6, R0, R1, R2 or R3 is authorized by this file.
 
@@ -109,10 +109,26 @@ U1-v2 passed. Authority:
 - `S3_COMMON_PRESTATE_U1_RESULT_V2.md`
 - `S3_COMMON_PRESTATE_U1_RESULT_V2.json`
 
+## U2 result
+
+U2 passed in the same v2 checkout/session. Authority:
+- `S3_COMMON_PRESTATE_U2_RESULT_V1.md`
+- `S3_COMMON_PRESTATE_U2_RESULT_V1.json`
+
+The exact frozen U2 was the second user turn; GPT-5.6 Sol/xhigh identity remained unchanged; no forbidden source marker entered the session; the extension was content-preservingly moved into `.pi/extensions/message-signals.ts`.
+
+## U3 result
+
+U3 passed in the same v2 checkout/session. Authority:
+- `S3_COMMON_PRESTATE_U3_RESULT_V1.md`
+- `S3_COMMON_PRESTATE_U3_RESULT_V1.json`
+
+The exact frozen U3 was the third user turn; model/thinking identity and forbidden-source boundary remained unchanged. The resulting extension explicitly requires response termination after INPUT and waits for a hidden follow-up; INPUT wins over an invalid same-response DONE. A sustained real multi-turn interval remains for U4/U5 rather than being backfilled into U3.
+
 ## Exact next step
 
-U2 only:
-source_message_index=31
-`move that to cwd/.pi/extensions so i can relaod`
+U4 only:
+source_message_index=42
+`ok, i started, now do a bunch of turns, in the first turn open the ui, in the last turn clos eit`
 
-No U3-U5 in the same supervisor turn.
+Source_message_index=38/40 are historical observations and remain excluded. No U5 in the same supervisor turn.
