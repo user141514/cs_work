@@ -1,0 +1,20 @@
+{
+  "experiment": "S2_COMMON_PRESTATE_U0_INVALID_V1",
+  "status": "INVALID_RUNTIME_SUBSTRATE__NO_PROJECT_EFFECT",
+  "task": "pi-mono-auto-a4fca584",
+  "request_key": "s2-common-pre-u0-v1",
+  "lifetime_turn_id": "turn_86f29c6e0d474093a6b4db3a4cdf7567",
+  "session_id": "01a0f748-cd50-7000-ad23-65eda39158c4",
+  "session_sha256": "169efffc8e8f4d925d564f8db542ceb92d3c9cc38e20f49ed648c862a3564967",
+  "user0_exact": true,
+  "project_changed": false,
+  "invalid_reason": "tool execution occurred on Windows Node24/Bun1.3.14 against Linux node_modules instead of the frozen Linux Node20/Bun1.3.13 task runtime",
+  "scientific_evidence": false,
+  "accounting": {
+    "model_calls": 13,
+    "tool_calls": 67,
+    "noncached_input_output": 159912,
+    "reported_cost_usd": 1.3404768,
+    "wall_seconds": 206.31
+  }
+}

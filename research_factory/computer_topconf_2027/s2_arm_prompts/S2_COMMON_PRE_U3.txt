@@ -1,0 +1,1 @@
+try it with pi-test.sh. i'm especially curious what happens with relative paths. are they resolved to absolute paths in settings.json?

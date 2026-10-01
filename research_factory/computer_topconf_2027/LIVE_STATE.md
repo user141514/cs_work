@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-01
-status: BFSC_S2_RUNTIME_READY__COMMON_PRESTATE_NEXT
+status: BFSC_S2_COMMON_PRESTATE_ACTIVE__U0_V1_INVALID__LINUX_SUBSTRATE_READY__U0_RETRY_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 mechanism exposure, boundary freeze, Execution Leverage and runtime preflight are complete; the only authorized continuation is the paid `S2_COMMON_PRESTATE` object. No S3 arm, S2 late-revision/R2/R3 arm, S4 activation, R0 or R1 is authorized from historical text. Its R0/R3 results must never be relabeled as evidence for another research line. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 COMMON_PRESTATE is active, but U0-v1 is INVALID due to the wrong Windows tool-runtime substrate and must never be continued. The corrected Linux substrate is now verified; the only authorized continuation is `S2_COMMON_PRESTATE_U0_RETRY` in a fresh v2 session. No U1, late revision 37/39, R2/R3/R0/R1 or S4 activation is authorized yet. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
 
 ## 1. Retained scientific objective
 
@@ -284,12 +284,14 @@ The R2/R3 comparison cannot be promoted to either LOCAL_HEADROOM_PASS or LOCAL_H
 
 `S2_MECHANISM_EXPOSURE_GATE_V1` remains COMPLETE/PASS as `EXPOSURE_SOURCE_PROVEN`. `S2_STAGE_B_BOUNDARY_FREEZE_V1` is COMPLETE/PASS. `S2_EXECUTION_LEVERAGE_GATE_V1` is now COMPLETE/PASS scientifically, with current execution authorization `DEFERRED_IMAGE_NOT_READY`. Authority: `S2_EXECUTION_LEVERAGE_GATE_V1.md/json` and `S2_EXECUTION_LEVERAGE_RESULT_V1.md/json`. Docker client/server 29.8.0 is reachable on linux/amd64, but the exact official S2 image is not locally present. The prospective minimum paid sequence after runtime PASS is frozen as `COMMON_PRESTATE -> R2 -> conditional R3`; common-prestate must precede R2 so exact R3 scope remains outcome-blind. PARTIAL_REFERENCE_GUARD is binding: R2 full-success keeps R3 immediately decision-relevant; R2 partial makes S2 V-ineligible, forbids R0/R1 for V, and defers R3 unless later S4/H bounds prove it can still change an already-frozen H endpoint.
 
-`S2_RUNTIME_PREFLIGHT_V1` is now COMPLETE/PASS as `PASS_RUNTIME_READY`. Authority: `S2_RUNTIME_PREFLIGHT_V1.md/json`. Exact image digest is `sha256:24df21b472314647843bab5009a4f5b443a129e7bd42904936e0176277bf8148`; runtime identity is agent uid 1001, Node v20.20.2, Bun 1.3.13, clean exact base `e54dff7...`, no remotes/heads/tags. The frozen official verifier executes in the exact image; no-patch reward is `0.0000`. Its baseline upstream tsgo command reports TS5112, retained as verifier-baseline evidence rather than runtime invalidity.
+`S2_RUNTIME_PREFLIGHT_V1` remains COMPLETE/PASS as `PASS_RUNTIME_READY`. S2 COMMON_PRESTATE execution then began, but the first U0 attempt is invalid: `s2-common-pre-u0-v1` used exact user/source inputs and made zero project changes, yet its agent tool shell ran on Windows Node24/Bun1.3.14 with Linux node_modules, violating the frozen Linux task runtime. Authority: `S2_COMMON_PRESTATE_U0_INVALID_V1.md/json`. That session is frozen and excluded.
+
+`S2_COMMON_PRESTATE_LINUX_SUBSTRATE_V1 = PASS`: persistent container `s2-common-pre-v2` uses the exact official image/base, agent uid1001, Node20.20.2 and task Bun1.3.13; OMP18.1.15 is launched with an isolated harness Bun1.3.14 under `/opt/omp-bun` while PATH remains on task Bun1.3.13. Proxy, session bind and frozen input hashes are verified.
 
 The exact next scientific transition is now:
 
-`S2_COMMON_PRESTATE`
+`S2_COMMON_PRESTATE_U0_RETRY`
 ->
-deliver only controlled pre-revision requirements 0/6/8/20 under the fixed GPT-5.6 Sol/xhigh identity, persist the resulting project/session state once, then freeze exact artifacts and outcome-blind R3 scope before any late revision.
+restart user index 0 from the clean Linux container project in a fresh v2 OMP session, with the frozen issue source adapter context-only.
 
-Do not deliver 37/39 or start R2/R3/R0/R1 in the same supervisor turn. Do not activate S4.
+Do not deliver U1 or late revision 37/39 in the same supervisor turn. Do not start R2/R3/R0/R1. Do not activate S4.

@@ -1,0 +1,1 @@
+but, wouldn't that basically add a local path to packages i settings.json? is that ok?
