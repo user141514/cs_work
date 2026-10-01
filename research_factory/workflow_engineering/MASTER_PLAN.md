@@ -8,6 +8,28 @@ Authority: current user request to understand adjacent papers, integrate their m
 ## Goal / scope
 Build and validate a reusable research-task workflow on the dedicated D:/cs_work substrate. Reuse verified mechanisms and existing tools; do not equate a collection of paper names with an implemented method. First engineer our own workflow, then evaluate it on the SAME complex historical task as the frozen original workflow. This is not an A²Flow reproduction claim, a new SOTA claim, or a new scientific candidate.
 
+## Current user-directed engineering override — 2026-10-01
+
+ID: WFE-06
+Status: MERGED_MAIN_VERIFIED__PUSH_PENDING
+Workflow policy: WORKFLOW_SPEC_V0_2_ARIS_OVERLAY.md
+Integration: merged into main @ D:/cs_work; feature worktree retained pending final resolution
+Recovery checkpoint: WFE06_RECOVERY_CHECKPOINT_20261001.md
+Owner: current ARIS migration task
+Exit condition: verified governance projection integrated or branch discarded; no idle retained worktree.
+
+Why this step exists:
+- two preregistered historical A/B replays were completed before implementation: JRAD negative/fragile case and C049 positive-success case;
+- both current Research OS and Research OS + ARIS overlay scored 10/10 on frozen decision rubrics;
+- ARIS overlay added no extra scientific action or blocking stage; its demonstrated incremental value is durable bounded-claim / acceptance / anti-repeat state;
+- PC2 smoke proved ARIS Research Wiki can act as a derived projection and ARIS run-state preserves `done != accepted`;
+- user explicitly authorized migration into current facilities.
+
+Current single step:
+WFE-06 implementation, path-scoped branch integration, merge into `main`, and merged-main verification are COMPLETE under `WORKFLOW_SPEC_V0_2_ARIS_OVERLAY.md`. The merge introduced exactly the six intended WFE-06 paths relative to its first parent, and the whole workflow-engineering runtime suite passed **26/26** on merged `main`. Accepted completion evidence also includes: focused governance suite 16/16 PASS; fresh native Python 3.7 smoke + independent readback PASS; source Gate semantic fingerprint and raw `gate.sqlite3` SHA256 unchanged across projection; fresh independent whole-diff reviewer returned PASS with no BLOCKER/IMPORTANT findings; no authority owner changed. Resume only through `WFE06_RECOVERY_CHECKPOINT_20261001.md`. The only next frontier is push of the verified merged `main`, followed by explicit feature-worktree resolution. Root `NUL` and generated `graft/` remain out-of-scope noise in the feature worktree. Do not modify Gate/local_runner ownership, Watchdog, Observatory, selector lifecycle or scientific evidence.
+
+The previously retained scientific next step `S2_STAGE_B_BOUNDARY_FREEZE_V1` is PAUSED_BY_USER_REDIRECTION, not killed or rewritten. WFE-06 completion does not automatically authorize resuming it.
+
 ## Plan
 1. Verify the mechanisms and implementation seams of the selected papers; inspect existing local authority and execution assets; define one versioned integration and hard-constraint contract.
 2. COMPLETE / FROZEN: gate, native verification and bounded real local execution are accepted through consolidated WFE-05. Historical Stage-B live integration is not a research prerequisite. Do not add another engineering stage without a concrete blocker in an actual research task.
