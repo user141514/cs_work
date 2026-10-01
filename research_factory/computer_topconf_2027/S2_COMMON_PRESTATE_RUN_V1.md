@@ -173,8 +173,15 @@ Exact outcome-blind R3 semantic scope is frozen in `R3_SCOPE_V1.md/json`; whole-
 
 The raw frozen verifier reward is `0.0000`, but the primary F2P measurement is structurally invalid for the frozen base because the verifier instantiates runtime `PackageManager` while the task base defines `PackageManager` only as an interface and `DefaultPackageManager` as the runtime class. Under PRG-1 this yields no scientific correctness verdict and no PARTIAL_REFERENCE classification. R3/R0/R1 are not authorized.
 
+## Selector replan result
+
+`BFSC_SELECTOR_REPLAN_AFTER_S2_VERIFIER_INVALID` is complete. Authority:
+- `BFSC_SELECTOR_REPLAN_AFTER_S2_VERIFIER_INVALID_20261002.md/json`
+
+The selector keeps BFSC at PRECARD because S4 is the only still-unobserved frozen V-witness slot, but it does not authorize S4 paid work. A prospective S4-only `VERIFIER_COMPATIBILITY_GATE` now precedes mechanism exposure and all paid execution so the factory does not repeat S2's structurally invalid measurement failure.
+
 ## Exact next step
 
-`BFSC_SELECTOR_REPLAN_AFTER_S2_VERIFIER_INVALID` only.
+`S4_VERIFIER_COMPATIBILITY_GATE_V1` only.
 
-Do not repair/rescore this completed R2. Do not automatically activate S4 or R3 before the selector decision.
+Use zero model calls and only frozen S4 task/base/verifier evidence. Do not repair/rescore S2, do not run S2 R3/R0/R1, and do not run S4 mechanism exposure/common-prestate/paid arms in the same supervisor step.
