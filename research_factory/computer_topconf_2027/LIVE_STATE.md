@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-02
-status: BFSC_SELECTOR_REPLAN_AFTER_S2_COMPLETE__CONTINUE_PRECARD__S4_VERIFIER_COMPATIBILITY_NEXT
+status: BFSC_S4_VERIFIER_COMPATIBILITY_PASS__MECHANISM_EXPOSURE_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 COMMON_PRESTATE and R2 FULL_RESTART are complete; S2 R2 execution is valid but its primary frozen correctness measurement is structurally invalid, so S2 remains `NONIDENTIFIABLE_VERIFIER_STRUCTURAL_INVALIDITY` rather than negative or PARTIAL_REFERENCE. The higher-level selector replan is now complete under `BFSC_SELECTOR_REPLAN_AFTER_S2_VERIFIER_INVALID_20261002.md/json`. Portfolio state leaves S4 as the only still-unobserved frozen V-witness opportunity. Before any S4 mechanism-exposure or paid work, a new prospective admission-only `S4_VERIFIER_COMPATIBILITY_GATE_V1` must prove the frozen verifier can mechanically reach and discriminate its intended task behavior against the exact base. This changes execution order only and does not modify H/V metrics or historical results. No S4 paid arm/common-prestate, S2 R3/R0/R1, or new TOPIC_BET/PAPER_CANDIDATE is authorized. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 remains `NONIDENTIFIABLE_VERIFIER_STRUCTURAL_INVALIDITY`; S2 R3/R0/R1 remain unauthorized. The higher-level selector replan is complete, and the prospective S4-only verifier-compatibility gate is now also COMPLETE/PASS. Exact S4 image `sha256:06a5e300...` at base `353ac792...` executes the frozen no-patch verifier with exit 0; all observed P2P gates pass and F2P failures are the intended absent `pi-package`/documentation/search behavior, not harness structural failure. Authority: `S4_VERIFIER_COMPATIBILITY_GATE_V1.md/json`. S4 is therefore measurement-admitted but not yet scientifically exposure-admitted. The only authorized continuation is `S4_MECHANISM_EXPOSURE_GATE_V1` with zero model calls. No S4 common-prestate/paid arm, S2 R3/R0/R1, or new TOPIC_BET/PAPER_CANDIDATE is authorized. The AgentSquare/ALFWorld O+I line remains terminated.
 
 ## 1. Retained scientific objective
 
@@ -292,12 +292,12 @@ The R2/R3 comparison cannot be promoted to either LOCAL_HEADROOM_PASS or LOCAL_H
 
 `S2_R2_FULL_RESTART` is now COMPLETE as a valid independent execution. Authority: `S2_R2_FULL_RESTART_SNAPSHOT_V1/` and `S2_R2_FULL_RESTART_RESULT_V1.md/json`. Snapshot manifest SHA256 is `a6e75270dd4ab9e109efb8b49788e447379efb2e0b41d8a33a962a250e01fd05`; frozen R2 session SHA256 is `18ce317dc49fabd818b4dcebb83fb467ab98e5497f19a8f9c5996f7dcfffd6c8`. The raw frozen verifier reward is `0.0000`, but the primary F2P measurement is structurally invalid for the frozen base because it instantiates a runtime `PackageManager` class that does not exist. PRG-1 therefore blocks a scientific correctness verdict and blocks PARTIAL_REFERENCE qualification; R3/R0/R1 remain unauthorized.
 
-`BFSC_SELECTOR_REPLAN_AFTER_S2_VERIFIER_INVALID` is now COMPLETE. Authority: `BFSC_SELECTOR_REPLAN_AFTER_S2_VERIFIER_INVALID_20261002.md/json`. BFSC remains PRECARD rather than killed because S4 is the only still-unobserved frozen V-witness slot. The replan introduces a prospective S4-only `VERIFIER_COMPATIBILITY_GATE` ahead of mechanism exposure and all paid work; it does not alter the frozen Stage-B correctness/reuse/value metrics or historical S2/S3/S5 outcomes.
+`BFSC_SELECTOR_REPLAN_AFTER_S2_VERIFIER_INVALID` remains COMPLETE. `S4_VERIFIER_COMPATIBILITY_GATE_V1` is now also COMPLETE/PASS as `VERIFIER_COMPATIBLE`. Authority: `S4_VERIFIER_COMPATIBILITY_GATE_V1.md/json`. Exact image/base/runtime are locked; no-patch verifier exit 0; P2P gates pass; all F2P failures are intended missing task behavior. The verifier can therefore reach and discriminate S4 behavior under the frozen base architecture.
 
 The exact next scientific transition is now:
 
-`S4_VERIFIER_COMPATIBILITY_GATE_V1`
+`S4_MECHANISM_EXPOSURE_GATE_V1`
 ->
-use zero model calls and only frozen S4 task/base/verifier evidence to determine whether the published verifier can actually reach and discriminate the intended S4 behavior.
+use zero model calls and only frozen S4 ordered user requirements plus frozen base source needed to determine whether the late requirement acts on already-created implementation/decision state strongly enough to expose stale-state survival/selective invalidation.
 
-Do not run S4 mechanism exposure, common-prestate, R2/R3/R0/R1, or any S2 arm before that gate.
+Do not run S4 common-prestate, R2/R3/R0/R1, or any S2 arm in the same supervisor step.

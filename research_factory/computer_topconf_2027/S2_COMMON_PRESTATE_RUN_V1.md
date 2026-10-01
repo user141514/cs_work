@@ -180,8 +180,15 @@ The raw frozen verifier reward is `0.0000`, but the primary F2P measurement is s
 
 The selector keeps BFSC at PRECARD because S4 is the only still-unobserved frozen V-witness slot, but it does not authorize S4 paid work. A prospective S4-only `VERIFIER_COMPATIBILITY_GATE` now precedes mechanism exposure and all paid execution so the factory does not repeat S2's structurally invalid measurement failure.
 
+## S4 verifier-compatibility result
+
+`S4_VERIFIER_COMPATIBILITY_GATE_V1 = VERIFIER_COMPATIBLE`. Authority:
+- `S4_VERIFIER_COMPATIBILITY_GATE_V1.md/json`
+
+The exact frozen S4 verifier executes against the frozen base with exit 0. Observed P2P gates pass; F2P failures are the intended absent `pi-package`/documentation/search behavior, not a structurally impossible harness assumption.
+
 ## Exact next step
 
-`S4_VERIFIER_COMPATIBILITY_GATE_V1` only.
+`S4_MECHANISM_EXPOSURE_GATE_V1` only.
 
-Use zero model calls and only frozen S4 task/base/verifier evidence. Do not repair/rescore S2, do not run S2 R3/R0/R1, and do not run S4 mechanism exposure/common-prestate/paid arms in the same supervisor step.
+Use zero model calls and frozen S4 ordered requirements/base source only. Do not repair/rescore S2, do not run S2 R3/R0/R1, and do not run S4 common-prestate/paid arms in the same supervisor step.
