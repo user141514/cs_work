@@ -1,7 +1,7 @@
 # S2 Common Prestate Run V1
 
 date: 2026-10-01
-status: U0_U1_U2_PASS__MATERIAL_DERIVED_WORK__U3_NEXT
+status: U0_U1_U2_U3_PASS__COMMON_PRESTATE_FREEZE_NEXT
 task: pi-mono-auto-a4fca584
 
 ## Historical U0-v1 checkout — INVALID runtime trajectory
@@ -97,8 +97,10 @@ U3:
 - SHA256 `cebe7791d109d74047ebd025ca82f546c64111c4acaab6e9dda0a4b82bf55de0`
 
 Authoritative delivery after runtime repair:
-`U0-v2 PASS -> U1 PASS -> U2 PASS -> U3`
-through the same WSL-native durable session using `--continue`.
+`U0-v2 PASS -> U1 PASS -> U2 PASS -> U3 PASS`
+through the same WSL-native durable session.
+
+The scientific session is now FROZEN for turn delivery. Do not append any further user turn before the immutable common-prestate bundle and exact outcome-blind R3 scope are materialized.
 
 U0-v2 authority:
 - result: `S2_COMMON_PRESTATE_U0_RESULT_V2.md/json`
@@ -123,6 +125,15 @@ U2 authority:
 - material derived work is now non-empty
 - pre-revision implementation persists relative CLI paths as lexical absolute paths
 - no settings.json-relative late-revision semantics are present.
+
+U3 authority:
+- result: `S2_COMMON_PRESTATE_U3_RESULT_V1.md/json`
+- same session ID: `01a0f7cc-4a3e-7000-8639-ae33f7a25a58`
+- post-U3 session SHA256: `27de34edff19712f382c5086bfc96adc123b04a00f32618f89b8ea847e850000`
+- final patch is unchanged from U2: `6d072b1f42bc39306b9a9e494ee631cd19712eac979aeca52f79fb2149a71c75`
+- pi-test.sh verifies both user/global and project-local relative inputs persist the same lexical absolute path
+- relative-path basis is caller cwd, not settings.json directory
+- no new edit/write calls; no temporary smoke directories remain.
 
 Do not deliver late revision indices 37/39.
 

@@ -1,0 +1,62 @@
+{
+  "experiment": "S2_COMMON_PRESTATE_U3_V1",
+  "status": "PASS_PRE_REVISION_VERIFICATION__COMMON_PRESTATE_FREEZE_NEXT",
+  "task": "pi-mono-auto-a4fca584",
+  "source_message_index": 20,
+  "prompt_sha256": "cebe7791d109d74047ebd025ca82f546c64111c4acaab6e9dda0a4b82bf55de0",
+  "repo": {
+    "path": "/home/agent/s2-common-pre-v3",
+    "base_head": "e54dff7efb460e364a39e4a22369991a20c105b9",
+    "tracked_modified_files": 7,
+    "untracked_files": 0,
+    "patch_bytes": 8292,
+    "patch_sha256": "6d072b1f42bc39306b9a9e494ee631cd19712eac979aeca52f79fb2149a71c75",
+    "same_patch_as_post_u2": true,
+    "late_settings_relative_semantics_detected": false,
+    "temporary_smoke_dirs_remaining": 0
+  },
+  "verified_pre_revision_behavior": {
+    "global_relative_install_persists_absolute_path": true,
+    "equivalent_relative_path_deduplicates": true,
+    "project_local_relative_install_persists_same_absolute_path": true,
+    "global_remove_clears_settings_only": true,
+    "project_remove_clears_settings_only": true,
+    "source_file_preserved": true,
+    "relative_path_basis": "caller_current_working_directory"
+  },
+  "session": {
+    "id": "01a0f7cc-4a3e-7000-8639-ae33f7a25a58",
+    "sha256_after_u3": "27de34edff19712f382c5086bfc96adc123b04a00f32618f89b8ea847e850000",
+    "bytes": 2037536,
+    "lines": 217,
+    "scientific_user_turns": 4
+  },
+  "runtime": {
+    "model": "openai-codex/gpt-5.6-sol",
+    "fallback": false,
+    "thinking": "xhigh",
+    "node": "v20.20.2",
+    "task_bun": "1.3.13",
+    "harness_bun": "1.3.14",
+    "omp": "18.1.15"
+  },
+  "lifetime": {
+    "request_key": "s2-common-pre-u3-wsl-v1",
+    "turn_id": "turn_deaa2372acd24b03b7ea921b2ccd9c0c",
+    "outcome": "succeeded",
+    "quiescent": true,
+    "wall_seconds": 91.820
+  },
+  "accounting": {
+    "model_calls": 13,
+    "tool_calls": 15,
+    "mutating_edit_write": 0,
+    "input_tokens": 6933,
+    "output_tokens": 2392,
+    "cache_read_tokens": 2510848,
+    "reasoning_tokens": 1278,
+    "reported_cost_usd": 1.0799112
+  },
+  "forbidden_source_scan": "PASS",
+  "next_step": "S2_COMMON_PRESTATE_FREEZE_V1"
+}

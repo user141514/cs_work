@@ -2,7 +2,7 @@
 
 date: 2026-09-28
 execution_authority_updated: 2026-10-01
-status: BFSC_S2_COMMON_PRESTATE_ACTIVE__U0_U1_U2_PASS__MATERIAL_DERIVED_WORK__U3_NEXT
+status: BFSC_S2_COMMON_PRESTATE_U0_U3_PASS__FREEZE_NEXT
 authoritative_asset_index: ASSET_LEDGER_20260928.md
 scope: general computer science / machine learning / AI / software systems
 repository_authority: D:/cs_work
@@ -12,7 +12,7 @@ formal_paper_candidate: false
 
 ## Execution override — read before historical CURRENT/NEXT statements
 
-The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 COMMON_PRESTATE is active. U0-v1 remains invalid due to the old Windows tool-runtime substrate. The authoritative WSL-native runtime is verified, and valid U0-v2, U1, and U2 are complete in the same session. U2 creates material pre-revision derived work: 7 tracked files modified with local-package install/remove support and the old path basis `relative CLI path -> lexical absolute path before persistence`; smoke install/list/remove/missing-path behavior passed and no late settings.json-relative semantics are present. The only authorized continuation is `S2_COMMON_PRESTATE_U3` in the same WSL-native session. No late revision 37/39, R2/R3/R0/R1 or S4 activation is authorized yet. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
+The corresponding `D:/bio_paper` copy is historical/read-only after WFE-03.1. This file retains BFSC evidence and unresolved questions, not launch authority from old CURRENT/NEXT paragraphs. BFSC is not scientifically killed and remains PRECARD only. S2 COMMON_PRESTATE pre-revision delivery is now complete through U3 in one WSL-native session. U2 created material implementation state with the old path basis `relative CLI path -> lexical absolute path before persistence`; U3 verified that behavior through `pi-test.sh` in both user/global and project-local settings scopes without further mutation. Final patch remains 7 tracked files / SHA256 `6d072b1f...`; post-U3 session SHA256 `27de34ed...`; no late settings.json-relative semantics or temp smoke artifacts remain. The scientific session is now frozen for turn delivery. The only authorized continuation is `S2_COMMON_PRESTATE_FREEZE_V1`. No late revision 37/39, R2/R3/R0/R1 or S4 activation is authorized yet. The AgentSquare/ALFWorld O+I line remains terminated; its negative chain is retained as MECHANISM_EXPOSURE_GATE calibration. No new TOPIC_BET/PAPER_CANDIDATE is activated.
 
 ## 1. Retained scientific objective
 
@@ -288,12 +288,12 @@ The R2/R3 comparison cannot be promoted to either LOCAL_HEADROOM_PASS or LOCAL_H
 
 `S2_COMMON_PRESTATE_LINUX_SUBSTRATE_V1` remains historical execution-repair evidence for the Docker-native route, but that route is operationally superseded for scientific turns because it cannot consume the host's command-backed openai-codex credential without credential projection. `S2_COMMON_PRESTATE_WSL_SUBSTRATE_V1 = PASS`: WSL Ubuntu26.04/x86_64, uid1001 agent, exact clean base `e54dff7...`, task Node20.20.2/npm10.8.2/Bun1.3.13 copied byte/mode-preserving from the official image, OMP18.1.15 with isolated harness Bun1.3.14, Windows-interoperated command-backed Codex resolver, and user-space PI-proxy relay. Credential-aware model discovery includes `openai-codex/gpt-5.6-sol`.
 
-`S2_COMMON_PRESTATE_U0` and `U1` remain COMPLETE/PASS. `S2_COMMON_PRESTATE_U2` is now also COMPLETE/PASS. Authority: `S2_COMMON_PRESTATE_U0_RESULT_V2.md/json`, `S2_COMMON_PRESTATE_U1_RESULT_V1.md/json`, and `S2_COMMON_PRESTATE_U2_RESULT_V1.md/json`. Session ID remains `01a0f7cc-4a3e-7000-8639-ae33f7a25a58`; post-U2 session SHA256 is `bc039ce82b8b5d2ae222ac7c96a050b44fb7bffdcdb3864a0fd3845e4a5e4424`. The project now intentionally carries 7 tracked pre-revision modifications with patch SHA256 `6d072b1f...`; material derived work is non-empty and the implemented path basis is lexical-absolute persistence, with no late settings.json-relative semantics.
+`S2_COMMON_PRESTATE_U0/U1/U2/U3` are now all COMPLETE/PASS. Authority: `S2_COMMON_PRESTATE_U0_RESULT_V2.md/json`, `U1_RESULT_V1`, `U2_RESULT_V1`, and `U3_RESULT_V1`. Session ID remains `01a0f7cc-4a3e-7000-8639-ae33f7a25a58`; post-U3 session SHA256 is `27de34edff19712f382c5086bfc96adc123b04a00f32618f89b8ea847e850000`. The final project carries the same 7 tracked pre-revision modifications as U2, patch SHA256 `6d072b1f...`. U3 verified via `pi-test.sh` that both user/global and project-local relative inputs persist the same lexical absolute path and are resolved from caller cwd; remove clears settings while preserving source. No further edit/write calls occurred and no late settings.json-relative semantics are present.
 
 The exact next scientific transition is now:
 
-`S2_COMMON_PRESTATE_U3`
+`S2_COMMON_PRESTATE_FREEZE_V1`
 ->
-deliver exact source_message_index=20 in the same WSL-native session using `--continue` and verify the current pre-revision relative-path behavior.
+materialize the immutable project/session bundle, exact patch/artifact receipts, derived-work manifest and outcome-blind exact R3 affected/revalidate/independent scope before any post-revision turn.
 
-Do not deliver late revision 37/39 in the same supervisor turn. Do not start R2/R3/R0/R1. Do not activate S4.
+Do not deliver late revision 37/39 before the freeze completes. Do not start R2/R3/R0/R1. Do not activate S4.
